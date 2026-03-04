@@ -1,0 +1,50 @@
+<View>
+  <!-- 患者信息头 -->
+  <View style="padding: 12px; background: #e3f2fd; margin-bottom: 15px; border-left: 4px solid #2196f3; border-radius: 4px;">
+    <Header value="🏥 患者信息"/>
+    <View style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 8px;">
+      <Text name="patient_id" value="ID: $id" style="color: #666; font-size: 14px;"/>
+      <Text name="patient_name" value="姓名: $patient_name" style="color: #666; font-size: 14px;"/>
+      <Text name="org_name" value="机构: $org_name" style="color: #666; font-size: 14px;"/>
+      <Text name="dept_name" value="科室: $emr_activity_info[0].dept_name" style="color: #666; font-size: 14px;"/>
+    </View>
+  </View>
+
+  <!-- 主诉区域 - 统一显示，空值时只读提示 -->
+  <View style="padding: 15px; background: #fff3e0; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffe0b2;">
+    <Header value="📋 主诉（Chief Complaint）"/>
+    
+    <View style="margin-top: 10px;">
+      <Labels name="chief_complaint_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="症状" background="#ff7043"/>
+        <Label value="持续时间" background="#29b6f6"/>
+        <Label value="部位" background="#66bb6a"/>
+        <Label value="程度" background="#ab47bc"/>
+        <Label value="诱因" background="#ffa726"/>
+      </Labels>
+      <Text name="chief_complaint_text" value="$emr_activity_info[0].chief_complaint" 
+            style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px;"/>
+    </View>
+    
+  </View>
+
+  <!-- 现病史区域 -->
+  <View style="padding: 15px; background: #e8f5e9; margin-bottom: 20px; border-radius: 8px; border: 1px solid #c8e6c9;">
+    <Header value="📝 现病史（Present Illness History）"/>
+    
+    <View style="margin-top: 10px;">
+      <Labels name="present_illness_labels" toName="present_illness_text" showInline="true">
+        <Label value="症状" background="#ef5350"/>
+        <Label value="阴性症状" background="#ffca28"/>
+        <Label value="伴随症状" background="#42a5f5"/>
+        <Label value="诊疗经过" background="#7e57c2"/>
+        <Label value="时间特征" background="#26a69a"/>
+      </Labels>
+      <Text name="present_illness_text" value="$emr_activity_info[0].present_illness_his"
+            style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px;"/>
+    </View>
+    
+  </View>
+
+ 
+</View>
