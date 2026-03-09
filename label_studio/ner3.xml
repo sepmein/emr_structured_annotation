@@ -44,25 +44,33 @@
       </Labels>
         
       <Text name="chief_complaint_text" value="
-          就诊时间：$emr_activity_info[0].activity_time &#10;&#10; 
-         主诉：$emr_activity_info[0].chief_complaint  &#10;&#10;
+          就诊时间：$emr_activity_info[0].activity_time &#10; 
+         主诉：$emr_activity_info[0].chief_complaint  &#10;
 		 现病史：$emr_activity_info[0].present_illness_his
-         &#10;&#10;---------&#10;&#10;
-         就诊时间：$emr_activity_info[1].activity_time &#10;&#10; 
-         主诉：$emr_activity_info[1].chief_complaint  &#10;&#10;
+         &#10;---------&#10;
+         就诊时间：$emr_activity_info[1].activity_time &#10; 
+         主诉：$emr_activity_info[1].chief_complaint  &#10;
 		 现病史：$emr_activity_info[1].present_illness_his
-        &#10;&#10; ---------&#10;&#10;
-         就诊时间：$emr_activity_info[2].activity_time &#10;&#10; 
-         主诉：$emr_activity_info[2].chief_complaint  &#10;&#10;
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[2].activity_time &#10; 
+         主诉：$emr_activity_info[2].chief_complaint  &#10;
 		 现病史：$emr_activity_info[2].present_illness_his
-        &#10;&#10; ---------&#10;&#10;
-         就诊时间：$emr_activity_info[3].activity_time &#10;&#10; 
-         主诉：$emr_activity_info[3].chief_complaint  &#10;&#10;
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[3].activity_time &#10; 
+         主诉：$emr_activity_info[3].chief_complaint  &#10;
 		 现病史：$emr_activity_info[3].present_illness_his
-        &#10;&#10; ---------&#10;&#10;
-         就诊时间：$emr_activity_info[4].activity_time &#10;&#10; 
-         主诉：$emr_activity_info[4].chief_complaint  &#10;&#10;
-		 现病史：$emr_activity_info[4].present_illness_his                                      
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[4].activity_time &#10; 
+         主诉：$emr_activity_info[4].chief_complaint  &#10;
+		 现病史：$emr_activity_info[4].present_illness_his
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[5].activity_time &#10; 
+         主诉：$emr_activity_info[5].chief_complaint  &#10;
+		 现病史：$emr_activity_info[5].present_illness_his   
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[6].activity_time &#10;
+         主诉：$emr_activity_info[6].chief_complaint  &#10;
+		 现病史：$emr_activity_info[6].present_illness_his   
            " 
             style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px; white-space: pre-wrap;"/>
 
