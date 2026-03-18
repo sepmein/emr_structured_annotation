@@ -16,32 +16,54 @@
     
     <View style="margin-top: 10px;">
       <Labels name="chief_complaint_labels" toName="chief_complaint_text" showInline="true">
-       	<Label value="发热" background="#FF6B6B"/>
-      	<Label value="高热" background="#FF8E53"/>
-      	<Label value="寒战" background="#FF6B9D"/>
-      	<Label value="肌痛" background="#C44569"/>
-      	<Label value="持续咳嗽" background="#4ECDC4"/>
-      	<Label value="新近出现的咳嗽" background="#44A3AA"/>
-      	<Label value="新近出现的咳痰" background="#2E86AB"/>
-      	<Label value="无痰" background="#A8DADC"/>
-      	<Label value="浓痰" background="#457B9D"/>
-      	<Label value="血痰" background="#1D3557"/>
-      	<Label value="褐色痰" background="#264653"/>
-      	<Label value="呼吸困难" background="#9B59B6"/>
-      	<Label value="咯血" background="#8E44AD"/>
-      	<Label value="胸痛" background="#6C5CE7"/>
-      	<Label value="定向障碍" background="#F39C12"/>
-      	<Label value="意识障碍" background="#E67E22"/>
-      	<Label value="湿性啰音" background="#27AE60"/>
-      	<Label value="肺实变体征" background="#2ECC71"/>
-      	<Label value="肺实变呈叶段分布" background="#16A085"/>
-      	<Label value="肺泡浸润" background="#1ABC9C"/>
-      	<Label value="慢阻肺" background="#34495E"/>
-      	<Label value="结构性肺病" background="#2C3E50"/>
-      	<Label value="免疫缺陷" background="#7F8C8D"/>
-      	<Label value="原有呼吸道症状加重" background="#95A5A6"/>
-      	<Label value="急性起病" background="#BDC3C7"/>
+        <!-- 发热相关 -->
+        <Label value="发热" background="#FF6B6B"/>
+        <Label value="高热" background="#FF8E53"/>
+        <!-- 关联实体 -->
+        <Label value="体温值" background="#FFD93D"/>
+        <Label value="症状时间" background="#6BCB77"/>
+        <!-- 其他症状 -->
+        <Label value="寒战" background="#FF6B9D"/>
+        <Label value="肌痛" background="#C44569"/>
+        <Label value="持续咳嗽" background="#4ECDC4"/>
+        <Label value="新近出现的咳嗽" background="#44A3AA"/>
+        <Label value="新近出现的咳痰" background="#2E86AB"/>
+        <Label value="无痰" background="#A8DADC"/>
+        <Label value="浓痰" background="#457B9D"/>
+        <Label value="血痰" background="#1D3557"/>
+        <Label value="褐色痰" background="#264653"/>
+        <Label value="呼吸困难" background="#9B59B6"/>
+        <Label value="咯血" background="#8E44AD"/>
+        <Label value="胸痛" background="#6C5CE7"/>
+        <Label value="定向障碍" background="#F39C12"/>
+        <Label value="意识障碍" background="#E67E22"/>
+        <Label value="湿性啰音" background="#27AE60"/>
+        <Label value="肺实变体征" background="#2ECC71"/>
+        <Label value="肺实变呈叶段分布" background="#16A085"/>
+        <Label value="肺泡浸润" background="#1ABC9C"/>
+        <Label value="慢阻肺" background="#34495E"/>
+        <Label value="结构性肺病" background="#2C3E50"/>
+        <Label value="免疫缺陷" background="#7F8C8D"/>
+        <Label value="原有呼吸道症状加重" background="#95A5A6"/>
+        <Label value="急性起病" background="#BDC3C7"/>
       </Labels>
+
+      <!-- 症状状态：附加在每个症状 span 上，perRegion 使每个 region 独立选择 -->
+      <Choices name="symptom_status" toName="chief_complaint_text"
+               perRegion="true" choice="single" showInline="true"
+               style="margin-top: 6px;">
+        <Choice value="当前" style="background: #e8f5e9; color: #2e7d32;"/>
+        <Choice value="既往" style="background: #fff8e1; color: #f57f17;"/>
+        <Choice value="否定" style="background: #fce4ec; color: #c62828;"/>
+        <Choice value="疑似" style="background: #e3f2fd; color: #1565c0;"/>
+        <Choice value="好转" style="background: #f3e5f5; color: #6a1b9a;"/>
+      </Choices>
+
+      <!-- 关系：连接症状 span → 体温值 / 症状时间 -->
+      <Relations>
+        <Relation value="伴随体温"/>
+        <Relation value="持续时长"/>
+      </Relations>
         
       <Text name="chief_complaint_text" value="
           就诊时间：$emr_activity_info[0].activity_time &#10; 
