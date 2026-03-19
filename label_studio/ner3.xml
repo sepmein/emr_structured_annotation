@@ -59,10 +59,26 @@
         <Choice value="好转" style="background: #f3e5f5; color: #6a1b9a;"/>
       </Choices>
 
-      <!-- 关系：连接症状 span → 体温值 / 症状时间 -->
+      <!-- 状态NER标签：标注文本中的修饰词 span，可与症状标签建立关联 -->
+      <Labels name="status_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="否定词" background="#E53935" style="color: white;"/>
+        <Label value="既往史" background="#FB8C00" style="color: white;"/>
+        <Label value="疑似词" background="#1E88E5" style="color: white;"/>
+        <Label value="好转词" background="#8E24AA" style="color: white;"/>
+        <Label value="加重词" background="#D81B60" style="color: white;"/>
+      </Labels>
+
+      <!-- 测量标签：标注所有测量值 span（体温、心率、血压、血氧等广义测量） -->
+      <Labels name="measurement_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="测量" background="#00897B" style="color: white;"/>
+      </Labels>
+
+      <!-- 关系：连接各类 span -->
       <Relations>
         <Relation value="伴随体温"/>
         <Relation value="持续时长"/>
+        <Relation value="修饰症状"/>
+        <Relation value="对应测量"/>
       </Relations>
         
       <Text name="chief_complaint_text" value="
