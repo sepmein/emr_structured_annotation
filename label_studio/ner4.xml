@@ -1,0 +1,110 @@
+<View>
+  <!-- 患者信息头 -->
+  <View style="padding: 12px; background: #e3f2fd; margin-bottom: 15px; border-left: 4px solid #2196f3; border-radius: 4px;">
+    <Header value="🏥 患者信息"/>
+    <View style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 8px;">
+      <Text name="patient_id" value="ID: $id" style="color: #666; font-size: 14px;"/>
+      <Text name="patient_name" value="姓名: $patient_name" style="color: #666; font-size: 14px;"/>
+      <Text name="org_name" value="机构: $org_name" style="color: #666; font-size: 14px;"/>
+      <Text name="dept_name" value="科室: $emr_activity_info[0].dept_name" style="color: #666; font-size: 14px;"/>
+    </View>
+  </View>
+
+
+  <View style="padding: 15px; background: #fff3e0; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffe0b2;">
+    <Header value="📋 主诉（Chief Complaint）+ 现病史（Present Illness History）"/>
+    
+    <View style="margin-top: 10px;">
+      <!-- 发热标签 -->
+      <Labels name="fever_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="发热" background="#FF6B6B"/>
+      </Labels>
+      
+       <!-- 状态标签 -->
+       <Labels name="status_labels" toName="chief_complaint_text" showInline="true">
+         <Label value="否定" background="#FF8E53"/>
+         <Label value="既往" background="#C44510"/>
+      </Labels>
+      
+      <!-- 症状标签 -->
+      <Labels name="symptom_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="寒战" background="#FF6B9D"/>
+        <Label value="肌痛" background="#C44569"/>
+        <Label value="持续咳嗽" background="#4ECDC4"/>
+        <Label value="新近出现的咳嗽" background="#44A3AA"/>
+        <Label value="新近出现的咳痰" background="#2E86AB"/>
+        <Label value="无痰" background="#A8DADC"/>
+        <Label value="浓痰" background="#457B9D"/>
+        <Label value="血痰" background="#1D3557"/>
+        <Label value="褐色痰" background="#264653"/>
+        <Label value="呼吸困难" background="#9B59B6"/>
+        <Label value="咯血" background="#8E44AD"/>
+        <Label value="胸痛" background="#6C5CE7"/>
+        <Label value="定向障碍" background="#F39C12"/>
+        <Label value="意识障碍" background="#E67E22"/>
+        <Label value="湿性啰音" background="#27AE60"/>
+        <Label value="肺实变体征" background="#2ECC71"/>
+        <Label value="肺实变呈叶段分布" background="#16A085"/>
+        <Label value="肺泡浸润" background="#1ABC9C"/>
+        <Label value="慢阻肺" background="#34495E"/>
+        <Label value="结构性肺病" background="#2C3E50"/>
+        <Label value="免疫缺陷" background="#7F8C8D"/>
+        <Label value="原有呼吸道症状加重" background="#95A5A6"/>
+        <Label value="急性起病" background="#BDC3C7"/>
+      </Labels>
+      
+       <!-- 测量标签 -->
+       <Labels name="measure_labels" toName="chief_complaint_text" showInline="true">
+         <Label value="体温值" background="#FFD93D"/>
+         <Label value="白细胞（WBC）值" background="#C44510"/>
+         <Label value="中性粒细胞百分比（NEUT%）" background="#6BCB77"/>
+         <Label value="降钙素原（PCT）" background="#6BCB00"/>
+         <Label value="胸部 CT / 胸片" background="#7CDE88"/>
+      </Labels>
+
+
+      <!-- 关系：连接症状 span → 体温值 / 症状时间 -->
+      <Relations>
+        <Relation value="伴随体温"/>
+        <Relation value="持续时长"/>
+      </Relations>
+        
+      <Text name="chief_complaint_text" value="
+          就诊时间：$emr_activity_info[0].activity_time &#10; 
+         主诉：$emr_activity_info[0].chief_complaint  &#10;
+		 现病史：$emr_activity_info[0].present_illness_his
+         &#10;---------&#10;
+         就诊时间：$emr_activity_info[1].activity_time &#10; 
+         主诉：$emr_activity_info[1].chief_complaint  &#10;
+		 现病史：$emr_activity_info[1].present_illness_his
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[2].activity_time &#10; 
+         主诉：$emr_activity_info[2].chief_complaint  &#10;
+		 现病史：$emr_activity_info[2].present_illness_his
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[3].activity_time &#10; 
+         主诉：$emr_activity_info[3].chief_complaint  &#10;
+		 现病史：$emr_activity_info[3].present_illness_his
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[4].activity_time &#10; 
+         主诉：$emr_activity_info[4].chief_complaint  &#10;
+		 现病史：$emr_activity_info[4].present_illness_his
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[5].activity_time &#10; 
+         主诉：$emr_activity_info[5].chief_complaint  &#10;
+		 现病史：$emr_activity_info[5].present_illness_his   
+        &#10; ---------&#10;
+         就诊时间：$emr_activity_info[6].activity_time &#10;
+         主诉：$emr_activity_info[6].chief_complaint  &#10;
+		 现病史：$emr_activity_info[6].present_illness_his   
+           " 
+            style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px; white-space: pre-wrap;"/>
+
+     
+       
+    </View>
+    
+  </View>
+
+ 
+</View>
