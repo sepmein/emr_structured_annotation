@@ -1,110 +1,225 @@
 <View>
-  <!-- 患者信息头 -->
+
+  <!-- ══════════════════════════════════════════
+       患者信息头
+  ══════════════════════════════════════════ -->
   <View style="padding: 12px; background: #e3f2fd; margin-bottom: 15px; border-left: 4px solid #2196f3; border-radius: 4px;">
     <Header value="🏥 患者信息"/>
     <View style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 8px;">
-      <Text name="patient_id" value="ID: $id" style="color: #666; font-size: 14px;"/>
-      <Text name="patient_name" value="姓名: $patient_name" style="color: #666; font-size: 14px;"/>
-      <Text name="org_name" value="机构: $org_name" style="color: #666; font-size: 14px;"/>
-      <Text name="dept_name" value="科室: $emr_activity_info[0].dept_name" style="color: #666; font-size: 14px;"/>
+      <Text name="patient_id"   value="ID: $id"                                        style="color: #666; font-size: 14px;"/>
+      <Text name="patient_name" value="姓名: $patient_name"                             style="color: #666; font-size: 14px;"/>
+      <Text name="org_name"     value="机构: $org_name"                                 style="color: #666; font-size: 14px;"/>
+      <Text name="dept_name"    value="科室: $emr_activity_info[0].dept_name"           style="color: #666; font-size: 14px;"/>
     </View>
   </View>
 
-
+  <!-- ══════════════════════════════════════════
+       主诉 + 现病史标注区
+  ══════════════════════════════════════════ -->
   <View style="padding: 15px; background: #fff3e0; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ffe0b2;">
     <Header value="📋 主诉（Chief Complaint）+ 现病史（Present Illness History）"/>
-    
+
     <View style="margin-top: 10px;">
-      <!-- 发热标签 -->
-      <Labels name="fever_labels" toName="chief_complaint_text" showInline="true">
-        <Label value="发热" background="#FF6B6B"/>
-      </Labels>
-      
-       <!-- 状态标签 -->
-       <Labels name="status_labels" toName="chief_complaint_text" showInline="true">
-         <Label value="否定" background="#FF8E53"/>
-         <Label value="既往" background="#C44510"/>
-      </Labels>
-      
-      <!-- 症状标签 -->
-      <Labels name="symptom_labels" toName="chief_complaint_text" showInline="true">
-        <Label value="寒战" background="#FF6B9D"/>
-        <Label value="肌痛" background="#C44569"/>
-        <Label value="持续咳嗽" background="#4ECDC4"/>
-        <Label value="新近出现的咳嗽" background="#44A3AA"/>
-        <Label value="新近出现的咳痰" background="#2E86AB"/>
-        <Label value="无痰" background="#A8DADC"/>
-        <Label value="浓痰" background="#457B9D"/>
-        <Label value="血痰" background="#1D3557"/>
-        <Label value="褐色痰" background="#264653"/>
-        <Label value="呼吸困难" background="#9B59B6"/>
-        <Label value="咯血" background="#8E44AD"/>
-        <Label value="胸痛" background="#6C5CE7"/>
-        <Label value="定向障碍" background="#F39C12"/>
-        <Label value="意识障碍" background="#E67E22"/>
-        <Label value="湿性啰音" background="#27AE60"/>
-        <Label value="肺实变体征" background="#2ECC71"/>
-        <Label value="肺实变呈叶段分布" background="#16A085"/>
-        <Label value="肺泡浸润" background="#1ABC9C"/>
-        <Label value="慢阻肺" background="#34495E"/>
-        <Label value="结构性肺病" background="#2C3E50"/>
-        <Label value="免疫缺陷" background="#7F8C8D"/>
-        <Label value="原有呼吸道症状加重" background="#95A5A6"/>
-        <Label value="急性起病" background="#BDC3C7"/>
-      </Labels>
-      
-       <!-- 测量标签 -->
-       <Labels name="measure_labels" toName="chief_complaint_text" showInline="true">
-         <Label value="体温值" background="#FFD93D"/>
-         <Label value="白细胞（WBC）值" background="#C44510"/>
-         <Label value="中性粒细胞百分比（NEUT%）" background="#6BCB77"/>
-         <Label value="降钙素原（PCT）" background="#6BCB00"/>
-         <Label value="胸部 CT / 胸片" background="#7CDE88"/>
+
+      <!-- ──────────────────────────────────────
+           操作说明
+      ────────────────────────────────────── -->
+      <View style="padding: 8px 12px; background: #f5f5f5; border-radius: 6px; margin-bottom: 12px; font-size: 13px; color: #555; line-height: 1.7;">
+        <Text name="hint" value="📌 标注步骤：① 选择标签 → ② 拖选文本 → ③ 建立关系（点击来源 span → 点击关系按钮 → 点击目标 span）&#10;🔴 症状  🟠 诊断  🟣 治疗  🟢 流行病学  🕐 时间  🔵 断言  🟤 测量实体  💜 测量属性  🦠 病原体"/>
+      </View>
+
+      <!-- ──────────────────────────────────────
+           🔴 症状标签
+           标注：发热、气促等临床症状文本 span
+      ────────────────────────────────────── -->
+      <Header value="🔴 症状"/>
+      <Labels name="symptons_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="发热"         background="#E53935" style="color:white;"/>
+        <Label value="气促"         background="#E53935" style="color:white;"/>
+        <Label value="鼻翼煽动"     background="#E53935" style="color:white;"/>
+        <Label value="三凹征"       background="#E53935" style="color:white;"/>
+        <Label value="喘鸣或喘息"   background="#E53935" style="color:white;"/>
+        <Label value="意识障碍"     background="#E53935" style="color:white;"/>
+        <Label value="惊厥"         background="#E53935" style="color:white;"/>
+        <Label value="拒食或喂养困难" background="#E53935" style="color:white;"/>
+        <Label value="呼吸衰竭"     background="#E53935" style="color:white;"/>
+        <Label value="休克"         background="#E53935" style="color:white;"/>
+        <Label value="器官衰竭"     background="#E53935" style="color:white;"/>
       </Labels>
 
+      <!-- ──────────────────────────────────────
+           🟠 诊断标签
+           标注：影像/病理诊断相关文本 span
+      ────────────────────────────────────── -->
+      <Header value="🟠 诊断"/>
+      <Labels name="diagnosis_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="肺实质异常影" background="#FB8C00" style="color:white;"/>
+        <Label value="肺组织炎症"   background="#FB8C00" style="color:white;"/>
+        <Label value="肺炎诊断"     background="#FB8C00" style="color:white;"/>
+        <Label value="肺部感染"     background="#FB8C00" style="color:white;"/>
+      </Labels>
 
-      <!-- 关系：连接症状 span → 体温值 / 症状时间 -->
+      <!-- ──────────────────────────────────────
+           🟣 治疗标签
+           标注：治疗措施文本 span
+      ────────────────────────────────────── -->
+      <Header value="🟣 治疗"/>
+      <Labels name="treatment_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="机械通气" background="#8E24AA" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           🟢 流行病学关联标签
+           标注：职业暴露、接触史、外出史等文本 span
+      ────────────────────────────────────── -->
+      <Header value="🟢 流行病学关联"/>
+      <Labels name="epidemics_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="医务人员"               background="#00897B" style="color:white;"/>
+        <Label value="禽、畜类从业人员"       background="#00897B" style="color:white;"/>
+        <Label value="农牧民等野外作业人员"   background="#00897B" style="color:white;"/>
+        <Label value="病原微生物实验室检测人员" background="#00897B" style="color:white;"/>
+        <Label value="可疑动物或动物制品接触史" background="#00897B" style="color:white;"/>
+        <Label value="可疑环境暴露史"         background="#00897B" style="color:white;"/>
+        <Label value="外出外来史"             background="#00897B" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           🕐 时间标签
+           标注：时间修饰词文本 span（当前/既往/进行性/持续）
+      ────────────────────────────────────── -->
+      <Header value="🕐 时间"/>
+      <Labels name="time_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="当前"     background="#43A047" style="color:white;"/>
+        <Label value="既往"     background="#6D4C41" style="color:white;"/>
+        <Label value="进行性加重" background="#D81B60" style="color:white;"/>
+        <Label value="持续"     background="#039BE5" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           🔵 断言标签
+           标注：肯定/否定/可疑等断言修饰词文本 span
+           → 建立关系"状态"连接到目标症状/诊断 span
+      ────────────────────────────────────── -->
+      <Header value="🔵 断言"/>
+      <Labels name="status_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="肯定"         background="#2E7D32" style="color:white;"/>
+        <Label value="否定"         background="#C62828" style="color:white;"/>
+        <Label value="可疑"         background="#1565C0" style="color:white;"/>
+        <Label value="条件性"       background="#6A1B9A" style="color:white;"/>
+        <Label value="假设性"       background="#AD1457" style="color:white;"/>
+        <Label value="与患者本人无关" background="#546E7A" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           🟤 测量实体标签
+           标注：测量指标名称文本 span（呼吸频率、血氧等）
+           → 建立关系"时间"连接到症状 span
+      ────────────────────────────────────── -->
+      <Header value="🟤 测量实体"/>
+      <Labels name="measure_entities" toName="chief_complaint_text" showInline="true">
+        <Label value="呼吸频率"          background="#5E35B1" style="color:white;"/>
+        <Label value="指氧饱和度"        background="#5E35B1" style="color:white;"/>
+        <Label value="动脉氧分压(PaO2)"  background="#5E35B1" style="color:white;"/>
+        <Label value="吸氧浓度(FiO2)"    background="#5E35B1" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           💜 测量属性标签
+           标注：数值、单位、比较符、阈值判断文本 span
+      ────────────────────────────────────── -->
+      <Header value="💜 测量属性"/>
+      <Labels name="measure_labels" toName="chief_complaint_text" showInline="true">
+        <Label value="数值"     background="#3949AB" style="color:white;"/>
+        <Label value="单位"     background="#3949AB" style="color:white;"/>
+        <Label value="比较符"   background="#3949AB" style="color:white;"/>
+        <Label value="阈值判断" background="#3949AB" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           🦠 病原体标签
+           注意：toName="text" 为原始配置，保持不变
+      ────────────────────────────────────── -->
+
+      <!-- （一）病毒 -->
+      <Header value="🦠（一）病毒"/>
+      <Labels name="pathogen" toName="text" showInline="true">
+        <Label value="新冠病毒"       background="#1E88E5" style="color:white;"/>
+        <Label value="流感病毒"       background="#1E88E5" style="color:white;"/>
+        <Label value="呼吸道合胞病毒" background="#1E88E5" style="color:white;"/>
+        <Label value="腺病毒"         background="#1565C0" style="color:white;"/>
+        <Label value="人偏肺病毒"     background="#1565C0" style="color:white;"/>
+        <Label value="副流感病毒"     background="#1565C0" style="color:white;"/>
+        <Label value="普通冠状病毒"   background="#1565C0" style="color:white;"/>
+        <Label value="博卡病毒"       background="#1565C0" style="color:white;"/>
+        <Label value="鼻病毒"         background="#1565C0" style="color:white;"/>
+        <Label value="肠道病毒"       background="#1565C0" style="color:white;"/>
+      </Labels>
+
+      <!-- （二）细菌 -->
+      <Header value="🦠（二）细菌"/>
+      <Labels name="bacteria" toName="text" showInline="true">
+        <Label value="A族链球菌"     background="#00897B" style="color:white;"/>
+        <Label value="百日咳鲍特菌"  background="#00897B" style="color:white;"/>
+        <Label value="肺炎链球菌"    background="#00897B" style="color:white;"/>
+        <Label value="流感嗜血杆菌"  background="#00897B" style="color:white;"/>
+        <Label value="军团菌"        background="#00897B" style="color:white;"/>
+        <Label value="肺炎克雷伯菌"  background="#00897B" style="color:white;"/>
+      </Labels>
+
+      <!-- （三）其他病原体 -->
+      <Header value="🦠（三）其他病原体"/>
+      <Labels name="other_pathogen" toName="text" showInline="true">
+        <Label value="肺炎支原体"     background="#7CB342" style="color:white;"/>
+        <Label value="曲霉菌"         background="#7CB342" style="color:white;"/>
+        <Label value="隐球菌"         background="#7CB342" style="color:white;"/>
+        <Label value="鹦鹉热衣原体"   background="#7CB342" style="color:white;"/>
+        <Label value="肺炎衣原体"     background="#7CB342" style="color:white;"/>
+      </Labels>
+
+      <!-- ──────────────────────────────────────
+           关系定义
+           状态：断言/时间 span → 症状/诊断 span
+           时间：时间 span → 症状 span
+      ────────────────────────────────────── -->
       <Relations>
-        <Relation value="伴随体温"/>
-        <Relation value="持续时长"/>
+        <Relation value="状态"/>
+        <Relation value="时间"/>
       </Relations>
-        
-      <Text name="chief_complaint_text" value="
-          就诊时间：$emr_activity_info[0].activity_time &#10; 
-         主诉：$emr_activity_info[0].chief_complaint  &#10;
-		 现病史：$emr_activity_info[0].present_illness_his
-         &#10;---------&#10;
-         就诊时间：$emr_activity_info[1].activity_time &#10; 
-         主诉：$emr_activity_info[1].chief_complaint  &#10;
-		 现病史：$emr_activity_info[1].present_illness_his
-        &#10; ---------&#10;
-         就诊时间：$emr_activity_info[2].activity_time &#10; 
-         主诉：$emr_activity_info[2].chief_complaint  &#10;
-		 现病史：$emr_activity_info[2].present_illness_his
-        &#10; ---------&#10;
-         就诊时间：$emr_activity_info[3].activity_time &#10; 
-         主诉：$emr_activity_info[3].chief_complaint  &#10;
-		 现病史：$emr_activity_info[3].present_illness_his
-        &#10; ---------&#10;
-         就诊时间：$emr_activity_info[4].activity_time &#10; 
-         主诉：$emr_activity_info[4].chief_complaint  &#10;
-		 现病史：$emr_activity_info[4].present_illness_his
-        &#10; ---------&#10;
-         就诊时间：$emr_activity_info[5].activity_time &#10; 
-         主诉：$emr_activity_info[5].chief_complaint  &#10;
-		 现病史：$emr_activity_info[5].present_illness_his   
-        &#10; ---------&#10;
-         就诊时间：$emr_activity_info[6].activity_time &#10;
-         主诉：$emr_activity_info[6].chief_complaint  &#10;
-		 现病史：$emr_activity_info[6].present_illness_his   
-           " 
-            style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px; white-space: pre-wrap;"/>
 
-     
-       
+      <!-- 主文本区域 -->
+      <Text name="chief_complaint_text" value="
+          就诊时间：$emr_activity_info[0].activity_time &#10;
+          主诉：$emr_activity_info[0].chief_complaint  &#10;
+          现病史：$emr_activity_info[0].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[1].activity_time &#10;
+          主诉：$emr_activity_info[1].chief_complaint  &#10;
+          现病史：$emr_activity_info[1].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[2].activity_time &#10;
+          主诉：$emr_activity_info[2].chief_complaint  &#10;
+          现病史：$emr_activity_info[2].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[3].activity_time &#10;
+          主诉：$emr_activity_info[3].chief_complaint  &#10;
+          现病史：$emr_activity_info[3].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[4].activity_time &#10;
+          主诉：$emr_activity_info[4].chief_complaint  &#10;
+          现病史：$emr_activity_info[4].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[5].activity_time &#10;
+          主诉：$emr_activity_info[5].chief_complaint  &#10;
+          现病史：$emr_activity_info[5].present_illness_his
+          &#10;---------&#10;
+          就诊时间：$emr_activity_info[6].activity_time &#10;
+          主诉：$emr_activity_info[6].chief_complaint  &#10;
+          现病史：$emr_activity_info[6].present_illness_his
+        "
+        style="font-size: 16px; line-height: 1.6; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; min-height: 30px; white-space: pre-wrap;"/>
+
     </View>
-    
+
   </View>
 
- 
 </View>
