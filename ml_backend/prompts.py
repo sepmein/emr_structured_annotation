@@ -284,5 +284,5 @@ FROM_NAME_LIST: list[str] = [v[1] for v in LABEL_PROMPTS.values()]
 # GLiNER2 专用格式：{ "标签值": "详细提示词" }
 GLINER2_LABELS: dict[str, str] = {k: v[0] for k, v in LABEL_PROMPTS.items()}
 
-# 病原体标签组使用 toName="text"（原始配置），其余用 chief_complaint_text
-PATHOGEN_GROUPS = {"pathogen", "bacteria", "other_pathogen"}
+# 统一使用 chief_complaint_text，因为 XML 中没有名为 'text' 的组件
+PATHOGEN_GROUPS = set()
