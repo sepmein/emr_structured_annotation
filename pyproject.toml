@@ -6,7 +6,12 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "gliner2>=1.2.4",
+    "gliner>=0.2.0",
+    "httpx[socks]>=0.28.1",
+    "label-studio-ml>=1.0.9",
+    "redis>=7.4.0",
     "requests>=2.32.5",
+    "rq>=2.7.0",
     "urllib3>=2.6.3",
 ]
 

@@ -178,13 +178,51 @@
 
       <!-- ──────────────────────────────────────
            关系定义
-           状态：断言/时间 span → 症状/诊断 span
+           状态：断言 span → 症状/诊断 span
            时间：时间 span → 症状 span
+           对应指标：症状 span → 测量实体 span
+           提示病原：诊断 span → 病原体 span
+           改善对象：治疗 span → 症状/诊断 span
       ────────────────────────────────────── -->
       <Relations>
         <Relation value="状态"/>
         <Relation value="时间"/>
+        <Relation value="对应指标"/>
+        <Relation value="提示病原"/>
+        <Relation value="改善对象"/>
       </Relations>
+
+      <!-- ──────────────────────────────────────
+           条件显示区块：选中任意 span 后才显示
+           用于对当前选中 span 快速补充断言/时间属性
+           无需滚动查找标签组，减少误操作
+      ────────────────────────────────────── -->
+      <View visibleWhen="region-selected"
+            style="margin-top: 10px; padding: 10px; background: #e8eaf6; border-radius: 6px; border-left: 3px solid #3949AB;">
+        <Header value="📝 当前选中 span 的补充属性"/>
+
+        <!-- 断言快速选择（仅选中 span 时显示） -->
+        <Choices name="quick_status" toName="chief_complaint_text"
+                 perRegion="true" choice="single" showInline="true"
+                 style="margin-top: 4px;">
+          <Choice value="肯定"           style="background:#2E7D32; color:white;"/>
+          <Choice value="否定"           style="background:#C62828; color:white;"/>
+          <Choice value="可疑"           style="background:#1565C0; color:white;"/>
+          <Choice value="条件性"         style="background:#6A1B9A; color:white;"/>
+          <Choice value="假设性"         style="background:#AD1457; color:white;"/>
+          <Choice value="与患者本人无关" style="background:#546E7A; color:white;"/>
+        </Choices>
+
+        <!-- 时间快速选择（仅选中 span 时显示） -->
+        <Choices name="quick_time" toName="chief_complaint_text"
+                 perRegion="true" choice="single" showInline="true"
+                 style="margin-top: 6px;">
+          <Choice value="当前"       style="background:#43A047; color:white;"/>
+          <Choice value="既往"       style="background:#6D4C41; color:white;"/>
+          <Choice value="进行性加重" style="background:#D81B60; color:white;"/>
+          <Choice value="持续"       style="background:#039BE5; color:white;"/>
+        </Choices>
+      </View>
 
       <!-- 主文本区域 -->
       <Text name="chief_complaint_text" value="
@@ -223,3 +261,4 @@
   </View>
 
 </View>
+
