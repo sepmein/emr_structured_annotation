@@ -142,7 +142,7 @@
 
       <!-- （一）病毒 -->
       <Header value="🦠（一）病毒"/>
-      <Labels name="pathogen" toName="text" showInline="true">
+      <Labels name="pathogen" toName="chief_complaint_text" showInline="true">
         <Label value="新冠病毒"       background="#1E88E5" style="color:white;"/>
         <Label value="流感病毒"       background="#1E88E5" style="color:white;"/>
         <Label value="呼吸道合胞病毒" background="#1E88E5" style="color:white;"/>
@@ -157,7 +157,7 @@
 
       <!-- （二）细菌 -->
       <Header value="🦠（二）细菌"/>
-      <Labels name="bacteria" toName="text" showInline="true">
+      <Labels name="bacteria" toName="chief_complaint_text" showInline="true">
         <Label value="A族链球菌"     background="#00897B" style="color:white;"/>
         <Label value="百日咳鲍特菌"  background="#00897B" style="color:white;"/>
         <Label value="肺炎链球菌"    background="#00897B" style="color:white;"/>
@@ -168,7 +168,7 @@
 
       <!-- （三）其他病原体 -->
       <Header value="🦠（三）其他病原体"/>
-      <Labels name="other_pathogen" toName="text" showInline="true">
+      <Labels name="other_pathogen" toName="chief_complaint_text" showInline="true">
         <Label value="肺炎支原体"     background="#7CB342" style="color:white;"/>
         <Label value="曲霉菌"         background="#7CB342" style="color:white;"/>
         <Label value="隐球菌"         background="#7CB342" style="color:white;"/>
