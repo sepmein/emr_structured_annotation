@@ -15,13 +15,13 @@ logging.config.dictConfig({
   "handlers": {
     "console": {
       "class": "logging.StreamHandler",
-      "level": os.getenv('LOG_LEVEL'),
+      "level": os.getenv('LOG_LEVEL', 'DEBUG'),
       "stream": "ext://sys.stdout",
       "formatter": "standard"
     }
   },
   "root": {
-    "level": os.getenv('LOG_LEVEL'),
+    "level": os.getenv('LOG_LEVEL', 'DEBUG'),
     "handlers": [
       "console"
     ],
@@ -30,8 +30,7 @@ logging.config.dictConfig({
 })
 
 from label_studio_ml.api import init_app
-# from model import GLiNERModel
-from model2 import PneumoniaNERModel
+from .model import PneumoniaNERModel
 
 
 _DEFAULT_CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'config.json')
@@ -118,11 +117,19 @@ if __name__ == "__main__":
 
     # app = init_app(model_class=GLiNERModel, basic_auth_user=args.basic_auth_user, basic_auth_pass=args.basic_auth_pass)
 
-    app = init_app(model_class=PneumoniaNERModel, basic_auth_user=args.basic_auth_user, basic_auth_pass=args.basic_auth_pass)
+    app = init_app(
+        model_class=PneumoniaNERModel,
+        model_dir=args.model_dir,
+        basic_auth_user=args.basic_auth_user,
+        basic_auth_pass=args.basic_auth_pass
+    )
 
     app.run(host=args.host, port=args.port, debug=args.debug)
 
 else:
     # for uWSGI use
     # app = init_app(model_class=GLiNERModel)
-    app = init_app(model_class=PneumoniaNERModel)
+    app = init_app(
+        model_class=PneumoniaNERModel,
+        model_dir=os.path.dirname(__file__)
+    )

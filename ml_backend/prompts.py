@@ -286,3 +286,45 @@ GLINER2_LABELS: dict[str, str] = {k: v[0] for k, v in LABEL_PROMPTS.items()}
 
 # 统一使用 chief_complaint_text，因为 XML 中没有名为 'text' 的组件
 PATHOGEN_GROUPS = set()
+
+# ── 关系定义 ──────────────────────────────────────────────────────────────────
+# 格式：{ "关系名": {"description": "提示词", "threshold": float, "ls_relation": "LS关系值"} }
+# head = 修饰词/来源，tail = 被修饰的目标
+#
+# 对应 pneumonia.xml 中 <Relations> 定义的三种关系：
+#   状态：断言 span → 症状/诊断 span
+#   时间：时间 span → 症状 span
+#   对应指标：症状 span → 测量实体 span
+
+RELATION_SCHEMA: dict[str, dict] = {
+    "状态": {
+        "description": (
+            "断言修饰词（否定/可疑/肯定/条件性/假设性/与患者本人无关）修饰某个症状或诊断。"
+            "head 是断言词 span，tail 是被修饰的症状或诊断 span。"
+            "例：'不发热' 中 head='不'(否定)，tail='发热'(症状)。"
+            "assertion modifier modifies a symptom or diagnosis span"
+        ),
+        "threshold": 0.35,
+        "ls_relation": "状态",
+    },
+    "时间": {
+        "description": (
+            "时间修饰词（当前/既往/持续/进行性加重）修饰某个症状。"
+            "head 是时间词 span，tail 是被修饰的症状 span。"
+            "例：'既往有哮喘' 中 head='既往'(时间)，tail='哮喘'(症状)。"
+            "temporal modifier modifies a symptom span"
+        ),
+        "threshold": 0.35,
+        "ls_relation": "时间",
+    },
+    "测量": {
+        "description": (
+            "测量实体或测量属性对应某个症状或临床表现。"
+            "head 是测量实体/属性 span（呼吸频率/血氧饱和度/数值/单位等），tail 是目标症状或实体 span。"
+            "例：'气促，呼吸频率40次/分' 中 head='呼吸频率'(测量实体)，tail='气促'(症状)。"
+            "measurement entity or attribute corresponds to a symptom or clinical finding"
+        ),
+        "threshold": 0.35,
+        "ls_relation": "测量",
+    },
+}

@@ -114,7 +114,7 @@
            🟤 测量实体标签
            标注：测量指标名称文本 span（呼吸频率、血氧等）
            → 建立关系"时间"连接到症状 span
-      ────────────────────────────────────── -->
+      ──[118;1:3u──────────────────────────────────── -->
       <Header value="🟤 测量实体"/>
       <Labels name="measure_entities" toName="chief_complaint_text" showInline="true">
         <Label value="呼吸频率"          background="#5E35B1" style="color:white;"/>
@@ -137,7 +137,7 @@
 
       <!-- ──────────────────────────────────────
            🦠 病原体标签
-           注意：toName="text" 为原始配置，保持不变
+           toName="chief_complaint_text"
       ────────────────────────────────────── -->
 
       <!-- （一）病毒 -->
@@ -261,4 +261,5 @@
   </View>
 
 </View>
+
 

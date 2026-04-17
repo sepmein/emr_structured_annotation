@@ -31,19 +31,19 @@ uv run python main.py
 
 There are two ML backend implementations — they serve the same purpose but differ in maturity:
 
-### `ml_backend/` (active debug version)
-- `model.py` — `PneumoniaNERModel(LabelStudioMLBase)`: lazy-loads GLiNER2, builds a schema from `GLINER2_LABELS`, runs extraction, then applies a **re-anchoring fix** to correct character offset drift between GLiNER2 output and the rendered Label Studio text.
+### `ml_backend/` (active implementation)
+- `model.py` — `PneumoniaNERModel(LabelStudioMLBase)`: lazy-loads GLiNER2, builds a schema from `GLINER2_LABELS`, runs extraction. Uses class-level singleton pattern for model sharing across instances. Supports fine-tuned model loading with fallback to pretrained.
 - `prompts.py` — single source of truth for all NER labels. `LABEL_PROMPTS` maps Chinese label names → `(GLiNER2 prompt string, from_name)`. `GLINER2_LABELS` is derived from it. All labels use a flat threshold (`GLINER_THRESHOLD` env var, default `0.4`).
 - `_wsgi.py` — Flask app entry point via `label_studio_ml.api.init_app`.
+- `test_predict.py` — debug script for testing model predictions with confidence analysis.
 
-### `gliner_backend/` (more complete, Docker-deployed version)
-- `model.py` — `GLiNERModel(LabelStudioMLBase)`: same concept but uses `LABEL_SCHEMA` with **per-entity thresholds** (assertion labels use 0.55–0.6, symptom labels use 0.35–0.4). Supports fine-tuned model loading with fallback to pretrained. Implements `fit()` for training trigger from Label Studio.
-- Deployed via `docker-compose.yml` on port `9091`.
+### `gliner_backend/` (removed)
+- This directory was removed in commit 3a9780e. All functionality is now in `ml_backend/`.
 
 ### `label_studio/`
 - XML labeling configs for Label Studio projects. `pneumonia.xml` is the current production config.
 - The canonical text field is `chief_complaint_text`, which renders up to 7 EMR visits from `emr_activity_info[0..6]` (each with `activity_time`, `chief_complaint`, `present_illness_his`).
-- **Critical**: The whitespace/indentation in the XML `<Text value="...">` template must exactly match what `_extract_text()` in `ml_backend/model.py` reconstructs — any mismatch causes annotation offset errors.
+- **Critical**: The whitespace/indentation in the XML `<Text value="...">` template must exactly match what `_extract_text()` in `ml_backend/model.py` reconstructs — any mismatch causes annotation offset errors. When patients have fewer than 7 visits, missing fields render as empty strings (not "undefined").
 
 ## Label Schema
 
