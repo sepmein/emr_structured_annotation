@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-EMR Structured Annotation Framework — a Label Studio-based system for extracting structured information from Chinese Electronic Medical Records (EMR). The primary use case is pneumonia NER annotation using GLiNER2 as the ML backend.
+EMR Structured Annotation Framework — a Label Studio-based system for extracting structured information from Chinese Electronic Medical Records (EMR). The primary use case is pneumonia NER annotation.
 
 ## Commands
 
