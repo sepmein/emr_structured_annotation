@@ -54,6 +54,29 @@ Label Studio 标注
 结构化数据导出
 ```
 
+## EMR 数据拼合
+
+以 `data/temp_202608_emr_activity_info.csv` 为主表，按
+`patient_id + serial_number` 生成就诊级嵌套 JSONL：
+
+```powershell
+uv run python scripts/merge_emr_data.py
+```
+
+脚本仅使用 Python 标准库；如果本机 `uv` 不可用，也可直接运行
+`python scripts/merge_emr_data.py`。
+
+默认生成：
+
+- `output/emr_merged_202608.jsonl`：每个复合键一条记录；根级 `text` 按配置顺序拼合所有指定的非空临床文本，并用 `[表[序号].字段]` 标记来源。同一就诊下的活动、文书、医嘱、检验和检查仍以数组保留。检验、检查和医嘱父记录按 `id` 分组为 `records[]`，其明细放在 `items[]`。
+- `output/emr_merge_report_202608.json`：每张表的行数、匹配数、未匹配数及匹配率。
+
+可通过 `--data-dir`、`--main-file`、`--output` 和 `--report` 指定其他批次或输出位置。运行测试：
+
+```powershell
+uv run python -m unittest discover -s tests -v
+```
+
 ---
 
 ## 五、标注体系设计原则
