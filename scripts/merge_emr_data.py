@@ -14,6 +14,7 @@ import json
 import re
 from collections import defaultdict
 from copy import deepcopy
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -96,6 +97,37 @@ TEXT_FIELDS: dict[str, tuple[str, ...]] = {
     ),
 }
 
+TEXT_LABELS = {
+    "chief_complaint": "主诉",
+    "present_illness_his": "现病史",
+    "physical_examination": "体格检查",
+    "studies_summary_result": "检查摘要",
+    "past_illness_his": "既往史",
+    "infection_his": "传染病史",
+    "personal_his": "个人史",
+    "course": "病程记录",
+    "specialized_examination": "专科检查",
+    "diagnosis_basis": "诊断依据",
+    "treatment_plan": "治疗计划",
+    "order_content": "医嘱内容",
+    "treatment": "诊疗措施",
+    "admission_desc": "入院情况",
+    "treatment_desc": "治疗经过",
+    "discharge_desc": "出院情况",
+    "discharge_symptoms_signs": "出院症状体征",
+    "symptom_desc": "症状描述",
+    "examination_objective_desc": "检查所见",
+    "examination_subjective_desc": "检查结论",
+    "examination_notes": "检查备注",
+    "item_name": "检验项目",
+    "examination_result_name": "检验结果",
+    "examination_quantification": "检验数值",
+    "examination_quantification_unit": "检验单位",
+}
+
+CHILD_GROUP = "儿童组"
+ADULT_GROUP = "成人组"
+
 
 def _clean(value: Any) -> str:
     return "" if value is None else str(value).strip()
@@ -173,21 +205,117 @@ def _text_rows(record: dict[str, Any], table: str) -> list[dict[str, Any]]:
     return rows
 
 
-def build_combined_text(record: dict[str, Any]) -> tuple[str, dict[str, int]]:
-    """Build the traceable encounter text and return per-source segment counts."""
+def build_combined_text(
+    record: dict[str, Any],
+) -> tuple[str, dict[str, int], dict[str, int]]:
+    """Build Chinese-labeled encounter text, dropping exact duplicate values."""
     segments: list[str] = []
     source_counts: dict[str, int] = {}
+    duplicate_counts: dict[str, int] = {}
+    seen_values: set[str] = set()
     for table, fields in TEXT_FIELDS.items():
         source_count = 0
-        for row_number, row in enumerate(_text_rows(record, table), start=1):
+        duplicate_count = 0
+        for row in _text_rows(record, table):
             for field in fields:
                 value = _clean(row.get(field))
                 if not value:
                     continue
-                segments.append(f"[{table}[{row_number}].{field}]\n{value}")
+                if value in seen_values:
+                    duplicate_count += 1
+                    continue
+                seen_values.add(value)
+                segments.append(f"【{TEXT_LABELS[field]}】\n{value}")
                 source_count += 1
         source_counts[table] = source_count
-    return "\n\n".join(segments), source_counts
+        duplicate_counts[table] = duplicate_count
+    return "\n\n".join(segments), source_counts, duplicate_counts
+
+
+def _parse_reference_date(record: dict[str, Any]) -> date | None:
+    dates: list[date] = []
+    for row in record.get("activity_info", []):
+        value = _clean(row.get("activity_time"))
+        if not value:
+            continue
+        try:
+            dates.append(datetime.strptime(value[:10], "%Y-%m-%d").date())
+        except ValueError:
+            continue
+    return min(dates) if dates else None
+
+
+def _find_id_card(record: dict[str, Any]) -> str:
+    for collection in (record.get("activity_info", []), record.get("patient_info", [])):
+        for row in collection:
+            value = _clean(row.get("id_card"))
+            if value:
+                return value.upper()
+    return ""
+
+
+def calculate_age(record: dict[str, Any]) -> tuple[int | None, bool | None]:
+    """Calculate encounter-time age from a Chinese ID card.
+
+    Fully specified 18/15-digit cards produce exact age.  A masked card with
+    only a visible birth year produces a year-level estimate.
+    """
+    reference_date = _parse_reference_date(record)
+    id_card = _find_id_card(record)
+    if reference_date is None or not id_card:
+        return None, None
+
+    birth_date: date | None = None
+    if re.fullmatch(r"\d{17}[0-9X]", id_card):
+        token = id_card[6:14]
+        try:
+            birth_date = datetime.strptime(token, "%Y%m%d").date()
+        except ValueError:
+            birth_date = None
+    elif re.fullmatch(r"\d{15}", id_card):
+        token = "19" + id_card[6:12]
+        try:
+            birth_date = datetime.strptime(token, "%Y%m%d").date()
+        except ValueError:
+            birth_date = None
+
+    if birth_date is not None:
+        age = reference_date.year - birth_date.year - (
+            (reference_date.month, reference_date.day)
+            < (birth_date.month, birth_date.day)
+        )
+        return (age, False) if 0 <= age <= 150 else (None, None)
+
+    year_match = re.match(r"^\d{6}((?:18|19|20)\d{2})", id_card)
+    if year_match:
+        age = reference_date.year - int(year_match.group(1))
+        return (age, True) if 0 <= age <= 150 else (None, None)
+    return None, None
+
+
+def classify_age_group(age: int | None) -> str | None:
+    """Classify a calculated age using the under-18 boundary."""
+    if age is None:
+        return None
+    return CHILD_GROUP if age < 18 else ADULT_GROUP
+
+
+def split_age_groups(
+    records: Iterable[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Return child, adult, and ungrouped encounter records."""
+    children: list[dict[str, Any]] = []
+    adults: list[dict[str, Any]] = []
+    ungrouped: list[dict[str, Any]] = []
+    for record in records:
+        group = record.get("age_group")
+        if group == CHILD_GROUP:
+            children.append(record)
+        elif group == ADULT_GROUP:
+            adults.append(record)
+        else:
+            ungrouped.append(record)
+    return children, adults, ungrouped
 
 
 def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -343,7 +471,13 @@ def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], d
                 for name, index in sorted(related_indexes.items())
             },
         }
-        record["text"], record["_text_source_counts"] = build_combined_text(record)
+        record["age"], record["age_is_approximate"] = calculate_age(record)
+        record["age_group"] = classify_age_group(record["age"])
+        (
+            record["text"],
+            record["_text_source_counts"],
+            record["_text_duplicate_counts"],
+        ) = build_combined_text(record)
         records.append(record)
 
     text_lengths = [len(record["text"]) for record in records]
@@ -351,8 +485,15 @@ def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], d
         table: sum(record["_text_source_counts"][table] for record in records)
         for table in TEXT_FIELDS
     }
+    text_duplicate_counts = {
+        table: sum(record["_text_duplicate_counts"][table] for record in records)
+        for table in TEXT_FIELDS
+    }
     for record in records:
         del record["_text_source_counts"]
+        del record["_text_duplicate_counts"]
+
+    ages = [record["age"] for record in records if record["age"] is not None]
 
     report = {
         "join": {
@@ -370,11 +511,42 @@ def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], d
         "patient_info": patient_audit,
         "encounter_tables": table_audit,
         "child_tables": child_audit,
+        "age": {
+            "reference": "earliest activity_time in the encounter",
+            "calculated_records": len(ages),
+            "exact_records": sum(
+                record["age_is_approximate"] is False for record in records
+            ),
+            "approximate_records": sum(
+                record["age_is_approximate"] is True for record in records
+            ),
+            "missing_records": sum(record["age"] is None for record in records),
+            "minimum": min(ages, default=None),
+            "maximum": max(ages, default=None),
+            "average": round(sum(ages) / len(ages), 2) if ages else None,
+            "group_rule": {
+                CHILD_GROUP: "age < 18",
+                ADULT_GROUP: "age >= 18",
+                "未分组": "age is null",
+            },
+            "group_counts": {
+                CHILD_GROUP: sum(
+                    record["age_group"] == CHILD_GROUP for record in records
+                ),
+                ADULT_GROUP: sum(
+                    record["age_group"] == ADULT_GROUP for record in records
+                ),
+                "未分组": sum(record["age_group"] is None for record in records),
+            },
+        },
         "combined_text": {
             "configured_fields": {
                 table: list(fields) for table, fields in TEXT_FIELDS.items()
             },
+            "labels": TEXT_LABELS,
             "source_segment_counts": text_source_counts,
+            "discarded_exact_duplicates_by_source": text_duplicate_counts,
+            "discarded_exact_duplicates": sum(text_duplicate_counts.values()),
             "records_with_text": sum(length > 0 for length in text_lengths),
             "empty_records": sum(length == 0 for length in text_lengths),
             "total_characters": sum(text_lengths),
@@ -418,6 +590,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--report", type=Path, default=Path("output/emr_merge_report_202608.json")
     )
+    parser.add_argument(
+        "--children-output",
+        type=Path,
+        default=Path("output/emr_merged_202608_children.jsonl"),
+    )
+    parser.add_argument(
+        "--adults-output",
+        type=Path,
+        default=Path("output/emr_merged_202608_adults.jsonl"),
+    )
     return parser
 
 
@@ -425,11 +607,18 @@ def main() -> int:
     args = build_parser().parse_args()
     records, report = merge_data(args.data_dir, args.main_file)
     write_jsonl(records, args.output)
+    children, adults, ungrouped = split_age_groups(records)
+    write_jsonl(children, args.children_output)
+    write_jsonl(adults, args.adults_output)
     write_report(report, args.report)
     print(
         f"Merged {report['activity']['rows']} activity rows into "
         f"{report['output_records']} encounter records: {args.output}"
     )
+    print(f"{CHILD_GROUP}: {len(children)} records -> {args.children_output}")
+    print(f"{ADULT_GROUP}: {len(adults)} records -> {args.adults_output}")
+    if ungrouped:
+        print(f"Ungrouped (missing age): {len(ungrouped)} records")
     print(f"Audit report: {args.report}")
     return 0
 

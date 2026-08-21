@@ -68,7 +68,9 @@ uv run python scripts/merge_emr_data.py
 
 默认生成：
 
-- `output/emr_merged_202608.jsonl`：每个复合键一条记录；根级 `text` 按配置顺序拼合所有指定的非空临床文本，并用 `[表[序号].字段]` 标记来源。同一就诊下的活动、文书、医嘱、检验和检查仍以数组保留。检验、检查和医嘱父记录按 `id` 分组为 `records[]`，其明细放在 `items[]`。
+- `output/emr_merged_202608.jsonl`：每个复合键一条记录。根级 `text` 按配置顺序拼合所有指定的非空临床文本，字段标题使用 `【主诉】`、`【现病史】` 等简短中文；已出现过的完全相同内容不会重复拼入。根级 `age` 使用身份证出生日期和就诊日期计算，脱敏身份证只能按出生年份估算，此时 `age_is_approximate` 为 `true`。`age_group` 按年龄小于18岁归为 `儿童组`，否则归为 `成人组`。同一就诊下的活动、文书、医嘱、检验和检查仍以数组保留。检验、检查和医嘱父记录按 `id` 分组为 `records[]`，其明细放在 `items[]`。
+- `output/emr_merged_202608_children.jsonl`：仅包含 `age < 18` 的儿童组。
+- `output/emr_merged_202608_adults.jsonl`：仅包含 `age >= 18` 的成人组。
 - `output/emr_merge_report_202608.json`：每张表的行数、匹配数、未匹配数及匹配率。
 
 可通过 `--data-dir`、`--main-file`、`--output` 和 `--report` 指定其他批次或输出位置。运行测试：

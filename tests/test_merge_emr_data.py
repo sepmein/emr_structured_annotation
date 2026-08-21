@@ -4,7 +4,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.merge_emr_data import build_combined_text, merge_data, write_jsonl, write_report
+from scripts.merge_emr_data import (
+    build_combined_text,
+    calculate_age,
+    classify_age_group,
+    merge_data,
+    split_age_groups,
+    write_jsonl,
+    write_report,
+)
 
 
 class MergeEmrDataTests(unittest.TestCase):
@@ -128,7 +136,10 @@ class MergeEmrDataTests(unittest.TestCase):
             ],
             "encounter_data": {
                 "emr_outpatient_record": [
-                    {"chief_complaint": "发热", "present_illness_his": "体温39℃"}
+                    {
+                        "chief_complaint": "咳嗽三天",
+                        "present_illness_his": "体温39℃",
+                    }
                 ],
                 "emr_ex_lab": [
                     {
@@ -146,22 +157,22 @@ class MergeEmrDataTests(unittest.TestCase):
             },
         }
 
-        text, counts = build_combined_text(record)
+        text, counts, duplicates = build_combined_text(record)
 
         expected_fragments = [
-            "[emr_activity_info[1].chief_complaint]\n咳嗽三天",
-            "[emr_activity_info[1].physical_examination]\n双肺呼吸音粗",
-            "[emr_outpatient_record[1].chief_complaint]\n发热",
-            "[emr_outpatient_record[1].present_illness_his]\n体温39℃",
-            "[emr_ex_lab[1].examination_notes]\n血常规",
-            "[emr_ex_lab_item[1].item_name]\n白细胞计数",
-            "[emr_ex_lab_item[1].examination_result_name]\n升高",
-            "[emr_ex_lab_item[1].examination_quantification]\n12.3",
-            "[emr_ex_lab_item[1].examination_quantification_unit]\n10^9/L",
+            "【主诉】\n咳嗽三天",
+            "【体格检查】\n双肺呼吸音粗",
+            "【现病史】\n体温39℃",
+            "【检查备注】\n血常规",
+            "【检验项目】\n白细胞计数",
+            "【检验结果】\n升高",
+            "【检验数值】\n12.3",
+            "【检验单位】\n10^9/L",
         ]
         self.assertEqual("\n\n".join(expected_fragments), text)
         self.assertEqual(2, counts["emr_activity_info"])
         self.assertEqual(4, counts["emr_ex_lab_item"])
+        self.assertEqual(1, duplicates["emr_outpatient_record"])
 
     def test_merge_adds_root_text_and_text_audit(self):
         main = self.write_csv(
@@ -172,15 +183,51 @@ class MergeEmrDataTests(unittest.TestCase):
                     "patient_id": "p1",
                     "serial_number": "s1",
                     "chief_complaint": "咳嗽",
+                    "id_card": "310101199001150010",
+                    "activity_time": "2025-01-14 08:00:00.000",
                 }
             ],
         )
 
         records, report = merge_data(self.data_dir, main)
 
-        self.assertIn("[emr_activity_info[1].chief_complaint]\n咳嗽", records[0]["text"])
+        self.assertIn("【主诉】\n咳嗽", records[0]["text"])
+        self.assertEqual(34, records[0]["age"])
+        self.assertFalse(records[0]["age_is_approximate"])
+        self.assertEqual("成人组", records[0]["age_group"])
         self.assertEqual(1, report["combined_text"]["records_with_text"])
         self.assertEqual(len(records[0]["text"]), report["combined_text"]["total_characters"])
+
+    def test_age_falls_back_to_visible_year_for_masked_id_card(self):
+        record = {
+            "activity_info": [
+                {
+                    "id_card": "3101061940****0014",
+                    "activity_time": "2025-09-12 09:11:26.000",
+                }
+            ]
+        }
+
+        age, approximate = calculate_age(record)
+
+        self.assertEqual(85, age)
+        self.assertTrue(approximate)
+
+    def test_age_group_boundary_and_split(self):
+        self.assertEqual("儿童组", classify_age_group(17))
+        self.assertEqual("成人组", classify_age_group(18))
+        self.assertIsNone(classify_age_group(None))
+
+        children, adults, ungrouped = split_age_groups(
+            [
+                {"id": "c", "age_group": "儿童组"},
+                {"id": "a", "age_group": "成人组"},
+                {"id": "u", "age_group": None},
+            ]
+        )
+        self.assertEqual(["c"], [record["id"] for record in children])
+        self.assertEqual(["a"], [record["id"] for record in adults])
+        self.assertEqual(["u"], [record["id"] for record in ungrouped])
 
 
 if __name__ == "__main__":
