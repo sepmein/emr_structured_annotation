@@ -12,3 +12,7 @@ wheels/
 .claude
 .git
 
+# Local EMR source data and generated artifacts
+data/
+output/
+.DS_Store

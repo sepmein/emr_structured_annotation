@@ -1,9 +1,10 @@
-"""Merge EMR CSV exports into encounter-level nested JSON Lines records.
+"""Merge EMR CSV exports into a Label Studio task JSON array.
 
 The activity table is the driving table.  One output record is created for
 each distinct (patient_id, serial_number) pair.  One-to-many relationships are
 represented as arrays so that joining several detail tables cannot create a
-Cartesian product.
+Cartesian product.  The output is a JSON list of Label Studio tasks whose
+encounter records are stored under the required ``data`` key.
 """
 
 from __future__ import annotations
@@ -318,6 +319,28 @@ def split_age_groups(
     return children, adults, ungrouped
 
 
+def _patient_name(record: dict[str, Any]) -> str:
+    """Return the first non-empty patient name available for the encounter."""
+    for row in record.get("patient_info", []):
+        value = _clean(row.get("patient_name"))
+        if value:
+            return value
+    return ""
+
+
+def build_label_studio_task(record: dict[str, Any]) -> dict[str, Any]:
+    """Wrap an encounter record in Label Studio's import task structure.
+
+    The labeling configs reference ``$text``, ``$patient_id`` and
+    ``$patient_name``.  Label Studio resolves those variables from the task's
+    ``data`` object, so all encounter fields are retained there and the patient
+    name is promoted from ``patient_info`` for display.
+    """
+    data = deepcopy(record)
+    data["patient_name"] = _patient_name(record)
+    return {"data": data}
+
+
 def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Load and merge all supported CSV files under *data_dir*.
 
@@ -561,12 +584,17 @@ def merge_data(data_dir: Path, main_file: Path) -> tuple[list[dict[str, Any]], d
     return records, report
 
 
-def write_jsonl(records: Iterable[dict[str, Any]], path: Path) -> None:
+def write_tasks_json(records: Iterable[dict[str, Any]], path: Path) -> None:
+    """Write a Label Studio-compatible JSON list without buffering all tasks."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as handle:
-        for record in records:
-            handle.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")))
-            handle.write("\n")
+        handle.write("[\n")
+        for index, record in enumerate(records):
+            if index:
+                handle.write(",\n")
+            task = build_label_studio_task(record)
+            handle.write(json.dumps(task, ensure_ascii=False, separators=(",", ":")))
+        handle.write("\n]\n")
 
 
 def write_report(report: dict[str, Any], path: Path) -> None:
@@ -578,14 +606,14 @@ def write_report(report: dict[str, Any], path: Path) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Merge EMR CSV files into nested encounter-level JSONL."
+        description="Merge EMR CSV files into a Label Studio task JSON array."
     )
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
     parser.add_argument(
         "--main-file", type=Path, default=Path("temp_202608_emr_activity_info.csv")
     )
     parser.add_argument(
-        "--output", type=Path, default=Path("output/emr_merged_202608.jsonl")
+        "--output", type=Path, default=Path("output/emr_merged_202608.json")
     )
     parser.add_argument(
         "--report", type=Path, default=Path("output/emr_merge_report_202608.json")
@@ -593,12 +621,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--children-output",
         type=Path,
-        default=Path("output/emr_merged_202608_children.jsonl"),
+        default=Path("output/emr_merged_202608_children.json"),
     )
     parser.add_argument(
         "--adults-output",
         type=Path,
-        default=Path("output/emr_merged_202608_adults.jsonl"),
+        default=Path("output/emr_merged_202608_adults.json"),
     )
     return parser
 
@@ -606,10 +634,10 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     records, report = merge_data(args.data_dir, args.main_file)
-    write_jsonl(records, args.output)
+    write_tasks_json(records, args.output)
     children, adults, ungrouped = split_age_groups(records)
-    write_jsonl(children, args.children_output)
-    write_jsonl(adults, args.adults_output)
+    write_tasks_json(children, args.children_output)
+    write_tasks_json(adults, args.adults_output)
     write_report(report, args.report)
     print(
         f"Merged {report['activity']['rows']} activity rows into "

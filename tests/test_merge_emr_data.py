@@ -5,13 +5,14 @@ import unittest
 from pathlib import Path
 
 from scripts.merge_emr_data import (
+    build_label_studio_task,
     build_combined_text,
     calculate_age,
     classify_age_group,
     merge_data,
     split_age_groups,
-    write_jsonl,
     write_report,
+    write_tasks_json,
 )
 
 
@@ -113,17 +114,67 @@ class MergeEmrDataTests(unittest.TestCase):
             ],
         )
 
-    def test_writers_emit_valid_utf8_json(self):
-        records = [{"patient_id": "患者一", "serial_number": "1"}]
+    def test_writers_emit_label_studio_compatible_utf8_json(self):
+        records = [
+            {
+                "patient_id": "患者一",
+                "serial_number": "1",
+                "text": "发热三天",
+                "patient_info": [{"patient_name": "张三"}],
+            }
+        ]
         report = {"output_records": 1}
-        jsonl_path = self.root / "out" / "merged.jsonl"
+        json_path = self.root / "out" / "merged.json"
         report_path = self.root / "out" / "report.json"
 
-        write_jsonl(records, jsonl_path)
+        write_tasks_json(records, json_path)
         write_report(report, report_path)
 
-        self.assertEqual(records[0], json.loads(jsonl_path.read_text(encoding="utf-8")))
+        tasks = json.loads(json_path.read_text(encoding="utf-8"))
+        self.assertIsInstance(tasks, list)
+        self.assertEqual(1, len(tasks))
+        task = tasks[0]
+        self.assertEqual({"data"}, set(task))
+        self.assertEqual("患者一", task["data"]["patient_id"])
+        self.assertEqual("张三", task["data"]["patient_name"])
+        self.assertEqual("发热三天", task["data"]["text"])
+        self.assertEqual(records[0]["patient_info"], task["data"]["patient_info"])
         self.assertEqual(report, json.loads(report_path.read_text(encoding="utf-8")))
+
+    def test_writer_emits_empty_json_list_for_no_records(self):
+        json_path = self.root / "out" / "empty.json"
+
+        write_tasks_json([], json_path)
+
+        self.assertEqual([], json.loads(json_path.read_text(encoding="utf-8")))
+
+    def test_label_studio_task_supplies_all_xml_variables(self):
+        task = build_label_studio_task(
+            {
+                "patient_id": "p1",
+                "serial_number": "s1",
+                "text": "咳嗽伴发热",
+                "patient_info": [
+                    {"patient_name": ""},
+                    {"patient_name": "患者甲"},
+                ],
+                "encounter_data": {"emr_order": [{"id": "o1"}]},
+            }
+        )
+
+        self.assertEqual("p1", task["data"]["patient_id"])
+        self.assertEqual("患者甲", task["data"]["patient_name"])
+        self.assertEqual("咳嗽伴发热", task["data"]["text"])
+        self.assertEqual(
+            {"emr_order": [{"id": "o1"}]}, task["data"]["encounter_data"]
+        )
+
+    def test_label_studio_task_uses_empty_name_when_patient_info_is_missing(self):
+        task = build_label_studio_task(
+            {"patient_id": "p1", "serial_number": "s1", "text": "发热"}
+        )
+
+        self.assertEqual("", task["data"]["patient_name"])
 
     def test_combined_text_uses_configured_order_and_skips_empty_values(self):
         record = {
