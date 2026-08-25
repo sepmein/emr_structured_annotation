@@ -1,0 +1,481 @@
+<View className="ls-page">
+
+  <Style>
+    .ls-page {
+      background: #f3f6fa;
+      padding: 12px;
+      color: #1f2937;
+    }
+
+    .ls-page h3,
+    .ls-page h4,
+    .ls-page h5,
+    .ls-page .ant-typography {
+      margin: 0 !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      line-height: 1.35 !important;
+      color: #1f2937 !important;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      background: #ffffff;
+      border: 1px solid #e2eaf3;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+    }
+
+    .topbar-title {
+      margin: 0;
+      padding: 0;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .meta-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+    }
+
+    .meta-pill {
+      background: #f8fafc;
+      border: 1px solid #e6edf5;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: #475467;
+    }
+
+    .main {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .left {
+      width: 400px;
+      min-width: 400px;
+      max-width: 400px;
+      max-height: 82vh;
+      overflow: auto;
+      position: sticky;
+      top: 8px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .group {
+      background: #ffffff;
+      border: 1px solid #e6edf5;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+
+    .group-head {
+      padding: 3px 8px;
+      border-bottom: 1px solid #eef3f8;
+      background: #f8fafc;
+    }
+
+    .group-head h3,
+    .group-head h4,
+    .group-head h5,
+    .group-head .ant-typography {
+      font-size: 12px !important;
+    }
+
+    .group-body {
+      padding: 4px 6px;
+      background: #ffffff;
+    }
+
+    .modifier-panel {
+      background: #f4f6f8;
+      border: 1px dashed #b7c3d0;
+      border-radius: 10px;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+
+    .modifier-head {
+      padding: 2px 4px 6px;
+    }
+
+    .modifier-head h3,
+    .modifier-head h4,
+    .modifier-head h5,
+    .modifier-head .ant-typography {
+      font-size: 11px !important;
+      color: #667085 !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.04em;
+    }
+
+    .modifier-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .modifier-row + .modifier-row {
+      margin-top: 6px;
+    }
+
+    .modifier-panel .group {
+      flex: 1;
+      min-width: 0;
+      margin-bottom: 0;
+      background: #ffffff;
+      border-style: dashed;
+    }
+
+    .tone-red .group-head {
+      border-left: 3px solid #D32F2F;
+      background: #fff5f5;
+    }
+
+    .tone-orange .group-head {
+      border-left: 3px solid #EF6C00;
+      background: #fff8f1;
+    }
+
+    .tone-cyan .group-head {
+      border-left: 3px solid #00838F;
+      background: #f1fbfc;
+    }
+
+    .tone-slate .group-head {
+      border-left: 3px solid #607D8B;
+      background: #f5f7f8;
+    }
+
+    .tone-indigo .group-head {
+      border-left: 3px solid #303F9F;
+      background: #f4f5fc;
+    }
+
+    .tone-indigo-soft .group-head {
+      border-left: 3px solid #5C6BC0;
+      background: #f6f7fd;
+    }
+
+    .tone-brown .group-head {
+      border-left: 3px solid #6D4C41;
+      background: #f7f4f2;
+    }
+
+    .tone-pathogen .group-head {
+      border-left: 3px solid #1565C0;
+      background: #f3f8fd;
+    }
+
+    .pathogen-sub {
+      margin: 4px 0 2px;
+      padding-top: 4px;
+      border-top: 1px dashed #e8eef5;
+    }
+
+    .pathogen-sub:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .pathogen-sub h3,
+    .pathogen-sub h4,
+    .pathogen-sub h5,
+    .pathogen-sub .ant-typography {
+      font-size: 11px !important;
+      color: #667085 !important;
+      font-weight: 600 !important;
+    }
+
+    .detect-block {
+      margin-top: 4px;
+      padding: 4px 6px;
+      background: #faf4fc;
+      border: 1px solid #e1bee7;
+      border-radius: 6px;
+    }
+
+    .detect-block .pathogen-sub:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .detect-block h3,
+    .detect-block h4,
+    .detect-block h5,
+    .detect-block .ant-typography {
+      color: #8E24AA !important;
+    }
+
+    .relation-card {
+      background: #f7faff;
+      border: 1px solid #dbeafe;
+      border-radius: 8px;
+      padding: 5px 8px;
+    }
+
+    .reader-shell {
+      background: #ffffff;
+      border: 1px solid #e2eaf3;
+      border-radius: 10px;
+      padding: 10px 12px;
+      position: sticky;
+      top: 8px;
+    }
+
+    .reader-head {
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .text-panel {
+      background: #fcfdff;
+      border: 1px solid #e8eef5;
+      border-radius: 8px;
+      padding: 14px 16px;
+      max-height: 78vh;
+      overflow: auto;
+    }
+
+    .htx-text {
+      white-space: pre-wrap !important;
+      font-size: 16px !important;
+      line-height: 1.9 !important;
+      color: #1f2937 !important;
+    }
+
+    .lsf-label,
+    .htx-label,
+    .ant-tag {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      padding: 5px 8px !important;
+      margin: 0 4px 5px 0 !important;
+      border-radius: 5px !important;
+      font-weight: 500 !important;
+      min-height: 28px !important;
+      height: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    .left::-webkit-scrollbar,
+    .text-panel::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .left::-webkit-scrollbar-thumb,
+    .text-panel::-webkit-scrollbar-thumb {
+      background: #d0dbe8;
+      border-radius: 8px;
+    }
+  </Style>
+
+  <View className="topbar">
+    <View className="topbar-title">
+      <Header value="🏥 患者信息"/>
+    </View>
+    <View className="meta-grid">
+      <View className="meta-pill"><Text name="patient_id" value="ID: $patient_id"/></View>
+      <View className="meta-pill"><Text name="patient_name" value="姓名: $patient_name"/></View>
+    </View>
+  </View>
+
+  <View className="main">
+
+    <View className="left">
+
+      <View className="group tone-red">
+        <View className="group-head"><Header value="症状及治疗"/></View>
+        <View className="group-body">
+          <Labels name="symptons_labels" toName="chief_complaint_text" showInline="true">
+            <Label value="发热" background="#D32F2F" style="color:white;"/>
+            <Label value="鼻翼煽动" background="#D32F2F" style="color:white;"/>
+            <Label value="呼吸衰竭" background="#D32F2F" style="color:white;"/>
+            <Label value="三凹征" background="#D32F2F" style="color:white;"/>
+            <Label value="喘鸣喘息" background="#D32F2F" style="color:white;"/>
+            <Label value="意识障碍" background="#D32F2F" style="color:white;"/>
+            <Label value="惊厥" background="#D32F2F" style="color:white;"/>
+            <Label value="拒食或喂养困难" background="#D32F2F" style="color:white;"/>
+            <Label value="脱水征" background="#D32F2F" style="color:white;"/>
+            <Label value="休克" background="#D32F2F" style="color:white;"/>
+            <Label value="器官衰竭" background="#D32F2F" style="color:white;"/>
+            <Label value="机械通气" background="#D32F2F" style="color:white;"/>
+          </Labels>
+        </View>
+      </View>
+
+      <View className="group tone-orange">
+        <View className="group-head"><Header value="诊断"/></View>
+        <View className="group-body">
+          <Labels name="diagnosis_labels" toName="chief_complaint_text" showInline="true">
+            <Label value="肺部组织炎症" background="#EF6C00" style="color:white;"/>
+            <Label value="肺炎诊断" background="#EF6C00" style="color:white;"/>
+            <Label value="肺部感染" background="#EF6C00" style="color:white;"/>
+          </Labels>
+        </View>
+      </View>
+
+      <View className="modifier-panel">
+        <View className="modifier-head"><Header value="修饰属性"/></View>
+        <View className="modifier-row">
+          <View className="group tone-cyan">
+            <View className="group-head"><Header value="时间"/></View>
+            <View className="group-body">
+              <Labels name="time_labels" toName="chief_complaint_text" showInline="true">
+                <Label value="当前" background="#00838F" style="color:white;"/>
+                <Label value="既往" background="#00838F" style="color:white;"/>
+                <Label value="进行性加重" background="#00838F" style="color:white;"/>
+                <Label value="持续" background="#00838F" style="color:white;"/>
+              </Labels>
+            </View>
+          </View>
+          <View className="group tone-slate">
+            <View className="group-head"><Header value="断言"/></View>
+            <View className="group-body">
+              <Labels name="status_labels" toName="chief_complaint_text" showInline="true">
+                <Label value="肯定" background="#607D8B" style="color:white;"/>
+                <Label value="否定" background="#607D8B" style="color:white;"/>
+                <Label value="可疑" background="#607D8B" style="color:white;"/>
+                <Label value="条件性" background="#607D8B" style="color:white;"/>
+                <Label value="假设性" background="#607D8B" style="color:white;"/>
+                <Label value="与患者本人无关" background="#607D8B" style="color:white;"/>
+              </Labels>
+            </View>
+          </View>
+        </View>
+        <View className="modifier-row">
+          <View className="group tone-indigo">
+            <View className="group-head"><Header value="测量实体"/></View>
+            <View className="group-body">
+              <Labels name="measure_entities" toName="chief_complaint_text" showInline="true">
+                <Label value="呼吸频率" background="#303F9F" style="color:white;"/>
+                <Label value="静息状态指氧饱和度" background="#303F9F" style="color:white;"/>
+                <Label value="动脉氧分压(PaO2)" background="#303F9F" style="color:white;"/>
+                <Label value="吸氧浓度(FiO2)" background="#303F9F" style="color:white;"/>
+              </Labels>
+            </View>
+          </View>
+          <View className="group tone-indigo-soft">
+            <View className="group-head"><Header value="测量属性"/></View>
+            <View className="group-body">
+              <Labels name="measure_labels" toName="chief_complaint_text" showInline="true">
+                <Label value="数值" background="#5C6BC0" style="color:white;"/>
+                <Label value="单位" background="#5C6BC0" style="color:white;"/>
+                <Label value="比较符" background="#5C6BC0" style="color:white;"/>
+                <Label value="阈值判断" background="#5C6BC0" style="color:white;"/>
+              </Labels>
+            </View>
+          </View>
+        </View>
+      </View>
+
+      <View className="group tone-brown">
+        <View className="group-head"><Header value="流行病学关联"/></View>
+        <View className="group-body">
+          <Labels name="epidemics_labels" toName="chief_complaint_text" showInline="true">
+            <Label value="可疑动物或动物制品接触史" background="#6D4C41" style="color:white;"/>
+            <Label value="可疑环境暴露史" background="#6D4C41" style="color:white;"/>
+            <Label value="外出外来史" background="#6D4C41" style="color:white;"/>
+          </Labels>
+        </View>
+      </View>
+
+      <View className="group tone-pathogen">
+        <View className="group-head"><Header value="病原检测"/></View>
+        <View className="group-body">
+          <View className="detect-block">
+            <View className="pathogen-sub"><Header value="标本类型"/></View>
+            <Labels name="specimen_labels" toName="chief_complaint_text" showInline="true">
+              <Label value="咽/鼻咽拭子" background="#AD1457" style="color:white;"/>
+              <Label value="痰" background="#AD1457" style="color:white;"/>
+              <Label value="肺泡灌洗液" background="#AD1457" style="color:white;"/>
+              <Label value="血" background="#AD1457" style="color:white;"/>
+              <Label value="尿" background="#AD1457" style="color:white;"/>
+              <Label value="胸水" background="#AD1457" style="color:white;"/>
+            </Labels>
+            <View className="pathogen-sub"><Header value="检测方式"/></View>
+            <Labels name="pathogen_detect_labels" toName="chief_complaint_text" showInline="true">
+              <Label value="核酸检测" background="#8E24AA" style="color:white;"/>
+              <Label value="mNGS" background="#8E24AA" style="color:white;"/>
+              <Label value="抗原快速检测" background="#8E24AA" style="color:white;"/>
+              <Label value="抗体IgM" background="#8E24AA" style="color:white;"/>
+              <Label value="抗体滴度/双份" background="#8E24AA" style="color:white;"/>
+              <Label value="培养" background="#8E24AA" style="color:white;"/>
+            </Labels>
+          </View>
+
+          <View className="pathogen-sub"><Header value="病毒"/></View>
+          <Labels name="pathogen" toName="chief_complaint_text" showInline="true">
+            <Label value="新冠病毒" background="#1565C0" style="color:white;"/>
+            <Label value="流感病毒" background="#1565C0" style="color:white;"/>
+            <Label value="呼吸道合胞病毒" background="#1565C0" style="color:white;"/>
+            <Label value="腺病毒" background="#1565C0" style="color:white;"/>
+            <Label value="人偏肺病毒" background="#1565C0" style="color:white;"/>
+            <Label value="副流感病毒" background="#1565C0" style="color:white;"/>
+            <Label value="普通冠状病毒" background="#1565C0" style="color:white;"/>
+            <Label value="博卡病毒" background="#1565C0" style="color:white;"/>
+            <Label value="鼻病毒" background="#1565C0" style="color:white;"/>
+            <Label value="肠道病毒" background="#1565C0" style="color:white;"/>
+          </Labels>
+
+          <View className="pathogen-sub"><Header value="细菌"/></View>
+          <Labels name="bacteria" toName="chief_complaint_text" showInline="true">
+            <Label value="A族链球菌" background="#2E7D32" style="color:white;"/>
+            <Label value="百日咳鲍特菌" background="#2E7D32" style="color:white;"/>
+            <Label value="肺炎链球菌" background="#2E7D32" style="color:white;"/>
+            <Label value="流感嗜血杆菌" background="#2E7D32" style="color:white;"/>
+            <Label value="军团菌" background="#2E7D32" style="color:white;"/>
+            <Label value="肺炎克雷伯菌" background="#2E7D32" style="color:white;"/>
+          </Labels>
+
+          <View className="pathogen-sub"><Header value="其他病原体"/></View>
+          <Labels name="other_pathogen" toName="chief_complaint_text" showInline="true">
+            <Label value="肺炎支原体" background="#827717" style="color:white;"/>
+            <Label value="曲霉菌" background="#827717" style="color:white;"/>
+            <Label value="隐球菌" background="#827717" style="color:white;"/>
+            <Label value="鹦鹉热衣原体" background="#827717" style="color:white;"/>
+            <Label value="肺炎衣原体" background="#827717" style="color:white;"/>
+          </Labels>
+        </View>
+      </View>
+
+      <View className="relation-card">
+        <Header value="关系"/>
+        <Relations>
+          <Relation value="状态" background="#607D8B"/>
+          <Relation value="时间" background="#00838F"/>
+          <Relation value="测量" background="#303F9F"/>
+          <Relation value="标本" background="#AD1457"/>
+          <Relation value="检测方式" background="#8E24AA"/>
+        </Relations>
+      </View>
+    </View>
+
+    <View className="right">
+      <View className="reader-shell">
+        <View className="reader-head">
+          <Header value="患者就诊信息"/>
+        </View>
+        <View className="text-panel">
+          <Text name="chief_complaint_text" value="$text"/>
+        </View>
+      </View>
+    </View>
+
+  </View>
+</View>

@@ -33,16 +33,16 @@ def debug_run():
     print("正在检查那些置信度较低但模型其实识别出来的实体...")
     
     # 临时创建一个低阈值的 schema
-    low_threshold_schema = model.gliner.create_schema().entities({
-        label: {"description": desc, "threshold": 0.1} 
+    low_threshold_schema = PneumoniaNERModel._gliner.create_schema().entities({
+        label: {"description": desc, "threshold": 0.1}
         for label, desc in GLINER2_LABELS.items()
     })
-    
+
     text = SAMPLE_TASK["data"]["chief_complaint_text"]
-    raw_low = model.gliner.extract(
-        text, 
-        low_threshold_schema, 
-        include_confidence=True, 
+    raw_low = PneumoniaNERModel._gliner.extract(
+        text,
+        low_threshold_schema,
+        include_confidence=True,
         include_spans=True
     )
     
