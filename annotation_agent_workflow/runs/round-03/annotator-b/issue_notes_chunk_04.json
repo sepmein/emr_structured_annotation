@@ -1,0 +1,41 @@
+[
+  {
+    "issue_id": "ISSUE-R3B-002",
+    "category": "xml_guide_mismatch",
+    "severity": "major",
+    "affected_tasks": ["R3-154", "R3-162", "R3-164", "R3-176", "R3-183", "R3-198"],
+    "affected_labels": ["咳嗽", "咳痰", "气促/呼吸困难"],
+    "evidence_excerpt": "咳嗽；咳痰；气急",
+    "observed_problem": "前块问题复现：病例级判断依赖的常见呼吸症状在锁定XML中没有实体标签。",
+    "question": "生产XML更新前是否继续只在evidence中保留这些症状？",
+    "decision_impact": "不改变病例级判断，但结构化触发链不完整。",
+    "temporary_action": "不私建标签，仅保留最小原文证据。",
+    "suggested_options": ["后续XML加入缺失症状", "校准期明确不计这些实体漏标"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-003",
+    "category": "data_quality",
+    "severity": "major",
+    "affected_tasks": ["R3-155", "R3-161", "R3-166", "R3-170", "R3-172", "R3-173", "R3-184", "R3-186", "R3-187", "R3-188", "R3-190", "R3-191", "R3-194", "R3-199", "R3-200"],
+    "affected_labels": ["data_issue", "case_decision"],
+    "evidence_excerpt": "空文本；前症；上症；同既往",
+    "observed_problem": "前块问题复现：空文本或依赖缺失上文的记录只能使用data_issue=other。",
+    "question": "是否增加empty_text、missing_context或other说明字段？",
+    "decision_impact": "均判信息不足，但数据修复路径不能结构化区分。",
+    "temporary_action": "使用other并通过issue_refs标识。",
+    "suggested_options": ["增加专门枚举", "为other增加必填说明字段"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-006",
+    "category": "xml_guide_mismatch",
+    "severity": "major",
+    "affected_tasks": ["R3-164"],
+    "affected_labels": ["肺/胸部异常", "肺结节"],
+    "evidence_excerpt": "磨玻璃微结节；粟粒结节",
+    "observed_problem": "B3允许当前性质不明的肺/胸部异常触发待专业复核，但锁定XML只有肺炎诊断、肺部感染和肺部组织炎症，没有通用肺部异常或肺结节实体。",
+    "question": "B3触发证据在当前XML中是否统一只保存为病例级evidence？",
+    "decision_impact": "不改变病例级判断，但无法在结构化实体中复现B3触发依据。",
+    "temporary_action": "判待专业复核，保留原文证据，不把结节误标成肺部组织炎症。",
+    "suggested_options": ["后续XML增加通用肺/胸异常或肺结节标签", "明确B3证据在校准期不要求实体化"]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "run_id": "round-01",
+  "guide_version": "0.1.0",
+  "xml_sha256": "REPLACE_WITH_SHA256",
+  "sample": {"total": 0, "completed": 0, "blocked": 0},
+  "issues": []
+}

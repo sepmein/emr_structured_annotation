@@ -1,0 +1,110 @@
+{
+  "guide_version": "2.0.0",
+  "input_feedback": [
+    "../annotator-a/annotator_feedback.json",
+    "../annotator-b/annotator_feedback.json"
+  ],
+  "resolutions": [
+    {
+      "issue_ids": ["ISS-A2-001", "ISS-R2-B-002"],
+      "disposition": "accept",
+      "rationale": "空白和无法归属的纯检验列表没有可判断的索引临床事件，医学标注只会产生流程性信息不足。",
+      "decision_impact": "信息不足和工作量",
+      "complexity_cost": "低；预处理门禁和单独日志。",
+      "guide_change": "生产前拦截；保留少量门禁回归样本，不从检验项目名称推断病例。",
+      "schema_change": "preprocessing",
+      "back_annotation_required": false,
+      "validation_case_types": ["空文本", "纯检验列表", "完整无关记录附带阴性检验"]
+    },
+    {
+      "issue_ids": ["ISS-A2-002"],
+      "disposition": "clarify",
+      "rationale": "只有泛化的病情稳定/继续治疗，缺少疾病、症状和检查，不能确认索引事件内容。",
+      "decision_impact": "非目标与信息不足",
+      "complexity_cost": "无新增标签。",
+      "guide_change": "统一判信息不足并退回补充上下文。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": ["泛化稳定配药文本", "完整无关复诊"]
+    },
+    {
+      "issue_ids": ["ISS-A2-003", "ISS-A2-008", "ISS-R2-B-004"],
+      "disposition": "accept",
+      "rationale": "关键词白名单不能覆盖明确慢性/非感染性改变或已有充分替代病因的肺部异常，否则会系统性过筛。",
+      "decision_impact": "目标、待复核与非目标",
+      "complexity_cost": "只增加决策规则和案例，不增加标签。",
+      "guide_change": "建立慢性/非感染性、明确替代病因和连续诊疗旧证据三组边界。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": ["少许慢性炎症", "稳定间质性肺病", "肿瘤占位", "心衰渗出", "连续治疗引用旧影像"]
+    },
+    {
+      "issue_ids": ["ISS-A2-004", "ISS-R2-B-005"],
+      "disposition": "accept",
+      "rationale": "支气管扩张伴感染不唯一表示肺实质感染，但急性症状恶化合并客观异常对病例复核有价值。",
+      "decision_impact": "目标、待复核与非目标",
+      "complexity_cost": "不新增疾病标签；增加一条组合规则。",
+      "guide_change": "稳定复诊判非目标；急性恶化加发热/低氧/湿啰音之一判待复核；明确肺实质证据才判目标。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": ["支扩稳定配药", "无发热但低氧", "支扩合并明确肺炎"]
+    },
+    {
+      "issue_ids": ["ISS-A2-005", "ISS-A2-007", "ISS-R2-B-003"],
+      "disposition": "accept",
+      "rationale": "跨记录拼接和重复段落会改变索引事件归属、证据计数和严格F1，不能由标注员猜测或修文。",
+      "decision_impact": "所有四分类和结构化证据",
+      "complexity_cost": "中；需按就诊/activity/source拆分并保留偏移映射。",
+      "guide_change": "影响结论的拼接作为阻塞并判信息不足占位；精确重复预处理去重。",
+      "schema_change": "preprocessing",
+      "back_annotation_required": true,
+      "validation_case_types": ["跨就诊拼接", "复制段落", "截断后文"]
+    },
+    {
+      "issue_ids": ["ISS-R2-B-001"],
+      "disposition": "accept_resolved",
+      "rationale": "姓名、住院号和床位字段属于隐私门禁；三例已重新去标识化并由两名智能体独立复标。",
+      "decision_impact": "三例原结果不可用，复标后纳入一致性分析",
+      "complexity_cost": "中；字段白名单、模式扫描和人工抽检。",
+      "guide_change": "增加结构化身份槽位和隐私扫描顺序；保留修复前文件供审计。",
+      "schema_change": "preprocessing",
+      "back_annotation_required": false,
+      "validation_case_types": ["姓名字段", "住院号", "床位号", "自由文本姓名模式"]
+    },
+    {
+      "issue_ids": ["ISS-R2-B-006"],
+      "disposition": "accept",
+      "rationale": "展平后的最近字符串不能证明项目—结果归属，错误关系可能反转病原断言。",
+      "decision_impact": "病原阳性触发和关系F1",
+      "complexity_cost": "中；需恢复检验记录ID或组块。",
+      "guide_change": "只在同一检验记录组内连边；无法唯一配对时不连、不触发阳性。",
+      "schema_change": "preprocessing",
+      "back_annotation_required": true,
+      "validation_case_types": ["项目结果错位", "多项目共享结果", "未找见与阳性矛盾"]
+    },
+    {
+      "issue_ids": ["ISS-A2-006", "ISS-R2-B-007"],
+      "disposition": "accept_existing_proposal",
+      "rationale": "病例级四分类、咳嗽、咳痰、气促和时间表达反复用于病例解释，当前XML仍无法完整承载。",
+      "decision_impact": "核心任务可执行性和结构化可解释性",
+      "complexity_cost": "新增1个病例单选、3个症状和1个通用时间跨度；不增加程度、稳定或因果标签。",
+      "guide_change": "维持v1最小Schema提案，升级为真人结构化试标前阻塞项。",
+      "schema_change": "add_required_before_structured_human_pilot",
+      "back_annotation_required": true,
+      "validation_case_types": ["急性发热加咳嗽", "支扩急性加重", "具体日期和时长"]
+    },
+    {
+      "issue_ids": ["ISS-A2-009"],
+      "disposition": "clarify",
+      "rationale": "同句肯定/否定矛盾不能靠常识改写；若不影响病例结论则记录，影响结论则退回。",
+      "decision_impact": "活动性和优先级",
+      "complexity_cost": "低；数据问题标记。",
+      "guide_change": "保留原文两处证据，标记模板矛盾，不自动选择其一。",
+      "schema_change": "data_issue",
+      "back_annotation_required": false,
+      "validation_case_types": ["同句气促与无气促", "模板复制矛盾"]
+    }
+  ],
+  "unresolved_blockers": [],
+  "production_xml_changed": false
+}

@@ -1,0 +1,238 @@
+{
+  "run_id": "round-01-annotator-a",
+  "guide_version": "0.2.0",
+  "annotation_scope": "病例级判断与直接影响判断的核心XML实体；未追求重复段落和非核心检测项的穷尽标注",
+  "tasks": [
+    {
+      "task_id": "R1-001",
+      "case_decision": "信息不足",
+      "evidence": [{"location": "全文（空）", "excerpt": ""}],
+      "entities": [], "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-001"]
+    },
+    {
+      "task_id": "R1-002",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "现病史", "excerpt": "稍咳嗽，无发热"},
+        {"location": "体格检查", "excerpt": "双肺呼吸音粗，未闻及干湿啰音"}
+      ],
+      "entities": [{"entity_id": "R1-002-E1", "label": "发热", "text": "发热", "location": "现病史"}],
+      "attributes": [{"attribute_id": "R1-002-A1", "label": "否定", "text": "无", "location": "现病史"}],
+      "relations": [{"relation_id": "R1-002-R1", "type": "状态", "from_id": "R1-002-A1", "to_id": "R1-002-E1", "evidence_excerpt": "无发热"}],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-003",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "慢病复诊开药"},
+        {"location": "现病史", "excerpt": "病情稳定，心肺无殊"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-004",
+      "case_decision": "信息不足",
+      "evidence": [{"location": "全文（空）", "excerpt": ""}],
+      "entities": [], "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-001"]
+    },
+    {
+      "task_id": "R1-005",
+      "case_decision": "待专业复核",
+      "evidence": [
+        {"location": "现病史", "excerpt": "右侧脓胸，脏脏壁层胸膜纤维板形成，支气管胸膜瘘"},
+        {"location": "现病史", "excerpt": "每日约引流出50ml脓性液体"},
+        {"location": "现病史", "excerpt": "刻下：咳嗽，少量咳痰，伴胸闷、胸痛"}
+      ],
+      "entities": [], "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-002", "ISS-A-003", "ISS-A-005", "ISS-A-006", "ISS-A-007"]
+    },
+    {
+      "task_id": "R1-006",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        {"location": "现病史", "excerpt": "今再来复诊，仍有发热伴咳嗽"},
+        {"location": "现病史", "excerpt": "肺部CT：右肺炎症"},
+        {"location": "现病史", "excerpt": "门诊以“肺炎”收住院"}
+      ],
+      "entities": [
+        {"entity_id": "R1-006-E1", "label": "发热", "text": "发热", "location": "现病史：今再来复诊句"},
+        {"entity_id": "R1-006-E2", "label": "肺部组织炎症", "text": "右肺炎症", "location": "现病史：肺部CT"},
+        {"entity_id": "R1-006-E3", "label": "肺炎诊断", "text": "肺炎", "location": "现病史：收住院句"}
+      ],
+      "attributes": [
+        {"attribute_id": "R1-006-A1", "label": "当前", "text": "今", "location": "现病史：今再来复诊句"},
+        {"attribute_id": "R1-006-A2", "label": "持续", "text": "仍有", "location": "现病史：今再来复诊句"}
+      ],
+      "relations": [
+        {"relation_id": "R1-006-R1", "type": "时间", "from_id": "R1-006-A1", "to_id": "R1-006-E1", "evidence_excerpt": "今再来复诊，仍有发热"},
+        {"relation_id": "R1-006-R2", "type": "时间", "from_id": "R1-006-A2", "to_id": "R1-006-E1", "evidence_excerpt": "仍有发热"}
+      ],
+      "issue_refs": ["ISS-A-002", "ISS-A-003", "ISS-A-004", "ISS-A-006"]
+    },
+    {
+      "task_id": "R1-007",
+      "case_decision": "待专业复核",
+      "evidence": [
+        {"location": "相关后文节选", "excerpt": "两肺散见纤维条索影及小斑片状影"},
+        {"location": "相关后文节选", "excerpt": "双肺呼吸音清，未闻及干湿啰音"}
+      ],
+      "entities": [], "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-002", "ISS-A-005", "ISS-A-006"]
+    },
+    {
+      "task_id": "R1-008",
+      "case_decision": "待专业复核",
+      "evidence": [
+        {"location": "主诉", "excerpt": "发热1周余"},
+        {"location": "现病史", "excerpt": "偶有咳痰"},
+        {"location": "现病史", "excerpt": "今晨患者出现体温39.2℃"}
+      ],
+      "entities": [{"entity_id": "R1-008-E1", "label": "发热", "text": "发热", "location": "主诉"}],
+      "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-002", "ISS-A-003"]
+    },
+    {
+      "task_id": "R1-009",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "现病史", "excerpt": "诊断抑郁症"},
+        {"location": "体格检查", "excerpt": "肺：无异常"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-010",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "反复咳嗽咳痰20年"},
+        {"location": "体格检查", "excerpt": "心肺无殊"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-011",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        {"location": "治疗经过", "excerpt": "胸部CT：两肺炎症伴两侧胸腔积液"},
+        {"location": "治疗经过", "excerpt": "患者入院后仍有发热"},
+        {"location": "相关后文节选", "excerpt": "现患者神清精神好，无发热，无咳嗽咳痰"}
+      ],
+      "entities": [
+        {"entity_id": "R1-011-E1", "label": "肺部组织炎症", "text": "两肺炎症", "location": "治疗经过：胸部CT"},
+        {"entity_id": "R1-011-E2", "label": "发热", "text": "发热", "location": "治疗经过：入院后"}
+      ],
+      "attributes": [{"attribute_id": "R1-011-A1", "label": "持续", "text": "仍有", "location": "治疗经过：入院后"}],
+      "relations": [{"relation_id": "R1-011-R1", "type": "时间", "from_id": "R1-011-A1", "to_id": "R1-011-E2", "evidence_excerpt": "入院后仍有发热"}],
+      "issue_refs": ["ISS-A-003", "ISS-A-004", "ISS-A-006"]
+    },
+    {
+      "task_id": "R1-012",
+      "case_decision": "待专业复核",
+      "evidence": [
+        {"location": "主诉", "excerpt": "咳嗽发热复诊"},
+        {"location": "现病史", "excerpt": "10+天前无明显诱因出现咳嗽"},
+        {"location": "现病史", "excerpt": "低热4天"}
+      ],
+      "entities": [
+        {"entity_id": "R1-012-E1", "label": "发热", "text": "发热", "location": "主诉"},
+        {"entity_id": "R1-012-E2", "label": "发热", "text": "低热", "location": "现病史"}
+      ],
+      "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-003", "ISS-A-008"]
+    },
+    {
+      "task_id": "R1-013",
+      "case_decision": "待专业复核",
+      "evidence": [
+        {"location": "主诉", "excerpt": "发热1天"},
+        {"location": "现病史", "excerpt": "偶有咳嗽"},
+        {"location": "体格检查", "excerpt": "双肺呼吸音粗"}
+      ],
+      "entities": [{"entity_id": "R1-013-E1", "label": "发热", "text": "发热", "location": "主诉"}],
+      "attributes": [], "relations": [],
+      "issue_refs": ["ISS-A-002", "ISS-A-003"]
+    },
+    {
+      "task_id": "R1-014",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "糖尿病复诊"},
+        {"location": "现病史", "excerpt": "无咳嗽、发热、腹泻等"}
+      ],
+      "entities": [{"entity_id": "R1-014-E1", "label": "发热", "text": "发热", "location": "现病史"}],
+      "attributes": [{"attribute_id": "R1-014-A1", "label": "否定", "text": "无", "location": "现病史"}],
+      "relations": [{"relation_id": "R1-014-R1", "type": "状态", "from_id": "R1-014-A1", "to_id": "R1-014-E1", "evidence_excerpt": "无咳嗽、发热、腹泻等"}],
+      "issue_refs": ["ISS-A-003"]
+    },
+    {
+      "task_id": "R1-015",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "咳嗽1天"},
+        {"location": "现病史", "excerpt": "无发热"},
+        {"location": "体格检查", "excerpt": "双肺未及啰音"}
+      ],
+      "entities": [{"entity_id": "R1-015-E1", "label": "发热", "text": "发热", "location": "现病史"}],
+      "attributes": [{"attribute_id": "R1-015-A1", "label": "否定", "text": "无", "location": "现病史"}],
+      "relations": [{"relation_id": "R1-015-R1", "type": "状态", "from_id": "R1-015-A1", "to_id": "R1-015-E1", "evidence_excerpt": "无发热"}],
+      "issue_refs": ["ISS-A-002"]
+    },
+    {
+      "task_id": "R1-016",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "右耳耳闷1周"},
+        {"location": "现病史", "excerpt": "右耳耳鸣，耳闷，伴听力下降"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-017",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "咳嗽3天"},
+        {"location": "现病史", "excerpt": "无发热"},
+        {"location": "体格检查", "excerpt": "未闻及干湿啰音"}
+      ],
+      "entities": [{"entity_id": "R1-017-E1", "label": "发热", "text": "发热", "location": "现病史"}],
+      "attributes": [{"attribute_id": "R1-017-A1", "label": "否定", "text": "无", "location": "现病史"}],
+      "relations": [{"relation_id": "R1-017-R1", "type": "状态", "from_id": "R1-017-A1", "to_id": "R1-017-E1", "evidence_excerpt": "无发热"}],
+      "issue_refs": ["ISS-A-002"]
+    },
+    {
+      "task_id": "R1-018",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "皮疹4天"},
+        {"location": "现病史", "excerpt": "手臂部发出皮疹伴有瘙痒"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-019",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "患者高血压复诊"},
+        {"location": "现病史", "excerpt": "近几天有鼻塞流涕"},
+        {"location": "体格检查", "excerpt": "呼吸平稳"}
+      ],
+      "entities": [], "attributes": [], "relations": [], "issue_refs": []
+    },
+    {
+      "task_id": "R1-020",
+      "case_decision": "非目标",
+      "evidence": [
+        {"location": "主诉", "excerpt": "反复鼻痒、鼻塞、喷嚏、流清涕"},
+        {"location": "现病史", "excerpt": "无咳嗽、胸闷"},
+        {"location": "现病史", "excerpt": "无黄涕、发热、头痛"}
+      ],
+      "entities": [{"entity_id": "R1-020-E1", "label": "发热", "text": "发热", "location": "现病史"}],
+      "attributes": [{"attribute_id": "R1-020-A1", "label": "否定", "text": "无", "location": "现病史：无黄涕句"}],
+      "relations": [{"relation_id": "R1-020-R1", "type": "状态", "from_id": "R1-020-A1", "to_id": "R1-020-E1", "evidence_excerpt": "无黄涕、发热、头痛"}],
+      "issue_refs": []
+    }
+  ]
+}

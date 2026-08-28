@@ -1,0 +1,87 @@
+{
+  "comparison_scope": "completed tasks only; privacy blocks excluded",
+  "common_completed_tasks": 50,
+  "blocked": {
+    "run_a": [],
+    "run_b": [],
+    "union": []
+  },
+  "observed_agreement": 0.94,
+  "expected_agreement": 0.5536,
+  "cohens_kappa": 0.865591,
+  "category_counts": {
+    "run_a": {
+      "信息不足": 14,
+      "非目标": 36
+    },
+    "run_b": {
+      "信息不足": 14,
+      "非目标": 33,
+      "待专业复核": 3
+    }
+  },
+  "confusion_run_a_by_run_b": {
+    "信息不足": {
+      "信息不足": 14
+    },
+    "非目标": {
+      "非目标": 33,
+      "待专业复核": 3
+    }
+  },
+  "disagreements": [
+    {
+      "task_id": "R3-140",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-145",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-148",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    }
+  ],
+  "entity_relation_note": "Not scored here; strict entity/relation F1 requires stable character offsets and endpoint IDs.",
+  "run_a_vs_preregistered_reference": {
+    "tasks": 50,
+    "agreement": 0.94,
+    "disagreements": [
+      {
+        "task_id": "R3-117",
+        "run": "非目标",
+        "reference": "信息不足"
+      },
+      {
+        "task_id": "R3-140",
+        "run": "非目标",
+        "reference": "待专业复核"
+      },
+      {
+        "task_id": "R3-145",
+        "run": "非目标",
+        "reference": "待专业复核"
+      }
+    ]
+  },
+  "run_b_vs_preregistered_reference": {
+    "tasks": 50,
+    "agreement": 0.96,
+    "disagreements": [
+      {
+        "task_id": "R3-117",
+        "run": "非目标",
+        "reference": "信息不足"
+      },
+      {
+        "task_id": "R3-148",
+        "run": "待专业复核",
+        "reference": "非目标"
+      }
+    ]
+  }
+}

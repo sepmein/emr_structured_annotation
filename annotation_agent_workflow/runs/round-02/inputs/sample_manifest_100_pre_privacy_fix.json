@@ -1,0 +1,638 @@
+{
+  "round": "round-02",
+  "seed": 20260828,
+  "excluded_round1_source_indexes": [
+    38,
+    55,
+    91,
+    101,
+    105,
+    109,
+    146,
+    147,
+    178,
+    200,
+    211,
+    225,
+    229,
+    282,
+    294,
+    327,
+    331,
+    334,
+    344,
+    348
+  ],
+  "targets": {
+    "direct": 21,
+    "acute_resp": 30,
+    "pathogen": 6,
+    "chest": 11,
+    "chronic_resp": 2,
+    "other": 20,
+    "low_info": 5,
+    "blank": 5
+  },
+  "tasks": [
+    {
+      "task_id": "R2-001",
+      "source_index": 19,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "19c41b95fcb3f4d57687f3c7d862424175e9d1a341229ba06f04b9cb6660f2f0"
+    },
+    {
+      "task_id": "R2-002",
+      "source_index": 61,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "b09994260840cacb01175ef217c54c68844887613b595b761516bf2148555089"
+    },
+    {
+      "task_id": "R2-003",
+      "source_index": 349,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "a75f80ebaa61fe07ecfc71ef587a9fa0f3af17b216132cf8003a51ce59d287cc"
+    },
+    {
+      "task_id": "R2-004",
+      "source_index": 335,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "9c7b64902f1c89ec266e06c06e0fd021912f2b3138cb093ad078fc0942337e06"
+    },
+    {
+      "task_id": "R2-005",
+      "source_index": 202,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "34f56400e18079a0be822ed48e4b4e86f94705cf95c01eb371bad24471c70069"
+    },
+    {
+      "task_id": "R2-006",
+      "source_index": 8,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "b8e3ee14d63bf0ccd9c99d59fcd459ad5237d2620c2c6e22589542ef50cef768"
+    },
+    {
+      "task_id": "R2-007",
+      "source_index": 171,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "886548983b605d7cc38e252817f2e0945d0f71e6422fca09671450f44f55b782"
+    },
+    {
+      "task_id": "R2-008",
+      "source_index": 107,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "8be1ddbc9fc5fccc927097290baa42d182e2a85463a34166b9d4ab192c6e6857"
+    },
+    {
+      "task_id": "R2-009",
+      "source_index": 217,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "95fe47b42043c72b49ad2e1349f4a36ac125b23d1be0537fd56de6200f5fdda0"
+    },
+    {
+      "task_id": "R2-010",
+      "source_index": 201,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "6ba61e8c0115c627a66f6377cea11c40b5e3d7f3089106784e1225670b103822"
+    },
+    {
+      "task_id": "R2-011",
+      "source_index": 243,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "4e23f75ca7e97fa4e1164170efbc39f8098d811bf50560450a4199920692bd26"
+    },
+    {
+      "task_id": "R2-012",
+      "source_index": 293,
+      "sampling_stratum": "chronic_resp",
+      "deidentified_text_sha256": "a816747ccf61ad44cffe63c165b9c4111f528e61647b1bea086d431e3e014eba"
+    },
+    {
+      "task_id": "R2-013",
+      "source_index": 11,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "65f99a1ae1ff7b90f5d1b6265343c238eeb46263389d3170a09eee8b6da4e3c1"
+    },
+    {
+      "task_id": "R2-014",
+      "source_index": 48,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "377128c19a86bf6b14acf5e65bb87e53a9c585da5ceb00d1610cc866013a70cd"
+    },
+    {
+      "task_id": "R2-015",
+      "source_index": 222,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "c76eccd837ecb4c763a6b0b0332396cf0723e392909889c76e3cf2333747d427"
+    },
+    {
+      "task_id": "R2-016",
+      "source_index": 332,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "56843466efc316b9e5675142d7af682bedda64c6f61b0ec5ca5f628d2cccb569"
+    },
+    {
+      "task_id": "R2-017",
+      "source_index": 231,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "ef819fa472e2d442eacc312e9ef5485dad8714f951dfb2711c6f5de81ebdfb04"
+    },
+    {
+      "task_id": "R2-018",
+      "source_index": 69,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "8bd04d7ad3faaa8ee716737b20323200dc3ef7824863dbbe6435fe49e90fd70b"
+    },
+    {
+      "task_id": "R2-019",
+      "source_index": 17,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "0e4a27a6db0db74ef1b8d941830ca485bba9c4737ab9e086ce085f47d288014e"
+    },
+    {
+      "task_id": "R2-020",
+      "source_index": 337,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "4d032a8f97d8a5f20a2e81937a3d4acb4c2a769f5fbd61d6862a600b96930054"
+    },
+    {
+      "task_id": "R2-021",
+      "source_index": 43,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "2df8080fa8887ecb941b4e0da376bc25fddffcdece13976f3e121fd6b2f65d9c"
+    },
+    {
+      "task_id": "R2-022",
+      "source_index": 131,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "4a5c8cf0e8b587bef239aaf0cdb33a6261811b38aae4ecf24079e754300eac70"
+    },
+    {
+      "task_id": "R2-023",
+      "source_index": 221,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "4c434dd6e0582551ac11c0ef5a8aec6b9f2f72d13926024016902ee7153f83c5"
+    },
+    {
+      "task_id": "R2-024",
+      "source_index": 304,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "b35164e3f755d2f4f489869fb8c8cd5f70bb8e9de36b47b6410989f788bf2a0c"
+    },
+    {
+      "task_id": "R2-025",
+      "source_index": 25,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "c33e6df2243304e6183859f402f7b4ae4e2c3dd4e67f9590ab41e115ab20f9f5"
+    },
+    {
+      "task_id": "R2-026",
+      "source_index": 306,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "7422cd6fcd91d6943b5af943b86a185a41671e05a62a908d88f4e80ad5f000e0"
+    },
+    {
+      "task_id": "R2-027",
+      "source_index": 238,
+      "sampling_stratum": "blank",
+      "deidentified_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "task_id": "R2-028",
+      "source_index": 160,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "67e19b6f7724ba7793354908bb6644bb61c0b885f80c0aef1511a309cdf5a28a"
+    },
+    {
+      "task_id": "R2-029",
+      "source_index": 207,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "985a749ff88613557601d8cec124643bddb3dbfd48c5f80b67cc22c571bde92a"
+    },
+    {
+      "task_id": "R2-030",
+      "source_index": 212,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "b7c82f3154e8b7bb4601cb16455a877d3bc3e801aeeba956f898eacc05e284a6"
+    },
+    {
+      "task_id": "R2-031",
+      "source_index": 281,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "ab35a4d72048913268aab868fdc3a0a3d164aac1ef7366ffe4096f3733acb6b2"
+    },
+    {
+      "task_id": "R2-032",
+      "source_index": 168,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "33c95d7511c8c786bf0e6fb9aefaecc23dc2afe46f3bddcea663f37328cc6036"
+    },
+    {
+      "task_id": "R2-033",
+      "source_index": 195,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "b52705029e5afa492c80a0e492e4eafbb2762f1b451b40477cc3623b02302606"
+    },
+    {
+      "task_id": "R2-034",
+      "source_index": 88,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "8759d5734564249f70b2a20862b242209aab9b3346d4417c55163f7bafd15bba"
+    },
+    {
+      "task_id": "R2-035",
+      "source_index": 214,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "51bb18183a42f699f5df4a324e727dcc84db3debdba6e653059c721d1716baa1"
+    },
+    {
+      "task_id": "R2-036",
+      "source_index": 250,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "03f9d26b5badf8ca5577fab74e3b30c446123c867403111967e18d9869a58429"
+    },
+    {
+      "task_id": "R2-037",
+      "source_index": 167,
+      "sampling_stratum": "blank",
+      "deidentified_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "task_id": "R2-038",
+      "source_index": 116,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "2da4f46589ad7d6b6d52ccfa49bdd26bbde8344e7e6681243a1c6426a50d667f"
+    },
+    {
+      "task_id": "R2-039",
+      "source_index": 81,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "9c4e85d88c815cff903accaa37acb0ab676cc822069acc96e9eab81352bc6914"
+    },
+    {
+      "task_id": "R2-040",
+      "source_index": 266,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "ab8901f66d5b87384e02af863183008d7826828dbe16be76064c701007b5acc5"
+    },
+    {
+      "task_id": "R2-041",
+      "source_index": 296,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "b2a4cb18c634b659223961a2c2a87357df394122d3e094235b475e74ad5bb78e"
+    },
+    {
+      "task_id": "R2-042",
+      "source_index": 123,
+      "sampling_stratum": "low_info",
+      "deidentified_text_sha256": "fd66aec92c5c32cf893368bf74f6bcb64df28c1bb1f262de6568651a5bdf3633"
+    },
+    {
+      "task_id": "R2-043",
+      "source_index": 249,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "784b59fe76e71a5749a426b5f4e54f89eeabb4ccb6a6749351ee1fb35f62961a"
+    },
+    {
+      "task_id": "R2-044",
+      "source_index": 163,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "3b87569b9a93751b9d3d04848e27065e2d97099af0491973aa2e916e8fea7f94"
+    },
+    {
+      "task_id": "R2-045",
+      "source_index": 240,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "91e8a0792d41c1e83aae1abc3d854b7aa42eae29828538eed4797d69ad00e05d"
+    },
+    {
+      "task_id": "R2-046",
+      "source_index": 352,
+      "sampling_stratum": "low_info",
+      "deidentified_text_sha256": "e825e622db6db52624429d4707347c429f72653783ed0711b48ae1f9d8b26efc"
+    },
+    {
+      "task_id": "R2-047",
+      "source_index": 328,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "6be8fc15d8d0ab3bb583af70a828c5f2d48984d434b2c77244e9e0e96aeeb099"
+    },
+    {
+      "task_id": "R2-048",
+      "source_index": 355,
+      "sampling_stratum": "low_info",
+      "deidentified_text_sha256": "3b6ce1a2b736c1464aa857fb4c2a576b3341c9cc0e199d9bf904db14bdd6fbf9"
+    },
+    {
+      "task_id": "R2-049",
+      "source_index": 226,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "75bf4f5b4257a5c7ed28dd845382c641b0447c7a525569f3e7b753fb6aa12da8"
+    },
+    {
+      "task_id": "R2-050",
+      "source_index": 36,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "ea330330bff1d565092b081520a8591681cd4c353b4d89a17787f20a37d5f7d5"
+    },
+    {
+      "task_id": "R2-051",
+      "source_index": 164,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "32d9523a13e2c3f664e5d2b1959a0f4008275f49a038930283b043d331c4bde3"
+    },
+    {
+      "task_id": "R2-052",
+      "source_index": 58,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "1bafc03343d3c6521c53779ff7c065bf1c0ff597e4b3a37893d6305282e106e4"
+    },
+    {
+      "task_id": "R2-053",
+      "source_index": 84,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "8205ee446d5509b1829fb3f1a6ec7151312fc170d5ef3b82ec1ec77a8fdb0079"
+    },
+    {
+      "task_id": "R2-054",
+      "source_index": 244,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "d93f39a3a8a77f8e0d7b5eef66334925eaf89201a1d7f3eb82c01d487a796962"
+    },
+    {
+      "task_id": "R2-055",
+      "source_index": 295,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "5d18798d6241d4dee1b80b0ebbd8d89106024865b1839d58f8a81a041315c46c"
+    },
+    {
+      "task_id": "R2-056",
+      "source_index": 239,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "062edf0bfc5fe9c1a8631d590911172951267e5ba8caed80a4d02532cf0e0dea"
+    },
+    {
+      "task_id": "R2-057",
+      "source_index": 76,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "8b868f108dac2e8fb1de8ef818f675490849b513da87fd274a38aafb0e82adf6"
+    },
+    {
+      "task_id": "R2-058",
+      "source_index": 350,
+      "sampling_stratum": "low_info",
+      "deidentified_text_sha256": "47e3e30ae0e3adb0154e156662c487971cbaa854982284551a09409dd649cc45"
+    },
+    {
+      "task_id": "R2-059",
+      "source_index": 12,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "52460e03e6155871ae6628fff1a6962643e25a9f25a0f044a13b284247279815"
+    },
+    {
+      "task_id": "R2-060",
+      "source_index": 34,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "3392023d16ce736603f4a930d6ecaffb0a73452d4f6595581c08dba61530dec2"
+    },
+    {
+      "task_id": "R2-061",
+      "source_index": 39,
+      "sampling_stratum": "chronic_resp",
+      "deidentified_text_sha256": "eab0ec8a663d268fbd1da87137bac3bc1ea6ef794a4ba1e622248c4cf5fc8609"
+    },
+    {
+      "task_id": "R2-062",
+      "source_index": 251,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "17093fc9e1048ad767437640568164ea1617abe8cee4c5d3692f17b58e6ea0f4"
+    },
+    {
+      "task_id": "R2-063",
+      "source_index": 230,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "5c7d37ee7cdeff458b92ad10d83ab60bad90dccbddcc0655e51ff763fb7124f4"
+    },
+    {
+      "task_id": "R2-064",
+      "source_index": 241,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "f39685fd67e0906eac7a909f642b33a183b57a6b3dfbf6bb8b2cd788408f0be9"
+    },
+    {
+      "task_id": "R2-065",
+      "source_index": 66,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "4ae2f223cdd19e69b4dfa5a42bc2eca126b0992dd117f7a8cac62b4ecd9dcef4"
+    },
+    {
+      "task_id": "R2-066",
+      "source_index": 341,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "b237cad47eeb44546c4d64cd94c9d3ab0bc3ae00843f58f23237807b4092a8e0"
+    },
+    {
+      "task_id": "R2-067",
+      "source_index": 308,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "880f25fa4a87ec50a5652887e59367ffcff90f615c5fe91e2727338f7dfeeedb"
+    },
+    {
+      "task_id": "R2-068",
+      "source_index": 219,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "ddd757b2ed70987653c615ca6c312f87ab82bd71ab89cd33acf492c8670b40db"
+    },
+    {
+      "task_id": "R2-069",
+      "source_index": 87,
+      "sampling_stratum": "low_info",
+      "deidentified_text_sha256": "000887cd6791bfc6c91c63b4285c1a1464952bcab2454afe1c7170d93759568f"
+    },
+    {
+      "task_id": "R2-070",
+      "source_index": 179,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "4ff016a5bc5ab6b70fa51e1dc2bd7fda11179830f9cb6152d1f8480a75091a7e"
+    },
+    {
+      "task_id": "R2-071",
+      "source_index": 180,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "65dcfbac3f0736b7d2cc19cd4d92297a290636dffd0b6f63c296a54c0c560b57"
+    },
+    {
+      "task_id": "R2-072",
+      "source_index": 137,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "97840dabf4a02ece4b9fd2380d922ac8a71cd3d0eae587f5080d9dcf2440802e"
+    },
+    {
+      "task_id": "R2-073",
+      "source_index": 204,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "fd4340155d9df69e8819db1621fd5e05bff261ac9f45811b093608359b77ba22"
+    },
+    {
+      "task_id": "R2-074",
+      "source_index": 158,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "942d8e28529c01a850320ed0dae55e727871c2fdfbc879ad5955a8ec7eaa1f02"
+    },
+    {
+      "task_id": "R2-075",
+      "source_index": 85,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "92adda15134da8f0aafd91d033fc8d06f05c968de4903afab99a3c0629d858db"
+    },
+    {
+      "task_id": "R2-076",
+      "source_index": 276,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "f24ab490a79258f3f55fb4dfbae8e59c2c0a2c426379b5de75c51e534ef32891"
+    },
+    {
+      "task_id": "R2-077",
+      "source_index": 59,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "4fb69fc2f356d6e7d738a59eff79f6c5d80b898e1540d25121c5d485cd05bc31"
+    },
+    {
+      "task_id": "R2-078",
+      "source_index": 280,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "e3d5b7ff683055cfea329d10fabf480545559069a56eae34c9302674eaa2d02f"
+    },
+    {
+      "task_id": "R2-079",
+      "source_index": 44,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "ed2e9dcb2533827f508c9cf23980c44dbb644929de5b4d0a2b955f751de8f5cb"
+    },
+    {
+      "task_id": "R2-080",
+      "source_index": 347,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "93078417c355a27704a3bd219c30a25806674506559d75ac942a6ef5faae0281"
+    },
+    {
+      "task_id": "R2-081",
+      "source_index": 173,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "4b9933e1493b75e18a77b24dc1ce8e0e4141e43d363001576ca9bf4ca1818209"
+    },
+    {
+      "task_id": "R2-082",
+      "source_index": 52,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "f7fad8bc39d35ecba8fe633273a2190bfe272474be700b26c4b2547f9877a46f"
+    },
+    {
+      "task_id": "R2-083",
+      "source_index": 102,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "9998ea50ac71bd39e8934f7d0c0c1749277a5cd108d9c56d25e8cff9b8815dd1"
+    },
+    {
+      "task_id": "R2-084",
+      "source_index": 22,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "707dd61ae1d0e0cad957b640a4c5e9eb4aaf7fb0997093b9de3ae0e44c2ebcaf"
+    },
+    {
+      "task_id": "R2-085",
+      "source_index": 28,
+      "sampling_stratum": "blank",
+      "deidentified_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "task_id": "R2-086",
+      "source_index": 135,
+      "sampling_stratum": "blank",
+      "deidentified_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "task_id": "R2-087",
+      "source_index": 23,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "9a59030ba62fe9fe8067415b53cbb2ba32badc6fbb1e020e576a4d18b68a155b"
+    },
+    {
+      "task_id": "R2-088",
+      "source_index": 338,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "47160b086545510ac444690b0618b549fd53c9a37c2e4bcfb90a03cf876120fa"
+    },
+    {
+      "task_id": "R2-089",
+      "source_index": 175,
+      "sampling_stratum": "chest",
+      "deidentified_text_sha256": "d44ad2541307f669af15952ed2295d8559d81874e60ec2c0c9060dd0ebfc0200"
+    },
+    {
+      "task_id": "R2-090",
+      "source_index": 142,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "53d89b0300e0ef29b39f497a334fe7c3b07f95406533b93ab1191dd690c7b128"
+    },
+    {
+      "task_id": "R2-091",
+      "source_index": 94,
+      "sampling_stratum": "blank",
+      "deidentified_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "task_id": "R2-092",
+      "source_index": 224,
+      "sampling_stratum": "pathogen",
+      "deidentified_text_sha256": "bb9f3ba850d16238ef6b42bcf38a935e825be00906342e5ecc4426129624896d"
+    },
+    {
+      "task_id": "R2-093",
+      "source_index": 300,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "f4d498606d8ecac02b372a4982cca7a684b00f2f14beacc06df183a60781933d"
+    },
+    {
+      "task_id": "R2-094",
+      "source_index": 73,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "b1d5db57a5ad235e6c9221726778ec794ddda600b75bc31b917d46b149b6aa4f"
+    },
+    {
+      "task_id": "R2-095",
+      "source_index": 247,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "fd550d2fa99d2cc9120a0ed3f196c9d238b882f4cb377d090935bca2d0e1dd0f"
+    },
+    {
+      "task_id": "R2-096",
+      "source_index": 127,
+      "sampling_stratum": "other",
+      "deidentified_text_sha256": "e89e5b176debeda3078ac2a1ec16318717c07e57b0bcc4bbeecb121ca2cdb6bd"
+    },
+    {
+      "task_id": "R2-097",
+      "source_index": 136,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "84ba945046b3786fd1bf678e9f5ff95474afa933f3b13f188a0730f5bb066a6b"
+    },
+    {
+      "task_id": "R2-098",
+      "source_index": 159,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "a218aae3343f023e149b3e988e1a160d49240daf419465635bbd9e8525bcadd8"
+    },
+    {
+      "task_id": "R2-099",
+      "source_index": 33,
+      "sampling_stratum": "acute_resp",
+      "deidentified_text_sha256": "7e7ecc365837ee3ce6e1b47e149d636256c0613ca8724ee666e053f16b267f1e"
+    },
+    {
+      "task_id": "R2-100",
+      "source_index": 268,
+      "sampling_stratum": "direct",
+      "deidentified_text_sha256": "b116ce68d585aa0333f359c4cb948e65836626918e1a9b9dd9afeba455efb8e4"
+    }
+  ]
+}

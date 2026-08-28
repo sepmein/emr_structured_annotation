@@ -1,0 +1,78 @@
+{
+  "run_id": "round-00",
+  "guide_version": "0.1.0",
+  "xml_sha256": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+  "tasks": [
+    {
+      "task_id": "T001",
+      "entities": [
+        {"text": "发热", "label": "发热"},
+        {"text": "无", "label": "否定"}
+      ],
+      "relations": [{"type": "状态", "from_text": "无", "to_text": "发热"}],
+      "case_judgment": "非目标病例",
+      "evidence": "无肺炎诊断/肺部感染/肺部组织炎症；发热被否定",
+      "issue_refs": ["ISS-001", "ISS-004"]
+    },
+    {
+      "task_id": "T002",
+      "entities": [
+        {"text": "发热", "label": "发热"},
+        {"text": "今", "label": "当前"},
+        {"text": "仍有", "label": "持续"},
+        {"text": "右肺炎症", "label": "肺部组织炎症"},
+        {"text": "肺炎", "label": "肺炎诊断"}
+      ],
+      "relations": [
+        {"type": "时间", "from_text": "今", "to_text": "发热"},
+        {"type": "时间", "from_text": "仍有", "to_text": "发热"}
+      ],
+      "case_judgment": "目标病例信号",
+      "evidence": "当前仍有发热，CT明示右肺炎症，且以肺炎收住院",
+      "issue_refs": ["ISS-001", "ISS-002", "ISS-003"]
+    },
+    {
+      "task_id": "T003",
+      "entities": [
+        {"text": "现", "label": "当前"},
+        {"text": "仍有", "label": "持续"}
+      ],
+      "relations": [],
+      "case_judgment": "需专业复核",
+      "evidence": "当前文本有复杂胸部病程，但当前XML无咳嗽、胸腔积液、支气管胸膜瘘或通用时间表达标签，无法形成完整证据链",
+      "issue_refs": ["ISS-001", "ISS-002", "ISS-005"]
+    },
+    {
+      "task_id": "T004",
+      "entities": [
+        {"text": "发热", "label": "发热"},
+        {"text": "今日", "label": "当前"},
+        {"text": "今", "label": "当前"},
+        {"text": "现", "label": "当前"}
+      ],
+      "relations": [
+        {"type": "时间", "from_text": "今日", "to_text": "发热"},
+        {"type": "时间", "from_text": "现", "to_text": "发热"}
+      ],
+      "case_judgment": "非目标病例",
+      "evidence": "存在当前发热，但无肺炎诊断、肺部感染或肺部组织炎症证据",
+      "issue_refs": ["ISS-001", "ISS-002", "ISS-003", "ISS-004"]
+    },
+    {
+      "task_id": "T005",
+      "entities": [
+        {"text": "发热", "label": "发热"},
+        {"text": "无", "label": "否定"},
+        {"text": "外出外来史", "label": "外出外来史"},
+        {"text": "无", "label": "否定"}
+      ],
+      "relations": [
+        {"type": "状态", "from_text": "无", "to_text": "发热"},
+        {"type": "状态", "from_text": "无", "to_text": "外出外来史"}
+      ],
+      "case_judgment": "非目标病例",
+      "evidence": "糖尿病复诊；相关症状和旅居史均被否定，无肺炎证据",
+      "issue_refs": ["ISS-001", "ISS-002"]
+    }
+  ]
+}

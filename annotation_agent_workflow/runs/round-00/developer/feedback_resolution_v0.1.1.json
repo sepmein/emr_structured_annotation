@@ -1,0 +1,61 @@
+{
+  "guide_version": "0.1.1",
+  "input_feedback": "../annotator/annotator_feedback.json",
+  "resolutions": [
+    {
+      "issue_id": "ISS-001",
+      "disposition": "defer",
+      "rationale": "咳嗽/咳痰出现频繁，但是否改变病例复核入口尚未确认；仅凭医学常见性不足以新增标签。",
+      "decision_impact": "可能影响未明确诊断病例是否进入复核",
+      "complexity_cost": "medium",
+      "guide_change": "明确当前不得私创，并将症状触发复核列为负责人决策点",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["急性咳嗽伴发热但无影像", "长期咳嗽", "单纯轻症咳嗽"]
+    },
+    {
+      "issue_id": "ISS-002",
+      "disposition": "accept",
+      "rationale": "明确时间直接决定证据近期性，当前XML确实无法表达。",
+      "decision_impact": "影响历史/当前证据计入",
+      "complexity_cost": "low",
+      "guide_change": "提出一个通用时间表达；现XML未更新前继续登记不一致",
+      "schema_change": "add",
+      "back_annotation_required": true,
+      "validation_case_types": ["明确日期", "相对时间", "时长", "观察窗口", "病程第几天"]
+    },
+    {
+      "issue_id": "ISS-003",
+      "disposition": "clarify",
+      "rationale": "这些表达主要影响活动性/优先级，可通过少量归并而不是新增多个按钮。",
+      "decision_impact": "影响复核优先级，不单独决定纳入",
+      "complexity_cost": "low",
+      "guide_change": "无好转/效不佳暂归持续语义；单次今日加重不等于进行性加重；好转暂不标",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["仍有", "无好转", "今日加重", "逐渐加重", "好转"]
+    },
+    {
+      "issue_id": "ISS-004",
+      "disposition": "defer",
+      "rationale": "这是病例级目标定义，不应由指南开发者代替负责人决定。",
+      "decision_impact": "直接改变非目标与需复核边界",
+      "complexity_cost": "high",
+      "guide_change": "列为发布前必须确认；Round 0保守判单纯轻症为非目标",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": ["症状组合无影像", "只有发热", "只有咳嗽", "症状伴低氧"]
+    },
+    {
+      "issue_id": "ISS-005",
+      "disposition": "clarify",
+      "rationale": "标注者不得推断肺炎；为防止复杂病例被直接排除，Round 0暂放需专业复核。",
+      "decision_impact": "改变复杂胸部疾病是否进入复核",
+      "complexity_cost": "low",
+      "guide_change": "增加保守暂行规则，同时列为负责人确认项",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["胸水/引流无肺炎原词", "术后胸部异常", "肺部疾病但诊断不清"]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "issue_id": "ISSUE-R3B-002",
+    "category": "xml_guide_mismatch",
+    "severity": "major",
+    "affected_tasks": ["R3-113", "R3-137", "R3-140", "R3-145", "R3-148", "R3-149"],
+    "affected_labels": ["咳嗽", "咳痰", "气促/呼吸困难"],
+    "evidence_excerpt": "咳嗽、咳痰；无气促",
+    "observed_problem": "前块问题复现：病例级判断依赖的常见呼吸症状在锁定XML中没有实体标签。",
+    "question": "生产XML更新前是否继续只在evidence中保留这些症状？",
+    "decision_impact": "不改变病例级判断，但结构化触发链不完整。",
+    "temporary_action": "不私建标签，仅保留最小原文证据。",
+    "suggested_options": ["后续XML加入缺失症状", "校准期明确不计这些实体漏标"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-003",
+    "category": "data_quality",
+    "severity": "major",
+    "affected_tasks": ["R3-108", "R3-114", "R3-119", "R3-131", "R3-134", "R3-135", "R3-136", "R3-138", "R3-139"],
+    "affected_labels": ["data_issue", "case_decision"],
+    "evidence_excerpt": "空文本；前症；上症；如前",
+    "observed_problem": "前块问题复现：空文本或依赖缺失上文的记录只能使用data_issue=other。",
+    "question": "是否增加empty_text、missing_context或other说明字段？",
+    "decision_impact": "均判信息不足，但数据修复路径不能结构化区分。",
+    "temporary_action": "使用other并通过issue_refs标识。",
+    "suggested_options": ["增加专门枚举", "为other增加必填说明字段"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-004",
+    "category": "boundary",
+    "severity": "major",
+    "affected_tasks": ["R3-148"],
+    "affected_labels": ["case_decision"],
+    "evidence_excerpt": "支气管扩张伴感染；咳嗽咳痰明显，较前未见好转；更改抗生素",
+    "observed_problem": "前块边界复现：支扩伴感染症状未改善并更换抗生素，但缺少发热、低氧或湿啰音。",
+    "question": "该组合是否足以按B6进入待专业复核？",
+    "decision_impact": "可能在待专业复核与非目标之间改变分类。",
+    "temporary_action": "按B6保守判待专业复核。",
+    "suggested_options": ["明确B6症状加重最低证据组合", "要求客观体征后再进入待复核"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-005",
+    "category": "boundary",
+    "severity": "major",
+    "affected_tasks": ["R3-140", "R3-145"],
+    "affected_labels": ["case_decision"],
+    "evidence_excerpt": "咳嗽、咳痰；两肺可闻及湿罗音",
+    "observed_problem": "B1要求急性发热加呼吸证据，而本例无发热信息；B3的“性质或活动性不明的肺/胸部异常”是否包括当前湿啰音未明确。",
+    "question": "急性咳嗽咳痰伴湿啰音、无发热信息时，应按B3判待专业复核还是按未命中显式条件判非目标？",
+    "decision_impact": "直接改变待专业复核与非目标分类。",
+    "temporary_action": "将湿啰音视为当前性质不明肺部异常，判待专业复核。",
+    "suggested_options": ["明确B3包含影像、听诊和其他肺部体征", "若B3仅限影像，在规则中明确排除单独湿啰音"]
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "proposal_version": "0.1.0",
+  "approval_status": "proposed",
+  "current_xml": {
+    "adult_sha256": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child_sha256": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "changes": [
+    {
+      "id": "SC-001",
+      "module": "time",
+      "proposal": "用一个通用时间表达实体补足日期、时长和病程日序；事件时态与病程变化分开",
+      "decision_role": "区分当前/近期、既往和计划证据，避免把历史或计划事件计入当前病例",
+      "complexity_control": "优先一个时间跨度标签和少量事件属性，不拆分绝对/相对/频率按钮",
+      "status": "requires_pilot"
+    },
+    {
+      "id": "SC-002",
+      "module": "relations",
+      "proposal": "评估是否将人工界面关系简化为通用关联，再由端点类型归一化",
+      "decision_role": "降低关系选择错误，同时保留证据归属",
+      "complexity_control": "仅在5例和20例试标证明可稳定归一化后采用",
+      "status": "requires_pilot"
+    },
+    {
+      "id": "SC-003",
+      "module": "treatment",
+      "proposal": "把机械通气从症状组调整为治疗/支持措施，或明确当前分组仅为技术实现",
+      "decision_role": "只影响复核优先级和证据解释",
+      "complexity_control": "不新增标签，仅调整归属或指南解释",
+      "status": "requires_owner_decision"
+    }
+  ],
+  "unresolved_blockers": [
+    "病例级目标病例定义尚未由项目负责人正式确认",
+    "时间表达在当前XML中无法标注",
+    "病原检测结果与病原体实体的表达方式需要在试标中验证"
+  ]
+}

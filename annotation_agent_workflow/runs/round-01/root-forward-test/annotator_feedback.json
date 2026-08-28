@@ -1,0 +1,112 @@
+{
+  "run_id": "round-01-root-forward-test",
+  "guide_version": "0.2.0",
+  "xml_sha256": "adult:b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5;child:68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50",
+  "sample": {"total": 20, "completed": 20, "blocked": 0},
+  "issues": [
+    {
+      "issue_id": "R1-ISS-001",
+      "category": "decision_relevance",
+      "severity": "major",
+      "affected_tasks": ["R1-002","R1-006","R1-008","R1-010","R1-012","R1-013","R1-015","R1-017"],
+      "affected_labels": ["咳嗽","咳痰","气促"],
+      "evidence_excerpt": "发热1天，偶有咳嗽，双肺呼吸音粗",
+      "observed_problem": "这些症状直接决定非目标与待专业复核的边界，但当前XML没有对应实体按钮，只能作为病例级原文证据。",
+      "question": "是否把咳嗽、咳痰、气促加入最小症状集合？",
+      "decision_impact": "改变非目标与待专业复核的区分，并影响证据可追溯性。",
+      "temporary_action": "本轮只在病例级最小证据中记录，不私创实体。",
+      "suggested_options": ["加入三个最小症状实体", "继续只记录病例级原文证据并由规则抽取"]
+    },
+    {
+      "issue_id": "R1-ISS-002",
+      "category": "xml_guide_mismatch",
+      "severity": "major",
+      "affected_tasks": ["R1-005","R1-006","R1-008","R1-010","R1-011","R1-012","R1-013","R1-015","R1-017"],
+      "affected_labels": ["时间表达","当前","既往","持续","进行性加重"],
+      "evidence_excerpt": "1周前；2025-02-16；反复咳嗽咳痰20年；今日输液第4天",
+      "observed_problem": "当前XML只有四个语义标签，不能直接保存日期、时长和病程日序，人工会在是否把具体日期标为既往上产生分歧。",
+      "question": "是否增加一个通用时间表达跨度，并把归一化留给后处理？",
+      "decision_impact": "影响当前/近期与长期/既往的病例纳入和优先级。",
+      "temporary_action": "XML存在按钮时按原义标；具体日期和时长仅放入病例证据并记录问题。",
+      "suggested_options": ["增加一个通用时间表达跨度", "完全由自动算法抽取时间并保留人工纠错"]
+    },
+    {
+      "issue_id": "R1-ISS-003",
+      "category": "definition_missing",
+      "severity": "major",
+      "affected_tasks": ["R1-011","R1-012"],
+      "affected_labels": ["当前","持续"],
+      "evidence_excerpt": "胸部CT：两肺炎症；现患者神清精神好；咳嗽好转",
+      "observed_problem": "近期明确肺部炎症已经改善或出院时，是否仍算目标病例信号缺少可操作窗口。",
+      "question": "目标病例信号是否包含同次就诊/住院内已改善的近期肺炎？",
+      "decision_impact": "可能把目标病例信号改为非目标或降低复核优先级。",
+      "temporary_action": "本轮保留目标/待复核结论，同时用好转证据降低优先级。",
+      "suggested_options": ["同次就诊/住院内直接证据仍纳入，另记活动性", "仅保留文档当前仍活动的肺炎"]
+    },
+    {
+      "issue_id": "R1-ISS-004",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": ["R1-005","R1-007"],
+      "affected_labels": ["肺部组织炎症","肺部感染","肺炎诊断"],
+      "evidence_excerpt": "右侧脓胸；两肺散见纤维条索影及小斑片状影",
+      "observed_problem": "复杂胸膜疾病和性质不明的小斑片影是肺/胸部异常，但不等同于肺实质炎症或肺炎。",
+      "question": "哪些影像或胸部异常可以直接进入目标病例，哪些只能待专业复核？",
+      "decision_impact": "直接影响目标病例信号与待专业复核的边界。",
+      "temporary_action": "无明确肺炎、肺部感染、炎症或实变时不标直接肺部证据，病例进入待专业复核。",
+      "suggested_options": ["建立直接证据白名单", "所有肺/胸部异常均待专业复核"]
+    },
+    {
+      "issue_id": "R1-ISS-005",
+      "category": "definition_missing",
+      "severity": "major",
+      "affected_tasks": ["R1-006","R1-011"],
+      "affected_labels": ["肯定","否定","可疑"],
+      "evidence_excerpt": "呼吸道合胞病毒IgM弱阳性；痰培养见耐药肺炎克雷伯菌",
+      "observed_problem": "弱阳性、可疑阳性、检出、培养见和病原体名称本身的断言映射未完整规定。",
+      "question": "如何统一病原检测结果的肯定、否定和可疑映射？",
+      "decision_impact": "影响病原学证据解释和复核优先级，但病原体单独不决定肺炎纳入。",
+      "temporary_action": "弱阳性按报告阳性保守记录为肯定；明确‘可疑阳性/临界’才记录可疑。",
+      "suggested_options": ["把弱阳性归肯定并保留完整跨度", "增加结果强度属性"]
+    },
+    {
+      "issue_id": "R1-ISS-006",
+      "category": "relation",
+      "severity": "major",
+      "affected_tasks": ["R1-006","R1-011"],
+      "affected_labels": ["状态","标本","检测方式"],
+      "evidence_excerpt": "其他检验报告：肺炎支原体IgM阴性，肺炎衣原体IgM阴性，呼吸道合胞病毒IgM弱阳性",
+      "observed_problem": "并列病原体、重复检测和共享检测方式时，如果不按项目逐一连边，容易把阴性或标本连给错误病原体。",
+      "question": "关系应如何处理并列项目、共享修饰语和重复检测？",
+      "decision_impact": "影响证据解释，错误关系可能反转病原结果。",
+      "temporary_action": "只连接原文可唯一归属的端点；不确定时不连并上报。",
+      "suggested_options": ["每个项目分别连边", "先标检测事件节点再连接病原体、标本和方法"]
+    },
+    {
+      "issue_id": "R1-ISS-007",
+      "category": "data_quality",
+      "severity": "minor",
+      "affected_tasks": ["R1-001","R1-004"],
+      "affected_labels": [],
+      "evidence_excerpt": "空文本",
+      "observed_problem": "无文本时不能产生任何医学标签。",
+      "question": "导入前是否自动拦截空白或仅有分隔符的任务？",
+      "decision_impact": "信息不足，不应进入医学标注工作量。",
+      "temporary_action": "病例级标信息不足，不产生实体。",
+      "suggested_options": ["导入前自动排除并记录原因", "保留少量空任务作质控陷阱"]
+    },
+    {
+      "issue_id": "R1-ISS-008",
+      "category": "data_quality",
+      "severity": "minor",
+      "affected_tasks": ["R1-005"],
+      "affected_labels": [],
+      "evidence_excerpt": "现患者仍有咳胸水",
+      "observed_problem": "疑似字段拼接或文本截断导致语义不通，不能确定原始症状。",
+      "question": "遇到明显拼接错误时是否允许根据上下文纠正？",
+      "decision_impact": "可能影响症状解释，但本例不改变待专业复核结论。",
+      "temporary_action": "不纠正文，不标该片段并记录数据问题。",
+      "suggested_options": ["只标原文明确部分", "返回数据源修复后重标"]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "guide_version": "2.0.1",
+  "resolved_at": "2026-08-28",
+  "input_feedback": [
+    {
+      "feedback_id": "USR-LABEL-DETAIL-001",
+      "source": "project_owner",
+      "summary": "逐标签清单过于简单，需要为每条内容提供详细医学定义。"
+    }
+  ],
+  "resolutions": [
+    {
+      "feedback_id": "USR-LABEL-DETAIL-001",
+      "disposition": "clarify",
+      "rationale": "原表格适合速查，但不足以让有医学背景、缺少标注经验的人员独立区分医学概念、项目操作边界和病例判断作用。",
+      "guide_change": "将病例级分类、全部当前XML实体、五类关系和外部数据问题字段扩展为独立定义卡；每卡包含医学定义、项目操作定义、纳入、排除、跨度或表单规则、关系或端点、病例作用、两个正例、近似反例和混淆裁决。",
+      "decision_impact": "提高标签边界的可解释性和可重复性；不改变病例四分类、待复核B1-B6入口或生产Schema。",
+      "complexity_cost": "文档长度显著增加；Label Studio界面复杂度不增加。",
+      "schema_change": "none",
+      "production_xml_changed": false,
+      "back_annotation_required": false,
+      "validation_case_types": [
+        "病原名称与肺炎诊断子串混淆",
+        "血清IgM与呼吸道直接检出混淆",
+        "症状中的痰与检验标本痰混淆",
+        "阴性或计划检测误当阳性",
+        "检验项目跨行错配",
+        "暴露线索误当病原阳性"
+      ]
+    }
+  ]
+}

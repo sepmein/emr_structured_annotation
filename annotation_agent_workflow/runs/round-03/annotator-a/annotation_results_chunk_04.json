@@ -1,0 +1,520 @@
+{
+  "run_id": "round-03-annotator-a-chunk-04",
+  "guide_version": "2.0.1",
+  "schema_manifest_version": "2.0.1",
+  "tasks": [
+    {
+      "task_id": "R3-151",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["蛋白尿复诊检查", "目前病情稳定"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-152",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者白蛋白尿后复诊。泌尿外科门诊"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-153",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["真性红细胞增多症", "冠状动脉粥样硬化性心脏病"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-154",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["胸闷气急改善，呼吸平稳", "双肺呼吸音粗，无干湿性啰音"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-155",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-156",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["前列腺增生复诊。", "双肺呼吸音清晰，未闻及干湿性罗音"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-157",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["慢性鼻炎配药，目前病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-158",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["患者病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-159",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["发热4天。", "不伴咳嗽，无咽痛，无鼻塞，无流涕"],
+      "entities": [
+        {"id": "R3-159-E1", "start": 5, "end": 7, "label": "发热", "text": "发热"}
+      ],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-160",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["糖尿病代配药", "血糖控制稳定，无不适"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-161",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-162",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者支气管扩张配药，目前病情稳定", "鼻涕，咳嗽，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["duplicate_text"],
+      "issue_refs": ["R3A-C04-ISS-001"]
+    },
+    {
+      "task_id": "R3-163",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["心力衰竭复诊", "服药后心悸胸闷好转"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-164",
+      "annotation_status": "completed",
+      "case_decision": "待专业复核",
+      "evidence": ["患者咳嗽 3天，咳痰少，咽痒明显。无发热", "左肺上叶及右肺中叶磨玻璃微结节，右肺中叶粟粒结节"],
+      "entities": [
+        {"id": "R3-164-E1", "start": 38, "end": 40, "label": "发热", "text": "发热"},
+        {"id": "R3-164-E2", "start": 37, "end": 38, "label": "否定", "text": "无"}
+      ],
+      "relations": [
+        {"from_id": "R3-164-E2", "to_id": "R3-164-E1", "relation_type": "状态"}
+      ],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-165",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["头晕3个月。", "双肺听诊呼吸音清，未及干湿罗音"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["truncated"],
+      "issue_refs": ["R3A-C01-ISS-002"]
+    },
+    {
+      "task_id": "R3-166",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-167",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["急性胃肠炎 复诊配药。", "病情平稳无特殊。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-168",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["慢性病复诊，病史同前", "症状好转，无明显不适主诉，维持原治疗。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-003"]
+    },
+    {
+      "task_id": "R3-169",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["高血压复诊，无不适"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-170",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["前症复诊配药", "如前"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-003"]
+    },
+    {
+      "task_id": "R3-171",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["糖尿病复诊配药", "血糖稳定，无明显不适主诉"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-172",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-173",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["目前病情稳定，服用目前药物无明显药物不良反应，无明显不适。", "查体同既往"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-003"]
+    },
+    {
+      "task_id": "R3-174",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["高脂血症 复诊配药。", "病情平稳无特殊。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-175",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["诊断“未分化型精神分裂症”", "患者出现言行紊乱"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-176",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者血糖升高多年史", "近日有咳嗽咳痰。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["duplicate_text"],
+      "issue_refs": ["R3A-C04-ISS-001"]
+    },
+    {
+      "task_id": "R3-177",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者呼吸道感染配药，目前病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-178",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["糖尿病复诊配药", "双肺呼吸音清"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-179",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者高血压复诊", "近来受寒后出现鼻塞、流清涕等不适。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-180",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["冠心病复诊配药，无不适", "未闻及干湿啰音"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-181",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["计划生育查环。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-182",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["鼻流涕一月。", "无明显头痛、发热不适"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-183",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者血糖升高多年史", "近日有咳嗽咳痰。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["duplicate_text"],
+      "issue_refs": ["R3A-C04-ISS-001"]
+    },
+    {
+      "task_id": "R3-184",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["配药，目前病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-185",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["未获得试验结果"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-186",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-187",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-188",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["复诊"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-003"]
+    },
+    {
+      "task_id": "R3-189",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["睡眠障碍", "目前病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-190",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-191",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-192",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["无恶心、乏力，腹痛、腹泻，大小便正常", "呼吸平稳"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-193",
+      "annotation_status": "completed",
+      "case_decision": "待专业复核",
+      "evidence": ["发热2天 无咳嗽", "双肺呼吸音粗"],
+      "entities": [
+        {"id": "R3-193-E1", "start": 5, "end": 7, "label": "发热", "text": "发热"},
+        {"id": "R3-193-E2", "start": 381, "end": 386, "label": "肺炎支原体", "text": "肺炎支原体"},
+        {"id": "R3-193-E3", "start": 397, "end": 399, "label": "否定", "text": "阴性"}
+      ],
+      "relations": [
+        {"from_id": "R3-193-E3", "to_id": "R3-193-E2", "relation_type": "状态"}
+      ],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-194",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    },
+    {
+      "task_id": "R3-195",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["过敏性皮炎", "口腔黏膜溃疡"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-196",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["患者要求完善检查。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-197",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["面部散在白色丘疹。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["none"],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R3-198",
+      "annotation_status": "completed",
+      "case_decision": "非目标",
+      "evidence": ["患者血糖升高多年史", "近日有咳嗽咳痰。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["duplicate_text"],
+      "issue_refs": ["R3A-C04-ISS-001"]
+    },
+    {
+      "task_id": "R3-199",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": ["患者上症复诊配药。", "配药，目前病情稳定，维持原治疗方案。"],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-003"]
+    },
+    {
+      "task_id": "R3-200",
+      "annotation_status": "completed",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "relations": [],
+      "data_issue": ["other"],
+      "issue_refs": ["R3A-C01-ISS-001"]
+    }
+  ]
+}

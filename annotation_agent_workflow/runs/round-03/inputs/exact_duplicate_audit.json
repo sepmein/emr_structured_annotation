@@ -1,0 +1,226 @@
+{
+  "input": "annotation_agent_workflow/runs/round-03/inputs/pilot_cases_200.json",
+  "total_tasks": 200,
+  "unique_exact_texts": 158,
+  "duplicate_groups": [
+    {
+      "text_sha256": "34f56400e18079a0be822ed48e4b4e86f94705cf95c01eb371bad24471c70069",
+      "blank": false,
+      "task_ids": [
+        "R3-004",
+        "R3-032"
+      ],
+      "primary_representative": "R3-004",
+      "excluded_from_unique_text_analysis": [
+        "R3-032"
+      ]
+    },
+    {
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blank": true,
+      "task_ids": [
+        "R3-010",
+        "R3-014",
+        "R3-015",
+        "R3-022",
+        "R3-025",
+        "R3-028",
+        "R3-054",
+        "R3-080",
+        "R3-081",
+        "R3-086",
+        "R3-087",
+        "R3-089",
+        "R3-100",
+        "R3-114",
+        "R3-119",
+        "R3-134",
+        "R3-136",
+        "R3-155",
+        "R3-161",
+        "R3-166",
+        "R3-172",
+        "R3-186",
+        "R3-187",
+        "R3-190",
+        "R3-191",
+        "R3-194",
+        "R3-200"
+      ],
+      "primary_representative": "R3-010",
+      "excluded_from_unique_text_analysis": [
+        "R3-014",
+        "R3-015",
+        "R3-022",
+        "R3-025",
+        "R3-028",
+        "R3-054",
+        "R3-080",
+        "R3-081",
+        "R3-086",
+        "R3-087",
+        "R3-089",
+        "R3-100",
+        "R3-114",
+        "R3-119",
+        "R3-134",
+        "R3-136",
+        "R3-155",
+        "R3-161",
+        "R3-166",
+        "R3-172",
+        "R3-186",
+        "R3-187",
+        "R3-190",
+        "R3-191",
+        "R3-194",
+        "R3-200"
+      ]
+    },
+    {
+      "text_sha256": "377128c19a86bf6b14acf5e65bb87e53a9c585da5ceb00d1610cc866013a70cd",
+      "blank": false,
+      "task_ids": [
+        "R3-012",
+        "R3-092",
+        "R3-177"
+      ],
+      "primary_representative": "R3-012",
+      "excluded_from_unique_text_analysis": [
+        "R3-092",
+        "R3-177"
+      ]
+    },
+    {
+      "text_sha256": "2bab0a64bc869b4a0973ec577886601bcea426762334ec178aa67f57293f273f",
+      "blank": false,
+      "task_ids": [
+        "R3-024",
+        "R3-097",
+        "R3-179"
+      ],
+      "primary_representative": "R3-024",
+      "excluded_from_unique_text_analysis": [
+        "R3-097",
+        "R3-179"
+      ]
+    },
+    {
+      "text_sha256": "3b6ce1a2b736c1464aa857fb4c2a576b3341c9cc0e199d9bf904db14bdd6fbf9",
+      "blank": false,
+      "task_ids": [
+        "R3-038",
+        "R3-072",
+        "R3-093",
+        "R3-127",
+        "R3-189"
+      ],
+      "primary_representative": "R3-038",
+      "excluded_from_unique_text_analysis": [
+        "R3-072",
+        "R3-093",
+        "R3-127",
+        "R3-189"
+      ]
+    },
+    {
+      "text_sha256": "eac601049ef0a95215ce86a8763d59320e6372b5a42264c12818c7718256aa12",
+      "blank": false,
+      "task_ids": [
+        "R3-059",
+        "R3-148"
+      ],
+      "primary_representative": "R3-059",
+      "excluded_from_unique_text_analysis": [
+        "R3-148"
+      ]
+    },
+    {
+      "text_sha256": "00f511c7488e6e14ac6835bfabb1a72af7ac5544204a101227142a95d5923fdc",
+      "blank": false,
+      "task_ids": [
+        "R3-076",
+        "R3-095",
+        "R3-139",
+        "R3-170"
+      ],
+      "primary_representative": "R3-076",
+      "excluded_from_unique_text_analysis": [
+        "R3-095",
+        "R3-139",
+        "R3-170"
+      ]
+    },
+    {
+      "text_sha256": "590095a74b81b3823e7767670d096b200c516816098d673625bd334aa004e953",
+      "blank": false,
+      "task_ids": [
+        "R3-082",
+        "R3-188"
+      ],
+      "primary_representative": "R3-082",
+      "excluded_from_unique_text_analysis": [
+        "R3-188"
+      ]
+    },
+    {
+      "text_sha256": "6be8fc15d8d0ab3bb583af70a828c5f2d48984d434b2c77244e9e0e96aeeb099",
+      "blank": false,
+      "task_ids": [
+        "R3-176",
+        "R3-183",
+        "R3-198"
+      ],
+      "primary_representative": "R3-176",
+      "excluded_from_unique_text_analysis": [
+        "R3-183",
+        "R3-198"
+      ]
+    }
+  ],
+  "excluded_duplicate_tasks": [
+    "R3-032",
+    "R3-014",
+    "R3-015",
+    "R3-022",
+    "R3-025",
+    "R3-028",
+    "R3-054",
+    "R3-080",
+    "R3-081",
+    "R3-086",
+    "R3-087",
+    "R3-089",
+    "R3-100",
+    "R3-114",
+    "R3-119",
+    "R3-134",
+    "R3-136",
+    "R3-155",
+    "R3-161",
+    "R3-166",
+    "R3-172",
+    "R3-186",
+    "R3-187",
+    "R3-190",
+    "R3-191",
+    "R3-194",
+    "R3-200",
+    "R3-092",
+    "R3-177",
+    "R3-097",
+    "R3-179",
+    "R3-072",
+    "R3-093",
+    "R3-127",
+    "R3-189",
+    "R3-148",
+    "R3-095",
+    "R3-139",
+    "R3-170",
+    "R3-188",
+    "R3-183",
+    "R3-198"
+  ],
+  "primary_analysis_rule": "Keep first deterministic representative per exact de-identified text; retain all task-level annotations for audit."
+}

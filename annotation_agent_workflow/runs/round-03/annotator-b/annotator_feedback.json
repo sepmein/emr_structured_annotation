@@ -1,0 +1,236 @@
+{
+  "run_id": "round-03-annotator-b",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {
+    "total": 200,
+    "completed": 200,
+    "blocked": 0
+  },
+  "issues": [
+    {
+      "issue_id": "ISSUE-R3B-001",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-002"
+      ],
+      "affected_labels": [
+        "case_decision"
+      ],
+      "evidence_excerpt": "支气管扩张感染，今年急性加重6次；氧饱和度93%",
+      "observed_problem": "结构性肺病伴一年内多次急性加重且当前氧饱和度偏低，但本次为配药、治疗后好转，文本未说明最近一次加重与索引就诊的时间距离。",
+      "question": "B5中的“近期加重”应采用何种时间窗口，治疗后好转但仍有低氧是否仍进入待专业复核？",
+      "decision_impact": "可能在待专业复核与非目标之间改变病例级判断。",
+      "temporary_action": "按B5保守判待专业复核，不把支气管扩张感染标成肺部感染实体。",
+      "suggested_options": [
+        "给出近期加重的建议时间窗口并说明治疗后好转的处理",
+        "明确静息状态未写明时氧饱和度93%能否作为B5低氧证据"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-002",
+      "category": "xml_guide_mismatch",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-035",
+        "R3-039",
+        "R3-059",
+        "R3-060",
+        "R3-069",
+        "R3-073",
+        "R3-091",
+        "R3-113",
+        "R3-137",
+        "R3-140",
+        "R3-145",
+        "R3-148",
+        "R3-149",
+        "R3-154",
+        "R3-162",
+        "R3-164",
+        "R3-176",
+        "R3-183",
+        "R3-198"
+      ],
+      "affected_labels": [
+        "咳嗽",
+        "咳痰",
+        "气促/呼吸困难"
+      ],
+      "evidence_excerpt": "咳嗽，咳痰，发热",
+      "observed_problem": "病例级B1依赖咳嗽、咳痰等呼吸道症状，但锁定XML没有这些实体标签，无法用结构化实体完整表达触发链。",
+      "question": "在生产XML更新前，是否统一只把缺失症状保存在病例级evidence并保持entities为空？",
+      "decision_impact": "不改变病例级分类，但降低结构化导出的可解释性和实体一致性。",
+      "temporary_action": "仅保存最小原文证据；不私建推荐但未批准的症状标签。",
+      "suggested_options": [
+        "后续XML版本加入咳嗽、咳痰、气促/呼吸困难",
+        "在校准期明确缺失标签只进入evidence、不计实体漏标",
+        "将缺失症状纳入后续XML",
+        "明确校准期不计这些实体漏标",
+        "后续XML加入缺失症状",
+        "校准期明确不计这些实体漏标"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01",
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03",
+        "issue_notes_chunk_04"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-010",
+        "R3-014",
+        "R3-015",
+        "R3-022",
+        "R3-025",
+        "R3-028",
+        "R3-036",
+        "R3-041",
+        "R3-054",
+        "R3-063",
+        "R3-074",
+        "R3-076",
+        "R3-080",
+        "R3-081",
+        "R3-082",
+        "R3-085",
+        "R3-086",
+        "R3-087",
+        "R3-089",
+        "R3-095",
+        "R3-100",
+        "R3-108",
+        "R3-114",
+        "R3-119",
+        "R3-131",
+        "R3-134",
+        "R3-135",
+        "R3-136",
+        "R3-138",
+        "R3-139",
+        "R3-155",
+        "R3-161",
+        "R3-166",
+        "R3-170",
+        "R3-172",
+        "R3-173",
+        "R3-184",
+        "R3-186",
+        "R3-187",
+        "R3-188",
+        "R3-190",
+        "R3-191",
+        "R3-194",
+        "R3-199",
+        "R3-200"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "空文本；同上；待人工审核",
+      "observed_problem": "空文本、仅引用缺失上文和仅含流程占位语均只能判信息不足，但data_issue枚举没有empty_text或missing_context，只能归入other，无法区分修复路径。",
+      "question": "是否需要增加empty_text和missing_context，或为other增加必填的非敏感说明字段？",
+      "decision_impact": "病例级均为信息不足，但数据治理原因和返工优先级无法从结构化结果区分。",
+      "temporary_action": "统一使用data_issue=other，并通过issue_refs区分该组记录。",
+      "suggested_options": [
+        "增加empty_text与missing_context枚举",
+        "保留other但新增data_issue_note必填字段",
+        "增加专门枚举",
+        "为other增加必填说明字段"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01",
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03",
+        "issue_notes_chunk_04"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-004",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-059",
+        "R3-148"
+      ],
+      "affected_labels": [
+        "case_decision"
+      ],
+      "evidence_excerpt": "支气管扩张伴感染；咳嗽咳痰明显，较前未见好转；根据痰培养今更改抗生素",
+      "observed_problem": "稳定的支气管扩张伴感染应判非目标；本例出现症状未改善和抗生素调整，但无发热、低氧或湿啰音，是否达到B6的新发或加重门槛仍需统一。",
+      "question": "支扩患者仅有咳嗽咳痰未改善并更换抗生素，是否足以进入待专业复核？",
+      "decision_impact": "可能在待专业复核与非目标之间改变分类。",
+      "temporary_action": "按B6保守判待专业复核。",
+      "suggested_options": [
+        "明确B6中症状加重的最低证据组合",
+        "要求至少一项客观严重度或体征后再进入待复核",
+        "明确B6症状加重最低证据组合",
+        "要求客观体征后再进入待复核"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-005",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-140",
+        "R3-145"
+      ],
+      "affected_labels": [
+        "case_decision"
+      ],
+      "evidence_excerpt": "咳嗽、咳痰；两肺可闻及湿罗音",
+      "observed_problem": "B1要求急性发热加呼吸证据，而本例无发热信息；B3的“性质或活动性不明的肺/胸部异常”是否包括当前湿啰音未明确。",
+      "question": "急性咳嗽咳痰伴湿啰音、无发热信息时，应按B3判待专业复核还是按未命中显式条件判非目标？",
+      "decision_impact": "直接改变待专业复核与非目标分类。",
+      "temporary_action": "将湿啰音视为当前性质不明肺部异常，判待专业复核。",
+      "suggested_options": [
+        "明确B3包含影像、听诊和其他肺部体征",
+        "若B3仅限影像，在规则中明确排除单独湿啰音"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_03"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-006",
+      "category": "xml_guide_mismatch",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-164"
+      ],
+      "affected_labels": [
+        "肺/胸部异常",
+        "肺结节"
+      ],
+      "evidence_excerpt": "磨玻璃微结节；粟粒结节",
+      "observed_problem": "B3允许当前性质不明的肺/胸部异常触发待专业复核，但锁定XML只有肺炎诊断、肺部感染和肺部组织炎症，没有通用肺部异常或肺结节实体。",
+      "question": "B3触发证据在当前XML中是否统一只保存为病例级evidence？",
+      "decision_impact": "不改变病例级判断，但无法在结构化实体中复现B3触发依据。",
+      "temporary_action": "判待专业复核，保留原文证据，不把结节误标成肺部组织炎症。",
+      "suggested_options": [
+        "后续XML增加通用肺/胸异常或肺结节标签",
+        "明确B3证据在校准期不要求实体化"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_04"
+      ]
+    }
+  ]
+}

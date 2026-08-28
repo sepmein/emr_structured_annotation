@@ -1,0 +1,73 @@
+{
+  "run_id": "round-00",
+  "guide_version": "0.1.0",
+  "xml_sha256": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+  "sample": {"total": 5, "completed": 4, "blocked": 1},
+  "issues": [
+    {
+      "issue_id": "ISS-001",
+      "category": "decision_relevance",
+      "severity": "major",
+      "affected_tasks": ["T001", "T002", "T003", "T004", "T005"],
+      "affected_labels": ["咳嗽", "咳痰"],
+      "evidence_excerpt": "咳嗽、偶有咳痰、反复咳嗽5年余",
+      "observed_problem": "咳嗽和咳痰在多数呼吸病历中出现，但当前成人XML没有对应标签。若目标病例必须有肺部诊断证据，可不标；若需要从未明确诊断的病例中筛出需复核信号，则会漏掉候选证据。",
+      "question": "最终病例判断是否允许仅凭呼吸道症状进入需复核；如果允许，哪些症状是最小必要集合？",
+      "decision_impact": "可能把未明确写出肺炎诊断的候选病例从需复核误判为非目标",
+      "temporary_action": "不私创标签；在病例判断证据中说明缺失",
+      "suggested_options": ["维持现状并明确肺部诊断证据是纳入前提", "只增加能改变病例判断的少量呼吸道症状"]
+    },
+    {
+      "issue_id": "ISS-002",
+      "category": "xml_guide_mismatch",
+      "severity": "blocker",
+      "affected_tasks": ["T002", "T003", "T004", "T005"],
+      "affected_labels": ["时间表达"],
+      "evidence_excerpt": "1周前、5年余、2025年5月15日、第4天、7天内",
+      "observed_problem": "这些时间决定事件是否属于当前/近期，但XML只能标当前、既往、持续和进行性加重，无法保存明确日期、时长或窗口。",
+      "question": "是否在下一版XML增加一个通用时间表达标签，并由后处理解析具体类型？",
+      "decision_impact": "无法稳定计算近期性，可能把长期既往事件计入本次病例或漏掉近期证据",
+      "temporary_action": "相关时间不标实体，T003病例级判断置为需专业复核",
+      "suggested_options": ["增加一个通用时间表达标签", "不人工标时间跨度，但由确定性的文本解析器提取并在指南中声明"]
+    },
+    {
+      "issue_id": "ISS-003",
+      "category": "definition_missing",
+      "severity": "major",
+      "affected_tasks": ["T002", "T004"],
+      "affected_labels": ["持续", "进行性加重"],
+      "evidence_excerpt": "无好转、今日加重、效不佳、现好转",
+      "observed_problem": "指南说明这些表达需试标，但没有规定无好转/效不佳是否等于持续，单次今日加重是否等于进行性加重，好转则完全无当前标签。",
+      "question": "病程标签是否只保留对病例判断有不同作用的少量状态，并明确这些词的归并？",
+      "decision_impact": "主要影响复核优先级和活动性解释，不应单独决定肺炎病例纳入",
+      "temporary_action": "只标明确的仍有为持续；其余不强行归类",
+      "suggested_options": ["持续合并无好转/效不佳，加重要求明确变化，好转不进入v1", "使用持续/未改善、加重、好转/已缓解三个病程状态"]
+    },
+    {
+      "issue_id": "ISS-004",
+      "category": "definition_missing",
+      "severity": "major",
+      "affected_tasks": ["T001", "T004"],
+      "affected_labels": [],
+      "evidence_excerpt": "稍咳嗽；咳嗽发热复诊但无肺部影像或诊断",
+      "observed_problem": "暂定四分类没有明确说明只有症状、没有肺部诊断证据时应统一判非目标，还是进入需专业复核。",
+      "question": "需专业复核的最低证据组合是什么？",
+      "decision_impact": "直接改变病例级非目标与需专业复核的分界",
+      "temporary_action": "按指南示例暂判非目标，同时保留问题",
+      "suggested_options": ["必须有肺部诊断/影像证据才进入目标或复核", "设置症状组合加近期性作为复核入口"]
+    },
+    {
+      "issue_id": "ISS-005",
+      "category": "decision_relevance",
+      "severity": "major",
+      "affected_tasks": ["T003"],
+      "affected_labels": ["肺部组织炎症", "肺部感染", "肺炎诊断"],
+      "evidence_excerpt": "长期复杂胸部病程，现仍有症状和胸腔引流，但无当前XML三类肺部诊断原词",
+      "observed_problem": "病历可能医学上与肺部感染相关，但普通标注者不能从手术、积液和引流推断肺炎；现有病例分类又没有规定这种信息不足与非目标怎样区分。",
+      "question": "复杂胸部疾病但缺少明确肺炎证据时，应判需复核、非目标还是证据不足？",
+      "decision_impact": "直接改变复杂病例是否进入人工复核队列",
+      "temporary_action": "不作肺炎推断，病例置为需专业复核",
+      "suggested_options": ["明确归入需专业复核", "只有出现规定肺部证据才进入，其他均非目标"]
+    }
+  ]
+}

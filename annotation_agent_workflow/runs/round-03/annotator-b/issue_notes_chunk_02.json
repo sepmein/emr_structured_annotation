@@ -1,0 +1,41 @@
+[
+  {
+    "issue_id": "ISSUE-R3B-002",
+    "category": "xml_guide_mismatch",
+    "severity": "major",
+    "affected_tasks": ["R3-059", "R3-060", "R3-069", "R3-073", "R3-091"],
+    "affected_labels": ["咳嗽", "咳痰", "气促/呼吸困难"],
+    "evidence_excerpt": "咳嗽咳痰明显；咳嗽1周",
+    "observed_problem": "前块问题复现：病例级判断依赖咳嗽、咳痰等症状，但锁定XML无法结构化表达。",
+    "question": "生产XML更新前是否继续统一只在evidence中保留这些症状？",
+    "decision_impact": "不改变病例级判断，但结构化触发链不完整。",
+    "temporary_action": "不私建标签，仅保留最小原文证据。",
+    "suggested_options": ["将缺失症状纳入后续XML", "明确校准期不计这些实体漏标"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-003",
+    "category": "data_quality",
+    "severity": "major",
+    "affected_tasks": ["R3-054", "R3-063", "R3-074", "R3-076", "R3-080", "R3-081", "R3-082", "R3-085", "R3-086", "R3-087", "R3-089", "R3-095", "R3-100"],
+    "affected_labels": ["data_issue", "case_decision"],
+    "evidence_excerpt": "空文本；上症；如前",
+    "observed_problem": "前块问题复现：空文本和引用缺失上文只能使用data_issue=other，无法区分空记录与缺上下文。",
+    "question": "是否增加empty_text、missing_context或other说明字段？",
+    "decision_impact": "均判信息不足，但数据修复路径不可结构化区分。",
+    "temporary_action": "使用other并通过issue_refs标识。",
+    "suggested_options": ["增加专门枚举", "为other增加必填说明字段"]
+  },
+  {
+    "issue_id": "ISSUE-R3B-004",
+    "category": "boundary",
+    "severity": "major",
+    "affected_tasks": ["R3-059"],
+    "affected_labels": ["case_decision"],
+    "evidence_excerpt": "支气管扩张伴感染；咳嗽咳痰明显，较前未见好转；根据痰培养今更改抗生素",
+    "observed_problem": "稳定的支气管扩张伴感染应判非目标；本例出现症状未改善和抗生素调整，但无发热、低氧或湿啰音，是否达到B6的新发或加重门槛仍需统一。",
+    "question": "支扩患者仅有咳嗽咳痰未改善并更换抗生素，是否足以进入待专业复核？",
+    "decision_impact": "可能在待专业复核与非目标之间改变分类。",
+    "temporary_action": "按B6保守判待专业复核。",
+    "suggested_options": ["明确B6中症状加重的最低证据组合", "要求至少一项客观严重度或体征后再进入待复核"]
+  }
+]

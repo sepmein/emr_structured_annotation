@@ -1,0 +1,49 @@
+{
+  "common_tasks": 20,
+  "observed_agreement": 1.0,
+  "expected_agreement": 0.385,
+  "cohens_kappa": 1.0,
+  "missing": {
+    "only_in_a": [],
+    "only_in_b": []
+  },
+  "category_counts": {
+    "run_a": {
+      "信息不足": 2,
+      "非目标": 11,
+      "待专业复核": 5,
+      "目标病例信号": 2
+    },
+    "run_b": {
+      "信息不足": 2,
+      "非目标": 11,
+      "待专业复核": 5,
+      "目标病例信号": 2
+    }
+  },
+  "confusion_run_a_by_run_b": {
+    "信息不足": {
+      "信息不足": 2
+    },
+    "非目标": {
+      "非目标": 11
+    },
+    "待专业复核": {
+      "待专业复核": 5
+    },
+    "目标病例信号": {
+      "目标病例信号": 2
+    }
+  },
+  "disagreements": [],
+  "run_a_vs_reference": {
+    "tasks": 20,
+    "agreement": 1.0,
+    "disagreements": []
+  },
+  "run_b_vs_reference": {
+    "tasks": 20,
+    "agreement": 1.0,
+    "disagreements": []
+  }
+}

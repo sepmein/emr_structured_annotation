@@ -1,0 +1,408 @@
+{
+  "reference_id": "round-02-developer-preregistered-v1.0.0",
+  "guide_version": "1.0.0",
+  "created_before_agent_results": true,
+  "purpose": "检验两名试标员如何执行v1.0.0；不是临床金标准，PRE-R2问题可能导致后续裁决改变。",
+  "tasks": [
+    {
+      "task_id": "R2-001",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-002",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-003",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-004",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-005",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-006",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-007",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-008",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-009",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-010",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-011",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-012",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-013",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-014",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-015",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-016",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-017",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-018",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-019",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-020",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-021",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-022",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-023",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-024",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-025",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-026",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-027",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-028",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-029",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-030",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-031",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-032",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-033",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-034",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-035",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-036",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-037",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-038",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-039",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-040",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-041",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-042",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-043",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-044",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-045",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-046",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-047",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-048",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-049",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-050",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-051",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-052",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-053",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-054",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-055",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-056",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-057",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-058",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-059",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-060",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-061",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-062",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-063",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-064",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-065",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-066",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-067",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-068",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-069",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-070",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-071",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-072",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-073",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-074",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-075",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-076",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-077",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-078",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-079",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-080",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-081",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-082",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-083",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-084",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-085",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-086",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-087",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-088",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-089",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-090",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-091",
+      "case_decision": "信息不足"
+    },
+    {
+      "task_id": "R2-092",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-093",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-094",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-095",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-096",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-097",
+      "case_decision": "目标病例信号"
+    },
+    {
+      "task_id": "R2-098",
+      "case_decision": "非目标"
+    },
+    {
+      "task_id": "R2-099",
+      "case_decision": "待专业复核"
+    },
+    {
+      "task_id": "R2-100",
+      "case_decision": "目标病例信号"
+    }
+  ]
+}

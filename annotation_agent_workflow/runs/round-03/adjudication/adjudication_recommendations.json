@@ -1,0 +1,250 @@
+{
+  "run_id": "round-03-independent-adjudication",
+  "guide_version": "2.0.1",
+  "draft_target_version": "2.1.0",
+  "scope": {
+    "raw_tasks": 200,
+    "unique_text_tasks": 158,
+    "a_b_disagreements_raw": 8,
+    "a_b_disagreements_unique_text": 7,
+    "a_equals_b_but_reference_disagreements": 1,
+    "case_level_only": true
+  },
+  "interpretation_warning": "本轮为两套独立AI标注流程的指南压力测试及独立规则裁决，不是真人IAA，不是临床诊断，也不是临床金标准。",
+  "adjudication_principles": [
+    "只按v2.0.1锁定指南和原文显式证据裁决，不以预注册参考替代规则判断。",
+    "支气管扩张等结构性肺病只有在索引事件中明确出现近期咳嗽、咳痰或气促加重，且同时有发热、低氧或湿啰音至少一项客观证据，才命中B5。",
+    "未改善、抗生素调整或痰培养送检不能单独替代近期症状加重和客观急性证据。",
+    "急性咳嗽或咳痰合并当前双肺湿啰音属于有呼吸症状支持的性质未明客观肺部异常，可命中B3；湿啰音单独出现仍不直接判目标。",
+    "短文本若已明确给出无关索引行为或计划，且没有肺炎触发证据，可判非目标；只有泛化的同前、如前、继续治疗而索引疾病缺失时判信息不足。",
+    "完全相同文本只作为一个独立规则证据；重复任务保留审计映射，但不增加证据权重。"
+  ],
+  "case_adjudications": [
+    {
+      "task_id": "R3-002",
+      "run_a": "非目标",
+      "run_b": "待专业复核",
+      "preregistered_reference": "非目标",
+      "recommended_case_decision": "非目标",
+      "minimal_deidentified_evidence": [
+        "支气管扩张感染，今年急性加重6次",
+        "美罗培南输液治疗后有好转"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2B-5要求索引事件中近期咳嗽、咳痰或气促明显加重，并有发热、低氧或湿啰音至少一项客观证据",
+        "4.3支气管扩张伴感染稳定复诊或缺少近期恶化时不进入待复核",
+        "7.3不能仅以不明确时间的既往加重次数并入当前索引事件"
+      ],
+      "reason": "记录写全年急性加重次数和治疗后好转，但未明确本次仍有近期呼吸症状加重。氧饱和度93%不能单独补足缺失的当前症状加重前提。",
+      "error_source": "guide_boundary",
+      "exposes_guide_gap": true,
+      "guide_gap": "需明确“近期”采用索引事件语义锚定，不机械设置天数；年度加重次数不等于本次急性加重。",
+      "reference_action": "retain"
+    },
+    {
+      "task_id": "R3-040",
+      "run_a": "非目标",
+      "run_b": "信息不足",
+      "preregistered_reference": "非目标",
+      "recommended_case_decision": "非目标",
+      "minimal_deidentified_evidence": [
+        "建议电子喉镜"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2C-5仅有筛查或计划检查且无急性呼吸证据时判非目标",
+        "3.2D规定“看不懂但明显与肺炎无关”不是信息不足",
+        "8.5计划或建议不证明事件已发生"
+      ],
+      "reason": "文本虽短，但明确是耳鼻喉计划检查，且没有肺炎、急性呼吸或肺部异常证据；长度短不等于数据不可判断。",
+      "error_source": "execution_boundary",
+      "exposes_guide_gap": true,
+      "guide_gap": "需增加“短而完整的无关记录”与“缺失索引病种的泛化记录”对照例。",
+      "reference_action": "retain"
+    },
+    {
+      "task_id": "R3-059",
+      "run_a": "非目标",
+      "run_b": "待专业复核",
+      "preregistered_reference": "非目标",
+      "recommended_case_decision": "非目标",
+      "minimal_deidentified_evidence": [
+        "支气管扩张伴感染配药",
+        "咳嗽咳痰明显，较前未见好转"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2B-5和4.3要求近期症状明显加重加至少一项客观急性证据",
+        "4.2抗感染治疗或病原检查不能单独作为直接肺部证据",
+        "7.4持续或未改善不等于进行性加重"
+      ],
+      "reason": "当前只有持续或未改善及抗生素调整，没有明确较前加重，也没有发热、低氧或湿啰音；不命中B5或B6。",
+      "error_source": "guide_boundary",
+      "exposes_guide_gap": true,
+      "guide_gap": "需在支扩案例中并列解释“未改善”“加重”和“客观急性证据”的不同作用。",
+      "reference_action": "retain",
+      "duplicate_group": [
+        "R3-059",
+        "R3-148"
+      ]
+    },
+    {
+      "task_id": "R3-074",
+      "run_a": "非目标",
+      "run_b": "信息不足",
+      "preregistered_reference": "非目标",
+      "recommended_case_decision": "信息不足",
+      "minimal_deidentified_evidence": [
+        "前症复诊配药",
+        "检查摘要：如前"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.1连续诊疗必须能确认被引用旧证据、同一疾病过程及其仍为当前依据",
+        "3.2D仅有无法识别索引疾病的泛化或缺失引用内容时判信息不足",
+        "10.2缺失关键上下文且可能改变结论时不得猜测"
+      ],
+      "reason": "现有症状虽在好转且体征无特殊，但“前症”和“如前”缺失的内容可能包含同一疗程的明确肺炎证据；该缺失会在目标与非目标之间反转结论。",
+      "error_source": "missing_context",
+      "exposes_guide_gap": true,
+      "guide_gap": "需明确复诊文本只有在缺失引用不会改变四分类时才能按现有内容分类；否则信息不足。",
+      "reference_action": "revise_to_信息不足"
+    },
+    {
+      "task_id": "R3-140",
+      "run_a": "非目标",
+      "run_b": "待专业复核",
+      "preregistered_reference": "待专业复核",
+      "recommended_case_decision": "待专业复核",
+      "minimal_deidentified_evidence": [
+        "咳嗽、咳痰3天",
+        "两肺可闻及湿罗音"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2B-3当前性质或活动性不明的肺部异常可触发待复核",
+        "4.2湿啰音不能单独作为目标直接证据，但可与其他证据共同触发待复核",
+        "3.3未见直接肺实质证据时不能判目标"
+      ],
+      "reason": "急性咳嗽咳痰与当前双肺湿啰音共同构成需复核的客观肺部异常组合；未写发热不排除B3，且没有肺炎或肺实质感染，故不判目标。",
+      "error_source": "guide_boundary",
+      "exposes_guide_gap": true,
+      "guide_gap": "B3需明确包括有当前呼吸症状支持的异常肺部听诊体征，而不只指影像异常。",
+      "reference_action": "retain"
+    },
+    {
+      "task_id": "R3-145",
+      "run_a": "非目标",
+      "run_b": "待专业复核",
+      "preregistered_reference": "待专业复核",
+      "recommended_case_decision": "待专业复核",
+      "minimal_deidentified_evidence": [
+        "咳嗽、咳痰2周",
+        "两肺可闻及湿罗音"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2B-3当前性质或活动性不明的肺部异常可触发待复核",
+        "4.2湿啰音需与其他证据结合，不能单独作为目标直接证据"
+      ],
+      "reason": "当前咳嗽咳痰合并双肺湿啰音，命中B3的复核组合；两周时长不自动转为慢性稳定，也没有直接肺实质证据。",
+      "error_source": "guide_boundary",
+      "exposes_guide_gap": true,
+      "guide_gap": "同R3-140；需用3天和2周两个回归例说明该入口不以发热为前提。",
+      "reference_action": "retain"
+    },
+    {
+      "task_id": "R3-148",
+      "run_a": "非目标",
+      "run_b": "待专业复核",
+      "preregistered_reference": "非目标",
+      "recommended_case_decision": "非目标",
+      "minimal_deidentified_evidence": [
+        "支气管扩张伴感染配药",
+        "咳嗽咳痰明显，较前未见好转"
+      ],
+      "rule_basis_v2_0_1": [
+        "与R3-059完全相同，按同一规则裁决",
+        "5.5和10.1要求识别完全重复文本，避免重复计权"
+      ],
+      "reason": "与R3-059全文相同；未改善和更改抗生素仍不能替代明确症状加重及客观急性证据。",
+      "error_source": "guide_boundary_and_duplicate_data",
+      "exposes_guide_gap": true,
+      "guide_gap": "同R3-059；重复任务应保留审计但在唯一文本分析中折叠。",
+      "reference_action": "retain",
+      "duplicate_group": [
+        "R3-059",
+        "R3-148"
+      ]
+    },
+    {
+      "task_id": "R3-168",
+      "run_a": "信息不足",
+      "run_b": "非目标",
+      "preregistered_reference": "信息不足",
+      "recommended_case_decision": "信息不足",
+      "minimal_deidentified_evidence": [
+        "慢性病复诊，病史同前",
+        "症状好转，维持原治疗"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2D只有泛化稳定或继续治疗语句、且没有疾病名称时判信息不足",
+        "10.2缺失同前所指内容时不猜测索引疾病"
+      ],
+      "reason": "“慢性病”没有具体病种，“同前”内容缺失；心肺阴性不足以确定本次延续治疗不是同一肺炎过程，因此数据缺失可能改变分类。",
+      "error_source": "missing_context",
+      "exposes_guide_gap": true,
+      "guide_gap": "需与明确病种的短记录形成对照，强调正常查体不能替代缺失索引疾病。",
+      "reference_action": "retain"
+    },
+    {
+      "task_id": "R3-117",
+      "run_a": "非目标",
+      "run_b": "非目标",
+      "preregistered_reference": "信息不足",
+      "recommended_case_decision": "信息不足",
+      "minimal_deidentified_evidence": [
+        "配药，病情稳定，治疗同前",
+        "患者平素健康一般"
+      ],
+      "rule_basis_v2_0_1": [
+        "3.2D仅有病情稳定、继续治疗等泛化语句且无疾病名称时判信息不足",
+        "3.1孤立旧检查不能自动代表当前索引治疗疾病"
+      ],
+      "reason": "旧糖化血红蛋白和脑部影像只能说明存在既往非呼吸信息，不能确认当前“治疗同前”针对何病；两名流程一致把旧检查当作当前无关病种，暴露系统性过度排除。",
+      "error_source": "shared_execution_bias",
+      "exposes_guide_gap": true,
+      "guide_gap": "需增加A=B但仍可能共同误标的反例：旧无关检查不补足当前索引病种。",
+      "reference_action": "retain"
+    }
+  ],
+  "reference_review": {
+    "retain_reference_for": [
+      "R3-002",
+      "R3-040",
+      "R3-059",
+      "R3-117",
+      "R3-140",
+      "R3-145",
+      "R3-148",
+      "R3-168"
+    ],
+    "revise_reference_for": [
+      {
+        "task_id": "R3-074",
+        "from": "非目标",
+        "to": "信息不足",
+        "reason": "缺失的前症和如前内容可能包含同一疗程直接肺炎证据，按索引事件和缺失上下文规则不能可靠排除。"
+      }
+    ]
+  },
+  "recommended_back_annotation": {
+    "case_decision_tasks": [
+      "R3-074",
+      "R3-117",
+      "R3-140",
+      "R3-145",
+      "R3-168"
+    ],
+    "data_issue_tasks": [
+      "R3-059",
+      "R3-148"
+    ],
+    "note": "仅建议定向修正裁决副本；不得覆盖A/B原始输出。R3-059和R3-148应补duplicate_text。"
+  }
+}

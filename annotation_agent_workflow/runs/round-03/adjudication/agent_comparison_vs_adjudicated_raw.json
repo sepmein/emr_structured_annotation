@@ -1,0 +1,153 @@
+{
+  "comparison_scope": "completed tasks only; privacy blocks excluded",
+  "common_completed_tasks": 200,
+  "blocked": {
+    "run_a": [],
+    "run_b": [],
+    "union": []
+  },
+  "exact_text_collapse": {
+    "enabled": false,
+    "groups": [],
+    "excluded_duplicate_tasks": []
+  },
+  "observed_agreement": 0.96,
+  "expected_agreement": 0.531425,
+  "cohens_kappa": 0.914635,
+  "category_counts": {
+    "run_a": {
+      "信息不足": 59,
+      "非目标": 136,
+      "目标病例信号": 1,
+      "待专业复核": 4
+    },
+    "run_b": {
+      "信息不足": 60,
+      "待专业复核": 9,
+      "非目标": 130,
+      "目标病例信号": 1
+    }
+  },
+  "confusion_run_a_by_run_b": {
+    "信息不足": {
+      "信息不足": 58,
+      "非目标": 1
+    },
+    "非目标": {
+      "待专业复核": 5,
+      "非目标": 129,
+      "信息不足": 2
+    },
+    "目标病例信号": {
+      "目标病例信号": 1
+    },
+    "待专业复核": {
+      "待专业复核": 4
+    }
+  },
+  "disagreements": [
+    {
+      "task_id": "R3-002",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-040",
+      "run_a": "非目标",
+      "run_b": "信息不足"
+    },
+    {
+      "task_id": "R3-059",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-074",
+      "run_a": "非目标",
+      "run_b": "信息不足"
+    },
+    {
+      "task_id": "R3-140",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-145",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-148",
+      "run_a": "非目标",
+      "run_b": "待专业复核"
+    },
+    {
+      "task_id": "R3-168",
+      "run_a": "信息不足",
+      "run_b": "非目标"
+    }
+  ],
+  "entity_relation_note": "Not scored here; strict entity/relation F1 requires stable character offsets and endpoint IDs.",
+  "run_a_vs_reference": {
+    "tasks": 200,
+    "agreement": 0.98,
+    "disagreements": [
+      {
+        "task_id": "R3-074",
+        "run": "非目标",
+        "reference": "信息不足"
+      },
+      {
+        "task_id": "R3-117",
+        "run": "非目标",
+        "reference": "信息不足"
+      },
+      {
+        "task_id": "R3-140",
+        "run": "非目标",
+        "reference": "待专业复核"
+      },
+      {
+        "task_id": "R3-145",
+        "run": "非目标",
+        "reference": "待专业复核"
+      }
+    ]
+  },
+  "run_b_vs_reference": {
+    "tasks": 200,
+    "agreement": 0.97,
+    "disagreements": [
+      {
+        "task_id": "R3-002",
+        "run": "待专业复核",
+        "reference": "非目标"
+      },
+      {
+        "task_id": "R3-040",
+        "run": "信息不足",
+        "reference": "非目标"
+      },
+      {
+        "task_id": "R3-059",
+        "run": "待专业复核",
+        "reference": "非目标"
+      },
+      {
+        "task_id": "R3-117",
+        "run": "非目标",
+        "reference": "信息不足"
+      },
+      {
+        "task_id": "R3-148",
+        "run": "待专业复核",
+        "reference": "非目标"
+      },
+      {
+        "task_id": "R3-168",
+        "run": "非目标",
+        "reference": "信息不足"
+      }
+    ]
+  }
+}

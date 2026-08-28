@@ -1,0 +1,108 @@
+{
+  "proposal_version": "2.1.0",
+  "approval_status": "proposed_not_applied",
+  "supersedes": "runs/round-02/developer/schema_change_proposal_v2.0.0.json",
+  "production_xml_changed": false,
+  "changes": [
+    {
+      "id": "SC3-001",
+      "action": "add",
+      "target": "external_case_form.data_issue_enum",
+      "label": "empty_text",
+      "control": "enum_value",
+      "decision_role": "区分空文本(数据导入缺失)与其他data_issue原因，使空任务能在医学标注前被门禁自动拦截",
+      "evidence": "Round 3: 200例中28例(14%)为空文本，此前只能归入other，无法自动路由",
+      "back_annotation_required": true,
+      "back_annotation_scope": "历史记录中data_issue=other且文本为空字符串/纯空格的任务，重新分类为empty_text"
+    },
+    {
+      "id": "SC3-002",
+      "action": "add",
+      "target": "external_case_form.data_issue_enum",
+      "label": "missing_context",
+      "control": "enum_value",
+      "decision_role": "标记'同前/如前/前症'等引用缺失的记录；仅当缺失内容可能反转四分类时才判信息不足",
+      "evidence": "Round 3: 200例中15例引用上文但被引用内容缺失",
+      "back_annotation_required": true,
+      "back_annotation_scope": "历史记录中data_issue=other且属于引用缺失模式的任务，重新分类为missing_context"
+    },
+    {
+      "id": "SC3-003",
+      "action": "add_conditional_field",
+      "target": "external_case_form",
+      "label": "data_issue_note",
+      "control": "conditional_required_text",
+      "condition": "data_issue包含other",
+      "decision_role": "避免other被当作无信息的兜底分类，要求至少一句非敏感说明以支持后续复核",
+      "evidence": "Round 3裁决复核发现other被用于至少3种不同修复路径（流程占位、跨字段矛盾、编码损坏），无法区分",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SC3-004",
+      "action": "reiterate_from_round2",
+      "target": "label_studio_xml",
+      "label": "咳嗽/咳痰/气促或呼吸困难",
+      "control": "three_span_labels",
+      "decision_role": "直接参与病例级B1(急性发热+呼吸证据)、B5(结构性肺病急性加重)和B6入口判断",
+      "evidence": "Round 3: 20/200任务的病例级判断依赖这三个症状，当前XML无法结构化表达，只能记录病例级evidence",
+      "back_annotation_required": true,
+      "back_annotation_scope": "若获批，仅对需要结构化症状实体输出的数据定向回标；病例级四分类结论不需要因此全量返工",
+      "note": "Round 2首次提出(SC2-002)，Round 3提供了额外20例证据，维持提案状态，不因证据增加自动生效"
+    },
+    {
+      "id": "SC3-005",
+      "action": "defer",
+      "target": "label_studio_xml",
+      "label": "通用肺/胸部异常",
+      "control": "single_span_label",
+      "decision_role": "B3(性质不明肺/胸部异常)证据的结构化表达",
+      "evidence": "Round 3: R3-164等案例的B3证据(磨玻璃微结节、粟粒结节)当前只能记录为病例级evidence",
+      "reconsideration_trigger": "至少10个唯一真实案例重复需要结构化表达，且专家能形成与'肺部组织炎症'不重叠、标注员可复述的边界后再评估",
+      "not_proposed_reason": "结节、磨玻璃影、胸水、条索影、异常听诊体征概念异质，单一按钮会模糊影像与体征边界，且容易与现有肺部组织炎症实体重叠",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SC3-006",
+      "action": "flag_implementation_gap",
+      "target": "ml_backend/prompts.py",
+      "label": "specimen_labels / pathogen_detect_labels 未接入模型Schema",
+      "control": "not_a_labeling_schema_change",
+      "decision_role": "不影响人工标注病例级判断或Label Studio界面按钮；影响ML backend能否为标本/检测方式两组标签和'标本''检测方式'两类关系提供预标注",
+      "evidence": "代码检查发现: 生产XML的specimen_labels(标本类型)和pathogen_detect_labels(检测方式)两个from_name分组在prompts.py的GLINER2_LABELS中无对应条目；RELATION_SCHEMA只实现状态/时间/测量三种关系，缺少标本、检测方式两种",
+      "scope_note": "此发现独立于Round 1-3的AI标注试验，AI标注员直接阅读原文不依赖模型预标注，因此未在此前反馈中出现；真人标注员若使用ML backend预标注功能会立即遇到此问题",
+      "back_annotation_required": false,
+      "requires_project_owner_confirmation": true,
+      "recommended_action": "项目负责人确认后，为这两组标签和两类关系补充prompts.py的GLINER2_LABELS和RELATION_SCHEMA条目；这是纯粹的模型侧实现补全，不改变XML按钮或病例定义"
+    },
+    {
+      "id": "SC3-007",
+      "action": "flag_implementation_gap",
+      "target": "ml_backend/prompts.py",
+      "label": "treatment_labels 分组在XML中不存在",
+      "control": "not_a_labeling_schema_change",
+      "decision_role": "prompts.py将机械通气归入独立的treatment_labels分组，但两份生产XML均把机械通气放在symptons_labels分组下；若不修正，模型预测的from_name可能无法映射到Label Studio实际接受的分组",
+      "evidence": "代码检查：grep确认两份XML的<Labels name=\"symptons_labels\">下都含<Label value=\"机械通气\">，XML中不存在name=\"treatment_labels\"的分组",
+      "scope_note": "label_dictionary_v2.1.0.md第4.8节已经按XML的symptons_labels归属编写机械通气标签卡，标注指南本身不受影响",
+      "back_annotation_required": false,
+      "requires_project_owner_confirmation": true,
+      "recommended_action": "项目负责人确认后，将prompts.py中机械通气条目的from_name由treatment_labels改为symptons_labels，与XML保持一致"
+    }
+  ],
+  "not_proposed": [
+    "慢性炎症独立实体",
+    "支气管扩张伴感染独立实体",
+    "稳定或好转人工标签",
+    "完整BEFORE/AFTER时间图",
+    "新增因果、治疗或疾病导致关系",
+    "未改善/更换抗生素/全年急性加重次数/湿啰音病例级按钮",
+    "案例级第5分类"
+  ],
+  "preprocessing_requirements_carried_forward": [
+    "空白和不可解析记录门禁(现可用empty_text实现自动拦截)",
+    "结构化身份字段删除及隐私模式扫描",
+    "按就诊/activity/source拆分索引事件",
+    "精确重复段落去重并保留偏移映射(Round 3已验证158/200唯一文本的折叠方法可行)",
+    "检验项目按原始记录ID成组输出",
+    "缺失引用(同前/如前)回源补上下文的复标流程(现可用missing_context标记待处理队列)"
+  ]
+}

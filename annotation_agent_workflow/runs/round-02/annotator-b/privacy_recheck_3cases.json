@@ -1,0 +1,29 @@
+{
+  "run_id": "round-02-annotator-b-privacy-recheck-3cases",
+  "guide_version": "1.0.0",
+  "privacy_gate": {
+    "status": "passed",
+    "checked_tasks": ["R2-032", "R2-044", "R2-084"],
+    "note": "三例均未检出姓名、住院号、床位、patient_name或有效姓名样式；R2-032的宽泛正则命中经复核为普通临床叙述。"
+  },
+  "tasks": [
+    {
+      "task_id": "R2-032",
+      "case_decision": "非目标",
+      "evidence": ["左侧腹股沟区可复性肿块2年", "无发热，无咳嗽咳痰"],
+      "issue_refs": ["ISS-R2-B-003"]
+    },
+    {
+      "task_id": "R2-044",
+      "case_decision": "目标病例信号",
+      "evidence": ["两肺下叶炎症", "发热伴咳嗽3天"],
+      "issue_refs": ["ISS-R2-B-003", "ISS-R2-B-007"]
+    },
+    {
+      "task_id": "R2-084",
+      "case_decision": "非目标",
+      "evidence": ["慢性肾功能不全", "双肺呼吸音清，未及明显干湿啰音"],
+      "issue_refs": ["ISS-R2-B-003"]
+    }
+  ]
+}

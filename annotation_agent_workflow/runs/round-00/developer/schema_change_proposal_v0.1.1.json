@@ -1,0 +1,35 @@
+{
+  "proposal_version": "0.1.1",
+  "approval_status": "proposed",
+  "changes": [
+    {
+      "id": "SC-001",
+      "action": "add",
+      "label": "时间表达",
+      "purpose": "保存直接影响病例近期性的日期、相对时间、时长、窗口和病程日序",
+      "implementation_options": ["Label Studio增加一个通用跨度标签", "不增加人工标签，使用确定性解析器并把结果合并进病例判断输入"],
+      "do_not_split_into": ["绝对日期", "相对日期", "时长", "频率", "病程日序"],
+      "approval_required": true
+    },
+    {
+      "id": "SC-002",
+      "action": "evaluate",
+      "label": "咳嗽/咳痰等呼吸道症状",
+      "purpose": "只有在症状组合被确认能触发需复核时才考虑增加",
+      "approval_required": true
+    },
+    {
+      "id": "SC-003",
+      "action": "move_or_document",
+      "label": "机械通气",
+      "purpose": "纠正治疗措施与症状分组混淆，不增加按钮",
+      "approval_required": true
+    }
+  ],
+  "rejected_for_v1": ["稳定", "独立频率标签", "细分BEFORE/AFTER时间关系"],
+  "unresolved_owner_decisions": [
+    "仅有急性呼吸道症状时，进入需复核的最低证据组合",
+    "复杂胸部疾病但无明确肺炎证据时的分类",
+    "时间表达采用人工标签还是自动解析"
+  ]
+}
