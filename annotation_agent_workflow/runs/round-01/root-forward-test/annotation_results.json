@@ -1,0 +1,271 @@
+{
+  "run_id": "round-01-root-forward-test",
+  "guide_version": "0.2.0",
+  "run_type": "developer-guided AI forward test; not an independent human annotation run",
+  "tasks": [
+    {
+      "task_id": "R1-001",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-007"]
+    },
+    {
+      "task_id": "R1-002",
+      "case_decision": "非目标",
+      "evidence": ["稍咳嗽", "无发热", "未闻及干湿啰音"],
+      "entities": [{"label":"发热","text":"发热"}],
+      "attributes": [{"type":"状态","value":"否定","target":"发热","cue":"无"}],
+      "relations": [{"type":"状态","from":"无","to":"发热"}],
+      "issue_refs": ["R1-ISS-001"]
+    },
+    {
+      "task_id": "R1-003",
+      "case_decision": "非目标",
+      "evidence": ["慢病复诊开药", "患者病情稳定", "心肺无殊"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-004",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-007"]
+    },
+    {
+      "task_id": "R1-005",
+      "case_decision": "待专业复核",
+      "evidence": ["右侧脓胸", "支气管胸膜瘘", "胸水病原菌测序提示鸟胞内分枝杆菌及大量铜绿假单胞菌感染"],
+      "entities": [
+        {"label":"胸水","text":"胸水"},
+        {"label":"mNGS","text":"病原菌测序"},
+        {"label":"持续","text":"仍有"},
+        {"label":"发热","text":"发热"}
+      ],
+      "attributes": [{"type":"状态","value":"否定","target":"发热","cue":"近期无"}],
+      "relations": [{"type":"状态","from":"近期无","to":"发热"}],
+      "issue_refs": ["R1-ISS-002", "R1-ISS-004", "R1-ISS-008"]
+    },
+    {
+      "task_id": "R1-006",
+      "case_decision": "目标病例信号",
+      "evidence": ["右肺炎症", "门诊以‘肺炎’收住院", "今再来复诊，仍有发热伴咳嗽"],
+      "entities": [
+        {"label":"发热","text":"发热"},
+        {"label":"肺部组织炎症","text":"右肺炎症"},
+        {"label":"肺炎诊断","text":"肺炎"},
+        {"label":"呼吸道合胞病毒","text":"呼吸道合胞病毒"},
+        {"label":"肺炎支原体","text":"肺炎支原体"},
+        {"label":"肺炎衣原体","text":"肺炎衣原体"},
+        {"label":"新冠病毒","text":"新型冠状病毒"},
+        {"label":"抗体IgM","text":"IgM"},
+        {"label":"抗原快速检测","text":"抗原快检"},
+        {"label":"核酸检测","text":"核酸测定"}
+      ],
+      "attributes": [
+        {"type":"时间","value":"当前","target":"发热","cue":"今"},
+        {"type":"时间","value":"持续","target":"发热","cue":"仍有"},
+        {"type":"状态","value":"肯定","target":"呼吸道合胞病毒","cue":"弱阳性"},
+        {"type":"状态","value":"否定","target":"肺炎支原体","cue":"阴性"},
+        {"type":"状态","value":"否定","target":"肺炎衣原体","cue":"阴性"},
+        {"type":"状态","value":"否定","target":"新冠病毒","cue":"阴性"}
+      ],
+      "relations": [
+        {"type":"时间","from":"今","to":"发热"},
+        {"type":"时间","from":"仍有","to":"发热"},
+        {"type":"状态","from":"弱阳性","to":"呼吸道合胞病毒"},
+        {"type":"状态","from":"阴性","to":"肺炎支原体"},
+        {"type":"状态","from":"阴性","to":"肺炎衣原体"},
+        {"type":"状态","from":"阴性","to":"新型冠状病毒"}
+      ],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002", "R1-ISS-005", "R1-ISS-006"]
+    },
+    {
+      "task_id": "R1-007",
+      "case_decision": "待专业复核",
+      "evidence": ["两肺散见纤维条索影及小斑片状影"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-004"]
+    },
+    {
+      "task_id": "R1-008",
+      "case_decision": "待专业复核",
+      "evidence": ["发热1周余", "偶有咳痰", "拟‘脓毒血症’收治入院"],
+      "entities": [{"label":"发热","text":"发热"}],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002"]
+    },
+    {
+      "task_id": "R1-009",
+      "case_decision": "非目标",
+      "evidence": ["今来院继续要求配药治疗", "肺：无异常"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-010",
+      "case_decision": "非目标",
+      "evidence": ["反复咳嗽咳痰20年", "心肺无殊"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002"]
+    },
+    {
+      "task_id": "R1-011",
+      "case_decision": "目标病例信号",
+      "evidence": ["胸部CT：两肺炎症伴两侧胸腔积液", "复查肺部CT：左侧胸腔少量积液", "现患者神清精神好"],
+      "entities": [
+        {"label":"肺部组织炎症","text":"两肺炎症"},
+        {"label":"胸水","text":"胸腔积液"},
+        {"label":"肺炎克雷伯菌","text":"肺炎克雷伯菌"},
+        {"label":"痰","text":"痰"},
+        {"label":"尿","text":"尿"},
+        {"label":"培养","text":"培养"},
+        {"label":"发热","text":"发热"}
+      ],
+      "attributes": [{"type":"状态","value":"否定","target":"发热","cue":"无"}],
+      "relations": [
+        {"type":"标本","from":"痰","to":"肺炎克雷伯菌"},
+        {"type":"检测方式","from":"培养","to":"肺炎克雷伯菌"},
+        {"type":"状态","from":"无","to":"发热"}
+      ],
+      "issue_refs": ["R1-ISS-002", "R1-ISS-003", "R1-ISS-005", "R1-ISS-006"]
+    },
+    {
+      "task_id": "R1-012",
+      "case_decision": "待专业复核",
+      "evidence": ["咳嗽发热复诊", "低热4天", "咳嗽好转"],
+      "entities": [{"label":"发热","text":"发热"}, {"label":"发热","text":"低热"}, {"label":"持续","text":"效不佳"}],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002", "R1-ISS-003"]
+    },
+    {
+      "task_id": "R1-013",
+      "case_decision": "待专业复核",
+      "evidence": ["发热1天", "偶有咳嗽", "双肺呼吸音粗"],
+      "entities": [
+        {"label":"发热","text":"发热"},
+        {"label":"可疑动物或动物制品接触史","text":"接触过活禽及其他动物"},
+        {"label":"外出外来史","text":"境外旅居史"}
+      ],
+      "attributes": [
+        {"type":"状态","value":"否定","target":"可疑动物或动物制品接触史","cue":"未"},
+        {"type":"状态","value":"否定","target":"外出外来史","cue":"否认"}
+      ],
+      "relations": [
+        {"type":"状态","from":"未","to":"接触过活禽及其他动物"},
+        {"type":"状态","from":"否认","to":"境外旅居史"}
+      ],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002"]
+    },
+    {
+      "task_id": "R1-014",
+      "case_decision": "非目标",
+      "evidence": ["糖尿病复诊", "无咳嗽、发热", "7天内无境外旅居史"],
+      "entities": [
+        {"label":"发热","text":"发热"},
+        {"label":"外出外来史","text":"境外旅居史"}
+      ],
+      "attributes": [
+        {"type":"状态","value":"否定","target":"发热","cue":"无"},
+        {"type":"状态","value":"否定","target":"外出外来史","cue":"无"}
+      ],
+      "relations": [
+        {"type":"状态","from":"无","to":"发热"},
+        {"type":"状态","from":"无","to":"境外旅居史"}
+      ],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-015",
+      "case_decision": "非目标",
+      "evidence": ["咳嗽1天", "无发热", "双肺未及啰音"],
+      "entities": [
+        {"label":"发热","text":"发热"},
+        {"label":"体温","text":"体温"},
+        {"label":"数值","text":"36.6"},
+        {"label":"单位","text":"℃"},
+        {"label":"呼吸频率","text":"呼吸"},
+        {"label":"数值","text":"19"},
+        {"label":"单位","text":"次/分"}
+      ],
+      "attributes": [{"type":"状态","value":"否定","target":"发热","cue":"无"}],
+      "relations": [
+        {"type":"状态","from":"无","to":"发热"},
+        {"type":"测量","from":"36.6","to":"体温"},
+        {"type":"测量","from":"℃","to":"体温"},
+        {"type":"测量","from":"19","to":"呼吸"},
+        {"type":"测量","from":"次/分","to":"呼吸"}
+      ],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002"]
+    },
+    {
+      "task_id": "R1-016",
+      "case_decision": "非目标",
+      "evidence": ["右耳耳闷1周", "伴听力下降"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-017",
+      "case_decision": "非目标",
+      "evidence": ["咳嗽3天", "无发热", "无气喘、呼吸困难"],
+      "entities": [
+        {"label":"发热","text":"发热"},
+        {"label":"喘鸣喘息","text":"气喘"}
+      ],
+      "attributes": [
+        {"type":"状态","value":"否定","target":"发热","cue":"无"},
+        {"type":"状态","value":"否定","target":"喘鸣喘息","cue":"无"}
+      ],
+      "relations": [
+        {"type":"状态","from":"无","to":"发热"},
+        {"type":"状态","from":"无","to":"气喘"}
+      ],
+      "issue_refs": ["R1-ISS-001", "R1-ISS-002"]
+    },
+    {
+      "task_id": "R1-018",
+      "case_decision": "非目标",
+      "evidence": ["皮疹4天", "皮疹伴有瘙痒"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-019",
+      "case_decision": "非目标",
+      "evidence": ["患者高血压复诊", "近几天有鼻塞流涕", "呼吸平稳"],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R1-020",
+      "case_decision": "非目标",
+      "evidence": ["反复鼻痒、鼻塞、喷嚏、流清涕", "无咳嗽", "无发热"],
+      "entities": [{"label":"发热","text":"发热"}],
+      "attributes": [{"type":"状态","value":"否定","target":"发热","cue":"无"}],
+      "relations": [{"type":"状态","from":"无","to":"发热"}],
+      "issue_refs": []
+    }
+  ]
+}

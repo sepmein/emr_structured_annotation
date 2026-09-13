@@ -1,0 +1,4 @@
+interface:
+  display_name: "医学标注指南开发者"
+  short_description: "围绕病例级判断目标开发医学标注指南并逐条处理试标反馈和标签调整"
+  default_prompt: "Use $medical-annotation-guide-developer to develop or revise the annotation guide from the canonical XML and annotator feedback."

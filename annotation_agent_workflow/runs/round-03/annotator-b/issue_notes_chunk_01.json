@@ -1,0 +1,50 @@
+[
+  {
+    "issue_id": "ISSUE-R3B-001",
+    "category": "boundary",
+    "severity": "major",
+    "affected_tasks": ["R3-002"],
+    "affected_labels": ["case_decision"],
+    "evidence_excerpt": "支气管扩张感染，今年急性加重6次；氧饱和度93%",
+    "observed_problem": "结构性肺病伴一年内多次急性加重且当前氧饱和度偏低，但本次为配药、治疗后好转，文本未说明最近一次加重与索引就诊的时间距离。",
+    "question": "B5中的“近期加重”应采用何种时间窗口，治疗后好转但仍有低氧是否仍进入待专业复核？",
+    "decision_impact": "可能在待专业复核与非目标之间改变病例级判断。",
+    "temporary_action": "按B5保守判待专业复核，不把支气管扩张感染标成肺部感染实体。",
+    "suggested_options": [
+      "给出近期加重的建议时间窗口并说明治疗后好转的处理",
+      "明确静息状态未写明时氧饱和度93%能否作为B5低氧证据"
+    ]
+  },
+  {
+    "issue_id": "ISSUE-R3B-002",
+    "category": "xml_guide_mismatch",
+    "severity": "major",
+    "affected_tasks": ["R3-035", "R3-039"],
+    "affected_labels": ["咳嗽", "咳痰", "气促/呼吸困难"],
+    "evidence_excerpt": "咳嗽，咳痰，发热",
+    "observed_problem": "病例级B1依赖咳嗽、咳痰等呼吸道症状，但锁定XML没有这些实体标签，无法用结构化实体完整表达触发链。",
+    "question": "在生产XML更新前，是否统一只把缺失症状保存在病例级evidence并保持entities为空？",
+    "decision_impact": "不改变病例级分类，但降低结构化导出的可解释性和实体一致性。",
+    "temporary_action": "仅保存最小原文证据；不私建推荐但未批准的症状标签。",
+    "suggested_options": [
+      "后续XML版本加入咳嗽、咳痰、气促/呼吸困难",
+      "在校准期明确缺失标签只进入evidence、不计实体漏标"
+    ]
+  },
+  {
+    "issue_id": "ISSUE-R3B-003",
+    "category": "data_quality",
+    "severity": "major",
+    "affected_tasks": ["R3-010", "R3-014", "R3-015", "R3-022", "R3-025", "R3-028", "R3-036", "R3-041"],
+    "affected_labels": ["data_issue", "case_decision"],
+    "evidence_excerpt": "空文本；同上；待人工审核",
+    "observed_problem": "空文本、仅引用缺失上文和仅含流程占位语均只能判信息不足，但data_issue枚举没有empty_text或missing_context，只能归入other，无法区分修复路径。",
+    "question": "是否需要增加empty_text和missing_context，或为other增加必填的非敏感说明字段？",
+    "decision_impact": "病例级均为信息不足，但数据治理原因和返工优先级无法从结构化结果区分。",
+    "temporary_action": "统一使用data_issue=other，并通过issue_refs区分该组记录。",
+    "suggested_options": [
+      "增加empty_text与missing_context枚举",
+      "保留other但新增data_issue_note必填字段"
+    ]
+  }
+]

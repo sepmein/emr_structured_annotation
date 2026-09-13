@@ -1,0 +1,2165 @@
+{
+  "reference_id": "round-03-adjudicated-guide-development-reference-v2.1.0",
+  "source_guide_version": "2.0.1",
+  "target_guide_version": "2.1.0",
+  "purpose": "200例AI指南压力测试的病例级裁决参考；不是临床诊断、真人IAA或临床金标准",
+  "raw_distribution": {
+    "信息不足": 61,
+    "非目标": 132,
+    "目标病例信号": 1,
+    "待专业复核": 6
+  },
+  "unique_text_distribution": {
+    "信息不足": 30,
+    "非目标": 121,
+    "目标病例信号": 1,
+    "待专业复核": 6
+  },
+  "raw_tasks": 200,
+  "unique_exact_text_tasks": 158,
+  "changes_from_preregistered_reference": [
+    {
+      "task_id": "R3-074",
+      "before": "非目标",
+      "after": "信息不足"
+    }
+  ],
+  "adjudicated_task_ids": [
+    "R3-002",
+    "R3-040",
+    "R3-059",
+    "R3-074",
+    "R3-117",
+    "R3-140",
+    "R3-145",
+    "R3-148",
+    "R3-168"
+  ],
+  "duplicate_exclusion_rule": "Keep first deterministic representative per exact de-identified text; retain all task-level annotations for audit.",
+  "tasks": [
+    {
+      "task_id": "R3-001",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 #C-反应蛋白"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-002",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张感染，今年急性加重6次",
+        "美罗培南输液治疗后有好转"
+      ],
+      "data_issue": [
+        "none"
+      ],
+      "adjudication_basis": "记录写全年急性加重次数和治疗后好转，但未明确本次仍有近期呼吸症状加重。氧饱和度93%不能单独补足缺失的当前症状加重前提。"
+    },
+    {
+      "task_id": "R3-003",
+      "case_decision": "非目标",
+      "evidence": [
+        "血糖升高多年",
+        "活动后偶有气促"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-004",
+      "case_decision": "信息不足",
+      "evidence": [
+        "目前病情较前变化不大"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-005",
+      "case_decision": "非目标",
+      "evidence": [
+        "冠心病复诊配药",
+        "双肺呼吸音清，未闻及明显罗音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-006",
+      "case_decision": "非目标",
+      "evidence": [
+        "下腹痛，尿频2天",
+        "T：37.0℃"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-007",
+      "case_decision": "非目标",
+      "evidence": [
+        "右髋疼痛2周",
+        "双侧股骨大转子旁少许筋膜水肿"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-008",
+      "case_decision": "非目标",
+      "evidence": [
+        "左上后牙拔牙术后1周",
+        "现就诊拆线"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-009",
+      "case_decision": "非目标",
+      "evidence": [
+        "心律失常复诊",
+        "无胸闷，胸痛"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-010",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-011",
+      "case_decision": "非目标",
+      "evidence": [
+        "便血 2 便秘 病复诊配药",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-012",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染配药，目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-013",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "肺炎继续用药",
+        "左下肺湿性啰音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-014",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-015",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-016",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性病代配药",
+        "病情控制平稳"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-017",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性支气管炎",
+        "目前无明显不适主诉"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-018",
+      "case_decision": "非目标",
+      "evidence": [
+        "鼻塞、鼻腔不适、流脓涕1周",
+        "无发热"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-019",
+      "case_decision": "非目标",
+      "evidence": [
+        "骨质疏松复诊",
+        "现调整治疗方案"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-020",
+      "case_decision": "非目标",
+      "evidence": [
+        "明确诊断高血压",
+        "目前血压平稳"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-021",
+      "case_decision": "非目标",
+      "evidence": [
+        "胃癌术后二十年",
+        "定期复查"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-022",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-023",
+      "case_decision": "非目标",
+      "evidence": [
+        "稍咳嗽，无发热",
+        "未闻及干湿啰音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-024",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊",
+        "鼻塞、流清涕"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-025",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-026",
+      "case_decision": "非目标",
+      "evidence": [
+        "左臀及下肢吊筋痛3周"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-027",
+      "case_decision": "非目标",
+      "evidence": [
+        "双膝关节疼痛一周"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-028",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-029",
+      "case_decision": "非目标",
+      "evidence": [
+        "反复头昏、心悸半年余",
+        "头昏有改善"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-030",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 血红蛋白"
+      ],
+      "data_issue": [
+        "truncated",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-031",
+      "case_decision": "非目标",
+      "evidence": [
+        "右眼流泪，白内障术后"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-032",
+      "case_decision": "信息不足",
+      "evidence": [
+        "目前病情较前变化不大"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-033",
+      "case_decision": "非目标",
+      "evidence": [
+        "急性上呼吸道感染复诊配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-034",
+      "case_decision": "非目标",
+      "evidence": [
+        "急性胃炎复诊",
+        "无发热"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-035",
+      "case_decision": "非目标",
+      "evidence": [
+        "现仍旧有 咳嗽，咳痰",
+        "无发热，无气促",
+        "未闻及干湿罗音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-036",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【现病史】 同上"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-037",
+      "case_decision": "非目标",
+      "evidence": [
+        "右上后牙复诊",
+        "无明显疼痛"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-038",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-039",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽，咳痰，发热",
+        "T38"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-040",
+      "case_decision": "非目标",
+      "evidence": [
+        "建议电子喉镜"
+      ],
+      "data_issue": [
+        "none"
+      ],
+      "adjudication_basis": "文本虽短，但明确是耳鼻喉计划检查，且没有肺炎、急性呼吸或肺部异常证据；长度短不等于数据不可判断。"
+    },
+    {
+      "task_id": "R3-041",
+      "case_decision": "信息不足",
+      "evidence": [
+        "待人工审核"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-042",
+      "case_decision": "非目标",
+      "evidence": [
+        "头晕较前好转",
+        "左侧小脑半球软化灶"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-043",
+      "case_decision": "信息不足",
+      "evidence": [
+        "病情平稳，续配药"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-044",
+      "case_decision": "非目标",
+      "evidence": [
+        "混合痔",
+        "门诊换药"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-045",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病复诊",
+        "指尖空腹血糖7.7mmol/l"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-046",
+      "case_decision": "非目标",
+      "evidence": [
+        "既往冠心病史多年",
+        "无气促"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-047",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管炎 复诊配药",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-048",
+      "case_decision": "非目标",
+      "evidence": [
+        "左眼下睑内翻、倒睫",
+        "今日患者来院"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-049",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病复诊取药",
+        "无不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-050",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压,便秘病,喉痹,代配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-051",
+      "case_decision": "非目标",
+      "evidence": [
+        "右眼红",
+        "无眼痛"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-052",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染复诊复诊配药",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-053",
+      "case_decision": "非目标",
+      "evidence": [
+        "右上后牙根管治疗10天复诊",
+        "无疼痛不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-054",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-055",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张伴感染复诊配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-056",
+      "case_decision": "非目标",
+      "evidence": [
+        "口干口苦1月",
+        "鼻塞"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-057",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性咽炎配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-058",
+      "case_decision": "非目标",
+      "evidence": [
+        "下腹疼痛1天要求妇科检查",
+        "目前无腹痛",
+        "无发热"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-059",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张伴感染配药",
+        "咳嗽咳痰明显，较前未见好转"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ],
+      "adjudication_basis": "当前只有持续或未改善及抗生素调整，没有明确较前加重，也没有发热、低氧或湿啰音；不命中B5或B6。"
+    },
+    {
+      "task_id": "R3-060",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽1周",
+        "双肺散在间质性炎症改变"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-061",
+      "case_decision": "非目标",
+      "evidence": [
+        "脂肪肝随访",
+        "心肺无殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-062",
+      "case_decision": "非目标",
+      "evidence": [
+        "白内障配药",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-063",
+      "case_decision": "信息不足",
+      "evidence": [
+        "上症，用药后症状改善",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-064",
+      "case_decision": "非目标",
+      "evidence": [
+        "下颌皮疹伴痒半年余"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-065",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性阻塞性肺病配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-066",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖耐量受损复诊检查",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-067",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 血β-羟基丁酸"
+      ],
+      "data_issue": [
+        "truncated",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-068",
+      "case_decision": "非目标",
+      "evidence": [
+        "乙肝愈后复查"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-069",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽10天"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-070",
+      "case_decision": "非目标",
+      "evidence": [
+        "血糖升高多年",
+        "活动后偶有气促"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-071",
+      "case_decision": "非目标",
+      "evidence": [
+        "高眼压症",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-072",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-073",
+      "case_decision": "非目标",
+      "evidence": [
+        "仍偶有咳嗽咳痰",
+        "无胸闷气促，无发热",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-074",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "检查摘要：如前"
+      ],
+      "data_issue": [
+        "none"
+      ],
+      "adjudication_basis": "现有症状虽在好转且体征无特殊，但“前症”和“如前”缺失的内容可能包含同一疗程的明确肺炎证据；该缺失会在目标与非目标之间反转结论。"
+    },
+    {
+      "task_id": "R3-075",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊",
+        "呼吸平稳"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-076",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "检查摘要】 如前"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-077",
+      "case_decision": "非目标",
+      "evidence": [
+        "腹部不适半天",
+        "无胸闷心悸"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-078",
+      "case_decision": "非目标",
+      "evidence": [
+        "急性上呼吸道感染",
+        "急性支气管炎",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-079",
+      "case_decision": "非目标",
+      "evidence": [
+        "双相情感障碍",
+        "病情无明显波动"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-080",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-081",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-082",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【现病史】 复诊"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-083",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性肾功能衰竭多年",
+        "两肺无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-084",
+      "case_decision": "非目标",
+      "evidence": [
+        "种植牙复诊",
+        "牙龈无红肿"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-085",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【主诉】 -"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-086",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-087",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-088",
+      "case_decision": "非目标",
+      "evidence": [
+        "无发热",
+        "无咳嗽、咳痰",
+        "活动后气短"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-089",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-090",
+      "case_decision": "非目标",
+      "evidence": [
+        "无心慌，胸闷不适",
+        "既往史】 同前"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-091",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽2周，有鼻塞，无发热",
+        "C反应蛋白 20.3"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-092",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染配药，目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-093",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-094",
+      "case_decision": "非目标",
+      "evidence": [
+        "室性自搏",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-095",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "检查摘要】 如前"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-096",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病、高血压代配药",
+        "无特殊不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-097",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊",
+        "鼻塞、流清涕"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-098",
+      "case_decision": "非目标",
+      "evidence": [
+        "外阴不适",
+        "HPV18型（高危）"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-099",
+      "case_decision": "非目标",
+      "evidence": [
+        "左侧鼻部疼痛，涕中带血",
+        "双侧鼻腔充血"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-100",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-101",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【现病史】 病情稳定",
+        "【检查摘要】 T-3.5"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-102",
+      "case_decision": "非目标",
+      "evidence": [
+        "口腔黏膜溃疡",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-103",
+      "case_decision": "非目标",
+      "evidence": [
+        "头晕3天",
+        "无头晕头痛"
+      ],
+      "data_issue": [
+        "template_conflict"
+      ]
+    },
+    {
+      "task_id": "R3-104",
+      "case_decision": "非目标",
+      "evidence": [
+        "双眼干数月",
+        "结膜轻度充血"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-105",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性肾功能衰竭多年",
+        "两肺无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-106",
+      "case_decision": "非目标",
+      "evidence": [
+        "阴道炎",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-107",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 肌酸激酶-MB亚型质量"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-108",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-109",
+      "case_decision": "非目标",
+      "evidence": [
+        "高脂血症2.2型糖尿病",
+        "病情较前变化不大"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-110",
+      "case_decision": "非目标",
+      "evidence": [
+        "急性上呼吸道感染 病复诊配药",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-111",
+      "case_decision": "非目标",
+      "evidence": [
+        "发热3天",
+        "不伴咳嗽",
+        "无胸闷气急呼吸困难"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-112",
+      "case_decision": "非目标",
+      "evidence": [
+        "右上后牙疼痛1天",
+        "14近远中邻面深龋"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-113",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽、咳痰，痰液白粘",
+        "不伴发热，无气促",
+        "肺炎支原体IgM抗体】【检验结果】 阴性"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-114",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-115",
+      "case_decision": "非目标",
+      "evidence": [
+        "躯干皮疹数月就诊",
+        "逐渐增多瘙痒"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-116",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性病家属代配药",
+        "有高血压心肌缺血关节炎史"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-117",
+      "case_decision": "信息不足",
+      "evidence": [
+        "配药，病情稳定，治疗同前",
+        "患者平素健康一般"
+      ],
+      "data_issue": [
+        "other"
+      ],
+      "adjudication_basis": "旧糖化血红蛋白和脑部影像只能说明存在既往非呼吸信息，不能确认当前“治疗同前”针对何病；两名流程一致把旧检查当作当前无关病种，暴露系统性过度排除。"
+    },
+    {
+      "task_id": "R3-118",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压病复诊",
+        "血压控制稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-119",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-120",
+      "case_decision": "非目标",
+      "evidence": [
+        "大便不畅数年",
+        "无发热"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-121",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压病复诊",
+        "双肺呼吸音粗，无啰音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-122",
+      "case_decision": "非目标",
+      "evidence": [
+        "髋关节置换术后6个月",
+        "拟复诊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-123",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 半乳甘露聚糖"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-124",
+      "case_decision": "非目标",
+      "evidence": [
+        "体温升高1日",
+        "发热，咽痛"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-125",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张复诊配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-126",
+      "case_decision": "非目标",
+      "evidence": [
+        "冠心病 心功能不全配药"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-127",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-128",
+      "case_decision": "非目标",
+      "evidence": [
+        "复诊配药",
+        "有高脂血症病史"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-129",
+      "case_decision": "非目标",
+      "evidence": [
+        "行肩袖修补术",
+        "患者目前一般情况平稳"
+      ],
+      "data_issue": [
+        "truncated"
+      ]
+    },
+    {
+      "task_id": "R3-130",
+      "case_decision": "非目标",
+      "evidence": [
+        "窦性心律",
+        "左室舒张功能减退"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-131",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "加用左氧联合抗感染"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-132",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 肾小球滤过率"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-133",
+      "case_decision": "非目标",
+      "evidence": [
+        "高脂血症复诊",
+        "无明显胸闷、心悸"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-134",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-135",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊，症状无变化",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-136",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-137",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽咳痰2周",
+        "T37.2℃",
+        "未闻及干湿罗因"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-138",
+      "case_decision": "信息不足",
+      "evidence": [
+        "上症复诊",
+        "症状较前好转"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-139",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "检查摘要】 如前"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-140",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽、咳痰3天",
+        "两肺可闻及湿罗音"
+      ],
+      "data_issue": [
+        "none"
+      ],
+      "adjudication_basis": "急性咳嗽咳痰与当前双肺湿啰音共同构成需复核的客观肺部异常组合；未写发热不排除B3，且没有肺炎或肺实质感染，故不判目标。"
+    },
+    {
+      "task_id": "R3-141",
+      "case_decision": "非目标",
+      "evidence": [
+        "左腕疼痛数小时",
+        "双肺听诊呼吸音清"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-142",
+      "case_decision": "非目标",
+      "evidence": [
+        "【主诉】 湿疹",
+        "仍有瘙痒"
+      ],
+      "data_issue": [
+        "truncated"
+      ]
+    },
+    {
+      "task_id": "R3-143",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压病复诊",
+        "目前血压稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-144",
+      "case_decision": "非目标",
+      "evidence": [
+        "脚部出疹，痒1月"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-145",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽、咳痰2周",
+        "两肺可闻及湿罗音"
+      ],
+      "data_issue": [
+        "none"
+      ],
+      "adjudication_basis": "当前咳嗽咳痰合并双肺湿啰音，命中B3的复核组合；两周时长不自动转为慢性稳定，也没有直接肺实质证据。"
+    },
+    {
+      "task_id": "R3-146",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 凝血酶原时间"
+      ],
+      "data_issue": [
+        "truncated",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-147",
+      "case_decision": "非目标",
+      "evidence": [
+        "心衰发作2小时",
+        "双肺呼吸音清，未及干湿罗音"
+      ],
+      "data_issue": [
+        "template_conflict"
+      ]
+    },
+    {
+      "task_id": "R3-148",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张伴感染配药",
+        "咳嗽咳痰明显，较前未见好转"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ],
+      "adjudication_basis": "与R3-059全文相同；未改善和更改抗生素仍不能替代明确症状加重及客观急性证据。"
+    },
+    {
+      "task_id": "R3-149",
+      "case_decision": "非目标",
+      "evidence": [
+        "现仍旧有 咳嗽",
+        "无发热，无气促",
+        "未闻及干湿罗音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-150",
+      "case_decision": "非目标",
+      "evidence": [
+        "左下磨牙疼痛不适1周",
+        "36残根状"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-151",
+      "case_decision": "非目标",
+      "evidence": [
+        "蛋白尿复诊检查",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-152",
+      "case_decision": "非目标",
+      "evidence": [
+        "白蛋白尿后复诊",
+        "泌尿外科门诊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-153",
+      "case_decision": "非目标",
+      "evidence": [
+        "真性红细胞增多症",
+        "冠状动脉粥样硬化性心脏病"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-154",
+      "case_decision": "非目标",
+      "evidence": [
+        "胸闷气急改善",
+        "双肺呼吸音粗，无干湿性啰音"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-155",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-156",
+      "case_decision": "非目标",
+      "evidence": [
+        "前列腺增生复诊",
+        "双肺呼吸音清晰"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-157",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性鼻炎复诊配药",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-158",
+      "case_decision": "信息不足",
+      "evidence": [
+        "代配药",
+        "患者病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-159",
+      "case_decision": "非目标",
+      "evidence": [
+        "发热4天",
+        "不伴咳嗽",
+        "无胸闷气急呼吸困难"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-160",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病代配药",
+        "无不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-161",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-162",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张配药，目前病情稳定",
+        "鼻涕，咳嗽"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-163",
+      "case_decision": "非目标",
+      "evidence": [
+        "心力衰竭复诊",
+        "心悸胸闷好转"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-164",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽 3天，咳痰少",
+        "多发磨玻璃结节影",
+        "右肺中叶粟粒结节"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-165",
+      "case_decision": "非目标",
+      "evidence": [
+        "头晕3个月",
+        "双肺听诊呼吸音清"
+      ],
+      "data_issue": [
+        "truncated"
+      ]
+    },
+    {
+      "task_id": "R3-166",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-167",
+      "case_decision": "非目标",
+      "evidence": [
+        "急性胃肠炎 复诊配药",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-168",
+      "case_decision": "信息不足",
+      "evidence": [
+        "慢性病复诊，病史同前",
+        "症状好转，维持原治疗"
+      ],
+      "data_issue": [
+        "other"
+      ],
+      "adjudication_basis": "“慢性病”没有具体病种，“同前”内容缺失；心肺阴性不足以确定本次延续治疗不是同一肺炎过程，因此数据缺失可能改变分类。"
+    },
+    {
+      "task_id": "R3-169",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊，无不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-170",
+      "case_decision": "信息不足",
+      "evidence": [
+        "前症复诊配药",
+        "检查摘要】 如前"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-171",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病复诊配药",
+        "无明显不适主诉"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-172",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-173",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【主诉】 配药",
+        "无明显不适"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-174",
+      "case_decision": "非目标",
+      "evidence": [
+        "高脂血症 复诊配药",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-175",
+      "case_decision": "非目标",
+      "evidence": [
+        "未分化型精神分裂症",
+        "病情波动明显"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-176",
+      "case_decision": "非目标",
+      "evidence": [
+        "血糖升高多年",
+        "近日有咳嗽咳痰",
+        "呼吸平稳"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-177",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染配药，目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-178",
+      "case_decision": "非目标",
+      "evidence": [
+        "糖尿病复诊配药",
+        "双肺呼吸音清"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-179",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊",
+        "鼻塞、流清涕"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-180",
+      "case_decision": "非目标",
+      "evidence": [
+        "冠心病复诊配药",
+        "未闻及干湿啰音"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-181",
+      "case_decision": "非目标",
+      "evidence": [
+        "计划生育查环",
+        "宫內节育器有"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-182",
+      "case_decision": "非目标",
+      "evidence": [
+        "鼻流涕一月",
+        "无明显头痛、发热不适"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-183",
+      "case_decision": "非目标",
+      "evidence": [
+        "血糖升高多年",
+        "近日有咳嗽咳痰",
+        "呼吸平稳"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-184",
+      "case_decision": "信息不足",
+      "evidence": [
+        "配药，目前病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-185",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【检验项目】 #平均红细胞容积"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-186",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-187",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-188",
+      "case_decision": "信息不足",
+      "evidence": [
+        "【现病史】 复诊"
+      ],
+      "data_issue": [
+        "duplicate_text",
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-189",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-190",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-191",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-192",
+      "case_decision": "非目标",
+      "evidence": [
+        "无恶心、乏力，腹痛、腹泻",
+        "呼吸平稳"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-193",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "发热2天",
+        "双肺呼吸音粗",
+        "无咳嗽"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-194",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-195",
+      "case_decision": "非目标",
+      "evidence": [
+        "过敏性皮炎",
+        "口腔黏膜溃疡",
+        "病情平稳无特殊"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-196",
+      "case_decision": "信息不足",
+      "evidence": [
+        "患者要求完善检查"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-197",
+      "case_decision": "非目标",
+      "evidence": [
+        "面部散在白色丘疹",
+        "无明显自觉症状"
+      ],
+      "data_issue": [
+        "none"
+      ]
+    },
+    {
+      "task_id": "R3-198",
+      "case_decision": "非目标",
+      "evidence": [
+        "血糖升高多年",
+        "近日有咳嗽咳痰",
+        "呼吸平稳"
+      ],
+      "data_issue": [
+        "duplicate_text"
+      ]
+    },
+    {
+      "task_id": "R3-199",
+      "case_decision": "信息不足",
+      "evidence": [
+        "上症复诊配药",
+        "病情稳定"
+      ],
+      "data_issue": [
+        "other"
+      ]
+    },
+    {
+      "task_id": "R3-200",
+      "case_decision": "信息不足",
+      "evidence": [],
+      "data_issue": [
+        "other"
+      ]
+    }
+  ]
+}

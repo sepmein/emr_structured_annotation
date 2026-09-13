@@ -1,0 +1,1467 @@
+{
+  "run_id": "round-02-annotator-b",
+  "guide_version": "1.0.0",
+  "tasks": [
+    {
+      "task_id": "R2-001",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "两肺少许慢性炎症",
+        "无发热寒战，无咳嗽咳痰"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺少许慢性炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-002",
+      "case_decision": "非目标",
+      "evidence": [
+        "目前病情稳定",
+        "仍有咳嗽、咳黄痰，无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-003",
+      "case_decision": "非目标",
+      "evidence": [
+        "右乳癌术后5月",
+        "无咳嗽、咯血"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-004",
+      "case_decision": "非目标",
+      "evidence": [
+        "焦虑状态高血压病2级（极高危）复诊配药",
+        "近期无发热，无咳嗽"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-005",
+      "case_decision": "非目标",
+      "evidence": [
+        "目前病情较前变化不大",
+        "现考虑维持当前治疗方案"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-006",
+      "case_decision": "非目标",
+      "evidence": [
+        "发现盆腔肿物2周+",
+        "现无不适"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-007",
+      "case_decision": "非目标",
+      "evidence": [
+        "心力衰竭复诊",
+        "近日反复活动后气急"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-008",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "胸部CT示肺炎",
+        "门诊以“肺炎”收入我科病房"
+      ],
+      "entities": [
+        {
+          "label": "肺炎诊断",
+          "text": "肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-009",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽1天，有痰",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-010",
+      "case_decision": "非目标",
+      "evidence": [
+        "出院后仍有咳嗽",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-011",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "左肺下叶炎症伴实变",
+        "门诊以“肺炎”收住院"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "左肺下叶炎症伴实变"
+        },
+        {
+          "label": "肺炎诊断",
+          "text": "肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-012",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性病复诊配药",
+        "两肺呼吸音清"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-013",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "胸部CT：双肺散在炎症",
+        "后患者出现发热"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "双肺散在炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-014",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染复诊配药",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-015",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "患者肺部感染",
+        "体温平"
+      ],
+      "entities": [
+        {
+          "label": "肺部感染",
+          "text": "肺部感染"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-016",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽、咳痰10天",
+        "支气管扩张伴感染"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-005",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-017",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "左肺上叶占位",
+        "考虑MT"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-018",
+      "case_decision": "非目标",
+      "evidence": [
+        "目前时有咳嗽、咳痰，症状较前减轻",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-019",
+      "case_decision": "非目标",
+      "evidence": [
+        "患者家属代配药",
+        "慢性病病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-020",
+      "case_decision": "非目标",
+      "evidence": [
+        "上腹不适1周",
+        "腹软"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-021",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽咳痰有改善",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-022",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "两肺炎症，建议治疗后复查",
+        "呼吸困难"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-023",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "右下肺炎症",
+        "胸闷气促反复发作"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "右下肺炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-004"
+      ]
+    },
+    {
+      "task_id": "R2-024",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "左下肺支气管扩张、管壁增厚伴周围炎症",
+        "炎症较前（2024-11-23CT）略进展"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "左下肺支气管扩张、管壁增厚伴周围炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-025",
+      "case_decision": "信息不足",
+      "evidence": [
+        "仅有检验项目和无法归属的数值"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002",
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-026",
+      "case_decision": "信息不足",
+      "evidence": [
+        "仅有检验项目和数值",
+        "涂片未找见抗酸杆菌"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002",
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-027",
+      "case_decision": "信息不足",
+      "evidence": [
+        "空文本"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002"
+      ]
+    },
+    {
+      "task_id": "R2-028",
+      "case_decision": "信息不足",
+      "evidence": [
+        "仅有检验项目和数值",
+        "结果仅供参考"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002",
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-029",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽咳痰3天",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-030",
+      "case_decision": "非目标",
+      "evidence": [
+        "鼻塞流涕伴咳嗽咳痰",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-031",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "两肺散在炎症，较前进展",
+        "肺结核复查，治疗近9个月"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺散在炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-004",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-032",
+      "case_decision": "非目标",
+      "evidence": [
+        "左侧腹股沟区可复性肿块2年",
+        "无发热，无咳嗽咳痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003"
+      ]
+    },
+    {
+      "task_id": "R2-033",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽、鼻塞 3 天",
+        "双肺呼吸音正常"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-034",
+      "case_decision": "非目标",
+      "evidence": [
+        "便血，伴肛门疼痛",
+        "普外科门诊"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-035",
+      "case_decision": "非目标",
+      "evidence": [
+        "甲状腺回声欠均匀伴两叶结节",
+        "双侧颈部未见异常肿大淋巴结"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-036",
+      "case_decision": "非目标",
+      "evidence": [
+        "高危妊娠监督",
+        "肺炎支原体IgM抗体"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-037",
+      "case_decision": "信息不足",
+      "evidence": [
+        "空文本"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002"
+      ]
+    },
+    {
+      "task_id": "R2-038",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "反复咳嗽咳痰1周",
+        "有发热1天"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-039",
+      "case_decision": "非目标",
+      "evidence": [
+        "腰部及双髋关节疼痛",
+        "腰椎及骨盆退变"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-040",
+      "case_decision": "非目标",
+      "evidence": [
+        "鼻涕1年",
+        "打喷嚏"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-041",
+      "case_decision": "非目标",
+      "evidence": [
+        "未避孕未孕1年半",
+        "左卵巢内无回声"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-042",
+      "case_decision": "非目标",
+      "evidence": [
+        "咽痛、咽干2天",
+        "无畏寒、发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-043",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽咳痰30天",
+        "双肺（-）"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-044",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "两肺下叶炎症",
+        "发热伴咳嗽3天"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-045",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "左肺下叶炎症伴实变",
+        "门诊以“肺炎”收住院"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "左肺下叶炎症伴实变"
+        },
+        {
+          "label": "肺炎诊断",
+          "text": "肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-046",
+      "case_decision": "非目标",
+      "evidence": [
+        "室性自搏",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-047",
+      "case_decision": "非目标",
+      "evidence": [
+        "近日有咳嗽咳痰",
+        "呼吸平稳"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-048",
+      "case_decision": "非目标",
+      "evidence": [
+        "睡眠障碍",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-049",
+      "case_decision": "非目标",
+      "evidence": [
+        "双下肢活动及二便障碍3年",
+        "双肺呼吸音清"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003"
+      ]
+    },
+    {
+      "task_id": "R2-050",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽、咳痰10天",
+        "胸部增强CT示支气管扩张伴感染"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-005",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-051",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性左心功能不全",
+        "无咳嗽，无咳痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-052",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "今中午起出现发热",
+        "咳嗽，咳黄痰"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-053",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "患儿前夜起咳嗽",
+        "发热，无好转"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-054",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "咳嗽加剧，咳痰增多乏力",
+        "支气管扩张史"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-005",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-055",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "体温最高39 ℃",
+        "咳嗽4 天，有痰"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-056",
+      "case_decision": "非目标",
+      "evidence": [
+        "右眼红痛半年",
+        "双肺呼吸音清"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-057",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽咳痰略改善",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-058",
+      "case_decision": "非目标",
+      "evidence": [
+        "室性自搏",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-059",
+      "case_decision": "非目标",
+      "evidence": [
+        "病情稳定",
+        "继续原治疗方案"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-060",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "近期反复肺部感染",
+        "肺克、大肠+白念+EBV"
+      ],
+      "entities": [
+        {
+          "label": "肺部感染",
+          "text": "肺部感染"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-061",
+      "case_decision": "非目标",
+      "evidence": [
+        "反复咳嗽咳痰20年",
+        "心肺无殊"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-062",
+      "case_decision": "非目标",
+      "evidence": [
+        "呕吐3天",
+        "无发热咳嗽流涕"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003"
+      ]
+    },
+    {
+      "task_id": "R2-063",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "两肺炎症，右肺为著",
+        "右肺中叶内侧段部分实变"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺炎症，右肺为著"
+        },
+        {
+          "label": "肺部组织炎症",
+          "text": "右肺中叶内侧段部分实变"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-064",
+      "case_decision": "信息不足",
+      "evidence": [
+        "仅有检验项目和数值",
+        "多数病原项目未见可归属结果"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002",
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-065",
+      "case_decision": "非目标",
+      "evidence": [
+        "呼吸道感染复诊复诊配药",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-066",
+      "case_decision": "非目标",
+      "evidence": [
+        "复诊配药",
+        "目前病情稳定，无明显不适"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-067",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "胸部CT：两肺炎症",
+        "拟“肺炎”收入院"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺炎症"
+        },
+        {
+          "label": "肺炎诊断",
+          "text": "肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-068",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽、咳痰20天",
+        "无畏寒、发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-069",
+      "case_decision": "非目标",
+      "evidence": [
+        "前列腺增生复诊"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-070",
+      "case_decision": "非目标",
+      "evidence": [
+        "双眼肿痛3天",
+        "发病前牙痛病史"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-071",
+      "case_decision": "非目标",
+      "evidence": [
+        "冠心病",
+        "无发热、寒战，无呼吸困难、咳嗽、咳痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-072",
+      "case_decision": "非目标",
+      "evidence": [
+        "咳嗽好转，有痰",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-073",
+      "case_decision": "非目标",
+      "evidence": [
+        "出院后仍有咳嗽",
+        "2天前出现咳痰，为黄痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-074",
+      "case_decision": "非目标",
+      "evidence": [
+        "因“上腹痛1天”入院",
+        "肺炎支原体lgM抗体弱阳性（±）P"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-075",
+      "case_decision": "非目标",
+      "evidence": [
+        "左眼抗VEGF治疗10次",
+        "左眼黄斑疤痕"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-076",
+      "case_decision": "非目标",
+      "evidence": [
+        "体检发现甲状腺结节",
+        "无发热，无咳嗽"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-077",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张伴感染复诊配药",
+        "目前病情稳定，体温正常"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-005"
+      ]
+    },
+    {
+      "task_id": "R2-078",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "两肺散在炎症，较前进展",
+        "肺结核复查，治疗近6个月"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "两肺散在炎症"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-004",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-079",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "肺部感染复诊配药",
+        "目前病情稳定"
+      ],
+      "entities": [
+        {
+          "label": "肺部感染",
+          "text": "肺部感染"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-080",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "肺部感染",
+        "时有咳嗽咳痰"
+      ],
+      "entities": [
+        {
+          "label": "肺部感染",
+          "text": "肺部感染"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-081",
+      "case_decision": "非目标",
+      "evidence": [
+        "心力衰竭复诊",
+        "心悸胸闷好转"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-082",
+      "case_decision": "非目标",
+      "evidence": [
+        "支气管扩张复诊配药",
+        "目前病情稳定"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-083",
+      "case_decision": "非目标",
+      "evidence": [
+        "便后肛门出血6月",
+        "心肺阴性"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-084",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性肾功能不全",
+        "双肺呼吸音清，未及明显干湿啰音"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003"
+      ]
+    },
+    {
+      "task_id": "R2-085",
+      "case_decision": "信息不足",
+      "evidence": [
+        "空文本"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002"
+      ]
+    },
+    {
+      "task_id": "R2-086",
+      "case_decision": "信息不足",
+      "evidence": [
+        "空文本"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002"
+      ]
+    },
+    {
+      "task_id": "R2-087",
+      "case_decision": "非目标",
+      "evidence": [
+        "高血压复诊",
+        "无头痛头晕"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-088",
+      "case_decision": "非目标",
+      "evidence": [
+        "左乳疼痛1月余",
+        "无发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-089",
+      "case_decision": "非目标",
+      "evidence": [
+        "两肺渗出",
+        "可符合心功能不全表现"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-090",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "间质性肺炎复诊",
+        "目前活动后气促"
+      ],
+      "entities": [
+        {
+          "label": "肺炎诊断",
+          "text": "间质性肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-091",
+      "case_decision": "信息不足",
+      "evidence": [
+        "空文本"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-002"
+      ]
+    },
+    {
+      "task_id": "R2-092",
+      "case_decision": "非目标",
+      "evidence": [
+        "慢性肾衰病* 复诊配药",
+        "病情平稳无特殊"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-006"
+      ]
+    },
+    {
+      "task_id": "R2-093",
+      "case_decision": "非目标",
+      "evidence": [
+        "配药",
+        "无发热，无咳嗽咳痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-094",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "肺部感染",
+        "目前病情稳定"
+      ],
+      "entities": [
+        {
+          "label": "肺部感染",
+          "text": "肺部感染"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-095",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "发热2天伴咽痛、咳嗽",
+        "甲型流感病毒抗原阳性"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        },
+        {
+          "label": "流感病毒",
+          "text": "甲型流感病毒"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-096",
+      "case_decision": "非目标",
+      "evidence": [
+        "腹泻8小时",
+        "不伴发热"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-097",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "右下肺小片炎症",
+        "门诊拟“肺炎”收住入院"
+      ],
+      "entities": [
+        {
+          "label": "肺部组织炎症",
+          "text": "右下肺小片炎症"
+        },
+        {
+          "label": "肺炎诊断",
+          "text": "肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-098",
+      "case_decision": "非目标",
+      "evidence": [
+        "急诊拟“冠心病”收治入院",
+        "无发热，有活动后气促，无咳嗽、咳痰"
+      ],
+      "entities": [],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    },
+    {
+      "task_id": "R2-099",
+      "case_decision": "待专业复核",
+      "evidence": [
+        "本次再次发热咳痰14天",
+        "支扩伴感染50年"
+      ],
+      "entities": [
+        {
+          "label": "发热",
+          "text": "发热"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": [
+        "ISS-R2-B-003",
+        "ISS-R2-B-005",
+        "ISS-R2-B-007"
+      ]
+    },
+    {
+      "task_id": "R2-100",
+      "case_decision": "目标病例信号",
+      "evidence": [
+        "间质性肺炎",
+        "仍咳嗽咳痰"
+      ],
+      "entities": [
+        {
+          "label": "肺炎诊断",
+          "text": "间质性肺炎"
+        }
+      ],
+      "attributes": [],
+      "relations": [],
+      "issue_refs": []
+    }
+  ],
+  "post_recheck": {
+    "source": "annotation_agent_workflow/runs/round-02/annotator-b/privacy_recheck_3cases.json",
+    "updated_tasks": [
+      "R2-032",
+      "R2-044",
+      "R2-084"
+    ]
+  }
+}

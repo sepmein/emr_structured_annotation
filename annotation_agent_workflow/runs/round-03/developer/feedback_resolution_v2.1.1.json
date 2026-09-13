@@ -1,0 +1,167 @@
+[
+  {
+    "issue_id": "HUM-001",
+    "disposition": "clarify",
+    "rationale": "Schema及其实施状态属于开发术语，目标读者无法据此操作。",
+    "decision_impact": "不改变病例判断；降低对页面可用标签的误解。",
+    "complexity_cost": "low",
+    "guide_change": "将Schema统一改写为标注页面或标注界面配置，并在开头解释该词。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["成人页面标签缺失", "儿童页面标签差异"]
+  },
+  {
+    "issue_id": "HUM-002",
+    "disposition": "clarify",
+    "rationale": "质量门禁和隐私门禁不是标注员日常用语。",
+    "decision_impact": "不改变病例判断；明确何时继续、停止或报告问题。",
+    "complexity_cost": "low",
+    "guide_change": "统一改写为数据与隐私检查，并用动作说明替代抽象定义。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["空文本", "隐私残留", "记录错拼"]
+  },
+  {
+    "issue_id": "HUM-003",
+    "disposition": "clarify",
+    "rationale": "v2人工标签体系是版本维护视角，不是标注员视角。",
+    "decision_impact": "不改变标签范围。",
+    "complexity_cost": "none",
+    "guide_change": "改为本项目不要求标注与四项用途无关的信息。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["医学相关但与筛查目标无关的信息"]
+  },
+  {
+    "issue_id": "HUM-004",
+    "disposition": "clarify",
+    "rationale": "英文缩写没有中文全称，增加阅读负担。",
+    "decision_impact": "不改变任何规则。",
+    "complexity_cost": "low",
+    "guide_change": "必要缩写首次出现时补中文全称，标签字典增加常见缩写表。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["含SpO2、PaO2、FiO2、IgM、mNGS的记录"]
+  },
+  {
+    "issue_id": "HUM-005",
+    "disposition": "clarify",
+    "rationale": "面向标注员的正文混入系统字段和英文状态值。",
+    "decision_impact": "不改变字段含义。",
+    "complexity_cost": "low",
+    "guide_change": "主指南改用中文动作；标签字典保留表单代码并增加中文对照表。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["正常完成", "隐私阻塞", "数据问题"]
+  },
+  {
+    "issue_id": "HUM-006",
+    "disposition": "clarify",
+    "rationale": "v2推荐实施无法说明当前页面能否操作。",
+    "decision_impact": "不改变当前可用标签。",
+    "complexity_cost": "low",
+    "guide_change": "改为页面上已有和暂未提供的功能，并逐项说明现在怎么做。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["咳嗽标签缺失", "时间表达标签缺失"]
+  },
+  {
+    "issue_id": "HUM-007",
+    "disposition": "clarify",
+    "rationale": "总体框架长句混合目的、模块和证据作用。",
+    "decision_impact": "不改变证据组合。",
+    "complexity_cost": "low",
+    "guide_change": "改为每份记录完成两件事，并用表格分别说明查看内容、问题、结果和用途。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["普通完整病例"]
+  },
+  {
+    "issue_id": "HUM-008",
+    "disposition": "clarify",
+    "rationale": "病例级与结构化证据段落使用模型和配置视角。",
+    "decision_impact": "不改变标注顺序。",
+    "complexity_cost": "low",
+    "guide_change": "改为阅读全文选一个结论，以及使用页面按钮框选和连线。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["四分类", "实体与关系标注"]
+  },
+  {
+    "issue_id": "HUM-009",
+    "disposition": "accept",
+    "rationale": "被批注句子重复强调配置约束，并混入未解释代码。",
+    "decision_impact": "不改变禁止私创标签的规则；该规则已在开头用更直接的话保留。",
+    "complexity_cost": "none",
+    "guide_change": "删除原第2.4节表后关于生产XML和xml_guide_mismatch的句子。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["页面缺少标签"]
+  },
+  {
+    "issue_id": "HUM-010",
+    "disposition": "clarify",
+    "rationale": "目标病例段落像系统逻辑说明，不像真人操作指南。",
+    "decision_impact": "不改变目标病例边界。",
+    "complexity_cost": "low",
+    "guide_change": "改为选择目标病例前依次确认四点。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["明确当前肺炎", "纯既往肺炎", "慢性非感染性改变"]
+  },
+  {
+    "issue_id": "HUM-011",
+    "disposition": "clarify",
+    "rationale": "多个否定、条件和主体要求挤在同一句中，阅读拗口。",
+    "decision_impact": "不改变断言和主体规则。",
+    "complexity_cost": "low",
+    "guide_change": "将患者归属、事实状态和排除语境拆为独立确认项。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["否定肺炎", "计划检查", "家属肺炎"]
+  },
+  {
+    "issue_id": "HUM-012",
+    "disposition": "clarify",
+    "rationale": "目标病例不应以抽象的直接证据一词自我定义。",
+    "decision_impact": "不改变病例分类；把直接证据展开为原文可识别的肺炎、肺实质感染、活动性炎症或实变。",
+    "complexity_cost": "low",
+    "guide_change": "在目标病例首项直接列出可识别内容，并继续指向第4.1节的具体范围。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["肺炎诊断", "肺部感染", "肺部炎症或实变"]
+  },
+  {
+    "issue_id": "HUM-013",
+    "disposition": "clarify",
+    "rationale": "长篇规则仅靠段落和列表不易看清判断顺序、证据组合和阶段关系。",
+    "decision_impact": "不改变病例边界、标签、关系或质量标准。",
+    "complexity_cost": "low",
+    "guide_change": "在四分类、关系、每例操作和培训质控部分增加流程图，并为证据作用、时间信息和双标设计增加对照表。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["四分类流程", "时间三类", "五类关系", "正式真人双标流程"]
+  },
+  {
+    "issue_id": "HUM-014",
+    "disposition": "clarify",
+    "rationale": "案例和高风险规则虽然内容完整，但视觉层级不足，不利于标注员快速定位原文、结论、操作和判断依据。",
+    "decision_impact": "不改变病例边界、标签、关系、数值或质量标准。",
+    "complexity_cost": "low",
+    "guide_change": "案例按主题分组，原文使用引用块，操作字段统一加粗；为隐私、关系、禁止事项和AI压力测试增加提示框。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["案例快速查读", "隐私停止", "关系不确定", "AI压力测试限制"]
+  },
+  {
+    "issue_id": "HUM-015",
+    "disposition": "clarify",
+    "rationale": "主指南没有集中说明成人和儿童页面的共同标签与专用标签，也缺少本地引用文件的可追溯清单。",
+    "decision_impact": "不改变病例分类或标签定义；降低成人儿童标签混用和引用来源不清的风险。",
+    "complexity_cost": "low",
+    "guide_change": "在第6章增加成人儿童标签导读，并在文件使用说明后增加标注文件、锁定清单、验证报告、裁决记录和反馈日志列表。",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": ["成人体温测量", "儿童发热但无体温标签", "成人职业暴露", "儿童专用体征", "引用文件追溯"]
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "manifest_version": "2.0.0",
+  "status": "locked_for_next_human_case_level_calibration",
+  "locked_at": "2026-08-28",
+  "locked_documents": {
+    "guide": {
+      "path": "annotation_guide_v2.0.0.md",
+      "sha256": "80e1936e9de7fe58fd4d3138680def221b1dbbf5191d4ea398181f8393a98075"
+    },
+    "label_dictionary": {
+      "path": "label_dictionary_v2.0.0.md",
+      "sha256": "15602b8dfb4e194186bda9dc8bd0f8dd48c521dfc259c5683365d031cf6f7694"
+    }
+  },
+  "mode": "current_xml_plus_external_case_form",
+  "mode_rule": "同一批所有标注员必须使用本清单；不得混用尚未批准的推荐标签",
+  "xml": {
+    "adult": {
+      "path": "/Users/sepmein/x/projects/emr_structured_annotation/label_studio/pnemonia_adult_config.xml",
+      "sha256": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5"
+    },
+    "child": {
+      "path": "/Users/sepmein/x/projects/emr_structured_annotation/label_studio/pneumonia_children_config.xml",
+      "sha256": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+    }
+  },
+  "external_case_form": {
+    "contract_version": "case-form-2.0.0",
+    "unconditionally_required_fields": {
+      "task_id": "string",
+      "annotation_status": ["completed", "blocked_privacy"],
+      "data_issue": "array_with_values_from_data_issue_enum"
+    },
+    "data_issue_enum": ["none", "truncated", "duplicate_text", "record_splice", "lab_pairing_error", "template_conflict", "privacy_block", "other"],
+    "conditional_rules": [
+      {
+        "when": {"annotation_status": "completed"},
+        "required": {
+          "case_decision": ["目标病例信号", "待专业复核", "非目标", "信息不足"],
+          "evidence": "array_of_0_to_3_minimal_deidentified_excerpts"
+        },
+        "validation": "目标病例信号、待专业复核、非目标必须有1到3条证据；信息不足允许0条，若有可用残片则最多3条"
+      },
+      {
+        "when": {"annotation_status": "blocked_privacy"},
+        "required": {
+          "case_decision": null,
+          "evidence": []
+        },
+        "validation": "data_issue必须包含privacy_block；立即停止医学标注，不复制身份值"
+      }
+    ],
+    "privacy_rule": "blocked_privacy不进入医学一致性分母；重新去标识化后以复标记录替换占位，但保留原阻塞审计记录"
+  },
+  "structured_export_contract": {
+    "version": "label-studio-export-2.0.0",
+    "entity_required_fields": ["id", "start", "end", "label", "text"],
+    "relation_required_fields": ["from_id", "to_id", "relation_type"],
+    "direction_scoring": "normalize_by_semantic_endpoint_roles"
+  },
+  "recommended_but_not_available_in_locked_xml": [
+    "case_decision",
+    "data_issue",
+    "咳嗽",
+    "咳痰",
+    "气促/呼吸困难",
+    "TimeExpression"
+  ],
+  "calibration_scoring_scope": {
+    "case_level": "score",
+    "current_xml_entities": "exploratory_until_offset_contract_verified",
+    "recommended_missing_labels": "do_not_score_and_do_not_create"
+  },
+  "production_xml_changed": false
+}

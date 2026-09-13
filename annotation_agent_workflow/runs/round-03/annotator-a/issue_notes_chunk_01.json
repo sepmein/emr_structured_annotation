@@ -1,0 +1,67 @@
+{
+  "run_id": "round-03-annotator-a-chunk-01",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {
+    "total": 50,
+    "completed": 50,
+    "blocked": 0
+  },
+  "issues": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-010", "R3-014", "R3-015", "R3-022", "R3-025", "R3-028"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "",
+      "observed_problem": "输入文本为空，无法形成索引临床事件，也无法可靠判入目标、待复核或非目标。",
+      "question": "导入门禁是否应在进入人工标注前统一拦截空字符串，并固定记录空文本原因？",
+      "decision_impact": "无法进行医学判断，本轮判信息不足。",
+      "temporary_action": "本轮按信息不足处理，data_issue保守记录为other，不创建实体或关系。",
+      "suggested_options": ["导入前拦截并记录empty_text", "保留任务但在外部表单新增明确的empty_text数据问题值"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-030"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "【相关后文节选】",
+      "observed_problem": "记录只保留检验列表，且后文节选标题后没有内容，关键临床语境疑似被截断。",
+      "question": "能否从源系统重取该任务完整临床文本，并在导入阶段检测空节选标题？",
+      "decision_impact": "缺失部分可能包含决定病例分类的呼吸证据，本轮不能可靠判入三类。",
+      "temporary_action": "本轮判信息不足并记录truncated，不根据孤立检验数值推断。",
+      "suggested_options": ["重取完整源记录后复标", "导入门禁检测标题后无正文的截断模式"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-036"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "同上",
+      "observed_problem": "文本引用上文，但任务内没有被引用内容，无法确定复诊疾病或症状。",
+      "question": "导入时是否应把被引用的同次就诊上文一并提供，或将此类任务门禁拦截？",
+      "decision_impact": "缺失引用内容可能改变病例分类，本轮只能判信息不足。",
+      "temporary_action": "本轮判信息不足并记录other，不猜测同上所指内容。",
+      "suggested_options": ["拼接同次就诊被引用文本后复标", "新增missing_context数据问题值并在导入前拦截"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-004",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-041"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "待人工审核",
+      "observed_problem": "检查结果尚未形成可用医学内容，当前任务只有流程状态。",
+      "question": "是否应在报告审核完成后再导入，或为未出结果任务设置专门门禁状态？",
+      "decision_impact": "无法依据尚未审核的检查判断病例类别，本轮判信息不足。",
+      "temporary_action": "本轮判信息不足并记录other，不把流程状态当医学证据。",
+      "suggested_options": ["审核完成后重取报告并复标", "新增pending_report数据问题值并在导入前拦截"]
+    }
+  ]
+}

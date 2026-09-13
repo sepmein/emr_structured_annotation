@@ -1,0 +1,55 @@
+{
+  "proposal_version": "2.0.0",
+  "approval_status": "proposed_not_applied",
+  "changes": [
+    {
+      "id": "SC2-001",
+      "action": "add_required",
+      "label": "case_decision",
+      "control": "single_choice",
+      "values": ["目标病例信号", "待专业复核", "非目标", "信息不足"],
+      "decision_role": "核心病例级输出",
+      "evidence": "100/100例均需外部JSON记录；当前XML无法在Label Studio内完成核心任务"
+    },
+    {
+      "id": "SC2-002",
+      "action": "add_minimal_entities",
+      "label": "咳嗽/咳痰/气促或呼吸困难",
+      "control": "three_span_labels",
+      "decision_role": "急性发热组合和结构性肺病急性恶化的证据",
+      "evidence": "两名智能体均报告多例XML与指南不一致"
+    },
+    {
+      "id": "SC2-003",
+      "action": "add",
+      "label": "TimeExpression",
+      "control": "single_span_label",
+      "decision_role": "保存日期、相对时间、时长和病程日序；归一化自动完成",
+      "evidence": "100例未发现需拆分更多人工时间标签"
+    },
+    {
+      "id": "SC2-004",
+      "action": "add_recommended",
+      "label": "data_issue",
+      "control": "multi_choice_or_text",
+      "values": ["truncated", "duplicate_text", "record_splice", "lab_pairing_error", "template_conflict", "privacy_block"],
+      "decision_role": "将数据问题与医学不确定性分开",
+      "evidence": "100例中出现隐私、拼接、重复、检验错位和模板矛盾"
+    }
+  ],
+  "preprocessing_requirements": [
+    "空白和不可解析记录门禁",
+    "结构化身份字段删除及隐私模式扫描",
+    "按就诊/activity/source拆分索引事件",
+    "精确重复段落去重并保留偏移映射",
+    "检验项目按原始记录ID成组输出"
+  ],
+  "not_proposed": [
+    "慢性炎症独立实体",
+    "支气管扩张伴感染独立实体",
+    "稳定或好转人工标签",
+    "完整BEFORE/AFTER时间图",
+    "新增因果、治疗或疾病导致关系"
+  ],
+  "production_xml_changed": false
+}

@@ -1,0 +1,11 @@
+{
+  "guide_version": "0.2.0",
+  "input_feedback": "../../round-00/annotator/annotator_feedback.json",
+  "resolutions": [
+    {"issue_id":"ISS-001","disposition":"clarify","rationale":"咳嗽等可用于病例级待复核证据，但是否做实体由Round 1测量效用后决定","decision_impact":"待复核入口","complexity_cost":"medium","guide_change":"分开病例级原文证据与当前XML实体","schema_change":"none","back_annotation_required":false,"validation_case_types":["急性症状无影像","长期咳嗽"]},
+    {"issue_id":"ISS-002","disposition":"accept","rationale":"明确时间改变近期性","decision_impact":"纳入/排除","complexity_cost":"low","guide_change":"拟议一个通用时间表达或自动解析","schema_change":"add","back_annotation_required":true,"validation_case_types":["日期","相对时间","时长","窗口","病程日序"]},
+    {"issue_id":"ISS-003","disposition":"clarify","rationale":"病程主要影响活动性和优先级","decision_impact":"优先级","complexity_cost":"low","guide_change":"无好转/效不佳归持续语义；单次今日加重不等于进行性","schema_change":"none","back_annotation_required":false,"validation_case_types":["持续","无改善","逐渐加重","好转"]},
+    {"issue_id":"ISS-004","disposition":"accept","rationale":"需要稳定的症状待复核入口","decision_impact":"非目标与待复核边界","complexity_cost":"medium","guide_change":"急性发热加至少一项呼吸证据进入待复核；孤立轻症不进入","schema_change":"none","back_annotation_required":true,"validation_case_types":["发热加咳嗽","孤立发热","孤立咳嗽"]},
+    {"issue_id":"ISS-005","disposition":"clarify","rationale":"不得推断肺炎，但当前明确肺/胸部异常不宜直接排除","decision_impact":"复核入口","complexity_cost":"low","guide_change":"有明确当前肺/胸部异常则待复核，否则非目标","schema_change":"none","back_annotation_required":false,"validation_case_types":["胸水/引流","胸部术后","非肺部胸痛"]}
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "run_id": "round-03-annotator-a",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {
+    "total": 200,
+    "completed": 200,
+    "blocked": 0
+  },
+  "issues": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-010",
+        "R3-014",
+        "R3-015",
+        "R3-022",
+        "R3-025",
+        "R3-028",
+        "R3-054",
+        "R3-080",
+        "R3-081",
+        "R3-085",
+        "R3-086",
+        "R3-087",
+        "R3-089",
+        "R3-100",
+        "R3-114",
+        "R3-119",
+        "R3-134",
+        "R3-136",
+        "R3-155",
+        "R3-161",
+        "R3-166",
+        "R3-172",
+        "R3-186",
+        "R3-187",
+        "R3-190",
+        "R3-191",
+        "R3-194",
+        "R3-200"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "",
+      "observed_problem": "输入文本为空，无法形成索引临床事件，也无法可靠判入目标、待复核或非目标。",
+      "question": "导入门禁是否应在进入人工标注前统一拦截空字符串，并固定记录空文本原因？",
+      "decision_impact": "无法进行医学判断，本轮判信息不足。",
+      "temporary_action": "本轮按信息不足处理，data_issue保守记录为other，不创建实体或关系。",
+      "suggested_options": [
+        "导入前拦截并记录empty_text",
+        "保留任务但在外部表单新增明确的empty_text数据问题值",
+        "导入前拦截",
+        "外部表单新增empty_text枚举",
+        "新增empty_text枚举"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01",
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03",
+        "issue_notes_chunk_04"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-030",
+        "R3-067",
+        "R3-129",
+        "R3-146",
+        "R3-165"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "【相关后文节选】",
+      "observed_problem": "记录只保留检验列表，且后文节选标题后没有内容，关键临床语境疑似被截断。",
+      "question": "能否从源系统重取该任务完整临床文本，并在导入阶段检测空节选标题？",
+      "decision_impact": "缺失部分可能包含决定病例分类的呼吸证据，本轮不能可靠判入三类。",
+      "temporary_action": "本轮判信息不足并记录truncated，不根据孤立检验数值推断。",
+      "suggested_options": [
+        "重取完整源记录后复标",
+        "导入门禁检测标题后无正文的截断模式",
+        "重取完整记录后复标",
+        "导入门禁检测截断模式",
+        "重取完整记录"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01",
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03",
+        "issue_notes_chunk_04"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-036",
+        "R3-063",
+        "R3-076",
+        "R3-082",
+        "R3-095",
+        "R3-108",
+        "R3-131",
+        "R3-135",
+        "R3-138",
+        "R3-139",
+        "R3-168",
+        "R3-170",
+        "R3-173",
+        "R3-188",
+        "R3-199"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "同上",
+      "observed_problem": "文本引用上文，但任务内没有被引用内容，无法确定复诊疾病或症状。",
+      "question": "导入时是否应把被引用的同次就诊上文一并提供，或将此类任务门禁拦截？",
+      "decision_impact": "缺失引用内容可能改变病例分类，本轮只能判信息不足。",
+      "temporary_action": "本轮判信息不足并记录other，不猜测同上所指内容。",
+      "suggested_options": [
+        "拼接同次就诊被引用文本后复标",
+        "新增missing_context数据问题值并在导入前拦截",
+        "拼接被引用文本后复标",
+        "外部表单新增missing_context枚举",
+        "新增missing_context枚举"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01",
+        "issue_notes_chunk_02",
+        "issue_notes_chunk_03",
+        "issue_notes_chunk_04"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-004",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-041"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "待人工审核",
+      "observed_problem": "检查结果尚未形成可用医学内容，当前任务只有流程状态。",
+      "question": "是否应在报告审核完成后再导入，或为未出结果任务设置专门门禁状态？",
+      "decision_impact": "无法依据尚未审核的检查判断病例类别，本轮判信息不足。",
+      "temporary_action": "本轮判信息不足并记录other，不把流程状态当医学证据。",
+      "suggested_options": [
+        "审核完成后重取报告并复标",
+        "新增pending_report数据问题值并在导入前拦截"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_01"
+      ]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-001",
+      "category": "data_quality",
+      "severity": "minor",
+      "affected_tasks": [
+        "R3-141",
+        "R3-147"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "左腕疼痛数小时／左膝疼痛数小时",
+      "observed_problem": "同一任务不同字段出现无法由时间解释的部位矛盾，或当前心脏事件与既往史否认心脏病和手术相冲突。",
+      "question": "此类模板矛盾是否应由预处理按字段一致性规则自动标记并回源核对？",
+      "decision_impact": "本块两例仍有足够证据判非目标，矛盾不直接改变肺炎信号判断，但降低记录可信度。",
+      "temporary_action": "病例级按明确无肺部感染证据判非目标，同时记录template_conflict。",
+      "suggested_options": [
+        "回源核对矛盾字段",
+        "预处理增加跨字段一致性检测"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_03"
+      ]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-002",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-140",
+        "R3-145"
+      ],
+      "affected_labels": [
+        "case_decision"
+      ],
+      "evidence_excerpt": "咳嗽、咳痰；两肺可闻及湿罗音",
+      "observed_problem": "B1把异常肺部体征与急性发热组合为待复核入口，但B3的“性质不明肺/胸部异常”是否也包含无发热时的湿啰音并不完全明确。",
+      "question": "无发热、无已知结构性肺病时，急性咳嗽咳痰合并湿啰音是否进入待专业复核？",
+      "decision_impact": "两种解释会使R3-140和R3-145在非目标与待专业复核之间变化。",
+      "temporary_action": "本轮按B1显式组合门槛保守判非目标，不把湿啰音解释为B3影像或结构性肺异常。",
+      "suggested_options": [
+        "明确B3仅指影像或结构性异常",
+        "将急性呼吸症状加湿啰音列为独立待复核入口"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_03"
+      ]
+    },
+    {
+      "issue_id": "R3A-C04-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": [
+        "R3-162",
+        "R3-176",
+        "R3-183",
+        "R3-198"
+      ],
+      "affected_labels": [
+        "case_decision",
+        "data_issue"
+      ],
+      "evidence_excerpt": "近日有咳嗽咳痰。",
+      "observed_problem": "R3-162内部重复近同义现病史；R3-176、R3-183和R3-198为逐字相同的跨任务记录，可能重复计入样本。",
+      "question": "扩大标注前是否应按去标识化全文哈希及近重复规则去重，并保留重复审计映射？",
+      "decision_impact": "不改变单例非目标判断，但会扭曲四分类分布并可能高估一致性。",
+      "temporary_action": "保留原任务独立判断，并对受影响任务记录duplicate_text。",
+      "suggested_options": [
+        "按全文哈希去重后抽样",
+        "保留重复任务但从一致性主分析中预先排除"
+      ],
+      "observed_in_chunks": [
+        "issue_notes_chunk_04"
+      ]
+    }
+  ]
+}

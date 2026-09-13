@@ -1,0 +1,251 @@
+{
+  "guide_version": "2.1.0-draft",
+  "source_guide_version": "2.0.1",
+  "run_id": "round-03",
+  "status": "draft_for_project_owner_review",
+  "production_xml_changed": false,
+  "interpretation_warning": "以下反馈来自AI指南压力测试，不是真人IAA或临床金标准。",
+  "resolutions": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "disposition": "data_issue",
+      "rationale": "28个任务报告空文本，来源是导入数据缺失而非医学标签定义。现有other不能区分自动重取路径。",
+      "decision_impact": "空文本固定判信息不足并应从普通医学标注队列拦截，不进入正常病例分布。",
+      "complexity_cost": "low",
+      "guide_change": "数据门禁增加empty_text定义、自动拦截和审计日志；不要求医学标注员手工处理空字符串。",
+      "schema_change": "add",
+      "schema_change_detail": "外部data_issue枚举增加empty_text；不增加Label Studio实体按钮。",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "空字符串",
+        "纯空格",
+        "只有分隔符",
+        "自然短但完整的无关记录"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "disposition": "data_issue",
+      "rationale": "孤立检验和空节选标题是源记录截断；现有truncated足以表达，无需新标签。",
+      "decision_impact": "关键上下文缺失时判信息不足；可由剩余完整非呼吸记录可靠分类时可正常分类并保留truncated。",
+      "complexity_cost": "low",
+      "guide_change": "增加空标题、只有项目无结果、固定字符截断三个自动检测例及“截断不自动等于信息不足”的对照。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": [
+        "检验标题后无正文",
+        "项目有名称无结果",
+        "末尾截断但已有明确无关索引事件"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "disposition": "data_issue",
+      "rationale": "15个任务引用同上、如前或前症但被引用内容缺失，修复路径是回源补上下文，不是医学裁决。",
+      "decision_impact": "缺失内容可能改变四分类时判信息不足；补齐同次就诊上下文后复标。",
+      "complexity_cost": "low",
+      "guide_change": "定义missing_context，并说明缺失引用不会影响分类时可继续；可能反转分类时信息不足。",
+      "schema_change": "add",
+      "schema_change_detail": "外部data_issue枚举增加missing_context；不增加实体按钮。",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "同上且病种缺失",
+        "如前但当前有足够无关证据",
+        "前症复诊且旧肺炎证据可能存在"
+      ]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-004",
+      "disposition": "data_issue",
+      "rationale": "待人工审核是单个流程占位任务，应在报告形成后再导入；单例不足以新增人工枚举按钮。",
+      "decision_impact": "当前没有医学内容，判信息不足并回源重取。",
+      "complexity_cost": "none",
+      "guide_change": "导入门禁增加pending_report自动拦截规则；当前用other并填写data_issue_note。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": [
+        "待人工审核",
+        "报告未出",
+        "已有最终报告"
+      ]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-001",
+      "disposition": "data_issue",
+      "rationale": "跨字段部位和病史冲突属于已有template_conflict定义，且未反转两例肺炎分类。",
+      "decision_impact": "降低记录可信度；核心肺炎结论冲突时才升级信息不足。",
+      "complexity_cost": "none",
+      "guide_change": "补充预处理跨字段一致性检测建议，并保留时间变化不算冲突的反例。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": [
+        "同一时点部位矛盾",
+        "不同日期真实变化",
+        "核心肺炎证据相互冲突"
+      ]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-002",
+      "disposition": "clarify",
+      "rationale": "v2.0.1第4.2节已允许湿啰音与其他证据共同触发复核，但B3未明确列出异常肺部听诊，导致两个相反且均可解释的执行结果。",
+      "decision_impact": "R3-140和R3-145应由非目标统一为待专业复核。",
+      "complexity_cost": "low",
+      "guide_change": "B3明确：当前咳嗽/咳痰等呼吸症状加双肺湿啰音可作为性质未明客观肺部异常进入待复核，不要求同时发热；湿啰音单独不自动进入。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "3天咳嗽咳痰加湿啰音无发热",
+        "2周咳嗽咳痰加湿啰音",
+        "孤立湿啰音",
+        "发热加呼吸音粗"
+      ]
+    },
+    {
+      "issue_id": "R3A-C04-ISS-001",
+      "disposition": "data_issue",
+      "rationale": "精确重复会扭曲类别分布和一致性，属于抽样与导入数据治理，不靠医学标签解决。",
+      "decision_impact": "不改变单例分类，但原始200例不能被当作200个独立临床文本。",
+      "complexity_cost": "low",
+      "guide_change": "全文哈希精确去重，保留task_id映射；近重复只标记。主分析同时报告raw和unique-text结果。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "全文完全重复",
+        "空文本重复组",
+        "同一患者不同日期相似记录",
+        "模板近重复"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-001",
+      "disposition": "clarify",
+      "rationale": "B5已规定症状加重加客观证据，但“今年加重6次”和治疗后好转的索引归属未举例。固定日数会增加伪精确性。",
+      "decision_impact": "R3-002判非目标；年度次数和单独SpO2 93%不能代替当前症状加重。",
+      "complexity_cost": "low",
+      "guide_change": "近期按索引事件语义判断：须明确本次/当前连续疗程的症状加重。治疗后好转仍可属于同一事件，但需原文建立连续诊疗关系。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "年度多次加重但本次配药好转",
+        "本次三天加重加低氧",
+        "治疗后好转但仍同一住院事件",
+        "孤立SpO2 93%"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-002",
+      "disposition": "accept",
+      "rationale": "咳嗽、咳痰、气促或呼吸困难在20个任务反复出现，直接参与B1、B5和B6，当前XML无法结构化表达且边界已在字典中定义。",
+      "decision_impact": "不改变病例级规则，但能完整保存触发待复核和排除的证据链，并支持核心症状一致性评估。",
+      "complexity_cost": "medium",
+      "guide_change": "在获批XML发布前继续只保存病例级evidence，不计为实体漏标；发布后按现有详细字典培训。",
+      "schema_change": "add",
+      "schema_change_detail": "提议下一版成人/儿童XML加入咳嗽、咳痰、气促或呼吸困难三个实体标签；本草案不修改生产XML。",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "发热加咳嗽",
+        "孤立咳嗽",
+        "支扩咳痰加重",
+        "气促的心源性替代解释",
+        "否定并列症状"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-003",
+      "disposition": "data_issue",
+      "rationale": "该反馈合并了空文本和缺失引用两条不同修复路径，均在多例重复出现，other无法支持自动路由。",
+      "decision_impact": "病例级仍为信息不足，但数据治理应区分直接丢弃空任务与回源补上下文。",
+      "complexity_cost": "low",
+      "guide_change": "增加empty_text和missing_context定义；当data_issue含other时要求一条非敏感data_issue_note。",
+      "schema_change": "add",
+      "schema_change_detail": "扩展外部data_issue枚举，并在other时条件必填data_issue_note。",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "空文本",
+        "同上缺失",
+        "待人工审核",
+        "其他编码损坏"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-004",
+      "disposition": "clarify",
+      "rationale": "未改善表达持续，不等于近期加重；更换抗生素或痰培养也不是B5规定的客观急性证据。",
+      "decision_impact": "R3-059和R3-148统一判非目标。",
+      "complexity_cost": "low",
+      "guide_change": "支扩规则增加三列对照：持续或未改善、明确加重、客观急性证据；只有明确加重加客观证据命中B5。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "未改善加换药但无客观证据",
+        "咳痰增多加湿啰音",
+        "稳定配药",
+        "明确肺实质感染"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-005",
+      "disposition": "clarify",
+      "rationale": "B3不应限于影像，但也不能让任意孤立体征自动进入复核；需要给出呼吸症状加客观肺部体征的组合。",
+      "decision_impact": "R3-140和R3-145统一判待专业复核。",
+      "complexity_cost": "low",
+      "guide_change": "明确B3包括当前异常肺部听诊体征；咳嗽或咳痰加双肺湿啰音为正例，孤立湿啰音为近似反例。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": [
+        "咳嗽咳痰加双肺湿啰音",
+        "孤立湿啰音",
+        "心衰加湿啰音且有明确替代解释"
+      ]
+    },
+    {
+      "issue_id": "ISSUE-R3B-006",
+      "disposition": "defer",
+      "rationale": "B3证据跨越结节、磨玻璃、胸腔改变和听诊体征。一个通用按钮会混合异质概念并与肺部组织炎症重叠；当前证据不足以证明人工实体化收益超过复杂度。",
+      "decision_impact": "当前病例级仍可用1至3条evidence复现B3触发，不影响R3-164待复核结论。",
+      "complexity_cost": "high",
+      "guide_change": "校准期明确B3证据可只进入病例级evidence，不误标为肺部组织炎症。建立候选证据台账，按唯一文本统计。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": [
+        "磨玻璃结节",
+        "胸水或胸膜异常",
+        "条索影",
+        "湿啰音",
+        "明确肺部炎症"
+      ],
+      "reconsideration_trigger": "至少10个唯一真实案例重复需要结构化表达，且专家能形成与肺部组织炎症不重叠、标注员可复述的边界后再评估。"
+    }
+  ],
+  "consolidated_schema_recommendations": {
+    "external_case_form": {
+      "add_data_issue_values": [
+        "empty_text",
+        "missing_context"
+      ],
+      "add_conditional_field": {
+        "field": "data_issue_note",
+        "when": "data_issue contains other",
+        "constraint": "required_short_deidentified_text"
+      }
+    },
+    "label_studio_xml_proposal_only": {
+      "add_entities": [
+        "咳嗽",
+        "咳痰",
+        "气促/呼吸困难"
+      ],
+      "defer_entities": [
+        "通用肺/胸部异常"
+      ],
+      "production_xml_modified": false
+    }
+  },
+  "guide_clarifications_to_apply": [
+    "结构性肺病B5要求当前症状明确加重加客观急性证据；未改善、换药和年度加重次数不能替代。",
+    "B3包括当前呼吸症状加异常肺部听诊体征；无发热的咳嗽咳痰加双肺湿啰音可待复核。",
+    "短而明确无关的记录判非目标；缺失同前或如前内容且可能反转分类时判信息不足。",
+    "旧的无关检查不能补足当前索引疾病。",
+    "raw和unique-text统计并列报告，AI结果不称真人IAA或金标准。"
+  ]
+}

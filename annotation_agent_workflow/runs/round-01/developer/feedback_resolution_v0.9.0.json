@@ -1,0 +1,94 @@
+{
+  "guide_version": "0.9.0",
+  "input_feedback": "../root-forward-test/annotator_feedback.json",
+  "resolutions": [
+    {
+      "issue_id": "R1-ISS-001",
+      "disposition": "accept",
+      "rationale": "咳嗽、咳痰和气促直接构成待专业复核入口，三个标签的病例判断效用明确且复杂度可控。",
+      "decision_impact": "非目标与待专业复核",
+      "complexity_cost": "新增3个症状实体；不新增程度、频率或解剖子标签。",
+      "guide_change": "纳入v1推荐最小症状集合；在XML更新前仍以病例级原文证据记录。",
+      "schema_change": "add_recommended",
+      "back_annotation_required": true,
+      "validation_case_types": ["急性发热加咳嗽","孤立咳嗽","长期稳定咳嗽"]
+    },
+    {
+      "issue_id": "R1-ISS-002",
+      "disposition": "accept",
+      "rationale": "一个通用时间表达可保存日期、相对时间、时长和病程日序，且不把归一化负担交给人工。",
+      "decision_impact": "当前/近期、长期/既往和计划的区分",
+      "complexity_cost": "新增1个通用跨度；标准化自动完成。",
+      "guide_change": "建立三层轻量时间模型：时间表达、事件位置、病程。",
+      "schema_change": "add_recommended",
+      "back_annotation_required": true,
+      "validation_case_types": ["具体日期","相对时间","时长","同次住院","计划"]
+    },
+    {
+      "issue_id": "R1-ISS-003",
+      "disposition": "clarify",
+      "rationale": "同次就诊或同次住院内出现的直接肺部证据属于索引临床事件，即使出院时好转仍可回顾性形成病例信号；好转只降低活动性/优先级。",
+      "decision_impact": "目标病例信号与非目标",
+      "complexity_cost": "不新增人工标签；由时间证据和后处理生成活动性。",
+      "guide_change": "定义索引临床事件，并增加已改善病例正例。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["住院早期肺炎出院好转","纯既往肺炎"]
+    },
+    {
+      "issue_id": "R1-ISS-004",
+      "disposition": "accept",
+      "rationale": "直接证据白名单能够防止把非特异影像和胸膜疾病误标为肺炎。",
+      "decision_impact": "目标病例信号与待专业复核",
+      "complexity_cost": "只增加指南例表，不增加标签。",
+      "guide_change": "明确炎症/感染/实变等直接证据与胸水、条索、结节、肿块、脓胸等非特异异常。",
+      "schema_change": "none",
+      "back_annotation_required": true,
+      "validation_case_types": ["脓胸","胸水","小斑片影","明确肺炎症"]
+    },
+    {
+      "issue_id": "R1-ISS-005",
+      "disposition": "clarify",
+      "rationale": "现有断言足够，关键是定义检测结果词的映射；增加强度标签对病例判断效用有限。",
+      "decision_impact": "病原证据解释和复核优先级",
+      "complexity_cost": "不新增标签。",
+      "guide_change": "阳性/检出/培养见/弱阳性归肯定并保留完整跨度；可疑阳性/临界归可疑；阴性/未检出归否定。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["弱阳性","可疑阳性","未检出","培养见"]
+    },
+    {
+      "issue_id": "R1-ISS-006",
+      "disposition": "clarify",
+      "rationale": "五类关系足以表达当前任务；应通过端点、作用域和并列规则控制错误，而不是新增检测事件节点。",
+      "decision_impact": "病原证据解释",
+      "complexity_cost": "不新增关系。",
+      "guide_change": "建立合法端点矩阵、共享修饰语逐项连边、点击顺序忽略和不确定不连规则。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["并列病原体","共享阴性","重复检测","标本唯一归属"]
+    },
+    {
+      "issue_id": "R1-ISS-007",
+      "disposition": "accept",
+      "rationale": "空文本应在导入前自动拦截，避免消耗医学标注时间。",
+      "decision_impact": "信息不足和工作量",
+      "complexity_cost": "低；预处理规则。",
+      "guide_change": "增加数据质量门禁和排除原因日志。",
+      "schema_change": "preprocessing",
+      "back_annotation_required": false,
+      "validation_case_types": ["空字符串","纯空格","只有分隔符"]
+    },
+    {
+      "issue_id": "R1-ISS-008",
+      "disposition": "clarify",
+      "rationale": "标注员不能修改原文或靠上下文猜测字段拼接错误。",
+      "decision_impact": "本例不改变病例结论",
+      "complexity_cost": "低。",
+      "guide_change": "只标明确原文；影响结论时阻塞并退回数据修复。",
+      "schema_change": "none",
+      "back_annotation_required": false,
+      "validation_case_types": ["截断","字段错位","语义不通"]
+    }
+  ]
+}

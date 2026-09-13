@@ -1,0 +1,57 @@
+{
+  "title": "三层时间模型20例真实病历验证",
+  "date": "2026-08-26",
+  "source": "/Users/sepmein/x/projects/emr_structured_annotation/output/emr_merged_202608.json",
+  "method": {
+    "sample_size": 20,
+    "sampling": "从非空病历中按时间线索类型进行目的抽样，用于Schema压力测试；不是患病率或标签频率的随机估计",
+    "privacy": "仅保留T01-T20、去标识化时间短语和判断，不保留姓名、患者ID、证件号或地址",
+    "unit": "一份合并后的EMR任务"
+  },
+  "model_under_test": {
+    "layer_1_explicit_time": ["时间定位", "时长/时间窗", "频率"],
+    "layer_2_temporality": ["当前", "既往", "计划/未来", "无法判断"],
+    "layer_3_course": ["持续/仍存在", "反复", "加重", "好转/缓解", "已结束"]
+  },
+  "summary": {
+    "full": 13,
+    "partial": 7,
+    "unrepresentable": 0,
+    "conceptual_coverage_percent": 100,
+    "full_coverage_percent_before_revision": 65,
+    "partial_coverage_percent_before_revision": 35
+  },
+  "cases": [
+    {"case":"T01","example":"无可标时间表达（检验列表）","status":"完整","gap":"无；应正确留空","action":"不因检验项目顺序推断时间"},
+    {"case":"T02","example":"稍咳嗽，无发热","status":"完整","gap":"无时间表达","action":"不标时间；否定另作属性"},
+    {"case":"T03","example":"病情稳定；继前用药","status":"部分","gap":"缺少稳定；治疗延续边界不清","action":"增加稳定；继前仅关联治疗事件"},
+    {"case":"T04","example":"无可标时间表达（检验列表）","status":"完整","gap":"无；应正确留空","action":"不把数值误识别为日期"},
+    {"case":"T05","example":"5年余、2019年底、3.21、现仍、每日、拟","status":"部分","gap":"不完整日期、当前与持续叠加、频率和计划并存","action":"时间定位覆盖模糊日期；事件可同时有当前和持续"},
+    {"case":"T06","example":"1周前、次日、今、仍有、无好转","status":"部分","gap":"事件锚定时间和未改善","action":"时间定位纳入次日/今；增加未改善"},
+    {"case":"T07","example":"多年、每日、偶有、时有、近1月、较前加重、未见缓解","status":"部分","gap":"频率与反复易混；缺少未改善","action":"按周期计数标频率；同一事件跨时出现标反复；增加未改善"},
+    {"case":"T08","example":"1周余前、当时、治疗后、今晨、明确日期、好转","status":"完整","gap":"仅需事件锚定时间边界规则","action":"将当时/治疗后/今晨统一归入时间定位"},
+    {"case":"T09","example":"明确日期、当时、服药后、好转、今、继续","status":"部分","gap":"服药后是事件锚定；继续可能指治疗而非症状","action":"v1把服药后整体标时间定位；继续只关联其实际修饰对象"},
+    {"case":"T10","example":"反复咳嗽咳痰20年","status":"完整","gap":"无","action":"20年关联咳嗽和咳痰；反复分别关联两个事件"},
+    {"case":"T11","example":"入院后、仍有、明确日期、持续下降趋势、1周后","status":"部分","gap":"检验数值下降不能直接等同好转","action":"时间层不推断临床意义；数值趋势另设后续模块"},
+    {"case":"T12","example":"今日、第4天、10+天前、今日加重、4天、效不佳、现好转","status":"部分","gap":"病程日序、非标准时长、未改善","action":"第4天归时间定位；10+天前整体标注；增加未改善"},
+    {"case":"T13","example":"1天、1天前、今、既往、近半个月、近7天、近3日","status":"完整","gap":"章节标题可能诱发过度标注","action":"既往史标题作为默认上下文，不给标题本身画实体"},
+    {"case":"T14","example":"7天内无境外旅居史","status":"完整","gap":"时间与否定需共存","action":"7天内关联旅居事件；事件另设否定属性"},
+    {"case":"T15","example":"咳嗽1天；既往史章节","status":"完整","gap":"无","action":"1天关联咳嗽；章节标题不逐项连边"},
+    {"case":"T16","example":"耳闷1周；1周前发现","status":"完整","gap":"无","action":"1周为时长；1周前为时间定位"},
+    {"case":"T17","example":"咳嗽3天涕（原文噪声）","status":"完整","gap":"文本边界有噪声","action":"仅标明确可读的3天；不修正文意"},
+    {"case":"T18","example":"皮疹4天；4天来出现皮疹","status":"完整","gap":"同一事实重复","action":"按原文分别标两个提及；下游事件归一化去重"},
+    {"case":"T19","example":"近几天、长期、既往史章节","status":"完整","gap":"模糊时长与章节上下文","action":"近几天/长期均可标时长或时间窗；保留原文不强制换算"},
+    {"case":"T20","example":"反复共同修饰四个并列症状","status":"完整","gap":"共享修饰范围","action":"只画一次反复，分别关联到四个症状"}
+  ],
+  "recommended_schema_v1": {
+    "layer_1_span_labels": [
+      {"label":"时间定位","definition":"绝对日期、相对时间、事件锚定时间和病程日序，如2025-05-15、1周前、入院后、服药后、次日、今晨、第4天"},
+      {"label":"时长/时间窗","definition":"事件持续长度或观察窗口，如3天、5年余、近半个月、7天内、长期"},
+      {"label":"频率","definition":"单位时间内次数或周期，如每日1次、每周、偶有、时有"}
+    ],
+    "layer_2_event_attribute": ["当前", "既往", "计划/未来", "无法判断"],
+    "layer_3_course_labels": ["持续/仍存在", "反复", "加重", "好转/缓解", "未改善", "稳定", "已结束"],
+    "relations": ["TIME_OF: 时间表达到临床事件", "COURSE_OF: 病程线索到临床事件"],
+    "deferred": ["事件到事件的BEFORE/AFTER图", "检验数值上升/下降的临床意义判断", "依靠医学常识而非原文的时间推断"]
+  }
+}

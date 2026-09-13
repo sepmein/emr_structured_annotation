@@ -1,0 +1,76 @@
+{
+  "run_id": "round-03-annotator-a-chunk-03",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {"total": 50, "completed": 50, "blocked": 0},
+  "issues": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-114", "R3-119", "R3-134", "R3-136"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "",
+      "observed_problem": "复现chunk 01空文本问题；任务无可用医学正文。",
+      "question": "导入门禁是否应统一拦截空字符串？",
+      "decision_impact": "无法进行医学判断，本轮判信息不足。",
+      "temporary_action": "沿用前块处理，记录other且不创建实体或关系。",
+      "suggested_options": ["导入前拦截", "新增empty_text枚举"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-129", "R3-146"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "【相关后文节选】",
+      "observed_problem": "复现chunk 01截断模式；检验尾部的项目或相关后文不完整。",
+      "question": "能否重取完整源记录，并在导入阶段检测截断标志？",
+      "decision_impact": "R3-146缺失临床语境而判信息不足；R3-129仍可据完整骨科索引记录判非目标。",
+      "temporary_action": "记录truncated，不根据缺失结果推断。",
+      "suggested_options": ["重取完整记录后复标", "导入门禁检测截断模式"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-108", "R3-131", "R3-135", "R3-138", "R3-139"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "前症",
+      "observed_problem": "复现chunk 01缺失引用上下文问题；当前任务不能确定所指疾病或症状。",
+      "question": "导入时是否应一并提供被引用的同次就诊文本？",
+      "decision_impact": "缺失内容可能改变病例分类，本轮判信息不足。",
+      "temporary_action": "记录other，不猜测引用内容。",
+      "suggested_options": ["拼接被引用文本后复标", "新增missing_context枚举"]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-001",
+      "category": "data_quality",
+      "severity": "minor",
+      "affected_tasks": ["R3-141", "R3-147"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "左腕疼痛数小时／左膝疼痛数小时",
+      "observed_problem": "同一任务不同字段出现无法由时间解释的部位矛盾，或当前心脏事件与既往史否认心脏病和手术相冲突。",
+      "question": "此类模板矛盾是否应由预处理按字段一致性规则自动标记并回源核对？",
+      "decision_impact": "本块两例仍有足够证据判非目标，矛盾不直接改变肺炎信号判断，但降低记录可信度。",
+      "temporary_action": "病例级按明确无肺部感染证据判非目标，同时记录template_conflict。",
+      "suggested_options": ["回源核对矛盾字段", "预处理增加跨字段一致性检测"]
+    },
+    {
+      "issue_id": "R3A-C03-ISS-002",
+      "category": "boundary",
+      "severity": "major",
+      "affected_tasks": ["R3-140", "R3-145"],
+      "affected_labels": ["case_decision"],
+      "evidence_excerpt": "咳嗽、咳痰；两肺可闻及湿罗音",
+      "observed_problem": "B1把异常肺部体征与急性发热组合为待复核入口，但B3的“性质不明肺/胸部异常”是否也包含无发热时的湿啰音并不完全明确。",
+      "question": "无发热、无已知结构性肺病时，急性咳嗽咳痰合并湿啰音是否进入待专业复核？",
+      "decision_impact": "两种解释会使R3-140和R3-145在非目标与待专业复核之间变化。",
+      "temporary_action": "本轮按B1显式组合门槛保守判非目标，不把湿啰音解释为B3影像或结构性肺异常。",
+      "suggested_options": ["明确B3仅指影像或结构性异常", "将急性呼吸症状加湿啰音列为独立待复核入口"]
+    }
+  ]
+}

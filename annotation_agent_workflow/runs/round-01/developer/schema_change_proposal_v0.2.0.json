@@ -1,0 +1,31 @@
+{
+  "proposal_version": "0.2.0",
+  "approval_status": "proposed",
+  "changes": [
+    {
+      "id": "SC-001",
+      "action": "add_or_automate",
+      "label": "时间表达",
+      "decision_role": "区分当前/近期、长期和计划证据",
+      "complexity": "一个通用跨度，导出后归一化",
+      "evidence_to_collect": "Round 1中改变病例结论的次数"
+    },
+    {
+      "id": "SC-002",
+      "action": "evaluate_minimal_set",
+      "label": "咳嗽/咳痰/气促",
+      "decision_role": "与急性发热等组合时触发待专业复核",
+      "complexity": "仅当人工实体比病例级原文证据明显提高可解释性时加入",
+      "evidence_to_collect": "症状实体缺失造成的病例判断或解释问题"
+    },
+    {
+      "id": "SC-003",
+      "action": "move_or_document",
+      "label": "机械通气",
+      "decision_role": "复核优先级",
+      "complexity": "不新增标签，仅调整分组或文档解释"
+    }
+  ],
+  "not_proposed": ["稳定", "独立频率标签", "完整BEFORE/AFTER时间图", "新增因果关系"],
+  "production_xml_changed": false
+}

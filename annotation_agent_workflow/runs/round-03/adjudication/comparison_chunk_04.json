@@ -1,0 +1,60 @@
+{
+  "comparison_scope": "completed tasks only; privacy blocks excluded",
+  "common_completed_tasks": 50,
+  "blocked": {
+    "run_a": [],
+    "run_b": [],
+    "union": []
+  },
+  "observed_agreement": 0.98,
+  "expected_agreement": 0.4864,
+  "cohens_kappa": 0.961059,
+  "category_counts": {
+    "run_a": {
+      "非目标": 29,
+      "信息不足": 19,
+      "待专业复核": 2
+    },
+    "run_b": {
+      "非目标": 30,
+      "信息不足": 18,
+      "待专业复核": 2
+    }
+  },
+  "confusion_run_a_by_run_b": {
+    "非目标": {
+      "非目标": 29
+    },
+    "信息不足": {
+      "信息不足": 18,
+      "非目标": 1
+    },
+    "待专业复核": {
+      "待专业复核": 2
+    }
+  },
+  "disagreements": [
+    {
+      "task_id": "R3-168",
+      "run_a": "信息不足",
+      "run_b": "非目标"
+    }
+  ],
+  "entity_relation_note": "Not scored here; strict entity/relation F1 requires stable character offsets and endpoint IDs.",
+  "run_a_vs_preregistered_reference": {
+    "tasks": 50,
+    "agreement": 1.0,
+    "disagreements": []
+  },
+  "run_b_vs_preregistered_reference": {
+    "tasks": 50,
+    "agreement": 0.98,
+    "disagreements": [
+      {
+        "task_id": "R3-168",
+        "run": "非目标",
+        "reference": "信息不足"
+      }
+    ]
+  }
+}

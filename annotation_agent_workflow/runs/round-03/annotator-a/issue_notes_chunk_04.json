@@ -1,0 +1,63 @@
+{
+  "run_id": "round-03-annotator-a-chunk-04",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {"total": 50, "completed": 50, "blocked": 0},
+  "issues": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-155", "R3-161", "R3-166", "R3-172", "R3-186", "R3-187", "R3-190", "R3-191", "R3-194", "R3-200"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "",
+      "observed_problem": "复现chunk 01空文本问题；任务无可用医学正文。",
+      "question": "导入门禁是否应统一拦截空字符串？",
+      "decision_impact": "无法进行医学判断，本轮判信息不足。",
+      "temporary_action": "沿用前块处理，记录other且不创建实体或关系。",
+      "suggested_options": ["导入前拦截", "新增empty_text枚举"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-165"],
+      "affected_labels": ["data_issue"],
+      "evidence_excerpt": "【相关后文节选】",
+      "observed_problem": "复现chunk 01截断模式；检验尾部被不自然截断。",
+      "question": "能否重取完整源记录，并在导入阶段检测截断标志？",
+      "decision_impact": "完整非呼吸索引记录仍支持非目标，但缺失检验尾部降低数据完整性。",
+      "temporary_action": "记录truncated，不根据缺失结果推断。",
+      "suggested_options": ["重取完整记录", "导入门禁检测截断模式"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-168", "R3-170", "R3-173", "R3-188", "R3-199"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "病史同前",
+      "observed_problem": "复现chunk 01缺失引用上下文问题；当前任务不能确定所指疾病或症状。",
+      "question": "导入时是否应一并提供被引用的同次就诊文本？",
+      "decision_impact": "缺失内容可能改变病例分类，本轮判信息不足。",
+      "temporary_action": "记录other，不猜测引用内容。",
+      "suggested_options": ["拼接被引用文本后复标", "新增missing_context枚举"]
+    },
+    {
+      "issue_id": "R3A-C04-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-162", "R3-176", "R3-183", "R3-198"],
+      "affected_labels": ["data_issue", "case_decision"],
+      "evidence_excerpt": "近日有咳嗽咳痰。",
+      "observed_problem": "R3-162内部重复近同义现病史；R3-176、R3-183和R3-198为逐字相同的跨任务记录，可能重复计入样本。",
+      "question": "扩大标注前是否应按去标识化全文哈希及近重复规则去重，并保留重复审计映射？",
+      "decision_impact": "不改变单例非目标判断，但会扭曲四分类分布并可能高估一致性。",
+      "temporary_action": "保留原任务独立判断，并对受影响任务记录duplicate_text。",
+      "suggested_options": ["按全文哈希去重后抽样", "保留重复任务但从一致性主分析中预先排除"]
+    }
+  ]
+}

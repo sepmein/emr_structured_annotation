@@ -1,0 +1,100 @@
+{
+  "guide_version": "1.0.0",
+  "production_xml_changed": false,
+  "current_xml": {
+    "adult": {
+      "path": "/Users/sepmein/x/projects/emr_structured_annotation/label_studio/pnemonia_adult_config.xml",
+      "sha256": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5"
+    },
+    "child": {
+      "path": "/Users/sepmein/x/projects/emr_structured_annotation/label_studio/pneumonia_children_config.xml",
+      "sha256": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+    }
+  },
+  "implementation_items": [
+    {
+      "id": "SCHEMA-001",
+      "priority": "required",
+      "action": "add_single_choice",
+      "name": "case_decision",
+      "values": ["目标病例信号","待专业复核","非目标","信息不足"],
+      "reason": "保存指南的核心病例级输出",
+      "fallback_before_xml_update": "在外部结构化表单记录",
+      "back_annotation_required": true
+    },
+    {
+      "id": "SCHEMA-002",
+      "priority": "recommended",
+      "action": "add_issue_control",
+      "name": "data_issue",
+      "values": ["空文本","截断","字段错位","重复文本","身份信息","其他"],
+      "reason": "区分信息不足、可修复数据问题和医学边界",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SCHEMA-003",
+      "priority": "recommended",
+      "action": "add_labels",
+      "group": "症状",
+      "values": ["咳嗽","咳痰","气促/呼吸困难"],
+      "reason": "与发热组合时直接触发待专业复核；增加3项，病例判断效用明确",
+      "fallback_before_xml_update": "只作为病例级最小原文证据",
+      "back_annotation_required": true
+    },
+    {
+      "id": "SCHEMA-004",
+      "priority": "recommended",
+      "action": "add_label",
+      "group": "时间",
+      "value": "时间表达",
+      "reason": "保存日期、相对时间、时长、病程日序和窗口",
+      "normalization": "导出后由程序结合文档时间完成",
+      "back_annotation_required": true
+    },
+    {
+      "id": "SCHEMA-005",
+      "priority": "required_documentation",
+      "action": "regroup_semantics",
+      "values": {
+        "事件相对位置": ["当前","既往"],
+        "病程": ["持续","进行性加重"]
+      },
+      "reason": "避免把时态和病程当作同一互斥维度",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SCHEMA-006",
+      "priority": "required_postprocessing",
+      "action": "normalize_relation_roles",
+      "relations": ["状态","时间","测量","标本","检测方式"],
+      "reason": "评分和模型训练忽略Label Studio点击顺序，按端点类型生成标准角色",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SCHEMA-007",
+      "priority": "required_export",
+      "action": "retain_offsets",
+      "fields": ["start","end","label","text","from_id","to_id","relation_type"],
+      "reason": "计算严格实体F1、属性F1和关系F1",
+      "back_annotation_required": false
+    },
+    {
+      "id": "SCHEMA-008",
+      "priority": "recommended_ui",
+      "action": "move_or_relabel_group",
+      "value": "机械通气",
+      "target_group": "严重程度/治疗支持",
+      "reason": "机械通气不是症状，也不能证明肺炎",
+      "back_annotation_required": false
+    }
+  ],
+  "explicitly_not_added": [
+    "好转",
+    "稳定",
+    "频率",
+    "症状程度子标签",
+    "因果关系",
+    "BEFORE/AFTER完整时间图",
+    "GIS聚集关系"
+  ]
+}

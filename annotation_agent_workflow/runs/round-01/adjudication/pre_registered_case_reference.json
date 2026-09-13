@@ -1,0 +1,27 @@
+{
+  "reference_id": "round-01-preregistered-v0.2.0",
+  "guide_version": "0.2.0",
+  "purpose": "在查看两名试标智能体结果前固定病例级解释，用于发现指南歧义；这不是临床金标准。",
+  "tasks": [
+    {"task_id":"R1-001","case_decision":"信息不足","rationale":"空文本"},
+    {"task_id":"R1-002","case_decision":"非目标","rationale":"轻微咳嗽，明确无发热，无直接肺部证据"},
+    {"task_id":"R1-003","case_decision":"非目标","rationale":"慢病复诊且病情稳定，无急性呼吸证据"},
+    {"task_id":"R1-004","case_decision":"信息不足","rationale":"空文本"},
+    {"task_id":"R1-005","case_decision":"待专业复核","rationale":"当前复杂胸腔感染、脓胸和支气管胸膜瘘，但无明确肺炎或肺实质炎症诊断"},
+    {"task_id":"R1-006","case_decision":"目标病例信号","rationale":"当前右肺炎症且以肺炎收住院"},
+    {"task_id":"R1-007","case_decision":"待专业复核","rationale":"非呼吸主诉中出现两肺纤维条索及小斑片影，性质和活动性不清"},
+    {"task_id":"R1-008","case_decision":"待专业复核","rationale":"急性高热加咳痰且拟脓毒血症入院，但无直接肺部证据"},
+    {"task_id":"R1-009","case_decision":"非目标","rationale":"精神科配药，肺部查体无异常"},
+    {"task_id":"R1-010","case_decision":"非目标","rationale":"二十年慢性稳定咳嗽咳痰，无急性改变或直接肺部证据"},
+    {"task_id":"R1-011","case_decision":"目标病例信号","rationale":"本次住院近期胸部CT明确两肺炎症，虽出院时改善仍属于近期直接肺部证据"},
+    {"task_id":"R1-012","case_decision":"待专业复核","rationale":"近期发热加咳嗽且治疗效不佳/仍输液，虽有好转但无直接肺部证据"},
+    {"task_id":"R1-013","case_decision":"待专业复核","rationale":"急性发热加咳嗽和双肺呼吸音粗，无直接肺部证据"},
+    {"task_id":"R1-014","case_decision":"非目标","rationale":"糖尿病复诊，咳嗽和发热均否定"},
+    {"task_id":"R1-015","case_decision":"非目标","rationale":"孤立短期咳嗽，发热和其他呼吸危险证据均否定"},
+    {"task_id":"R1-016","case_decision":"非目标","rationale":"单纯耳部症状"},
+    {"task_id":"R1-017","case_decision":"非目标","rationale":"短期夜间咳嗽但无发热、呼吸困难或肺部啰音，属于孤立轻症"},
+    {"task_id":"R1-018","case_decision":"非目标","rationale":"单纯皮疹"},
+    {"task_id":"R1-019","case_decision":"非目标","rationale":"高血压复诊伴上呼吸道鼻部症状，无下呼吸道证据"},
+    {"task_id":"R1-020","case_decision":"非目标","rationale":"鼻炎表现，咳嗽和发热均否定"}
+  ]
+}

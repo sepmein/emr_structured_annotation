@@ -1,0 +1,8 @@
+{
+  "input": "annotation_agent_workflow/runs/round-03/inputs/pilot_cases_200.json",
+  "total": 200,
+  "flagged": 0,
+  "category_counts": {},
+  "findings": [],
+  "note": "Pattern audit reports task IDs only; flagged records must be reviewed or re-redacted before annotation."
+}

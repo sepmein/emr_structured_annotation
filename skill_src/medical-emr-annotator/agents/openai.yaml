@@ -1,0 +1,4 @@
+interface:
+  display_name: "医学EMR试标员"
+  short_description: "依据医学标注指南试标EMR病例并结构化记录歧义、阻塞问题与改进建议"
+  default_prompt: "Use $medical-emr-annotator to annotate a de-identified EMR sample according to the current guide and produce structured feedback."

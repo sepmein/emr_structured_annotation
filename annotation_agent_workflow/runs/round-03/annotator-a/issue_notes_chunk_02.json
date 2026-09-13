@@ -1,0 +1,50 @@
+{
+  "run_id": "round-03-annotator-a-chunk-02",
+  "guide_version": "2.0.1",
+  "xml_sha256": {
+    "adult": "b80e3064a159bfcfe285b808eedf706f232b04acb431f369a4f4075fe6ea39b5",
+    "child": "68410b7207b971060bf45defa4717327f48f71a0f1391364ab628ec4a9ee9a50"
+  },
+  "sample": {"total": 50, "completed": 50, "blocked": 0},
+  "issues": [
+    {
+      "issue_id": "R3A-C01-ISS-001",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-054", "R3-080", "R3-081", "R3-085", "R3-086", "R3-087", "R3-089", "R3-100"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "",
+      "observed_problem": "复现chunk 01空文本问题；本块任务无可用医学正文或仅有占位符。",
+      "question": "导入门禁是否应统一拦截空字符串和无信息占位符？",
+      "decision_impact": "无法进行医学判断，本轮判信息不足。",
+      "temporary_action": "沿用前块保守处理，记录other且不创建实体或关系。",
+      "suggested_options": ["导入前拦截", "外部表单新增empty_text枚举"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-002",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-067"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "【相关后文节选】",
+      "observed_problem": "复现chunk 01截断模式；检验列表后的相关后文节选为空。",
+      "question": "能否重取完整源记录，并在导入阶段检测空节选标题？",
+      "decision_impact": "缺失临床语境可能改变病例分类，本轮判信息不足。",
+      "temporary_action": "沿用前块保守处理，记录truncated且不推断检验意义。",
+      "suggested_options": ["重取完整记录后复标", "导入门禁检测截断模式"]
+    },
+    {
+      "issue_id": "R3A-C01-ISS-003",
+      "category": "data_quality",
+      "severity": "major",
+      "affected_tasks": ["R3-063", "R3-076", "R3-082", "R3-095"],
+      "affected_labels": ["case_decision", "data_issue"],
+      "evidence_excerpt": "上症",
+      "observed_problem": "复现chunk 01缺失引用上下文问题；当前任务无法确定所指疾病或症状。",
+      "question": "导入时是否应一并提供被引用的同次就诊文本？",
+      "decision_impact": "缺失引用内容可能改变病例分类，本轮判信息不足。",
+      "temporary_action": "沿用前块保守处理，记录other且不猜测引用内容。",
+      "suggested_options": ["拼接被引用文本后复标", "外部表单新增missing_context枚举"]
+    }
+  ]
+}
