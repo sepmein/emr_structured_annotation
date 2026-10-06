@@ -8,7 +8,10 @@ dependencies = [
     "gliner2>=1.2.4",
     "gliner>=0.2.0",
     "httpx[socks]>=0.28.1",
+    "ipython>=9.17.1",
+    "jupyter>=1.1.1",
     "label-studio-ml>=1.0.9",
+    "notebook>=7.6.2",
     "redis>=7.4.0",
     "requests>=2.32.5",
     "rq>=2.7.0",
@@ -16,5 +19,5 @@ dependencies = [
 ]
 
 [[tool.uv.index]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://mirrors.aliyun.com/pypi/simple"
 default = true

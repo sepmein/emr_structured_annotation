@@ -9,10 +9,34 @@ wheels/
 # Virtual environments
 .venv
 
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Editor / agent settings
 .claude
-.git
+.cursor/
+.vscode/
+.idea/
+
+# Model weights and checkpoints
+models/
+bert-base-model/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.ckpt
 
 # Local EMR source data and generated artifacts
 data/
 output/
+*.log
 .DS_Store
