@@ -285,16 +285,6 @@
     }
   </Style>
 
-  <View className="topbar">
-    <View className="topbar-title">
-      <Header value="🏥 患者信息"/>
-    </View>
-    <View className="meta-grid">
-      <View className="meta-pill"><Text name="patient_id" value="ID: $patient_id"/></View>
-      <View className="meta-pill"><Text name="patient_name" value="姓名: $patient_name"/></View>
-    </View>
-  </View>
-
   <View className="main">
 
     <View className="left">
