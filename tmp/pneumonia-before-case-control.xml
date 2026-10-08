@@ -99,10 +99,6 @@
     background: #ffffff;
     }
 
-    .case-decision .group-body {
-    padding: 10px 12px;
-    }
-
     .modifier-panel {
     background: #f4f6f8;
     border: 1px dashed #b7c3d0;
@@ -301,25 +297,6 @@
   <View className="main">
 
     <View className="left">
-
-      <View className="group tone-indigo case-decision">
-        <View className="group-head">
-          <Header value="病例四分类（必选）" />
-        </View>
-        <View className="group-body">
-          <View className="annotation-help">
-            <Header size="6" value="确认文本可安全标注后，按指南选择一个结论；发现身份信息时停止该例，不选择、不提交。" />
-          </View>
-          <Choices name="case_decision" toName="chief_complaint_text" choice="single-radio"
-            perRegion="false" showInline="false" required="true"
-            requiredMessage="请选择一个病例结论。发现身份信息时请停止该例，不要提交。">
-            <Choice value="目标病例信号" />
-            <Choice value="待专业复核" />
-            <Choice value="非目标" />
-            <Choice value="信息不足" />
-          </Choices>
-        </View>
-      </View>
 
       <View className="group tone-red">
         <View className="group-head">

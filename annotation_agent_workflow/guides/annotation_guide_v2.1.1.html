@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="肺炎相关电子病历公共卫生信号标注指南：病例判断、实体属性、关系、完整案例与质量控制。"><title>肺炎标注指南 · 阅读版</title><style>
+:root{--nav:#152d3a;--ink:#263e4b;--muted:#677d88;--line:#dfe7e9;--green:#157665;--orange:#b56d41;--back:#f2f5f5;--font:16px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;color:var(--ink);background:var(--back);font:var(--font)/1.95 "Microsoft YaHei","PingFang SC",sans-serif}a{color:var(--green);text-underline-offset:3px}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #ce986c;outline-offset:3px}button:disabled{opacity:.45;cursor:default}.skip{position:fixed;top:-80px;z-index:30;background:white;padding:10px}.skip:focus{top:5px}.shell{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.sidebar{height:100vh;overflow:auto;position:sticky;top:0;background:var(--nav);color:white;padding:30px 20px 20px;scrollbar-width:thin;scrollbar-color:#47606c transparent}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;line-height:1.5;margin-bottom:22px}.brand .symbol{width:44px;height:44px;display:grid;place-items:center;background:#284955;border-radius:10px;font-size:29px}.brand strong{color:inherit;display:block;font-size:16px;font-weight:600}.brand small{font-size:10px;letter-spacing:1.3px;color:#a2bac5}.nav-label{color:#8faab7;font-size:11px;letter-spacing:2px;margin:23px 11px 8px}.chapter-link{display:block;border-left:3px solid transparent;text-decoration:none;color:#c0d0d8;padding:8px 11px;line-height:1.6;font-size:13px;border-radius:4px;margin:3px 0}.chapter-link:hover{background:#23414e;color:white}.chapter-link.active{background:#2d4c59;color:white;border-color:#d3a079}.side-related{margin-top:26px;padding:20px 10px 8px;border-top:1px solid #35505d;color:#9eb4bf;font-size:12px}.side-related a{color:#d7e8e0;display:block;margin:5px 0}.workspace{min-width:0}.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 34px}.breadcrumbs{font-size:12px;color:var(--muted);white-space:nowrap}.tools{display:flex;gap:9px;align-items:center}.tool{border:1px solid var(--line);border-radius:5px;background:white;color:#46606d;padding:6px 11px;white-space:nowrap;font-size:13px;text-decoration:none}.tool:hover{background:#f1f6f4}.searchbox{display:flex;gap:8px;align-items:center}.searchbox input{border:1px solid #d8e2e5;background:#f4f7f7;border-radius:5px;padding:7px 12px;width:228px;font-size:13px}.search-status{font-size:12px;white-space:nowrap;color:var(--muted)}.match-tools{display:flex;gap:5px}.match-tools button{padding:3px 9px}.progress{position:absolute;left:0;bottom:-1px;height:2px;background:#3e907a;width:0}.layout{display:grid;grid-template-columns:minmax(0,900px) 195px;gap:32px;max-width:1290px;margin:auto;padding:42px 34px 50px}.reading{min-width:0}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--orange);font-size:12px;letter-spacing:2px}.eyebrow:before{content:'';width:26px;height:2px;background:var(--orange)}.hero{padding:0 5px 20px}h1{font-size:36px;font-weight:600;line-height:1.45;letter-spacing:-.5px;margin:14px 0 23px;max-width:760px}.hero>p{font-size:13px;line-height:2.05;color:var(--muted);margin:0}.stats{display:flex;gap:28px;border-top:1px solid #d5e1e1;border-bottom:1px solid #d5e1e1;padding:15px 0;margin:25px 0 21px}.stats div{display:flex;align-items:baseline;gap:8px;font-size:12px;color:var(--muted)}.stats strong{font:29px/1.4 Georgia,serif;color:#407a69}.quick-start{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:0 0 21px}.quick-start a{padding:15px;background:white;border:1px solid var(--line);border-top:2px solid #6b9b8d;border-radius:5px;text-decoration:none;font-size:13px;line-height:1.7}.quick-start small{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}.quick-start a:hover{background:#edf6f0}.version-note{border-left:3px solid #c99c71;background:#faf3e8;padding:15px 18px;color:#805d40;font-size:13px;line-height:1.85;margin:20px 0 28px}.version-note strong{display:block;margin-bottom:4px;font-weight:600}.chapter{background:white;border:1px solid var(--line);border-radius:8px;padding:29px 32px;margin:0 0 22px}.chapter>h2:first-child{margin-top:0;padding-top:0;border:0}h2{font-size:23px;font-weight:600;line-height:1.6;margin:0 0 22px;letter-spacing:-.2px}h3{font-size:18px;font-weight:600;margin:33px 0 15px;padding-top:14px;border-top:1px solid #e8eeee;line-height:1.7}h4{font-size:16px;margin:25px 0 12px;font-weight:600;line-height:1.7}h2,h3,h4{scroll-margin-top:12px}.anchor{opacity:0;color:#9ab4ac;text-decoration:none;font-weight:400;padding-left:9px;font-size:15px}h2:hover .anchor,h3:hover .anchor,h4:hover .anchor,.anchor:focus-visible{opacity:1}p{margin:12px 0 16px}.reading a{overflow-wrap:anywhere}li{margin:7px 0;padding-left:3px}ul,ol{padding-left:24px;margin:13px 0 20px}li>ul,li>ol{margin:5px 0}strong{font-weight:600;color:#243f4b}code{font-family:Consolas,"Microsoft YaHei",monospace;font-size:.87em;background:#eff4f2;padding:2px 5px;border-radius:3px;color:#276d5a;overflow-wrap:anywhere}pre{background:#f3f6f6;border:1px solid #e1e9e9;padding:15px;overflow:auto;font-size:12px;line-height:1.8}pre code{background:none;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{overflow-x:auto;margin:20px 0 25px;scrollbar-width:thin;border:1px solid #dce6e6;border-radius:5px}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.85;min-width:560px}th,td{text-align:left;vertical-align:top;padding:13px 14px;border-bottom:1px solid #e2e9e9;overflow-wrap:anywhere}th{color:#4e7065;background:#eef4f1;font-weight:600}tr:last-child td{border:0}tbody tr:nth-child(even){background:#fafcfc}td:first-child{font-weight:500}blockquote{margin:18px 0;padding:16px 20px;background:#f2f7f5;border-left:3px solid #7ba28f;color:#426657}blockquote p{margin:0}.callout{background:#f1f7f4;border-left:3px solid #6d9d86;border-radius:3px;margin:18px 0 22px;padding:17px 20px;font-size:14px}.callout p:first-of-type{margin-top:3px}.callout p:last-child,.callout ol:last-child,.callout ul:last-child{margin-bottom:0}.callout-label{font-size:11px;letter-spacing:1.5px;color:#3c7a63;font-weight:600;margin-bottom:5px}.callout.caution,.callout.warning{background:#fbf2e9;border-color:#c69972}.callout.caution .callout-label,.callout.warning .callout-label{color:#93603f}.callout.note{background:#f0f5f8;border-color:#91adbb}.callout.note .callout-label{color:#526f80}hr{border:0;border-top:1px solid #e4eceb;margin:30px 0}.chapter>hr:last-child{display:none}.directory{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.directory a{display:flex;justify-content:space-between;gap:12px;text-decoration:none;border-bottom:1px solid #e7eeee;padding:12px 0;font-size:14px}.directory a:hover{color:#b77749}.directory b{font-weight:400;color:#8caaa0}.case-index{border:1px solid #cbdcd4;border-radius:5px;background:#f7faf8;margin:0 0 25px}.case-index summary{cursor:pointer;padding:13px 16px;color:#35745e;font-size:14px}.case-index summary span{float:right;color:#7a9087;font-size:12px}.case-index>div{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;padding:6px 17px 18px}.case-index a{font-size:13px;text-decoration:none;line-height:1.7;padding:4px 0}.case-index a:hover{text-decoration:underline}#chapter-12~h4{color:#276c56}h4[id^="case-"]{padding:14px 16px;border:1px solid #dce8e1;background:#f1f6f3;border-radius:5px;margin-top:32px}h4[id^="case-"]+blockquote{border:1px solid #e1e9e6;border-left:3px solid #70a48b;background:#fbfdfb}.unavailable{color:#778993}.unavailable small{font-size:10px;display:block;color:#92724f}.toc{align-self:start;position:sticky;top:112px;max-height:calc(100vh - 140px);overflow:auto;scrollbar-width:thin;font-size:12px;color:var(--muted);padding-top:5px}.toc-label{font-size:11px;letter-spacing:2px;margin-bottom:13px}.toc-chapter{font-size:13px;color:#3e6260;padding-bottom:13px;border-bottom:1px solid #dbe5e3;margin-bottom:10px}.toc a{display:block;color:var(--muted);text-decoration:none;border-left:1px solid #d0dddc;padding:7px 12px;line-height:1.7}.toc a.active{color:var(--green);border-left:2px solid var(--green);background:#eaf1ee}.toc a.sub{font-size:11px;padding-left:20px}.toc a:hover{color:var(--green)}.toc-note{font-size:11px;margin-top:23px;line-height:1.85;border-top:1px solid #dbe5e3;padding-top:17px}.flowchart{margin:24px 0;border:1px solid #dfe9e7;border-radius:6px;background:#fcfefd;padding:14px}.diagram-scroll{overflow-x:auto;background:white;border-radius:4px}.diagram-scroll svg{display:block;width:100%;min-width:660px;max-height:none;font-family:"Microsoft YaHei",sans-serif}.edge-label{font-size:17px;fill:#637d83;paint-order:stroke;stroke:white;stroke-width:7;stroke-linejoin:round}.flowchart figcaption{font-size:11px;color:#7d938e;padding:9px 3px 0}.diagram-source{font-size:11px;color:var(--muted);margin-top:6px}.diagram-source summary{cursor:pointer}.diagram-source pre{font-size:11px}footer{padding:0 38px 25px;color:#7b8e95;font-size:11px}.back-top{position:fixed;right:22px;bottom:22px;width:38px;height:38px;background:#e8f1ee;border:1px solid #c4d8d0;border-radius:7px;color:#367561;z-index:8}.mobile-menu,.veil{display:none}mark.search-hit{background:#ffedb2;color:inherit;border-radius:2px;padding:1px 0}mark.search-hit.current{background:#edb653;outline:2px solid #b77b24}.search-live{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}[hidden]{display:none!important}
+.version-note.unified{background:#edf5f1;border-color:#73a08a;color:#496e5f}
+@media(min-width:1700px){.layout{max-width:1390px;grid-template-columns:minmax(0,1000px) 205px;gap:40px}.chapter{padding:36px 44px}}
+@media(max-width:1280px){.layout{grid-template-columns:minmax(0,1fr);padding:32px 28px}.toc{display:none}.shell{grid-template-columns:230px minmax(0,1fr)}.topbar{padding:12px 24px}.breadcrumbs{display:none}.chapter{padding:26px}h1{font-size:32px}.tools{width:100%;justify-content:flex-end}}
+@media(max-width:760px){:root{--font:15px}.shell{display:block}.sidebar{position:fixed;z-index:25;left:0;top:0;bottom:0;width:min(290px,85vw);transform:translateX(-100%);transition:transform .18s}.nav-open .sidebar{transform:translateX(0)}.nav-open .veil{display:block;position:fixed;inset:0;background:#162c3b88;border:0;z-index:24}.topbar{padding:10px 14px;gap:8px;flex-wrap:wrap;min-height:65px}.mobile-menu{display:block}.tools{width:auto;gap:7px;flex:1;justify-content:flex-end;flex-wrap:wrap}.searchbox{flex:1;min-width:135px}.searchbox input{width:100%;min-width:80px}.text-size{display:none}.source-button{display:none}.search-status{font-size:10px}.layout{padding:26px 14px}.hero{padding:0}h1{font-size:28px;line-height:1.5}.hero>p{font-size:11px}.stats{gap:24px;margin:20px 0}.stats div{display:block}.stats strong{display:block}.quick-start{gap:7px}.quick-start a{padding:11px;font-size:12px}.quick-start small{font-size:10px}.chapter{padding:22px 18px;margin-bottom:16px}h2{font-size:21px}h3{font-size:17px}.directory,.case-index>div{grid-template-columns:1fr}.case-index summary span{font-size:10px}.table-scroll{margin-right:-4px}.flowchart{padding:7px}.diagram-scroll svg{min-width:650px}.version-note{padding:13px 14px}footer{padding:0 20px 25px}.back-top{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}
+@media print{.skip{display:none!important}}
+@media print{@page{size:A4;margin:17mm 15mm}.sidebar,.topbar,.toc,.quick-start,.back-top,.veil,.anchor,.diagram-source,footer{display:none!important}body{background:white;font-size:10pt;line-height:1.65;-webkit-print-color-adjust:exact;print-color-adjust:exact}.shell,.layout{display:block;padding:0;max-width:none}.hero{padding:0}.hero h1{font-size:22pt}.hero>p{font-size:9pt}.stats{padding:8px 0;margin:15px 0}.version-note{font-size:9pt;margin:12px 0}.chapter{border:0;border-radius:0;padding:0;margin:20px 0;break-before:auto}h2{font-size:16pt;border-top:1px solid #b8ccc3!important;padding-top:16px!important;margin-top:25px!important}h3{font-size:12pt}h4{font-size:11pt}h2,h3,h4{break-after:avoid;scroll-margin-top:0}p,li{orphans:3;widows:3}blockquote,.callout,tr{break-inside:avoid}.table-scroll{overflow:visible;border:0}table{min-width:0;font-size:8.5pt;table-layout:fixed}td,th{padding:7px;overflow-wrap:anywhere}thead{display:table-header-group}.flowchart{break-inside:avoid;padding:4px;margin:15px 0}.diagram-scroll{overflow:visible}.diagram-scroll svg{min-width:0;width:100%;max-height:230mm}.case-index{display:none}.directory{grid-template-columns:1fr 1fr}.directory a{font-size:9pt;padding:5px 0}.search-hit,.search-hit.current{background:transparent!important;outline:0!important}a{color:inherit;text-decoration:none}}
+</style></head>
+<body><a class="skip" href="#reading">跳到正文</a><button class="veil" id="veil" aria-label="关闭目录"></button><div class="shell"><aside class="sidebar" id="sidebar" aria-label="章节导航"><a class="brand" href="#page-title"><span class="symbol" aria-hidden="true">＋</span><span><strong>肺炎标注手册</strong><small>ANNOTATION HANDBOOK</small></span></a><div class="nav-label">开始阅读</div><nav><a class="chapter-link" href="#before-start">开始标注前，请先记住</a><a class="chapter-link" href="#document-notes">文件使用说明</a><a class="chapter-link" href="#contents">目录</a><div class="nav-label">病例判断与标注操作</div><a class="chapter-link" href="#chapter-1">1. 项目背景、目的与任务边界</a><a class="chapter-link" href="#chapter-2">2. 每份病例需要完成什么</a><a class="chapter-link" href="#chapter-3">3. 病例级判断框架</a><a class="chapter-link" href="#chapter-4">4. 哪些证据会影响病例结论</a><a class="chapter-link" href="#chapter-5">5. 原文框选通则</a><a class="chapter-link" href="#chapter-6">6. 实体标签模块</a><a class="chapter-link" href="#chapter-7">7. 时间模块</a><a class="chapter-link" href="#chapter-8">8. 实体属性与断言模块</a><a class="chapter-link" href="#chapter-9">9. 关系模块</a><div class="nav-label">流程、案例与质量</div><a class="chapter-link" href="#chapter-10">10. 数据与隐私检查</a><a class="chapter-link" href="#chapter-11">11. 标准标注流程</a><a class="chapter-link" href="#chapter-12">12. 完整案例</a><a class="chapter-link" href="#chapter-13">13. 复核、上报与升级处理</a><a class="chapter-link" href="#chapter-14">14. 质量控制与评价</a><a class="chapter-link" href="#chapter-15">15. 培训、双标与裁决机制</a><a class="chapter-link" href="#chapter-16">16. 文档维护与版本管理</a><div class="nav-label">查阅与追溯</div><a class="chapter-link" href="#appendix-a">附录A：快速判定卡</a><a class="chapter-link" href="#appendix-b">附录B：统一配置标签、属性与关系速查表</a><a class="chapter-link" href="#appendix-c">附录C：暂未提供的功能与处理方式</a><a class="chapter-link" href="#references">参考框架与外部项目</a></nav><div class="side-related">配套查阅<a href="../../documentation/layout-preview/annotation-manual-design-b.html">标签字典 · HTML 阅读版 ↗</a><a href="annotation_guide_v2.1.1.md">查看 Markdown 原稿 ↗</a><a href="../../label_studio/pneumonia_config.xml">当前统一页面配置 ↗</a><p>HTML 整理：2026-10-07<br>正文版本、状态以原稿为准</p></div></aside>
+<div class="workspace"><header class="topbar"><button class="tool mobile-menu" id="mobile-menu" aria-controls="sidebar" aria-expanded="false">目录</button><span class="breadcrumbs">标注操作　/　主指南　/　阅读版</span><div class="tools"><div class="searchbox"><input id="search" type="search" aria-label="搜索指南全文" placeholder="搜索规则、案例或关键词…"><span class="search-status" id="search-status"></span><div id="match-tools" class="match-tools" hidden><button class="tool" id="prev-hit" aria-label="上一处匹配">↑</button><button class="tool" id="next-hit" aria-label="下一处匹配">↓</button></div></div><div class="text-size"><button class="tool" id="font-down" aria-label="缩小正文字号">A−</button><button class="tool" id="font-up" aria-label="放大正文字号">A＋</button></div><a class="tool source-button" href="annotation_guide_v2.1.1.md">原稿</a><button class="tool" id="print">打印 / PDF</button></div><div class="progress" id="progress" aria-hidden="true"></div></header><div class="search-live" id="search-live" role="status" aria-live="polite"></div>
+<div class="layout"><main class="reading" id="reading"><div class="hero"><div class="eyebrow">标注工作指南 · 全文阅读</div><h1 id="page-title">肺炎相关电子病历公共卫生信号标注指南</h1>
+<p>版本：v2.2.0 成人与儿童统一配置适配草案（沿用v2.1.1文件名）</p>
+<p>修订日期：2026-10-07；原v2.1.1发布日期：2026-08-28</p>
+<p>状态：已按统一XML核对标签、属性和关系；病例四分类边界未变；尚未完成Label Studio页面验收与人工双标验证</p>
+<p>适用对象：具有医学背景、但缺少文本标注经验的标注人员</p>
+<p>适用平台：Label Studio</p>
+<p>任务性质：病例发现和早期预警，不是临床诊断</p>
+<div class="stats"><div><strong>16</strong>主体章节</div><div><strong>28</strong>完整案例</div><div><strong>4</strong>操作流程图</div></div><div class="quick-start"><a href="#chapter-3"><small>先判断病例</small>四分类与复核入口 ↗</a><a href="#chapter-11"><small>按步骤操作</small>每例流程与提交核对 ↗</a><a href="#chapter-12"><small>查阅示例</small>完整案例与边界处理 ↗</a></div></div><aside class="version-note unified" role="note"><strong>成人与儿童共用统一配置</strong>本指南与<a href="../../documentation/layout-preview/annotation-manual-design-b.html">标签字典</a>均已按<a href="../../label_studio/pneumonia_config.xml">pneumonia_config.xml</a>同步：49个实体标签、9个实体属性字段、5种关系及1个病例级单选控件。两类任务使用同一套页面操作，病例判断按第3—4章执行；儿童特有体征仍按其医学定义和纳入范围标注。</aside><section class="chapter" data-section="before-start" aria-labelledby="before-start"><h2 id="before-start">开始标注前，请先记住<a class="anchor" href="#before-start" aria-label="链接到开始标注前，请先记住">#</a></h2>
+<aside class="callout important" role="note"><div class="callout-label">操作重点</div><p><strong>开始每例标注前，请确认以下四点：</strong></p>
+<ol>
+<li>本任务不是诊断肺炎，而是从电子病历中找出可能存在传播风险、需要公共卫生人员进一步查看的病例。</li>
+<li>每份记录先选一个病例结论，再标出支持这个结论的原文证据。</li>
+<li>只使用标注页面上已经提供的按钮。页面上没有的标签，不要自行增加或用相近标签代替。</li>
+<li>如果看到姓名、证件号、电话、详细地址等可识别个人身份的信息，立即停止该例并报告隐私问题。</li>
+</ol>
+</aside></section>
+<section class="chapter" data-section="document-notes" aria-labelledby="document-notes"><h2 id="document-notes">文件使用说明<a class="anchor" href="#document-notes" aria-label="链接到文件使用说明">#</a></h2>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">项目</th><th scope="col">内容</th></tr></thead><tbody><tr><td>标注单位</td><td>一份就诊记录、住院记录或合并后的单病例文本</td></tr><tr><td>每例需要完成</td><td>选择一个病例结论；框选证据、填写适用实体属性、连接明确关系；记录数据问题</td></tr><tr><td>可用标签</td><td>成人与儿童共用<code>pneumonia_config.xml</code>；以统一配置及页面实际显示的按钮为准</td></tr><tr><td>配套字典</td><td><code>label_dictionary_v2.1.1.md</code>与本指南均按统一配置说明操作；旧标注迁移见字典附录</td></tr><tr><td>指南维护</td><td>所有修改必须带版本、反馈编号、裁决理由和是否需回标；原始双标不得覆盖</td></tr><tr><td>隐私要求</td><td>仅使用去标识化文本；反馈只保留最小必要片段</td></tr><tr><td>规则冲突时</td><td>病例结论按第3—4章；按钮和属性范围按统一XML及第5—9章；发现冲突需报告，不能自行增改按钮</td></tr></tbody></table></div>
+<h3 id="document-notes-h-1">本指南引用的项目文件<a class="anchor" href="#document-notes-h-1" aria-label="链接到本指南引用的项目文件">#</a></h3>
+<p>成人与儿童任务现共用<code>label_studio/pneumonia_config.xml</code>，本指南和标签字典均按该配置说明操作。患者年龄不改变页面配置，是否标注仍取决于原文和标签定义。锁定清单及历史反馈记录不因文档修订而自动更新。</p>
+<p>本表只列本指南实际使用的本地项目文件。网页和外部项目资料见文末“参考框架与外部项目”。</p>
+<h4 id="document-notes-h-2">标注时需要使用<a class="anchor" href="#document-notes-h-2" aria-label="链接到标注时需要使用">#</a></h4>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">文件</th><th scope="col">用途</th><th scope="col">谁需要查看</th></tr></thead><tbody><tr><td><a href="label_dictionary_v2.1.1.md"><code>label_dictionary_v2.1.1.md</code></a></td><td>解释每个标签何时使用、框选多长、可以连接什么</td><td>成人与儿童均按正文操作；历史标注迁移见附录</td></tr><tr><td><a href="../../label_studio/pneumonia_config.xml"><code>pneumonia_config.xml</code></a></td><td>决定成人与儿童页面显示的实体标签、属性和关系</td><td>两类任务共用；标注员不编辑此文件</td></tr></tbody></table></div>
+<h4 id="document-notes-h-3">项目管理和结果追溯时使用<a class="anchor" href="#document-notes-h-3" aria-label="链接到项目管理和结果追溯时使用">#</a></h4>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">文件</th><th scope="col">用途</th><th scope="col">使用说明</th></tr></thead><tbody><tr><td><a href="schema_manifest_v2.1.0.json"><code>schema_manifest_v2.1.0.json</code></a></td><td>记录历史锁定的指南、字典、页面配置及文件校验值</td><td>当前清单锁定的是v2.1.0文件；开始新一批人工试标前，应锁定本次指南、字典、统一XML及校验值；旧清单不能锁定新版</td></tr><tr><td><a href="validation_report_v2.0.0.md"><code>validation_report_v2.0.0.md</code></a></td><td>记录100例双智能体压力测试的方法、结果和限制</td><td>对应第14.5节，不作为真人一致性或临床效度证明</td></tr><tr><td><a href="../runs/round-03/adjudication/adjudication_review.md"><code>adjudication_review.md</code></a></td><td>汇总新增200例的分歧、重复文本口径和裁决结论</td><td>对应第14.6节</td></tr><tr><td><a href="../runs/round-03/developer/feedback_resolution_v2.1.1.json"><code>feedback_resolution_v2.1.1.json</code></a></td><td>逐条记录v2.1.1审阅意见、处理理由及是否需要回标</td><td>供指南维护和审计，不是标注操作规则</td></tr></tbody></table></div>
+<h3 id="document-notes-h-4">文中几个常用词<a class="anchor" href="#document-notes-h-4" aria-label="链接到文中几个常用词">#</a></h3>
+<ul>
+<li><strong>电子病历（EMR）</strong>：本项目使用的门诊、急诊、住院或复诊记录。EMR是英文 <em>Electronic Medical Record</em> 的缩写。</li>
+<li><strong>Label Studio</strong>：本项目使用的标注工具。标注员只需按页面上显示的按钮操作。</li>
+<li><strong>世界卫生组织（WHO）</strong>：本指南参考其文件的组织方式，但病例规则仍由本项目确定。</li>
+<li><strong>标注界面配置</strong>：决定页面上有哪些标签和按钮的技术文件。技术人员有时称它为“Schema”或“XML配置”；标注员不需要编辑这些文件。</li>
+<li><strong>实体</strong>：需要在原文中框选的医学词语或短语，例如“发热”“右肺炎症”。</li>
+<li><strong>属性</strong>：选中已框选实体后填写的状态，例如“发热”的存在状态为“明确不存在”。不单独框选“无”或连接状态关系。</li>
+<li><strong>关系</strong>：两个已框选实体之间的明确归属，例如“发热”连接“3天前”，或“体温”连接“38.5”。</li>
+<li><strong>索引临床事件</strong>：本次门急诊、当前住院，或能够确认属于同一疾病过程的连续诊疗。第3.1节给出具体判断方法。本指南和标签字典统一使用这个全称，不设简称。</li>
+<li><strong>目标病例信号</strong>：四类病例结论之一，表示本次诊疗中存在值得公共卫生复核的肺部证据；行文中可简称“目标病例”。</li>
+<li><strong>待专业复核</strong>：四类病例结论之一，表示命中一项明确的复核条件；行文中可简称“待复核”。它的六个触发入口编号为B1—B6，见第3.2节B。</li>
+<li><strong>直接肺部证据</strong>：可以直接支持“目标病例信号”的肺部原文，具体范围见第4.1节。</li>
+<li><strong>英文缩写</strong>：文中缩写第一次出现时给出中文含义；完整对照表见标签字典第1.4节。</li>
+</ul>
+</section>
+<section class="chapter" data-section="contents" aria-labelledby="contents"><h2 id="contents">目录<a class="anchor" href="#contents" aria-label="链接到目录">#</a></h2><div class="directory"><a href="#chapter-1"><span>1. 项目背景、目的与任务边界</span><b aria-hidden="true">↗</b></a><a href="#chapter-2"><span>2. 每份病例需要完成什么</span><b aria-hidden="true">↗</b></a><a href="#chapter-3"><span>3. 病例级判断框架</span><b aria-hidden="true">↗</b></a><a href="#chapter-4"><span>4. 哪些证据会影响病例结论</span><b aria-hidden="true">↗</b></a><a href="#chapter-5"><span>5. 原文框选通则</span><b aria-hidden="true">↗</b></a><a href="#chapter-6"><span>6. 实体标签模块</span><b aria-hidden="true">↗</b></a><a href="#chapter-7"><span>7. 时间模块</span><b aria-hidden="true">↗</b></a><a href="#chapter-8"><span>8. 实体属性与断言模块</span><b aria-hidden="true">↗</b></a><a href="#chapter-9"><span>9. 关系模块</span><b aria-hidden="true">↗</b></a><a href="#chapter-10"><span>10. 数据与隐私检查</span><b aria-hidden="true">↗</b></a><a href="#chapter-11"><span>11. 标准标注流程</span><b aria-hidden="true">↗</b></a><a href="#chapter-12"><span>12. 完整案例</span><b aria-hidden="true">↗</b></a><a href="#chapter-13"><span>13. 复核、上报与升级处理</span><b aria-hidden="true">↗</b></a><a href="#chapter-14"><span>14. 质量控制与评价</span><b aria-hidden="true">↗</b></a><a href="#chapter-15"><span>15. 培训、双标与裁决机制</span><b aria-hidden="true">↗</b></a><a href="#chapter-16"><span>16. 文档维护与版本管理</span><b aria-hidden="true">↗</b></a><a href="#appendix-a"><span>附录A：快速判定卡</span><b aria-hidden="true">↗</b></a><a href="#appendix-b"><span>附录B：统一配置标签、属性与关系速查表</span><b aria-hidden="true">↗</b></a><a href="#appendix-c"><span>附录C：暂未提供的功能与处理方式</span><b aria-hidden="true">↗</b></a><a href="#references"><span>参考框架与外部项目</span><b aria-hidden="true">↗</b></a></div></section>
+<section class="chapter" data-section="chapter-1" aria-labelledby="chapter-1"><h2 id="chapter-1">1. 项目背景、目的与任务边界<a class="anchor" href="#chapter-1" aria-label="链接到1. 项目背景、目的与任务边界">#</a></h2>
+<h3 id="s-1-1">1.1 背景与公共卫生问题<a class="anchor" href="#s-1-1" aria-label="链接到1.1 背景与公共卫生问题">#</a></h3>
+<p>本项目从电子病历中识别肺炎相关公共卫生信号，为后续专业复核提供结构化、可追溯的原文证据。项目需要解决的问题不是在临床上辅助诊断肺炎，而是识别一些潜在存在传播风险、需要公共卫生人员进一步复核的肺炎相关病例。</p>
+<p>系统输出的是病例级公共卫生信号，而不是肺炎临床诊断。该输出不得替代医生判断、实验室检测或疾控调查结论。</p>
+<h3 id="s-1-2">1.2 指南目的与预期用途<a class="anchor" href="#s-1-2" aria-label="链接到1.2 指南目的与预期用途">#</a></h3>
+<p>本指南告诉标注员如何选择病例结论、框选原文证据、处理数据问题，以及在不确定时怎样提交复核。只标与以下任务直接有关的信息：</p>
+<ol>
+<li>判断病例是否进入肺炎相关复核队列；</li>
+<li>排除明显无关、纯既往或证据不足的病例；</li>
+<li>对复核优先级进行排序；</li>
+<li>说明系统为何给出该病例级判断。</li>
+</ol>
+<p>如果一项医学信息不会影响上述四项任务，本项目不要求标注。</p>
+<h3 id="s-1-3">1.3 适用范围与非适用范围<a class="anchor" href="#s-1-3" aria-label="链接到1.3 适用范围与非适用范围">#</a></h3>
+<p>本指南适用于已经去除身份信息的肺炎相关电子病历。标注员需要完成病例分类，并在原文中标出支持分类的证据。实际可用标签以标注页面为准。</p>
+<p>下列事项不属于本指南规定的人工标注范围：</p>
+<ul>
+<li>不标病例之间的空间聚集、14天内聚集或传播链；这些信息由地理信息系统（GIS）等程序另行处理。</li>
+<li>不根据医学常识补造原文没有写出的肺炎、病原或因果。</li>
+<li>不评价治疗是否正确。</li>
+<li>不穷举全部症状、疾病和用药。</li>
+<li>不标注病历中所有事件的完整先后顺序。</li>
+<li>不把“病原体阳性”自动等同于“肺炎”。</li>
+</ul>
+<h3 id="s-1-4">1.4 总体原则<a class="anchor" href="#s-1-4" aria-label="链接到1.4 总体原则">#</a></h3>
+<ol>
+<li><strong>原文优先</strong>：只标文本明确表达的内容。</li>
+<li><strong>病例目标优先</strong>：先判断该信息是否会改变病例纳入、排除、优先级或解释。</li>
+<li><strong>不确定时保守</strong>：不确定的实体不补造，不确定的关系不连；记录问题并交裁决。</li>
+</ol>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-2" aria-labelledby="chapter-2"><h2 id="chapter-2">2. 每份病例需要完成什么<a class="anchor" href="#chapter-2" aria-label="链接到2. 每份病例需要完成什么">#</a></h2>
+<p>每份记录需要完成两件事：先选择一个病例结论，再标出支持这个结论的原文证据。单独一个症状、病原体名称、时间词或测量值，通常不能决定病例结论；必须按第3章规定的证据组合来判断。</p>
+<h3 id="s-2-1">2.1 总体框架<a class="anchor" href="#s-2-1" aria-label="链接到2.1 总体框架">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">查看内容</th><th scope="col">统一页面记录方式</th><th scope="col">用途</th></tr></thead><tbody><tr><td>数据与隐私</td><td>外部问题表单；隐私残留时立即停止</td><td>决定能否继续</td></tr><tr><td>病例级判断</td><td>页面顶部“病例四分类”单选控件；最小证据另在外部表单保存</td><td>主要病例输出</td></tr><tr><td>原文明写的事实</td><td>框选症状、肺炎诊断/影像、暴露、病原和测量</td><td>保留可追溯证据</td></tr><tr><td>存在状态和主体</td><td>选中适用实体，填写存在状态、条件性、假设性、主体</td><td>避免把否定、计划、他人事实当成患者事实</td></tr><tr><td>时间和病程</td><td>时间属性、可选病程变化、时间表达及四种时间关系</td><td>区分何时发生、是否仍存在及索引归属</td></tr><tr><td>病原检测</td><td>病原实体上的检测结果、标本类型、检测方式</td><td>防止检验错配</td></tr><tr><td>测量</td><td>指标、数值、单位、比较符及测量关系</td><td>保存原始数值；不推断阈值</td></tr></tbody></table></div>
+<p>证据多不等于结论更确定；仍按第3—4章判断。属性属于被选中的实体，不代表整份记录。</p>
+<h3 id="s-2-2">2.2 第一步：选择病例结论<a class="anchor" href="#s-2-2" aria-label="链接到2.2 第一步：选择病例结论">#</a></h3>
+<p>确认文本可以安全标注后，阅读全文，在左侧标注栏顶部的“病例四分类”中选择“目标病例信号、待专业复核、非目标、信息不足”之一。该控件必选且没有默认值，作用于整份病例，不随实体选区切换。前三类保存1—3条必要原文证据；信息不足保存0—3条。发现身份信息时停止，不选结论、不复制原文。</p>
+<h4 id="chapter-2-h-3">在页面上怎样选择与提交<a class="anchor" href="#chapter-2-h-3" aria-label="链接到在页面上怎样选择与提交">#</a></h4>
+<ol>
+<li>阅读全文并按第3—4章判断后，在左侧标注栏顶部选择一个结论。四个选项互斥，不需要先框选原文或选中实体。</li>
+<li>完成实体、属性和关系标注后，回到“病例四分类”核对所选结论与证据是否一致。需要更正时，改选另一个选项。</li>
+<li>提交前确认已选择一个结论。该控件没有默认值，未选择时会提示补选；不能为绕过必填检查而随意选择“非目标”或“信息不足”。</li>
+<li>将必要原文证据、任务状态和数据问题另存外部表单，并与该任务对应。四分类控件只保存结论，不保存证据片段。</li>
+</ol>
+<p>病例结论在Label Studio中记录为<code>case_decision</code>，适用于整份病例。它不是原文实体，不填写存在状态、时间属性等实体属性，也不与实体连接关系。外部流程若另有病例结论字段，须与页面所选结论一致。</p>
+<h3 id="s-2-3">2.3 第二步：框选、填写属性、连接关系<a class="anchor" href="#s-2-3" aria-label="链接到2.3 第二步：框选、填写属性、连接关系">#</a></h3>
+<p>成人与儿童均先框选医学实体，再逐个选中实体填写页面显示的适用属性，最后连接明确的时间和测量关系。否定、可疑、当前、过去、标本和方法通过属性记录，不单独框选为实体。</p>
+<h3 id="s-2-4">2.4 当前页面提供的功能<a class="anchor" href="#s-2-4" aria-label="链接到2.4 当前页面提供的功能">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">内容</th><th scope="col">当前统一页面</th><th scope="col">操作</th></tr></thead><tbody><tr><td>病例四分类</td><td>页面顶部必填单选控件</td><td>按第3章选一个结论，无需框选实体</td></tr><tr><td>症状与治疗</td><td>第6.2节列出的12个标签</td><td>按原文框选，并填写页面显示的适用属性</td></tr><tr><td>肺部证据</td><td>肺炎影像、肺炎诊断</td><td>依第6.1节按证据来源标注</td></tr><tr><td>流行病学关联</td><td>第6.4节列出的5个标签</td><td>按原文框选，确认事件主体及适用属性</td></tr><tr><td>具体时间</td><td>时间表达</td><td>框选原文，连接发生/起始/结束/持续关系</td></tr><tr><td>当前、过去、未来、无法判断</td><td>时间属性选项</td><td>选中适用实体后填写</td></tr><tr><td>加重、好转、已缓解</td><td>可选病程变化</td><td>仅原文明写且实体适用时填写</td></tr><tr><td>存在状态等</td><td>实体属性</td><td>按第8章填写；必填不代表存在默认答案</td></tr><tr><td>病原结果、标本、检测方式</td><td>病原实体属性</td><td>选中病原实体，填写同组检测信息</td></tr><tr><td>测量</td><td>体温等指标及数值、单位、比较符</td><td>标指标与测量组成，连接测量关系</td></tr></tbody></table></div>
+<hr>
+<h3 id="s-2-5">2.5 本任务中“病例”的操作含义<a class="anchor" href="#s-2-5" aria-label="链接到2.5 本任务中“病例”的操作含义">#</a></h3>
+<p>“目标病例信号”不是临床确诊。它表示当前记录中有值得公共卫生人员回看、可能反映感染性肺实质病变的证据。以下内容不能只看名称就选为目标病例：</p>
+<ul>
+<li>慢性、稳定或明确非感染性的间质性肺病；</li>
+<li>非呼吸主诉中偶然出现的少许慢性炎症；</li>
+<li>已被影像或临床明确解释为肿瘤、心衰等非感染病因的肺部异常；</li>
+<li>支气管扩张伴感染，但未明确累及肺实质。</li>
+</ul>
+<p>这些情况按第3章和第4章判断为待专业复核或非目标，不新增疾病亚型标签。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-3" aria-labelledby="chapter-3"><h2 id="chapter-3">3. 病例级判断框架<a class="anchor" href="#chapter-3" aria-label="链接到3. 病例级判断框架">#</a></h2>
+<p>本章说明怎样为一份记录选择唯一的病例结论。请先确认本次要判断的是哪次就诊或住院，再按顺序查看肺部证据、待复核条件、排除情况和文本是否完整。不要先凭总体印象选类别，再回头找证据。</p>
+<h3 id="s-3-1">3.1 “索引临床事件”<a class="anchor" href="#s-3-1" aria-label="链接到3.1 “索引临床事件”">#</a></h3>
+<p>索引临床事件指当前文本所描述的本次门急诊、当前住院或同一次连续诊疗过程。判断“当前或近期”时，以是否属于索引临床事件为准，不用固定天数代替临床语境。</p>
+<ul>
+<li>同次住院早期有明确肺炎、出院时已好转：仍属于索引临床事件。</li>
+<li>仅在既往史中提到多年前肺炎、与本次无关：不属于索引临床事件。</li>
+<li>连续治疗或复诊记录只有同时满足以下四项，才把既往证据并入索引临床事件：当前文书明确引用；写明继续治疗、复查或病程延续；能确认同一患者同一疾病过程；该旧证据仍被当前诊疗作为判断依据。具体操作见第7.3节。</li>
+<li>仅由系统拼接进来的旧检查、无当前医生引用或来源不清：不自动并入；若时间归属会改变结论，进入待专业复核并上报时间问题。</li>
+<li>多个互不相干记录疑似错拼，且归属会反转结论：不是待专业复核，而是信息不足并退回数据修复。</li>
+</ul>
+<h3 id="s-3-2">3.2 四种结论怎么选<a class="anchor" href="#s-3-2" aria-label="链接到3.2 四种结论怎么选">#</a></h3>
+<h4 id="chapter-3-h-3">A. 目标病例信号<a class="anchor" href="#chapter-3-h-3" aria-label="链接到A. 目标病例信号">#</a></h4>
+<blockquote><p><strong>一句话判断：</strong> 本次诊疗中存在有效、未被排除的直接肺部证据。</p>
+</blockquote><p>选择“目标病例信号”前，依次确认以下四点：</p>
+<ol>
+<li>本次就诊、当前住院或同一连续诊疗过程中，原文明写了肺炎、肺实质感染、活动性肺部炎症或实变等直接肺部证据；</li>
+<li>这项事实属于患者本人，而不是家属、接触者或其他人；</li>
+<li>这项事实已经发生或当前存在，不是被否定的内容，也不只是计划、假设或待发生事项；</li>
+<li>原文没有把它明确说明为慢性、稳定或非感染性改变，也没有用肿瘤、心衰等其他病因作出充分解释。</li>
+</ol>
+<p>四点都符合时，选择“目标病例信号”。直接肺部证据的具体范围见第4.1节。同一次住院内的肺炎即使已经好转、正在治疗或准备出院，仍可保留为目标病例信号；“好转”只影响当前活动性和复核优先级。</p>
+<h4 id="chapter-3-h-4">B. 待专业复核<a class="anchor" href="#chapter-3-h-4" aria-label="链接到B. 待专业复核">#</a></h4>
+<blockquote><p><strong>一句话判断：</strong> 尚不能判为目标病例，但已经命中一项明确的专业复核条件。</p>
+</blockquote><p>没有达到“目标病例信号”的条件，但出现下列任一入口时，选择“待专业复核”。六个入口编号为B1—B6，供本指南的流程图、案例、附录和标签字典引用：</p>
+<ol>
+<li><strong>B1</strong> 急性发热，加至少一项呼吸证据：咳嗽、咳痰、气促/呼吸困难、低氧、异常肺部体征；</li>
+<li><strong>B2</strong> 文本写“疑似肺炎、考虑肺炎、不除外肺炎、待排肺炎”；</li>
+<li><strong>B3</strong> 本次记录有性质或活动性不明的肺部、胸部异常；或者当前咳嗽、咳痰等呼吸症状同时伴有双肺湿啰音等客观听诊异常。这种情况不要求同时有发热。只有湿啰音、只有呼吸音粗，或者异常已经有明确的非感染性解释时，不因这一条进入待复核；</li>
+<li><strong>B4</strong> 呼吸道标本中检出本项目关注的呼吸道病原体，但没有足够肺炎直接证据；</li>
+<li><strong>B5</strong> 患者有支气管扩张等结构性肺病，并且同时符合两点：一是原文明写本次咳嗽、咳痰或气促比以前加重；二是同时出现发热、低氧或湿啰音中的至少一项。仅写“今年加重多次”“仍有症状”“未改善”“更换抗生素”，或者只有一个低氧数值，都不满足这一条；</li>
+<li><strong>B6</strong> 慢性或非感染性解释不确定，同时存在新发/加重呼吸症状或新的肺部异常；</li>
+</ol>
+<p>如果没有命中以上任何一条，不要因为“感觉不放心”就选择待专业复核。文本足够完整时选“非目标”；文本缺失、错位或错拼，导致无法判断时选“信息不足”。若遇到规则没有覆盖的新情况，按第13章上报。</p>
+<h4 id="chapter-3-h-5">C. 非目标<a class="anchor" href="#chapter-3-h-5" aria-label="链接到C. 非目标">#</a></h4>
+<blockquote><p><strong>一句话判断：</strong> 文本足以判断，但没有未解释的直接肺部证据，也没有命中待专业复核条件。</p>
+</blockquote><p>满足以下任一情况，且没有未解释的直接肺部证据：</p>
+<ol>
+<li>明确是其他疾病或无关复诊；</li>
+<li>孤立轻症，如单独短期咳嗽、鼻塞流涕、咽痛；</li>
+<li>长期稳定的慢性呼吸症状，无急性改变；</li>
+<li>所有相关证据均被明确否定；</li>
+<li>仅有筛查、暴露史或计划检查，且无急性呼吸证据；</li>
+<li>仅有纯既往肺炎，与索引临床事件无关；</li>
+<li>慢性、稳定或明确非感染性的间质性肺病，无急性感染证据；</li>
+<li>非呼吸主诉中偶见少许慢性肺部炎症，且急性呼吸证据均被否定；</li>
+<li>肺部异常被报告明确或高度解释为肿瘤、心功能不全等非感染病因，且没有独立感染证据；</li>
+<li>支气管扩张伴感染稳定复诊，或只有持续/未改善、换药、年度加重次数而没有本次明确症状加重加客观急性证据。</li>
+</ol>
+<h4 id="chapter-3-h-6">D. 信息不足<a class="anchor" href="#chapter-3-h-6" aria-label="链接到D. 信息不足">#</a></h4>
+<blockquote><p><strong>一句话判断：</strong> 不是医学上的阴性，而是文本本身不足以支持可靠分类。</p>
+</blockquote><p>当文本本身不足以支持前三类中的任何一类时，选择“信息不足”。常见情况包括：文本为空、内容严重截断、字段错位，或者只有无法确定归属的项目和数值。若记录只写“病情稳定”“继续治疗”“病史同前”“前症复诊”“检查如前”，但被引用的疾病或证据没有提供，而且缺失内容可能改变分类，也选择信息不足。单独出现一项与本次无关的旧检查，不能补足当前病种。</p>
+<p>“看不懂但明显与肺炎无关”不是信息不足，应判非目标。短文本若已明确给出无关索引行为或计划，例如“建议电子喉镜”，且无肺炎触发证据，仍判非目标；不能仅按字符长度判信息不足。</p>
+<h3 id="s-3-3">3.3 标准判定顺序<a class="anchor" href="#s-3-3" aria-label="链接到3.3 标准判定顺序">#</a></h3>
+<p>按下图从上到下判断。只要已经得到病例结论，就停止向下判断；只有图中写明“继续”的情况才进入下一步。</p>
+<h4 id="chapter-3-h-8">图1：四分类判断流程<a class="anchor" href="#chapter-3-h-8" aria-label="链接到图1：四分类判断流程">#</a></h4>
+<figure class="flowchart"><div class="diagram-scroll" tabindex="0" aria-label="流程图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 1110" role="img" aria-labelledby="diagram-title-0 diagram-desc-0"><title id="diagram-title-0">图1：四分类判断流程</title><desc id="diagram-desc-0">发现身份信息？，是：停止该例
+不作病例判断，也不保存原文证据；发现身份信息？，否：文本是否足以判断？；文本是否足以判断？，否：信息不足；文本是否足以判断？，是：明确为慢性、稳定、非感染性改变
+或已有充分的其他病因解释？；明确为慢性、稳定、非感染性改变
+或已有充分的其他病因解释？，是：同时有独立的急性感染证据？；同时有独立的急性感染证据？，否：非目标；同时有独立的急性感染证据？，是，继续判断：本次诊疗有未被排除的
+第4.1节直接肺部证据？；明确为慢性、稳定、非感染性改变
+或已有充分的其他病因解释？，否：本次诊疗有未被排除的
+第4.1节直接肺部证据？；本次诊疗有未被排除的
+第4.1节直接肺部证据？，是：目标病例信号；本次诊疗有未被排除的
+第4.1节直接肺部证据？，否：命中第3.2节B任一入口
+（B1—B6）待专业复核条件？；命中第3.2节B任一入口
+（B1—B6）待专业复核条件？，是：待专业复核；命中第3.2节B任一入口
+（B1—B6）待专业复核条件？，否：非目标</desc><defs><marker id="arrow-0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718d94"/></marker></defs><path d="M 415 65 L 580 65" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="A" data-to="P" d="M 415 65 L 580 65" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="510.5" y="55" text-anchor="middle" class="edge-label">是</text><path d="M 260 103 L 260 177" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="A" data-to="B" d="M 260 103 L 260 177" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="273" y="130" text-anchor="middle" class="edge-label">否</text><path d="M 415 215 L 625 215" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="B" data-to="I" d="M 415 215 L 625 215" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="533" y="205" text-anchor="middle" class="edge-label">否</text><path d="M 260 253 L 260 342" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="B" data-to="C" d="M 260 253 L 260 342" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="273" y="287.5" text-anchor="middle" class="edge-label">是</text><path d="M 480 405 L 590 405" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C" data-to="C1" d="M 480 405 L 590 405" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="548" y="395" text-anchor="middle" class="edge-label">是</text><path d="M 910 405 L 945 405 L 945 585 L 875 585" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C1" data-to="N" d="M 910 405 L 945 405 L 945 585 L 875 585" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="918" y="520" text-anchor="middle" class="edge-label">否</text><path d="M 750 450 L 750 505 L 530 505 L 530 635 L 260 635 L 260 659" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C1" data-to="D" d="M 750 450 L 750 505 L 530 505 L 530 635 L 260 635 L 260 659" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="640" y="490" text-anchor="middle" class="edge-label">是，继续判断</text><path d="M 260 468 L 260 659" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C" data-to="D" d="M 260 468 L 260 659" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="273" y="553.5" text-anchor="middle" class="edge-label">否</text><path d="M 480 715 L 625 715" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="T" d="M 480 715 L 625 715" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="565.5" y="705" text-anchor="middle" class="edge-label">是</text><path d="M 260 771 L 260 894" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="R" d="M 260 771 L 260 894" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="273" y="822.5" text-anchor="middle" class="edge-label">否</text><path d="M 480 950 L 625 950" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="R" data-to="V" d="M 480 950 L 625 950" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="565.5" y="940" text-anchor="middle" class="edge-label">是</text><path d="M 40 950 L 20 950 L 20 585 L 625 585" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="R" data-to="N" d="M 40 950 L 20 950 L 20 585 L 625 585" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-0)"/><text x="45" y="915" text-anchor="middle" class="edge-label">否</text><g class="flow-node" data-node="A"><rect x="105" y="27" width="310" height="76" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 118 60 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="260" y="71" fill="#28444e" font-size="18"><tspan x="260" dy="0">发现身份信息？</tspan></text></g><g class="flow-node" data-node="P"><rect x="580" y="15" width="340" height="100" rx="8" fill="#fff3e8" stroke="#89ae9b" stroke-width="1.6"/><text text-anchor="middle" x="750" y="58" fill="#28444e" font-size="18"><tspan x="750" dy="0">停止该例</tspan><tspan x="750" dy="26">不作病例判断，也不保存原文证据</tspan></text></g><g class="flow-node" data-node="B"><rect x="105" y="177" width="310" height="76" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 118 210 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="260" y="221" fill="#28444e" font-size="18"><tspan x="260" dy="0">文本是否足以判断？</tspan></text></g><g class="flow-node" data-node="I"><rect x="625" y="177" width="250" height="76" rx="8" fill="#e9f3ee" stroke="#89ae9b" stroke-width="1.6"/><text text-anchor="middle" x="750" y="221" fill="#28444e" font-size="18"><tspan x="750" dy="0">信息不足</tspan></text></g><g class="flow-node" data-node="C"><rect x="40" y="342" width="440" height="126" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 53 400 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="260" y="398" fill="#28444e" font-size="18"><tspan x="260" dy="0">明确为慢性、稳定、非感染性改变</tspan><tspan x="260" dy="26">或已有充分的其他病因解释？</tspan></text></g><g class="flow-node" data-node="C1"><rect x="590" y="360" width="320" height="90" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 603 400 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="750" y="411" fill="#28444e" font-size="18"><tspan x="750" dy="0">同时有独立的急性感染证据？</tspan></text></g><g class="flow-node" data-node="N"><rect x="625" y="547" width="250" height="76" rx="8" fill="#e9f3ee" stroke="#89ae9b" stroke-width="1.6"/><text text-anchor="middle" x="750" y="591" fill="#28444e" font-size="18"><tspan x="750" dy="0">非目标</tspan></text></g><g class="flow-node" data-node="D"><rect x="40" y="659" width="440" height="112" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 53 710 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="260" y="708" fill="#28444e" font-size="18"><tspan x="260" dy="0">本次诊疗有未被排除的</tspan><tspan x="260" dy="26">第4.1节直接肺部证据？</tspan></text></g><g class="flow-node" data-node="T"><rect x="625" y="677" width="250" height="76" rx="8" fill="#e9f3ee" stroke="#89ae9b" stroke-width="1.6"/><text text-anchor="middle" x="750" y="721" fill="#28444e" font-size="18"><tspan x="750" dy="0">目标病例信号</tspan></text></g><g class="flow-node" data-node="R"><rect x="40" y="894" width="440" height="112" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 53 945 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="260" y="943" fill="#28444e" font-size="18"><tspan x="260" dy="0">命中第3.2节B任一入口</tspan><tspan x="260" dy="26">（B1—B6）待专业复核条件？</tspan></text></g><g class="flow-node" data-node="V"><rect x="625" y="912" width="250" height="76" rx="8" fill="#e9f3ee" stroke="#89ae9b" stroke-width="1.6"/><text text-anchor="middle" x="750" y="956" fill="#28444e" font-size="18"><tspan x="750" dy="0">待专业复核</tspan></text></g></div><figcaption>图1 · 按原稿节点和箭头绘制；窄屏可横向滚动。</figcaption><details class="diagram-source"><summary>查看原始流程图文本</summary><pre><code>flowchart TD
+    A{&quot;发现身份信息？&quot;} --&gt;|是| P[&quot;停止该例&lt;br/&gt;不作病例判断，也不保存原文证据&quot;]
+    A --&gt;|否| B{&quot;文本是否足以判断？&quot;}
+    B --&gt;|否| I[&quot;信息不足&quot;]
+    B --&gt;|是| C{&quot;明确为慢性、稳定、非感染性改变&lt;br/&gt;或已有充分的其他病因解释？&quot;}
+    C --&gt;|是| C1{&quot;同时有独立的急性感染证据？&quot;}
+    C1 --&gt;|否| N[&quot;非目标&quot;]
+    C1 --&gt;|是，继续判断| D{&quot;本次诊疗有未被排除的&lt;br/&gt;第4.1节直接肺部证据？&quot;}
+    C --&gt;|否| D
+    D --&gt;|是| T[&quot;目标病例信号&quot;]
+    D --&gt;|否| R{&quot;命中第3.2节B任一入口&lt;br/&gt;（B1—B6）待专业复核条件？&quot;}
+    R --&gt;|是| V[&quot;待专业复核&quot;]
+    R --&gt;|否| N</code></pre></details></figure><h3 id="s-3-4">3.4 证据记录要求<a class="anchor" href="#s-3-4" aria-label="链接到3.4 证据记录要求">#</a></h3>
+<p>病例级证据只保留足以解释结论的最短原文片段。“目标病例信号”“待专业复核”和“非目标”保存1—3条；“信息不足”保存0—3条。发现身份信息时不要保存证据，也不要作病例判断。不要复制整段病历。按以下顺序选择证据：</p>
+<ol>
+<li>直接肺部证据；</li>
+<li>急性时间和核心症状；</li>
+<li>否定、计划、他人或既往等排除信息；</li>
+<li>病原、暴露或严重程度证据。</li>
+</ol>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-4" aria-labelledby="chapter-4"><h2 id="chapter-4">4. 哪些证据会影响病例结论<a class="anchor" href="#chapter-4" aria-label="链接到4. 哪些证据会影响病例结论">#</a></h2>
+<p>本章把证据分成两类：一类可以直接支持“目标病例信号”，另一类必须与其他证据合并判断，或只能触发“待专业复核”。最终结论仍按第3章判断。</p>
+<h3 id="chapter-4-h-1">先看证据在判断中起什么作用<a class="anchor" href="#chapter-4-h-1" aria-label="链接到先看证据在判断中起什么作用">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">证据作用</th><th scope="col">常见内容</th><th scope="col">单独出现时可能得到的结论</th><th scope="col">还要检查什么</th></tr></thead><tbody><tr><td>直接肺部证据</td><td>肺炎、肺实质感染、活动性肺部炎症或实变</td><td>可支持目标病例信号</td><td>是否属于本次诊疗；是否被否定、仅为计划或属于他人；是否为慢性改变或已有其他病因解释</td></tr><tr><td>待复核触发证据</td><td>疑似肺炎、急性发热加呼吸证据、呼吸症状加湿啰音、性质不明的肺胸异常等</td><td>待专业复核</td><td>是否确实命中第3.2节B的一项完整入口条件（B1—B6）</td></tr><tr><td>辅助证据</td><td>单个症状、炎症指标、病原体阳性、用药、暴露史</td><td>通常不能单独决定病例结论</td><td>是否与其他证据组成明确的待复核条件</td></tr><tr><td>排除或降级证据</td><td>否定、纯既往、长期稳定、明确非感染性解释</td><td>无独立急性感染证据时通常为非目标</td><td>是否仍有未被解释的直接肺部证据或新的急性证据</td></tr><tr><td>数据不足</td><td>空文本、严重截断、错位、错拼、缺少“同前”所指内容</td><td>信息不足</td><td>问题是否会影响四分类；能否回源补齐或修复</td></tr></tbody></table></div>
+<p>同一份记录可能同时出现几类证据。应先按图1处理排除语境，再判断直接肺部证据和待复核条件，不能简单按证据数量投票。</p>
+<h3 id="s-4-1">4.1 可以直接支持目标病例的肺部证据<a class="anchor" href="#s-4-1" aria-label="链接到4.1 可以直接支持目标病例的肺部证据">#</a></h3>
+<p>下列原文可以直接支持“目标病例信号”。但它们必须属于本次就诊、当前住院或同一连续诊疗过程，而且不能是明确的慢性、非感染性改变，也不能已经有充分的其他病因解释：</p>
+<ul>
+<li>明确感染性诊断：肺炎、支气管肺炎、大叶性肺炎、病毒性/感染性间质性肺炎等；</li>
+<li>明确感染：肺部感染、两肺感染、下呼吸道感染且上下文明确指肺实质；</li>
+<li>明确炎症/实变：右肺炎症、两肺炎症、感染性病变、肺实变或影像明确提示肺炎。</li>
+</ul>
+<p>必须保留原文语义。不能因为词中含“肺炎”就标肺炎诊断，例如：肺炎支原体、肺炎克雷伯菌、肺炎链球菌。</p>
+<p>“间质性肺炎”不能脱离语境机械纳入：明确为慢性间质性肺病、稳定复诊或非感染性病因时判非目标；性质不明且有新发/加重呼吸证据时判待专业复核；明确急性感染性间质性肺炎时才判目标。</p>
+<h3 id="s-4-2">4.2 单独出现时不能判为目标病例的证据<a class="anchor" href="#s-4-2" aria-label="链接到4.2 单独出现时不能判为目标病例的证据">#</a></h3>
+<p>以下内容单独出现时不判目标病例信号：</p>
+<ul>
+<li>胸水/胸腔积液、气胸、胸膜增厚、脓胸、支气管胸膜瘘；</li>
+<li>条索影、小斑片影、结节、肿块、纤维化、陈旧性结核、肺不张；</li>
+<li>双肺呼吸音粗、啰音、胸痛；</li>
+<li>C反应蛋白（CRP）、降钙素原（PCT）、白细胞等炎症指标升高；</li>
+<li>发热、咳嗽、咳痰、气促；</li>
+<li>病原体阳性；</li>
+<li>“抗感染治疗”或抗菌药物使用。</li>
+<li>“支气管扩张伴感染/支扩伴感染”，除非另有明确肺实质感染、炎症、实变或肺炎证据；</li>
+<li>“少许慢性炎症”“慢性间质性肺炎稳定复诊”；</li>
+<li>已明确归因于心衰的两肺渗出，或高度考虑肿瘤的肺占位。</li>
+</ul>
+<p>这些证据与其他内容组合后，可能达到“待专业复核”的条件。</p>
+<h3 id="s-4-3">4.3 容易出现分歧的情况<a class="anchor" href="#s-4-3" aria-label="链接到4.3 容易出现分歧的情况">#</a></h3>
+<h4 id="chapter-4-h-5">慢性/非感染性肺部改变<a class="anchor" href="#chapter-4-h-5" aria-label="链接到慢性/非感染性肺部改变">#</a></h4>
+<ul>
+<li>慢性、稳定、非感染性语境明确，且无急性呼吸证据：非目标。</li>
+<li>性质不明，同时有新发或加重呼吸症状：待专业复核。</li>
+<li>明确急性感染性肺实质病变：目标病例信号。</li>
+</ul>
+<h4 id="chapter-4-h-6">明确替代解释<a class="anchor" href="#chapter-4-h-6" aria-label="链接到明确替代解释">#</a></h4>
+<ul>
+<li>影像或医生明确/高度解释为肿瘤、心衰、肺栓塞等，且没有独立感染证据：非目标。</li>
+<li>替代解释不确定，并有急性呼吸证据或未解释的新肺部异常：待专业复核。</li>
+<li>不能仅因出现“占位、渗出、模糊影”就判目标。</li>
+</ul>
+<h4 id="chapter-4-h-7">支气管扩张伴感染<a class="anchor" href="#chapter-4-h-7" aria-label="链接到支气管扩张伴感染">#</a></h4>
+<ul>
+<li>该固定短语不等于“肺部感染”实体，不直接判目标。</li>
+<li>稳定复诊、配药、体温正常且无近期恶化：非目标。</li>
+<li>“未改善、仍有、继续抗感染、更换抗生素”表示持续或治疗调整，不等于加重，也不是客观急性证据。</li>
+<li>“今年加重6次”等年度次数不等于本次加重；“近期”不设机械天数，但必须由原文锚定到本次就诊、当前连续疗程或明确复诊原因。</li>
+<li>本次咳嗽/咳痰/气促明确加重，并伴发热、低氧、湿啰音等至少一项客观证据：待专业复核。</li>
+<li>另有明确肺炎、肺实质感染、炎症或实变：目标病例信号。</li>
+</ul>
+<h4 id="chapter-4-h-8">纯检验和无关临床记录<a class="anchor" href="#chapter-4-h-8" aria-label="链接到纯检验和无关临床记录">#</a></h4>
+<ul>
+<li>空文本或仅有无法归属的检验项目、数值：信息不足，并交项目组处理数据问题。</li>
+<li>完整的非呼吸索引记录，附带明确阴性病原结果：非目标。</li>
+<li>项目与结果展平错位、无法唯一配对：不连关系、不作阳性触发；若影响病例结论则信息不足并退回修复。</li>
+</ul>
+<h3 id="s-4-4">4.4 项目组如何进行初步筛查<a class="anchor" href="#s-4-4" aria-label="链接到4.4 项目组如何进行初步筛查">#</a></h3>
+<p>本节供项目管理和数据处理人员参考，标注员不需要执行程序筛查。项目先进行自动粗筛，再按第3章完成人工四分类。</p>
+<h4 id="chapter-4-h-10">第一步：数据检查<a class="anchor" href="#chapter-4-h-10" aria-label="链接到第一步：数据检查">#</a></h4>
+<p>程序先排除空字符串、纯空格、只有分隔符、无法解析的记录，并记录排除原因。不要让医学标注员手工清理大量空任务。</p>
+<h4 id="chapter-4-h-11">第二步：尽量不漏病例的粗筛<a class="anchor" href="#chapter-4-h-11" aria-label="链接到第二步：尽量不漏病例的粗筛">#</a></h4>
+<p>只要命中以下任一条件就保留给病例级模型或人工：</p>
+<ul>
+<li>直接肺部证据词；</li>
+<li>急性发热加呼吸证据；</li>
+<li>疑似/待排肺炎；</li>
+<li>性质不明的当前肺/胸异常；</li>
+<li>呼吸道标本中关注病原体阳性。</li>
+</ul>
+<p>这一阶段允许多保留一些记录，但不直接把它们当作目标病例。</p>
+<h4 id="chapter-4-h-12">第三步：四分类判断<a class="anchor" href="#chapter-4-h-12" aria-label="链接到第三步：四分类判断">#</a></h4>
+<p>按第3章规则区分目标、待复核、非目标和信息不足。</p>
+<h4 id="chapter-4-h-13">防止漏筛<a class="anchor" href="#chapter-4-h-13" aria-label="链接到防止漏筛">#</a></h4>
+<ul>
+<li>从阶段1排除的记录中随机抽取5%—10%复核；</li>
+<li>对含“肺、胸、呼吸、CT、影像、感染、发热”等宽词但被排除的记录加大抽样；</li>
+<li>分别报告目标/待复核合并后的漏筛数，不能只看总体准确率；</li>
+<li>一旦发现规则性漏筛，补充规则并回溯同批数据。</li>
+</ul>
+<h4 id="chapter-4-h-14">防止过筛<a class="anchor" href="#chapter-4-h-14" aria-label="链接到防止过筛">#</a></h4>
+<ul>
+<li>单独鼻塞、流涕、咽痛、孤立咳嗽不进入待复核；</li>
+<li>暴露史单独出现不进入待复核，只用于已有呼吸证据病例的优先级；</li>
+<li>病原体名称或计划检测不等于阳性结果；</li>
+<li>非特异影像不直接判目标。</li>
+<li>“慢性炎症、间质性肺炎、支气管扩张伴感染”必须结合急性/感染性语境，不能只按关键词直纳目标。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-5" aria-labelledby="chapter-5"><h2 id="chapter-5">5. 原文框选通则<a class="anchor" href="#chapter-5" aria-label="链接到5. 原文框选通则">#</a></h2>
+<h3 id="s-5-1">5.1 框选最短但完整的医学概念<a class="anchor" href="#s-5-1" aria-label="链接到5.1 框选最短但完整的医学概念">#</a></h3>
+<p>不包含否定词、时间词、检查提示词和句末标点；保留必要部位限定。</p>
+<ul>
+<li>“CT提示右肺炎症”：框选<code>右肺炎症</code>，使用“肺炎影像”。</li>
+<li>“无发热”：只框选<code>发热</code>；选中后填写存在状态“明确不存在”，不框选<code>无</code>。</li>
+<li>“今仍有发热”：框选<code>发热</code>；时间属性“当前”；可另标<code>今</code>为时间表达并连“发生时间”。“仍有”不另标实体，也不自动选“加重”。</li>
+<li>“肺炎支原体IgM阴性”：框选<code>肺炎支原体</code>；选中后填写阴性和抗体IgM，不把“肺炎”再标诊断。</li>
+</ul>
+<p>上述框选和属性规则同时适用于成人与儿童。</p>
+<h3 id="s-5-2">5.2 保留会改变含义的限定词<a class="anchor" href="#s-5-2" aria-label="链接到5.2 保留会改变含义的限定词">#</a></h3>
+<p>“右肺炎症”“两肺感染”保留必要部位；普通程度词不扩入实体。弱阳性、可疑阳性等结果限定词保留于最小证据，按第8.3节填属性，不能丢失其不确定性。</p>
+<h3 id="s-5-3">5.3 用语境填写属性，不扩大跨度<a class="anchor" href="#s-5-3" aria-label="链接到5.3 用语境填写属性，不扩大跨度">#</a></h3>
+<p><code>无、未见、考虑、拟、家属</code>等用来确定实体属性，不单独框选为断言实体。各属性独立填写：过去不等于已缓解；明确存在不等于属于患者；条件性不等于假设性。</p>
+<h3 id="s-5-4">5.4 不拆词内误标<a class="anchor" href="#s-5-4" aria-label="链接到5.4 不拆词内误标">#</a></h3>
+<p><code>肺炎支原体、肺炎克雷伯菌、肺炎链球菌</code>只标相应病原；“抗肺炎治疗”不是明确诊断时不标肺炎诊断。药物用途不能替代诊断证据。</p>
+<h3 id="s-5-5">5.5 重复、并列与多次检测<a class="anchor" href="#s-5-5" aria-label="链接到5.5 重复、并列与多次检测">#</a></h3>
+<p>每个独立提及分别标。完全重复的任务保留审计映射，主分析按唯一文本计数，同时报告原始分母；空文本先报empty_text。近重复不能无来源证据自动删除。</p>
+<p>并列病原分别标，例如“肺炎支原体、肺炎衣原体IgM阴性”：在归属明确时分别填写阴性和抗体IgM。不同日期、标本或方法的检测提及不得合并为一个病原实体；属性单选无法表达一个提及对应多次检测时，保留最小证据并上报，不选择“最严重”结果覆盖其余检测。</p>
+<h3 id="s-5-6">5.6 不把相隔文本合成一个实体<a class="anchor" href="#s-5-6" aria-label="链接到5.6 不把相隔文本合成一个实体">#</a></h3>
+<p>实体跨度必须连续。临床事实与明确时间分别框选并连接；实体与属性靠选中同一实体填写，不靠另造跨度或关系。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-6" aria-labelledby="chapter-6"><h2 id="chapter-6">6. 实体标签模块<a class="anchor" href="#chapter-6" aria-label="链接到6. 实体标签模块">#</a></h2>
+<h3 id="chapter-6-h-1">先确认任务配置<a class="anchor" href="#chapter-6-h-1" aria-label="链接到先确认任务配置">#</a></h3>
+<p>成人与儿童共用<code>pneumonia_config.xml</code>：49个实体标签、9个实体属性字段、5种关系，以及1个病例级单选控件。病例四分类和实体属性选项均不是实体标签。文本控件为<code>chief_complaint_text</code>，显示<code>$text</code>。页面按钮和属性适用范围以统一XML为准，具体操作同时参照标签字典。</p>
+<p>统一配置的实体按以下模块组织：症状及治疗12个、诊断2个、流行病学关联5个、时间表达1个、测量指标5个、测量组成3个、病原21个。当前配置没有肺部感染、肺部组织炎症、阈值判断、独立断言或独立标本/方法按钮，不沿用旧配置操作。</p>
+<h3 id="s-6-1">6.1 核心肺部实体<a class="anchor" href="#s-6-1" aria-label="链接到6.1 核心肺部实体">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">标签</th><th scope="col">定义、纳入及最小跨度</th><th scope="col">正例</th><th scope="col">排除与易混淆</th><th scope="col">判断作用与关联</th></tr></thead><tbody><tr><td>肺炎诊断</td><td>临床诊断明确写出的感染性/活动性肺炎或肺实质感染概念，框最短完整诊断</td><td><code>支气管肺炎</code>；诊断栏<code>肺部感染</code></td><td>病原名称、抗感染治疗、支扩伴感染不替代；明确慢性非感染性间质性病不机械纳入</td><td>状态、时间、主体符合第3章时支持目标；可填临床属性并连时间表达</td></tr><tr><td>肺炎影像</td><td>影像报告明确提示肺炎、感染性肺实质炎症/实变；框异常描述而非“CT提示”</td><td>CT示<code>右肺炎症</code>；胸片示<code>感染性实变</code></td><td>孤立条索影、结节、胸水、未明确性质的小斑片影不自动映射；非影像临床诊断用肺炎诊断</td><td>直接证据或复核解释；可填临床属性并连时间表达</td></tr></tbody></table></div>
+<p>这是按来源区分的标签操作，不改变第3—4章证据白名单。影像和诊断独立出现时分别标，不将一个短语凭推断复制成两种来源。遇到病理或明确肺实质炎症原文却无法归入两个按钮时，保留病例证据并上报标签适配问题，不能因此漏掉病例信号或假称影像。</p>
+<h3 id="s-6-2">6.2 症状和严重程度<a class="anchor" href="#s-6-2" aria-label="链接到6.2 症状和严重程度">#</a></h3>
+<p>以下标签除机械通气外可填写第8章临床属性；均可在语义明确时连时间表达。跨度框选完整症状/体征，不包含“无、拟”等修饰词。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">标签</th><th scope="col">定义与两个纳入例</th><th scope="col">近似反例/排除</th><th scope="col">病例判断作用</th></tr></thead><tbody><tr><td>发热</td><td>明确症状；<code>发热</code>、<code>高热</code></td><td>单独38.5℃不自动标症状</td><td>与急性呼吸证据组合触发复核</td></tr><tr><td>鼻翼煽动</td><td>明确鼻翼呼吸体征；<code>鼻翼煽动</code>、<code>呼吸时鼻翼扇动</code></td><td>鼻塞不等同</td><td>严重程度/复核优先级</td></tr><tr><td>呼吸衰竭</td><td>明确诊断/状态；<code>呼吸衰竭</code>、<code>Ⅰ型呼吸衰竭</code></td><td>低SpO2不自动推断</td><td>严重程度</td></tr><tr><td>三凹征</td><td>明确吸气凹陷；<code>三凹征</code>、<code>三凹征阳性</code>中的三凹征</td><td>普通胸痛不等同</td><td>严重程度</td></tr><tr><td>喘鸣喘息</td><td>明确喘鸣或喘息；<code>喘鸣</code>、<code>喘息</code></td><td>咳嗽/气促不自动替代</td><td>呼吸证据，非肺炎确诊</td></tr><tr><td>意识障碍</td><td>明确意识异常；<code>意识障碍</code>、<code>意识模糊</code></td><td>睡眠差不等同</td><td>严重程度</td></tr><tr><td>惊厥</td><td>明确发作；<code>惊厥</code>、<code>抽搐发作</code></td><td>寒战不等同</td><td>严重程度</td></tr><tr><td>拒食或喂养困难</td><td>明确拒食/喂养困难；<code>拒食</code>、<code>喂养困难</code></td><td>普通食欲稍差不自动映射</td><td>儿童严重程度</td></tr><tr><td>脱水征</td><td>明确脱水表现/判断；<code>脱水征</code>、<code>脱水貌</code></td><td>孤立口渴不推断</td><td>严重程度</td></tr><tr><td>休克</td><td>明确休克；<code>休克</code>、<code>感染性休克</code></td><td>单独低血压不推断</td><td>严重程度</td></tr><tr><td>器官衰竭</td><td>明确衰竭；<code>多器官衰竭</code>、<code>肾衰竭</code></td><td>单项实验室异常不推断</td><td>严重程度</td></tr><tr><td>机械通气</td><td>明确支持措施；<code>机械通气</code>、<code>有创机械通气</code></td><td>普通鼻导管吸氧不等同</td><td>支持强度；当前XML未给它临床属性控件，计划/否定需保留病例证据并上报，不能视为已实施</td></tr></tbody></table></div>
+<p>“无鼻翼煽动”仍框选实体并填明确不存在。原文词义不清时不上升为更重诊断。咳嗽、咳痰、气促仍无专门按钮，可作为病例证据，不新增子标签。</p>
+<h3 id="s-6-3">6.3 测量<a class="anchor" href="#s-6-3" aria-label="链接到6.3 测量">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">标签</th><th scope="col">定义/跨度与两个正例</th><th scope="col">排除与判断作用</th></tr></thead><tbody><tr><td>体温</td><td>指标词；<code>体温</code>、<code>T</code>（明确生命体征语境）</td><td>单独数值不推断发热；辅助解释</td></tr><tr><td>呼吸频率</td><td>指标词；<code>呼吸频率</code>、<code>呼吸</code>（明确每分计数语境）</td><td>呼吸困难不是频率；辅助解释</td></tr><tr><td>静息状态指氧饱和度</td><td>明确静息指氧测量；<code>SpO2</code>、<code>静息指氧饱和度</code></td><td>不把运动后血氧或未说明状态强行补为静息；关键语境不足时保留证据上报</td></tr><tr><td>动脉氧分压(PaO2)</td><td>动脉血气指标；<code>PaO2</code>、<code>动脉氧分压</code></td><td>静脉氧分压不替代；低氧证据</td></tr><tr><td>吸氧浓度(FiO2)</td><td>吸入氧浓度；<code>FiO2</code>、<code>吸氧浓度</code></td><td>氧流量L/min不是浓度；支持氧合解释</td></tr><tr><td>数值</td><td>原文数字；<code>38.5</code>、<code>92</code></td><td>不标推算值</td></tr><tr><td>单位</td><td>原文单位；<code>℃</code>、<code>%</code></td><td>无单位不补造</td></tr><tr><td>比较符</td><td>原文比较符；<code>&lt;</code>、<code>≥</code></td><td>不根据数值生成比较符</td></tr></tbody></table></div>
+<p>测量关系统一从指标连向数值/单位/比较符，均选“测量”。如“体温38.5℃”：体温→38.5、体温→℃。XML无“阈值判断”，不框选或计算异常阈值；保持原文数据。无明确指标或唯一配对时不猜最近对象。</p>
+<h3 id="s-6-4">6.4 流行病学关联<a class="anchor" href="#s-6-4" aria-label="链接到6.4 流行病学关联">#</a></h3>
+<p>跨度保留能识别事件的最短完整描述；填写存在状态、时间属性、假设性、主体。暴露面板无条件性及病程变化，不要求填写。可连明确时间。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">标签</th><th scope="col">定义与两个正例</th><th scope="col">排除/混淆及作用</th></tr></thead><tbody><tr><td>周围聚集性发病现象</td><td>原文明写周围多人类似发病；<code>同班多名同学发热</code>、<code>家中两人同时出现类似症状</code></td><td>单个亲属发病不自动称聚集；不推断传播链；提高复核关注</td></tr><tr><td>高风险职业史</td><td>原文明写职业暴露语境；<code>在禽类养殖场工作</code>、<code>从事病原微生物实验室检测</code></td><td>不凭职业名称补感染；保留实际主体；解释暴露</td></tr><tr><td>可疑动物或动物制品接触史</td><td>明确接触事件；<code>接触病死禽</code>、<code>处理生禽制品</code></td><td>病原名称不等于动物接触；解释暴露</td></tr><tr><td>可疑环境暴露史</td><td>明确关注环境接触；<code>清扫鸟粪污染环境</code>、<code>进入有禽类污染的场所</code></td><td>普通地点名称不自动映射；解释暴露</td></tr><tr><td>境内外旅居史</td><td>明确旅居事件；<code>近期赴外省旅行</code>、<code>上月境外旅居</code></td><td>无旅行行为的地名不标；不做GIS判断</td></tr></tbody></table></div>
+<p>患者接触母亲：事件主体通常是患者；母亲从事禽类工作：职业主体是家属。两者不能混同。过去暴露可以仍具公共卫生相关性，不仅凭过去属性排除；仅有暴露而无肺炎复核组合不自动纳入。</p>
+<h3 id="s-6-5">6.5 病原体<a class="anchor" href="#s-6-5" aria-label="链接到6.5 病原体">#</a></h3>
+<p>只框完整病原名称。21个按钮为：新冠病毒、流感病毒、呼吸道合胞病毒、腺病毒、人偏肺病毒、副流感病毒、普通冠状病毒、博卡病毒、鼻病毒、肠道病毒；A族链球菌、百日咳鲍特菌、肺炎链球菌、流感嗜血杆菌、军团菌、肺炎克雷伯菌；肺炎支原体、曲霉菌、隐球菌、鹦鹉热衣原体、肺炎衣原体。</p>
+<p>上述各标签均适用同一规则：纳入原文明写的完整名称或语境明确的规范缩写，如“肺炎支原体IgM阴性”中的病原名、“痰培养检出肺炎克雷伯菌”中的病原名；排除仅写未能唯一对应的“病毒、支原体、病原菌”。不同标签不可因同属一类互换。不拆名称中的“肺炎”。每个病原提及可填写检测结果、标本类型、检测方式，不提供临床五轴属性；不自行给病原套“当前、家属、假设性”等不存在的按钮。</p>
+<p>病原提及不等于检测，更不等于阳性或肺炎。呼吸道标本明确检出关注病原且来源完整，可按B4复核；血清IgM等抗体阳性必须结合急性呼吸证据，不能套呼吸道检出入口。血、尿、胸腔穿刺液按实际标本处理；纯检验列表按信息不足，完整无关临床记录按非目标。计划、历史、他人检测语境仍须保留病例证据供复核。</p>
+<h4 id="chapter-6-h-7">病原逐标签跨度示例<a class="anchor" href="#chapter-6-h-7" aria-label="链接到病原逐标签跨度示例">#</a></h4>
+<p>下表例句仅说明名称框选，不设定各病原的临床检测方案；未写检测方法、标本时不能补造。每行两例均框选病原名，阳性/阴性通过检测结果属性填写；病例作用统一按第6.5节及B4判断，均不单独证明肺炎。合法关联为原文明确的检测时间及三个检验属性。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">标签</th><th scope="col">正例一（阳性语境）</th><th scope="col">正例二（阴性语境）</th><th scope="col">近似反例/混淆</th></tr></thead><tbody><tr><td>新冠病毒</td><td>检验报告“新冠病毒检出”</td><td>检验报告“新冠病毒未检出”</td><td>“拟检测新冠病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>流感病毒</td><td>检验报告“流感病毒检出”</td><td>检验报告“流感病毒未检出”</td><td>“拟检测流感病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>呼吸道合胞病毒</td><td>检验报告“呼吸道合胞病毒检出”</td><td>检验报告“呼吸道合胞病毒未检出”</td><td>“拟检测呼吸道合胞病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>腺病毒</td><td>检验报告“腺病毒检出”</td><td>检验报告“腺病毒未检出”</td><td>“拟检测腺病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>人偏肺病毒</td><td>检验报告“人偏肺病毒检出”</td><td>检验报告“人偏肺病毒未检出”</td><td>“拟检测人偏肺病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>副流感病毒</td><td>检验报告“副流感病毒检出”</td><td>检验报告“副流感病毒未检出”</td><td>“拟检测副流感病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>普通冠状病毒</td><td>检验报告“普通冠状病毒检出”</td><td>检验报告“普通冠状病毒未检出”</td><td>“拟检测普通冠状病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>博卡病毒</td><td>检验报告“博卡病毒检出”</td><td>检验报告“博卡病毒未检出”</td><td>“拟检测博卡病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>鼻病毒</td><td>检验报告“鼻病毒检出”</td><td>检验报告“鼻病毒未检出”</td><td>“拟检测鼻病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>肠道病毒</td><td>检验报告“肠道病毒检出”</td><td>检验报告“肠道病毒未检出”</td><td>“拟检测肠道病毒”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>A族链球菌</td><td>检验报告“A族链球菌检出”</td><td>检验报告“A族链球菌未检出”</td><td>“拟检测A族链球菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>百日咳鲍特菌</td><td>检验报告“百日咳鲍特菌检出”</td><td>检验报告“百日咳鲍特菌未检出”</td><td>“拟检测百日咳鲍特菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>肺炎链球菌</td><td>检验报告“肺炎链球菌检出”</td><td>检验报告“肺炎链球菌未检出”</td><td>“拟检测肺炎链球菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>流感嗜血杆菌</td><td>检验报告“流感嗜血杆菌检出”</td><td>检验报告“流感嗜血杆菌未检出”</td><td>“拟检测流感嗜血杆菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>军团菌</td><td>检验报告“军团菌检出”</td><td>检验报告“军团菌未检出”</td><td>“拟检测军团菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>肺炎克雷伯菌</td><td>检验报告“肺炎克雷伯菌检出”</td><td>检验报告“肺炎克雷伯菌未检出”</td><td>“拟检测肺炎克雷伯菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>肺炎支原体</td><td>检验报告“肺炎支原体检出”</td><td>检验报告“肺炎支原体未检出”</td><td>“拟检测肺炎支原体”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>曲霉菌</td><td>检验报告“曲霉菌检出”</td><td>检验报告“曲霉菌未检出”</td><td>“拟检测曲霉菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>隐球菌</td><td>检验报告“隐球菌检出”</td><td>检验报告“隐球菌未检出”</td><td>“拟检测隐球菌”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>鹦鹉热衣原体</td><td>检验报告“鹦鹉热衣原体检出”</td><td>检验报告“鹦鹉热衣原体未检出”</td><td>“拟检测鹦鹉热衣原体”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr><tr><td>肺炎衣原体</td><td>检验报告“肺炎衣原体检出”</td><td>检验报告“肺炎衣原体未检出”</td><td>“拟检测肺炎衣原体”不是已检测；不误标名称中的肺炎，不替代相邻病原</td></tr></tbody></table></div>
+<h3 id="s-6-6">6.6 标本类型：填写属性，不框选实体<a class="anchor" href="#s-6-6" aria-label="链接到6.6 标本类型：填写属性，不框选实体">#</a></h3>
+<p>选中病原实体后填写：口咽/鼻咽拭子、深部痰液、气管吸取物、肺泡灌洗液、胸腔穿刺液、血液(发病7天急性期样本)、血液(发病间隔2到4周样本)、血液(发病间隔6到8周样本)、血液(未说明采样间隔)、痰、尿、原文未说明。</p>
+<p>“咽拭子、鼻咽拭子”映射口咽/鼻咽拭子；“BALF、肺泡灌洗液”映射肺泡灌洗液；“痰”未说明深部时选痰，明确深部痰才选深部痰液。“咳痰”不是检验标本。“血清、血浆、血液”未说明采样间隔时用血液(未说明采样间隔)，不能凭IgM推断急性期或恢复期。胸水仅在明确是检测标本时映射胸腔穿刺液，影像胸水不填写标本。检测记录未说明用原文未说明；明确标本不在选项中则上报，不能伪装成未说明。</p>
+<h3 id="s-6-7">6.7 检测方式：填写属性，不画方法关系<a class="anchor" href="#s-6-7" aria-label="链接到6.7 检测方式：填写属性，不画方法关系">#</a></h3>
+<p>选项：核酸检测、mNGS、抗原快速检测、抗体IgM、抗体滴度/双份、培养、原文未说明。</p>
+<p>同组“PCR/核酸”→核酸检测；明确mNGS/宏基因组测序→mNGS；“IgM”→抗体IgM；“培养”→培养。仅“测序”不能推断为mNGS，普通抗体不能冒充IgM，单次抗体阳性不能冒充双份滴度。检测记录未写方法用原文未说明；明确方法无对应选项则保留证据上报。计划检测不生成已完成结果。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-7" aria-labelledby="chapter-7"><h2 id="chapter-7">7. 时间模块<a class="anchor" href="#chapter-7" aria-label="链接到7. 时间模块">#</a></h2>
+<h3 id="s-7-1">7.1 三层时间分别记录<a class="anchor" href="#s-7-1" aria-label="链接到7.1 三层时间分别记录">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">问题</th><th scope="col">记录方式</th><th scope="col">例子</th></tr></thead><tbody><tr><td>描述指向哪一时间段</td><td>实体的时间属性：当前/过去/未来/无法判断</td><td>3天前发热→过去</td></tr><tr><td>具体何时、持续多久</td><td>时间表达实体＋发生/起始/结束/持续关系</td><td>发热→3天前</td></tr><tr><td>病情发生什么变化</td><td>可选病程变化：加重/好转/已缓解</td><td>发热较前好转→好转</td></tr></tbody></table></div>
+<p>时间属性以本条原始记录时间为参照。过去不等于已缓解，也不等于与索引临床事件无关；第3章索引判断仍需独立完成。</p>
+<h3 id="s-7-2">7.2 原文时间表达<a class="anchor" href="#s-7-2" aria-label="链接到7.2 原文时间表达">#</a></h3>
+<p>框选绝对日期（7月15日、2025-02-16）、相对时间（今日、3天前）、时长（3天、2周）、病程日序（住院第2日）、明确时间窗口（近7天、近期）。最短完整跨度保留“前、后、近”等时间限定，不把整个医学事件并入。</p>
+<p>排除未提供具体时点/时长的“好转、加重、未愈”；“既往”主要提供时间属性，不为每个旧时态词强行生成时间表达。时间词若指无按钮的咳嗽等内容，不造实体作连线端点；保留病例证据。</p>
+<h3 id="s-7-3">7.3 时间属性<a class="anchor" href="#s-7-3" aria-label="链接到7.3 时间属性">#</a></h3>
+<ul>
+<li>当前：本条记录描述现时事实或当前仍在发生的事件；如“现有发热、今无发热”。</li>
+<li>过去：描述早于记录时点的事件；如“3天前发热、5年前患肺炎”。若句子明确持续至今，如“3天前开始发热，现仍有”，当前发热提及选当前，同时连接起始时间。</li>
+<li>未来：明确尚未发生的计划或未来情境；如“拟行CT排查肺炎”。检查是未来行为不等于被排查疾病已存在。</li>
+<li>无法判断：原文不足以确定该提及的时间段，不能用它代替漏填。</li>
+</ul>
+<p>复诊引用较早检查能否计入索引事件，仍核查当前明确引用、连续治疗、同一患者/疾病过程、旧结果仍作为依据四项。属性可为过去，但该证据仍可能支持同一索引事件；已消失的两年前孤立病灶不自动并入。</p>
+<h3 id="s-7-4">7.4 病程变化（选填）<a class="anchor" href="#s-7-4" aria-label="链接到7.4 病程变化（选填）">#</a></h3>
+<p>明确“较前加重、逐渐恶化”→加重；“较前好转、明显改善”→好转；“已缓解、已消失”→已缓解。只记录原文所述被选中事件的变化。</p>
+<p>“持续、仍有、未好转、稳定”不映射加重或好转，留空并保留必要证据；明确不存在时不填病程变化。好转不等于已缓解，不能因出院好转删除同次住院肺炎信号。流行病学、机械通气、病原、测量和时间实体当前无该控件。</p>
+<h3 id="s-7-5">7.5 时间关系<a class="anchor" href="#s-7-5" aria-label="链接到7.5 时间关系">#</a></h3>
+<p>从医学实体连向时间表达。发生时间用于一般何时发生；起始时间只用于明确开始；结束时间只用于明确结束；持续时长用于明确多久。详见第9章，不沿用旧“时间”关系。</p>
+<p>“3天前发热”默认发生时间；“3天前开始发热”用起始时间；“发热持续3天”用持续时长。过去描述不自动结束，持续多久不自动换算出开始日期。</p>
+<h3 id="s-7-6">7.6 标注员不做的换算<a class="anchor" href="#s-7-6" aria-label="链接到7.6 标注员不做的换算">#</a></h3>
+<p>不计算标准日期、发病日期、阈值或推断完整先后。标注员仍须按原文填写时间属性，并依据第3章判断索引归属；不能把所有判断留给程序。</p>
+<h3 id="s-7-7">7.7 历史标注与不确定处理<a class="anchor" href="#s-7-7" aria-label="链接到7.7 历史标注与不确定处理">#</a></h3>
+<p>成人与儿童均使用本章的时间属性、时间表达和四种时间关系。历史时间标签或关系需核对原文后迁移，不能直接混入当前批次。拼接文本来源不明、引用上下文缺失且会改变结论时，先按第10章报告数据问题；增加按钮不能解决错拼。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-8" aria-labelledby="chapter-8"><h2 id="chapter-8">8. 实体属性与断言模块<a class="anchor" href="#chapter-8" aria-label="链接到8. 实体属性与断言模块">#</a></h2>
+<h3 id="s-8-1">8.1 先选中实体，再填写适用属性<a class="anchor" href="#s-8-1" aria-label="链接到8.1 先选中实体，再填写适用属性">#</a></h3>
+<p>属性绑定到当前选中的已框选实体。页面只在选中适用实体时显示，切换实体后必须核对当前选区。空白表示未标注，不代表“否、当前、患者本人”。普通明确陈述也须填写显示的必填属性，不沿用旧“不补肯定”的操作。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">字段/选项</th><th scope="col">适用对象</th><th scope="col">要求</th></tr></thead><tbody><tr><td>存在状态：明确存在/明确不存在/可能存在/无法判断</td><td>症状与严重体征（不含机械通气）、肺炎影像/诊断、5种流行病学实体</td><td>必填</td></tr><tr><td>时间属性：当前/过去/未来/无法判断</td><td>同上</td><td>必填，见第7章</td></tr><tr><td>病程变化：加重/好转/已缓解</td><td>上述临床症状与肺炎影像/诊断</td><td>选填；明确不存在不填</td></tr><tr><td>条件性：是/否</td><td>上述临床症状与肺炎影像/诊断</td><td>必填；暴露无此字段</td></tr><tr><td>假设性：是/否</td><td>临床实体及5种流行病学实体</td><td>必填</td></tr><tr><td>主体：患者本人/家属/其他人/无法判断</td><td>临床实体及5种流行病学实体</td><td>必填；主体是事件主体</td></tr><tr><td>检测结果：阳性/阴性/无法判断</td><td>21种病原实体</td><td>XML非必填；检测记录按第8.3节填写</td></tr><tr><td>标本类型、检测方式</td><td>21种病原实体</td><td>XML非必填；检测记录逐项填写，未说明用对应选项</td></tr></tbody></table></div>
+<p>机械通气、时间表达、测量指标及其组成无上述临床属性；不能为完成检查而给它们套其他实体的按钮。病原也无临床属性。原文的重要计划/主体语境没有控件承载时保留证据并反馈。</p>
+<h3 id="s-8-2">8.2 存在状态、条件性、假设性和主体分别判断<a class="anchor" href="#s-8-2" aria-label="链接到8.2 存在状态、条件性、假设性和主体分别判断">#</a></h3>
+<ul>
+<li>明确存在：原文明确报告事实，如“发热、CT示肺炎影像”；不表示病因已证实。</li>
+<li>明确不存在：无、否认、未见。如“无发热”，标发热并填明确不存在。</li>
+<li>可能存在：考虑、疑似、不除外、待排；不是明确不存在。</li>
+<li>无法判断：有可标概念，但原文状态含混/冲突，不能确定；缺少概念时不能造实体。</li>
+<li>条件性：特定条件下实际出现，如“活动后喘息”填是；普通无条件描述填否。尚未发生的“若发热”同时属条件性和假设性。</li>
+<li>假设性：仅在假设、计划、预期语境出现填是；实际发生或明确否定的现实陈述填否。计划排查肺炎并不证明已患肺炎。</li>
+<li>主体：按谁发生该事件选择，母亲肺炎填家属，其他同学填其他人；患者接触母亲时，接触事件主体是患者。</li>
+</ul>
+<p>例：“若出现发热则复诊”→存在状态无法判断、时间未来、条件性是、假设性是、患者本人。“不除外肺炎”→可能存在，不能因“不”填明确不存在。属性之间不互相替代。</p>
+<h3 id="s-8-3">8.3 病原检测结果<a class="anchor" href="#s-8-3" aria-label="链接到8.3 病原检测结果">#</a></h3>
+<p>在项目—结果唯一配对且属于同一检测记录组时：</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">原文</th><th scope="col">检测结果</th><th scope="col">证据处理</th></tr></thead><tbody><tr><td>阳性、检出、培养见；明确弱阳性</td><td>阳性</td><td>弱阳性限定保留于病例证据，不改写成强阳性</td></tr><tr><td>阴性、未检出</td><td>阴性</td><td>不作阳性证据</td></tr><tr><td>可疑阳性、临界、结果待回报或含糊</td><td>无法判断</td><td>保留不确定原文，不当阳性</td></tr><tr><td>仅检验项目名、拟检测、结果未写或错位</td><td>无法判断</td><td>不把检测计划/项目当完成检测；错位另报数据问题</td></tr></tbody></table></div>
+<p>非检测语境如“接触新冠病毒感染者”，不凭名称填阳性，不强制伪造标本/方法；可保留空值并记录非检测语境。不要用“无法判断”掩盖已明确写出却不在选项中的方法或标本。</p>
+<p>不同检测提及分别标，不能把同一病原多次检验的阳性、阴性压为一个结果。原文只有一个提及却指向多个检测时，当前单选结构不能完整表达，保留必要证据并交裁决，不能用重叠复制实体制造虚假对应。</p>
+<h3 id="s-8-4">8.4 共享修饰语与检验记录组<a class="anchor" href="#s-8-4" aria-label="链接到8.4 共享修饰语与检验记录组">#</a></h3>
+<p>“无发热、喘息”分别给两个实体填明确不存在；不标“无”或画状态边。“肺炎支原体、肺炎衣原体IgM阴性”作用域明确时分别填IgM、阴性；不明确则不猜。</p>
+<p>标本和方法只取同组信息；相邻不等于配对。“咳痰，支原体IgM阴性”中的咳痰不是该检测的标本；选原文未说明。结果错位、跨组或冲突可能影响病例结论时按第10章反馈。</p>
+<h3 id="s-8-5">8.5 文书语境与默认解释<a class="anchor" href="#s-8-5" aria-label="链接到8.5 文书语境与默认解释">#</a></h3>
+<p>现病史的普通现实陈述可按上下文填患者本人、当前、假设性否、条件性否；每项仍需人工确认，XML没有默认选中。句内明确过去、他人或计划优先于章节。既往史通常填过去，不自动选已缓解；家族史按实际主体，接触史区分事件主体与接触对象；出院改善不删除索引事件内已发生事实。</p>
+<p>成人与儿童均通过适用实体的属性记录存在状态、条件性、假设性和主体，不框选独立断言实体或连接状态关系。遇到模板冲突、同前缺失或错拼，不用默认属性掩盖问题。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-9" aria-labelledby="chapter-9"><h2 id="chapter-9">9. 关系模块<a class="anchor" href="#chapter-9" aria-label="链接到9. 关系模块">#</a></h2>
+<h3 id="s-9-1">9.1 统一配置只连五种关系<a class="anchor" href="#s-9-1" aria-label="链接到9.1 统一配置只连五种关系">#</a></h3>
+<p>当前仅使用发生时间、起始时间、结束时间、持续时长和测量，不连接状态、旧时间、标本或检测方式关系。存在状态和检验信息通过属性绑定，时间和测量仍需要两个已框选端点。不能因为属性多就省去明确时间关系。</p>
+<h3 id="s-9-2">9.2 方向<a class="anchor" href="#s-9-2" aria-label="链接到9.2 方向">#</a></h3>
+<p>成人与儿童均先选医学实体或测量指标作为起点，再指向时间表达或测量组成作为终点；导出时须核对from_id、to_id和方向。历史评分中“不考核点击顺序”的做法不适用于当前统一配置的关系验收。</p>
+<p>同句不等于关系；归属不明确时不上最近对象。</p>
+<h3 id="s-9-3">9.3 合法端点及例子<a class="anchor" href="#s-9-3" aria-label="链接到9.3 合法端点及例子">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">关系</th><th scope="col">起点→终点</th><th scope="col">两个正例</th><th scope="col">反例/作用</th></tr></thead><tbody><tr><td>发生时间</td><td>医学事件实体→时间表达</td><td>发热→3天前；肺炎诊断→住院第2日</td><td>“3天前”未写开始，不能改起始时间；解释时点</td></tr><tr><td>起始时间</td><td>医学事件实体→明确开始时间</td><td>发热→昨晚（开始发热）；喘息→3天前（起病）</td><td>单独“3天前发热”不推断开始；解释起病</td></tr><tr><td>结束时间</td><td>医学事件实体→明确结束时间</td><td>发热→昨日（昨日退热）；喘息→今晨（已于今晨消失）</td><td>过去/好转不自动结束；解释终止</td></tr><tr><td>持续时长</td><td>医学事件实体→时间表达</td><td>发热→3天（持续3天）；喘息→2小时</td><td>“3天前”是时点，不是持续3天；解释病程</td></tr><tr><td>测量</td><td>测量指标→数值/单位/比较符</td><td>体温→38.5/℃；静息状态指氧饱和度→&lt;/93/%</td><td>不跨指标配对，不算阈值；保存原始测量</td></tr></tbody></table></div>
+<p>医学事件端点须是页面已有实体；具体病原检测时间只有原文明确指向该检测提及时才连，不能凭检测方法猜日期。没有“咳嗽”实体时，不用发热代替咳嗽连时间。</p>
+<h4 id="chapter-9-h-4">图2：关系方向示例<a class="anchor" href="#chapter-9-h-4" aria-label="链接到图2：关系方向示例">#</a></h4>
+<figure class="flowchart"><div class="diagram-scroll" tabindex="0" aria-label="流程图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570" role="img" aria-labelledby="diagram-title-1 diagram-desc-1"><title id="diagram-title-1">图2：关系方向示例</title><desc id="diagram-desc-1">发热，起始时间：昨晚；肺炎诊断，发生时间：住院第2日；喘鸣喘息，持续时长：2小时；发热，结束时间：昨日；体温，测量：38.5；体温，测量：℃</desc><defs><marker id="arrow-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718d94"/></marker></defs><path d="M 245 60 L 510 60" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="F" data-to="T" d="M 245 60 L 510 60" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="390.5" y="50" text-anchor="middle" class="edge-label">起始时间</text><path d="M 245 165 L 510 165" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="W" d="M 245 165 L 510 165" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="390.5" y="155" text-anchor="middle" class="edge-label">发生时间</text><path d="M 245 270 L 510 270" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="A" data-to="H" d="M 245 270 L 510 270" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="390.5" y="260" text-anchor="middle" class="edge-label">持续时长</text><path d="M 245 375 L 510 375" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="X" data-to="Y" d="M 245 375 L 510 375" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="390.5" y="365" text-anchor="middle" class="edge-label">结束时间</text><path d="M 245 490 L 380 490 L 380 465 L 510 465" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="S" data-to="V" d="M 245 490 L 380 490 L 380 465 L 510 465" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="435" y="450" text-anchor="middle" class="edge-label">测量</text><path d="M 245 490 L 330 490 L 330 540 L 510 540" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="S" data-to="U" d="M 245 490 L 330 490 L 330 540 L 510 540" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-1)"/><text x="430" y="525" text-anchor="middle" class="edge-label">测量</text><g class="flow-node" data-node="F"><rect x="45" y="27.5" width="200" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="145" y="66" fill="#28444e" font-size="18"><tspan x="145" dy="0">发热</tspan></text></g><g class="flow-node" data-node="T"><rect x="510" y="27.5" width="240" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="66" fill="#28444e" font-size="18"><tspan x="630" dy="0">昨晚</tspan></text></g><g class="flow-node" data-node="D"><rect x="45" y="132.5" width="200" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="145" y="171" fill="#28444e" font-size="18"><tspan x="145" dy="0">肺炎诊断</tspan></text></g><g class="flow-node" data-node="W"><rect x="510" y="132.5" width="240" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="171" fill="#28444e" font-size="18"><tspan x="630" dy="0">住院第2日</tspan></text></g><g class="flow-node" data-node="A"><rect x="45" y="237.5" width="200" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="145" y="276" fill="#28444e" font-size="18"><tspan x="145" dy="0">喘鸣喘息</tspan></text></g><g class="flow-node" data-node="H"><rect x="510" y="237.5" width="240" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="276" fill="#28444e" font-size="18"><tspan x="630" dy="0">2小时</tspan></text></g><g class="flow-node" data-node="X"><rect x="45" y="342.5" width="200" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="145" y="381" fill="#28444e" font-size="18"><tspan x="145" dy="0">发热</tspan></text></g><g class="flow-node" data-node="Y"><rect x="510" y="342.5" width="240" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="381" fill="#28444e" font-size="18"><tspan x="630" dy="0">昨日</tspan></text></g><g class="flow-node" data-node="S"><rect x="45" y="457.5" width="200" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="145" y="496" fill="#28444e" font-size="18"><tspan x="145" dy="0">体温</tspan></text></g><g class="flow-node" data-node="V"><rect x="510" y="432.5" width="240" height="65" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="471" fill="#28444e" font-size="18"><tspan x="630" dy="0">38.5</tspan></text></g><g class="flow-node" data-node="U"><rect x="510" y="517.5" width="240" height="45" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="630" y="546" fill="#28444e" font-size="18"><tspan x="630" dy="0">℃</tspan></text></g></div><figcaption>图2 · 按原稿节点和箭头绘制；窄屏可横向滚动。</figcaption><details class="diagram-source"><summary>查看原始流程图文本</summary><pre><code>flowchart LR
+    F[&quot;发热&quot;] --&gt;|起始时间| T[&quot;昨晚&quot;]
+    D[&quot;肺炎诊断&quot;] --&gt;|发生时间| W[&quot;住院第2日&quot;]
+    A[&quot;喘鸣喘息&quot;] --&gt;|持续时长| H[&quot;2小时&quot;]
+    X[&quot;发热&quot;] --&gt;|结束时间| Y[&quot;昨日&quot;]
+    S[&quot;体温&quot;] --&gt;|测量| V[&quot;38.5&quot;]
+    S --&gt;|测量| U[&quot;℃&quot;]</code></pre></details></figure><h3 id="s-9-4">9.4 逐关系操作<a class="anchor" href="#s-9-4" aria-label="链接到9.4 逐关系操作">#</a></h3>
+<p>先确认两个实体、来源和语法归属，再选关系。明确起始/结束时用具体类型，不再重复加发生时间；同一事件可同时有起始和持续关系，但两项均须明写。“3天前开始发热，现仍有”标起始时间，不补结束时间。共享时间只连作用域明确的实体；不连隐含因果或完整先后。</p>
+<p>测量按同组指标配对；一项指标可连接数值、单位、比较符。缺指标、单位或结果时不补造。</p>
+<h3 id="s-9-5">9.5 历史关系与禁止关系<a class="anchor" href="#s-9-5" aria-label="链接到9.5 历史关系与禁止关系">#</a></h3>
+<p>旧配置的关系不能直接混入当前批次，须按原文核对端点、类型和方向后迁移，具体见标签字典附录。成人与儿童均不标症状导致诊断、病原导致肺炎、药物治疗疾病、传播链或完整事件先后。</p>
+<h3 id="s-9-6">9.6 不确定时<a class="anchor" href="#s-9-6" aria-label="链接到9.6 不确定时">#</a></h3>
+<p>确认端点→核对原文明确归属→核对类型和方向；若两种解释均合理，暂不连，反馈最小片段、解释及病例影响。检验归属问题也可能发生在属性填写中；不用强制选择掩盖错位。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-10" aria-labelledby="chapter-10"><h2 id="chapter-10">10. 数据与隐私检查<a class="anchor" href="#chapter-10" aria-label="链接到10. 数据与隐私检查">#</a></h2>
+<p>数据问题和医学上的“非目标”不是一回事。空文本、错误拼接或身份信息残留，表示这份记录不能安全、可靠地标注；它们不能当作没有肺炎信号的阴性病例。</p>
+<aside class="callout caution" role="note"><div class="callout-label">隐私与安全</div><p><strong>发现身份信息时立即停止。</strong> 不选择病例结论，不复制原文证据，也不要把该例标成“非目标”或“信息不足”；按项目隐私流程报告。</p>
+</aside><h3 id="s-10-1">10.1 项目组在导入前检查什么<a class="anchor" href="#s-10-1" aria-label="链接到10.1 项目组在导入前检查什么">#</a></h3>
+<p>本节由项目管理和数据处理人员执行，标注员不需要手工清理大批任务。以下记录应在导入前被拦下并记录原因：</p>
+<ul>
+<li>没有正文、正文为空或只有分隔符；</li>
+<li>文件无法读取；</li>
+<li>相同文本重复导入；</li>
+<li>仍有姓名、证件号、电话、详细住址、住院号或床位号等身份信息；</li>
+<li>多次就诊或多份文书被拼在一起，而且无法确定各段的来源和时间；</li>
+<li>检验项目、标本、方法和结果已经错位，无法恢复正确对应关系。</li>
+</ul>
+<p>完整但与肺炎无关的记录不是数据问题，应保留为“非目标”病例。</p>
+<h3 id="s-10-2">10.2 标注时发现问题怎么办<a class="anchor" href="#s-10-2" aria-label="链接到10.2 标注时发现问题怎么办">#</a></h3>
+<p>如果数据问题表单显示英文代码，按下表中的中文含义选择；不要仅凭代码猜测。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">看到的问题</th><th scope="col">记录方式</th><th scope="col">下一步</th></tr></thead><tbody><tr><td>空字符串、纯空格、仅分隔符</td><td>空文本（<code>empty_text</code>）</td><td>选“信息不足”，不作医学负例</td></tr><tr><td>“同上、如前、前症”等引用内容没有提供</td><td>缺少上下文（<code>missing_context</code>）</td><td>若缺失内容可能改变分类，选“信息不足”并申请补全</td></tr><tr><td>文本被截断，但剩余内容仍足以判断</td><td>文本截断（<code>truncated</code>）</td><td>正常选择病例结论，同时记录问题</td></tr><tr><td>多份记录疑似错误拼接</td><td>记录拼接错误（<code>record_splice</code>）</td><td>若会改变结论，选“信息不足”并退回修复</td></tr><tr><td>检验项目与结果无法对应</td><td>检验配对错误（<code>lab_pairing_error</code>）</td><td>不猜测连线；若会改变结论，选“信息不足”</td></tr><tr><td>非空文本完全重复</td><td>文本重复（<code>duplicate_text</code>）</td><td>正常标注该例，同时记录问题</td></tr><tr><td>仍有身份信息</td><td>隐私问题</td><td>立即停止该例并按项目隐私流程处理</td></tr><tr><td>只有“病情稳定、继续治疗、同前”等笼统内容</td><td>缺少上下文（<code>missing_context</code>）</td><td>当前病种不明且可能改变分类时，选“信息不足”</td></tr><tr><td>完整无关记录附带阴性检验</td><td>不记录数据问题</td><td>选“非目标”；不因检验项目名称改判</td></tr></tbody></table></div>
+<p>如果上述类型都不合适，才选择“其他”（<code>other</code>），并用一句不含身份信息的话说明数据人员需要修复什么。不要把“医学上不确定”写成数据问题。</p>
+<h3 id="s-10-3">10.3 无关病例的处理<a class="anchor" href="#s-10-3" aria-label="链接到10.3 无关病例的处理">#</a></h3>
+<p>本节供项目组准备训练数据时参考。与肺炎无关但内容完整的病历，是帮助模型学习排除无关记录的“非目标样本”，不应全部在导入前删除。建议：</p>
+<ul>
+<li>空白、损坏、重复、含身份信息的记录由项目组另行处理；</li>
+<li>医学内容完整但与肺炎无关的记录保留一部分，作为真实的非目标样本；</li>
+<li>通过分层抽样控制目标、待复核、容易误判的非目标样本和普通非目标样本比例；</li>
+<li>不要只用关键词命中的病历训练，否则模型无法学习排除无关内容。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-11" aria-labelledby="chapter-11"><h2 id="chapter-11">11. 标准标注流程<a class="anchor" href="#chapter-11" aria-label="链接到11. 标准标注流程">#</a></h2>
+<p>每例任务应按固定顺序完成。该顺序用于减少先入为主、证据遗漏和关系错配，不得因文本较短或结论看似明显而跳过数据质量、病例判断或提交前检查。</p>
+<h3 id="s-11-1">11.1 每例操作顺序<a class="anchor" href="#s-11-1" aria-label="链接到11.1 每例操作顺序">#</a></h3>
+<h4 id="chapter-11-h-2">图3：一份记录从打开到提交<a class="anchor" href="#chapter-11-h-2" aria-label="链接到图3：一份记录从打开到提交">#</a></h4>
+<figure class="flowchart"><div class="diagram-scroll" tabindex="0" aria-label="流程图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 910" role="img" aria-labelledby="diagram-title-2 diagram-desc-2"><title id="diagram-title-2">图3：一份记录从打开到提交</title><desc id="diagram-desc-2">1. 检查文本是否可用
+并确认没有身份信息，到2. 阅读全文
+确定本次要判断的诊疗过程；2. 阅读全文
+确定本次要判断的诊疗过程，到3. 在病例四分类中选择一个结论
+判定顺序见图1；3. 在病例四分类中选择一个结论
+判定顺序见图1，到4. 框选直接肺部证据
+和必要的症状证据；4. 框选直接肺部证据
+和必要的症状证据，到5. 框选时间、测量、病原和暴露
+逐实体填写适用属性；5. 框选时间、测量、病原和暴露
+逐实体填写适用属性，到6. 只连接归属明确的时间和测量关系
+核对关系类型、端点与方向；6. 只连接归属明确的时间和测量关系
+核对关系类型、端点与方向，到7. 在外部表单中按结论要求
+保存0—3条最短必要证据；7. 在外部表单中按结论要求
+保存0—3条最短必要证据，到8. 记录数据或指南问题
+完成提交前检查</desc><defs><marker id="arrow-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718d94"/></marker></defs><path d="M 380 93 L 380 129" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="A" data-to="B" d="M 380 93 L 380 129" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 205 L 380 241" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="B" data-to="C" d="M 380 205 L 380 241" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 317 L 380 353" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C" data-to="D" d="M 380 317 L 380 353" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 429 L 380 465" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="E" d="M 380 429 L 380 465" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 541 L 380 577" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="E" data-to="F" d="M 380 541 L 380 577" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 653 L 380 689" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="F" data-to="G" d="M 380 653 L 380 689" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><path d="M 380 765 L 380 801" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="G" data-to="H" d="M 380 765 L 380 801" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-2)"/><g class="flow-node" data-node="A"><rect x="70" y="17" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="48" fill="#28444e" font-size="18"><tspan x="380" dy="0">1. 检查文本是否可用</tspan><tspan x="380" dy="26">并确认没有身份信息</tspan></text></g><g class="flow-node" data-node="B"><rect x="70" y="129" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="160" fill="#28444e" font-size="18"><tspan x="380" dy="0">2. 阅读全文</tspan><tspan x="380" dy="26">确定本次要判断的诊疗过程</tspan></text></g><g class="flow-node" data-node="C"><rect x="70" y="241" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="272" fill="#28444e" font-size="18"><tspan x="380" dy="0">3. 在病例四分类中选择一个结论</tspan><tspan x="380" dy="26">判定顺序见图1</tspan></text></g><g class="flow-node" data-node="D"><rect x="70" y="353" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="384" fill="#28444e" font-size="18"><tspan x="380" dy="0">4. 框选直接肺部证据</tspan><tspan x="380" dy="26">和必要的症状证据</tspan></text></g><g class="flow-node" data-node="E"><rect x="70" y="465" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="496" fill="#28444e" font-size="18"><tspan x="380" dy="0">5. 框选时间、测量、病原和暴露</tspan><tspan x="380" dy="26">逐实体填写适用属性</tspan></text></g><g class="flow-node" data-node="F"><rect x="70" y="577" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="608" fill="#28444e" font-size="18"><tspan x="380" dy="0">6. 只连接归属明确的时间和测量关系</tspan><tspan x="380" dy="26">核对关系类型、端点与方向</tspan></text></g><g class="flow-node" data-node="G"><rect x="70" y="689" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="720" fill="#28444e" font-size="18"><tspan x="380" dy="0">7. 在外部表单中按结论要求</tspan><tspan x="380" dy="26">保存0—3条最短必要证据</tspan></text></g><g class="flow-node" data-node="H"><rect x="70" y="801" width="620" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="380" y="832" fill="#28444e" font-size="18"><tspan x="380" dy="0">8. 记录数据或指南问题</tspan><tspan x="380" dy="26">完成提交前检查</tspan></text></g></div><figcaption>图3 · 按原稿节点和箭头绘制；窄屏可横向滚动。</figcaption><details class="diagram-source"><summary>查看原始流程图文本</summary><pre><code>flowchart TD
+    A[&quot;1. 检查文本是否可用&lt;br/&gt;并确认没有身份信息&quot;] --&gt; B[&quot;2. 阅读全文&lt;br/&gt;确定本次要判断的诊疗过程&quot;]
+    B --&gt; C[&quot;3. 在病例四分类中选择一个结论&lt;br/&gt;判定顺序见图1&quot;]
+    C --&gt; D[&quot;4. 框选直接肺部证据&lt;br/&gt;和必要的症状证据&quot;]
+    D --&gt; E[&quot;5. 框选时间、测量、病原和暴露&lt;br/&gt;逐实体填写适用属性&quot;]
+    E --&gt; F[&quot;6. 只连接归属明确的时间和测量关系&lt;br/&gt;核对关系类型、端点与方向&quot;]
+    F --&gt; G[&quot;7. 在外部表单中按结论要求&lt;br/&gt;保存0—3条最短必要证据&quot;]
+    G --&gt; H[&quot;8. 记录数据或指南问题&lt;br/&gt;完成提交前检查&quot;]</code></pre></details></figure><p>如果在第1步发现身份信息，立即停止该例；如果在后续步骤发现文本错拼、缺失或关系无法确定，按第10章或第13章处理，不要猜测补全。</p>
+<h3 id="s-11-2">11.2 禁止事项<a class="anchor" href="#s-11-2" aria-label="链接到11.2 禁止事项">#</a></h3>
+<aside class="callout warning" role="note"><div class="callout-label">提交前核对</div><p><strong>下列做法容易造成系统性错误，应在提交前逐项排除：</strong></p>
+</aside><ul>
+<li>不因担心漏标而把所有医学词都标出来。</li>
+<li>不把模型预标注当成正确答案。</li>
+<li>不自行修改原文、标签名或关系名。</li>
+<li>不在无法确定关系时随意连最近实体。</li>
+<li>不用个人临床经验替代指南正文列出的证据规则。</li>
+</ul>
+<h3 id="s-11-3">11.3 提交前检查<a class="anchor" href="#s-11-3" aria-label="链接到11.3 提交前检查">#</a></h3>
+<ul>
+<li>“病例四分类”已选择一个结论，且与原文支持证据一致；</li>
+<li>目标病例信号有直接肺部证据；</li>
+<li>待复核有明确触发原因；</li>
+<li>否定、可疑、计划和他人证据没有被当成确定当前事实；</li>
+<li>适用必填属性已逐实体确认，空白未被当成默认；</li>
+<li>病原检测记录的结果、标本、方法与同组证据对应，计划未当成结果；</li>
+<li>每条关系端点、类型及方向符合第9.3节；</li>
+<li>没有把病原体名称中的“肺炎”误标为肺炎诊断；</li>
+<li>问题反馈不含身份信息。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-12" aria-labelledby="chapter-12"><h2 id="chapter-12">12. 完整案例<a class="anchor" href="#chapter-12" aria-label="链接到12. 完整案例">#</a></h2><details class="case-index"><summary>按案例查阅 <span>28 个完整案例</span></summary><div><a href="#case-1">案例1：明确当前肺炎</a><a href="#case-2">案例2：急性发热加呼吸证据</a><a href="#case-3">案例3：孤立轻症</a><a href="#case-4">案例4：长期稳定咳嗽</a><a href="#case-5">案例5：复杂胸腔感染</a><a href="#case-6">案例6：非呼吸主诉中的偶然影像</a><a href="#case-7">案例7：住院期间肺炎已改善</a><a href="#case-8">案例8：纯既往肺炎</a><a href="#case-9">案例9：病原体弱阳性</a><a href="#case-10">案例10：计划排除肺炎</a><a href="#case-11">案例11：空文本</a><a href="#case-12">案例12：偶然慢性炎症</a><a href="#case-13">案例13：支气管扩张急性恶化</a><a href="#case-14">案例14：支气管扩张稳定配药</a><a href="#case-15">案例15：明确替代解释</a><a href="#case-16">案例16：连续诊疗中引用旧影像</a><a href="#case-17">案例17：疑似跨记录拼接</a><a href="#case-18">案例18：慢性间质性肺病稳定复诊</a><a href="#case-19">案例19：无发热信息的咳痰加湿啰音</a><a href="#case-20">案例20：支扩未改善并换药，但没有急性客观证据</a><a href="#case-21">案例21：短而完整的无关计划</a><a href="#case-22">案例22：缺失“同前/如前”引用</a><a href="#case-23">案例23：过去发热不等于已缓解</a><a href="#case-24">案例24：起始、持续与好转分开记录</a><a href="#case-25">案例25：条件性与假设性独立</a><a href="#case-26">案例26：职业主体与接触主体</a><a href="#case-27">案例27：同病原的两次检测</a><a href="#case-28">案例28：体温和检测缺项</a></div></details>
+<aside class="callout note" role="note"><div class="callout-label">阅读提示</div><p>案例用于演示正文规则怎样组合使用。若案例与第3章或第4章冲突，以正文为准并提交指南问题；<strong>案例不能产生新规则。</strong></p>
+</aside><div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">分组</th><th scope="col">案例</th><th scope="col">主要练习内容</th></tr></thead><tbody><tr><td>常见病例判断</td><td>1—4</td><td>明确肺炎、症状组合、孤立轻症和长期稳定症状</td></tr><tr><td>复杂证据与断言</td><td>5—10</td><td>胸腔病变、偶然影像、治疗后改善、纯既往、检验结果和计划检查</td></tr><tr><td>数据质量与高频边界</td><td>11—18</td><td>空文本、慢性改变、支气管扩张、替代病因、旧影像和记录错拼</td></tr><tr><td>其他高频边界</td><td>19—22</td><td>无发热湿啰音、未改善与加重、短文本和缺少上下文</td></tr><tr><td>统一属性与关系专项</td><td>23—28</td><td>时间属性与关系、条件/假设、事件主体、检验配对和体温</td></tr></tbody></table></div>
+<p>各案例未逐项展开的必填属性仍须按第8章确认；无法确定用该字段可选的无法判断，不能因示例简写就漏填。病例级证据可以包含页面无按钮的症状；不能据此造实体。</p>
+<h3 id="s-12-1">12.1 常见病例判断<a class="anchor" href="#s-12-1" aria-label="链接到12.1 常见病例判断">#</a></h3>
+<h4 id="case-1">案例1：明确当前肺炎<a class="anchor" href="#case-1" aria-label="链接到案例1：明确当前肺炎">#</a></h4>
+<blockquote><p><strong>原文</strong>：“1周前发热伴咳嗽，今仍有发热。CT提示右肺炎症，门诊以‘肺炎’收住院。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：目标病例信号。</li>
+<li><strong>应标内容</strong>：发热、右肺炎症、肺炎；咳嗽没有实体标签，保留为病例证据。</li>
+<li><strong>标注操作</strong>：两处发热分别标；1周前提及选过去，今仍发热选当前，存在状态均明确存在、主体患者本人、条件性否、假设性否。<code>1周前</code>和<code>今</code>分别标时间表达，由对应发热连发生时间；“仍有”不标病程变化。右肺炎症用肺炎影像，肺炎用肺炎诊断；病例索引归属另按第3章。</li>
+<li><strong>判断依据</strong>：有索引临床事件内直接肺部证据。</li>
+</ul>
+<h4 id="case-2">案例2：急性发热加呼吸证据<a class="anchor" href="#case-2" aria-label="链接到案例2：急性发热加呼吸证据">#</a></h4>
+<blockquote><p><strong>原文</strong>：“发热1天，偶有咳嗽，双肺呼吸音粗，未行胸部影像。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核。</li>
+<li><strong>应标内容</strong>：发热；咳嗽没有实体标签，保留为病例证据。</li>
+<li><strong>不要标</strong>：没有直接肺部证据，不标肺炎诊断或肺炎影像。</li>
+<li><strong>判断依据</strong>：符合急性发热加呼吸证据，但没有直接肺部证据。</li>
+</ul>
+<h4 id="case-3">案例3：孤立轻症<a class="anchor" href="#case-3" aria-label="链接到案例3：孤立轻症">#</a></h4>
+<blockquote><p><strong>原文</strong>：“咳嗽1天，无发热，无胸闷气促，双肺未及啰音。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>标注操作</strong>：框选发热，填明确不存在、当前、患者本人、条件性否、假设性否，病程变化留空；咳嗽和气促无按钮，保留病例证据。不框选“无”或连接否定关系。</li>
+<li><strong>判断依据</strong>：孤立轻症，缺少急性组合和直接证据。</li>
+</ul>
+<h4 id="case-4">案例4：长期稳定咳嗽<a class="anchor" href="#case-4" aria-label="链接到案例4：长期稳定咳嗽">#</a></h4>
+<blockquote><p><strong>原文</strong>：“反复咳嗽咳痰20年，心肺无殊。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>标注操作</strong>：咳嗽/咳痰无按钮，保留“反复20年”病例证据；可标20年为时间表达，但不造咳嗽端点，不把该时长连给无关实体。</li>
+<li><strong>判断依据</strong>：长期稳定症状，无急性改变。</li>
+</ul>
+<h3 id="s-12-2">12.2 复杂证据与断言<a class="anchor" href="#s-12-2" aria-label="链接到12.2 复杂证据与断言">#</a></h3>
+<h4 id="case-5">案例5：复杂胸腔感染<a class="anchor" href="#case-5" aria-label="链接到案例5：复杂胸腔感染">#</a></h4>
+<blockquote><p><strong>原文</strong>：“右侧脓胸，支气管胸膜瘘，胸水病原菌测序提示相关病原感染，近期无发热。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核。</li>
+<li><strong>标注操作</strong>：发热填明确不存在、当前等适用属性。原文仅“相关病原”不能唯一对应病原按钮，故不造病原实体；仅“测序”不自动选mNGS；胸水无独立实体按钮，保留病例证据。</li>
+<li><strong>不要标</strong>：肺炎诊断或肺炎影像；胸腔病变不自动映射肺实质证据。</li>
+<li><strong>判断依据</strong>：胸腔感染严重但不等于肺实质肺炎。</li>
+</ul>
+<h4 id="case-6">案例6：非呼吸主诉中的偶然影像<a class="anchor" href="#case-6" aria-label="链接到案例6：非呼吸主诉中的偶然影像">#</a></h4>
+<blockquote><p><strong>原文</strong>：“因混合痔入院。影像见两肺纤维条索影及小斑片状影。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核。</li>
+<li><strong>不要标</strong>：肺炎影像，除非报告明确写符合第6.1节的炎症或感染性实变；不明斑片影不自动映射为肺炎影像。</li>
+<li><strong>判断依据</strong>：性质和活动性不清，不能直接纳入目标。</li>
+</ul>
+<h4 id="case-7">案例7：住院期间肺炎已改善<a class="anchor" href="#case-7" aria-label="链接到案例7：住院期间肺炎已改善">#</a></h4>
+<blockquote><p><strong>原文</strong>：“入院胸部CT示两肺炎症。治疗后复查明显改善，现无发热咳嗽，予出院。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：目标病例信号。</li>
+<li><strong>标注操作</strong>：两肺炎症标肺炎影像，时间过去、存在明确存在，病程变化好转；发热填明确不存在、当前，病程变化留空。原文未说肺炎消失，不能选已缓解。咳嗽无按钮，保留否定证据。</li>
+<li><strong>病例证据</strong>：治疗后改善。</li>
+<li><strong>判断依据</strong>：肺炎发生在同一次索引住院内；改善降低活动性，不删除病例信号。</li>
+</ul>
+<h4 id="case-8">案例8：纯既往肺炎<a class="anchor" href="#case-8" aria-label="链接到案例8：纯既往肺炎">#</a></h4>
+<blockquote><p><strong>原文</strong>：“5年前曾患肺炎，本次糖尿病复诊，无咳嗽发热。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>标注操作</strong>：肺炎标肺炎诊断，明确存在、过去、患者本人；标5年前为时间表达，肺炎→5年前选发生时间，不补结束或已缓解。发热填明确不存在、当前。两实体均填适用条件性/假设性。</li>
+<li><strong>判断依据</strong>：纯既往、与索引临床事件无关。</li>
+</ul>
+<h4 id="case-9">案例9：病原体弱阳性<a class="anchor" href="#case-9" aria-label="链接到案例9：病原体弱阳性">#</a></h4>
+<blockquote><p><strong>原文</strong>：“呼吸道合胞病毒IgM弱阳性，肺炎支原体IgM阴性。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：按语境三选一：<ul>
+<li>脱离就诊语境的纯检验列表 → 信息不足；</li>
+<li>附在一份完整、明确无关的临床记录中 → 非目标；</li>
+<li>同一索引临床事件另有急性呼吸证据 → 待专业复核。</li>
+</ul>
+</li>
+<li><strong>注意</strong>：任何情况下都不能仅凭该结果判目标病例。</li>
+<li><strong>标注操作</strong>：标呼吸道合胞病毒、肺炎支原体；结果分别阳性、阴性，方法均抗体IgM，标本均原文未说明，弱阳性限定留在证据中。不推断血液或呼吸道标本，不框IgM/弱阳性，不画状态或方法关系。</li>
+<li><strong>不要标</strong>：“肺炎支原体”中的肺炎诊断。</li>
+</ul>
+<h4 id="case-10">案例10：计划排除肺炎<a class="anchor" href="#case-10" aria-label="链接到案例10：计划排除肺炎">#</a></h4>
+<blockquote><p><strong>原文</strong>：“拟行胸部CT排除肺炎，无发热咳嗽。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>标注操作</strong>：肺炎用肺炎诊断，存在状态无法判断、时间未来、假设性是、条件性否、主体患者本人；病程变化留空。“排除”是检查目的，不能填明确不存在；也不能把计划检测当阳性。若原文写“不除外肺炎/待排肺炎”，现实诊断可能性填可能存在。</li>
+<li><strong>判断依据</strong>：只有计划且缺少急性证据。</li>
+</ul>
+<h3 id="s-12-3">12.3 数据质量与高频边界<a class="anchor" href="#s-12-3" aria-label="链接到12.3 数据质量与高频边界">#</a></h3>
+<h4 id="case-11">案例11：空文本<a class="anchor" href="#case-11" aria-label="链接到案例11：空文本">#</a></h4>
+<blockquote><p><strong>原文</strong>：空。</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足。</li>
+<li><strong>实体和关系</strong>：均为空。</li>
+<li><strong>后续处理</strong>：这类空任务应在导入前由项目组拦下，不交给标注员。</li>
+</ul>
+<h4 id="case-12">案例12：偶然慢性炎症<a class="anchor" href="#case-12" aria-label="链接到案例12：偶然慢性炎症">#</a></h4>
+<blockquote><p><strong>原文</strong>：“因胸痛就诊。CT示两肺少许慢性炎症；无发热、咳嗽、咳痰和呼吸困难。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>不要标</strong>：不要把“少许慢性炎症”标成活动性感染性肺实质证据。</li>
+<li><strong>判断依据</strong>：非呼吸索引临床事件、慢性语境明确、急性呼吸证据均被否定。</li>
+</ul>
+<h4 id="case-13">案例13：支气管扩张急性恶化<a class="anchor" href="#case-13" aria-label="链接到案例13：支气管扩张急性恶化">#</a></h4>
+<blockquote><p><strong>原文</strong>：“支气管扩张史。3天来咳嗽加剧、咳痰增多；SpO2 92%，双肺可闻湿啰音，无发热。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核。</li>
+<li><strong>不要标</strong>：不要把支扩诊断映射为肺炎诊断或肺炎影像；若原文另有直接肺实质证据，再按第6.1节标。SpO2必须确认测量状态；不能补静息。</li>
+<li><strong>判断依据</strong>：无发热不自动排除；结构性肺病急性症状恶化并有低氧/湿啰音。</li>
+</ul>
+<h4 id="case-14">案例14：支气管扩张稳定配药<a class="anchor" href="#case-14" aria-label="链接到案例14：支气管扩张稳定配药">#</a></h4>
+<blockquote><p><strong>原文</strong>：“支气管扩张伴感染复诊配药，目前病情稳定，体温正常。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>判断依据</strong>：固定诊断短语不等于当前肺实质感染，且没有近期恶化。</li>
+</ul>
+<h4 id="case-15">案例15：明确替代解释<a class="anchor" href="#case-15" aria-label="链接到案例15：明确替代解释">#</a></h4>
+<blockquote><p><strong>原文</strong>：“气促、双下肢水肿。影像示两肺渗出，可符合心功能不全表现；无发热及感染证据。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>判断依据</strong>：肺部异常已有明确非感染性解释，没有独立感染证据。</li>
+</ul>
+<h4 id="case-16">案例16：连续诊疗中引用旧影像<a class="anchor" href="#case-16" aria-label="链接到案例16：连续诊疗中引用旧影像">#</a></h4>
+<blockquote><p><strong>原文</strong>：“肺病复诊，继续原疗程。当前医师记录引用上月CT：两肺炎症较前进展，建议继续治疗后复查。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：目标病例信号。</li>
+<li><strong>标注操作</strong>：两肺炎症用肺炎影像，时间过去、明确存在、病程变化加重；标上月为时间表达，肺炎影像→上月连发生时间。过去属性不排除同一索引事件的旧检查证据。</li>
+<li><strong>判断依据</strong>：当前文书明确引用旧证据，并说明同一疾病连续治疗和复查。</li>
+</ul>
+<h4 id="case-17">案例17：疑似跨记录拼接<a class="anchor" href="#case-17" aria-label="链接到案例17：疑似跨记录拼接">#</a></h4>
+<blockquote><p><strong>原文</strong>：“上腹痛入院，无发热咳嗽。检验数值中间无过渡拼入‘病程中发热，支原体阳性，已治疗’。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足。</li>
+<li><strong>后续处理</strong>：停止该例，由项目组按来源和就诊编号拆分后重新导入。</li>
+<li><strong>判断依据</strong>：后段归属会反转四分类，医学标注员不能猜测。</li>
+</ul>
+<h4 id="case-18">案例18：慢性间质性肺病稳定复诊<a class="anchor" href="#case-18" aria-label="链接到案例18：慢性间质性肺病稳定复诊">#</a></h4>
+<blockquote><p><strong>原文</strong>：“间质性肺炎复诊，病情稳定，无发热、咳嗽，活动后气促长期无明显变化。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>判断依据</strong>：慢性稳定且无感染性证据；若明确写急性感染性间质性肺炎，则按目标判断。</li>
+</ul>
+<h3 id="s-12-4">12.4 其他高频边界<a class="anchor" href="#s-12-4" aria-label="链接到12.4 其他高频边界">#</a></h3>
+<h4 id="case-19">案例19：无发热信息的咳痰加湿啰音<a class="anchor" href="#case-19" aria-label="链接到案例19：无发热信息的咳痰加湿啰音">#</a></h4>
+<blockquote><p><strong>原文</strong>：“咳嗽、咳痰3天。两肺可闻及湿啰音。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核。</li>
+<li><strong>判断依据</strong>：当前呼吸症状加客观肺部听诊异常命中B3，不要求同时写发热；没有肺炎或肺实质感染，故不判目标。</li>
+<li><strong>近似反例</strong>：“体检偶闻湿啰音，无咳嗽咳痰，心衰解释明确。”不能机械进入待复核。</li>
+</ul>
+<h4 id="case-20">案例20：支扩未改善并换药，但没有急性客观证据<a class="anchor" href="#case-20" aria-label="链接到案例20：支扩未改善并换药，但没有急性客观证据">#</a></h4>
+<blockquote><p><strong>原文</strong>：“支气管扩张伴感染复诊配药，咳嗽咳痰较前未见好转，根据痰培养更改抗生素；无发热、低氧或湿啰音记录。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>判断依据</strong>：未改善属于持续，不等于明确加重；换药和痰培养不能替代本次症状加重加客观急性证据。</li>
+</ul>
+<h4 id="case-21">案例21：短而完整的无关计划<a class="anchor" href="#case-21" aria-label="链接到案例21：短而完整的无关计划">#</a></h4>
+<blockquote><p><strong>原文</strong>：“建议电子喉镜。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标。</li>
+<li><strong>判断依据</strong>：内容虽短，但索引行为明确且无肺炎触发证据；不能仅按字符数判信息不足。</li>
+</ul>
+<h4 id="case-22">案例22：缺失“同前/如前”引用<a class="anchor" href="#case-22" aria-label="链接到案例22：缺失“同前/如前”引用">#</a></h4>
+<blockquote><p><strong>原文</strong>：“慢性病复诊，病史同前。症状好转，维持原治疗。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足。</li>
+<li><strong>数据问题</strong>：缺少上下文（<code>missing_context</code>）。</li>
+<li><strong>判断依据</strong>：当前病种未给出，被引用内容可能含同一疗程肺炎证据；正常心肺查体或孤立旧无关检查不能补足索引疾病。</li>
+</ul>
+<hr>
+<h3 id="s-12-5">12.5 统一配置属性和关系专项练习<a class="anchor" href="#s-12-5" aria-label="链接到12.5 统一配置属性和关系专项练习">#</a></h3>
+<p>以下是为说明操作而构造的去标识化例句，不是新增真人试标结果。每例仍按第3—4章判断病例；属性只在适用实体上填写。</p>
+<h4 id="case-23">案例23：过去发热不等于已缓解<a class="anchor" href="#case-23" aria-label="链接到案例23：过去发热不等于已缓解">#</a></h4>
+<blockquote><p><strong>原文</strong>：“患儿3天前发热，病程其余情况未记载。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足；缺少当前呼吸与肺部语境。</li>
+<li><strong>标注操作</strong>：发热填明确存在、过去、患者本人、条件性否、假设性否；病程变化留空。标3天前，发热→3天前连发生时间。</li>
+<li><strong>不要标</strong>：已缓解、起始时间或持续3天；这些事实原文未给出。</li>
+</ul>
+<h4 id="case-24">案例24：起始、持续与好转分开记录<a class="anchor" href="#case-24" aria-label="链接到案例24：起始、持续与好转分开记录">#</a></h4>
+<blockquote><p><strong>原文</strong>：“3天前开始发热，现仍低热，较前好转；伴咳嗽。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核，按急性发热加呼吸证据入口。</li>
+<li><strong>标注操作</strong>：开始发热提及指过去；现仍低热提及指当前，病程变化好转，存在状态均明确存在。开始发热→3天前连起始时间；没有明写完整持续时长，不另补持续时长。各提及填写适用主体、条件性、假设性。</li>
+<li><strong>不要标</strong>：已缓解；咳嗽无实体按钮，不用喘鸣喘息替代。</li>
+</ul>
+<h4 id="case-25">案例25：条件性与假设性独立<a class="anchor" href="#case-25" aria-label="链接到案例25：条件性与假设性独立">#</a></h4>
+<blockquote><p><strong>原文</strong>：“活动后喘息；若出现发热则复诊。其余资料未提供。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足，不能只靠该句确认急性索引呼吸事件或肺炎。</li>
+<li><strong>标注操作</strong>：喘息标喘鸣喘息，明确存在、当前、条件性是、假设性否、患者本人；发热为无法判断、未来、条件性是、假设性是、患者本人。</li>
+<li><strong>不要标</strong>：把“若发热”当当前发热；两者没有时间表达关系。</li>
+</ul>
+<h4 id="case-26">案例26：职业主体与接触主体<a class="anchor" href="#case-26" aria-label="链接到案例26：职业主体与接触主体">#</a></h4>
+<blockquote><p><strong>原文</strong>：“母亲在禽类养殖场工作，患儿近期接触病死禽。无呼吸不适，就诊原因是外伤。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：非目标；仅暴露不组成肺炎复核入口。</li>
+<li><strong>标注操作</strong>：职业描述标高风险职业史，主体家属；接触事件标可疑动物或动物制品接触史，主体患者本人。各填明确存在、当前、假设性否；接触→近期连发生时间。不填不存在的条件性/病程变化字段。</li>
+<li><strong>不要标</strong>：因职业而推断感染，或把接触对象误填为接触事件主体。</li>
+</ul>
+<h4 id="case-27">案例27：同病原的两次检测<a class="anchor" href="#case-27" aria-label="链接到案例27：同病原的两次检测">#</a></h4>
+<blockquote><p><strong>原文</strong>：“患儿发热伴咳嗽。昨日鼻咽拭子新冠病毒核酸阳性，今日鼻咽拭子新冠病毒核酸阴性。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：待专业复核；急性发热加呼吸证据；检测结果变化不自动删除原阳性证据。</li>
+<li><strong>标注操作</strong>：两次新冠病毒提及分别标，标本均口咽/鼻咽拭子、方法均核酸检测，结果分别阳性、阴性；各连自身检测日期的发生时间。发热填适用临床属性。</li>
+<li><strong>不要标</strong>：合并两个病原实体或按最近结果覆盖全部检测。仅一个病原提及指向多次检测时按第8.3节上报结构限制。</li>
+</ul>
+<h4 id="case-28">案例28：体温和检测缺项<a class="anchor" href="#case-28" aria-label="链接到案例28：体温和检测缺项">#</a></h4>
+<blockquote><p><strong>原文</strong>：“体温38.5℃。肺炎支原体IgM可疑阳性，未记标本与呼吸症状。”</p>
+</blockquote><ul>
+<li><strong>病例结论</strong>：信息不足；不能凭数值加可疑抗体结果补造急性呼吸组合。</li>
+<li><strong>标注操作</strong>：体温→38.5、体温→℃选测量；病原结果无法判断、方法抗体IgM、标本原文未说明。保留可疑阳性原文。</li>
+<li><strong>不要标</strong>：凭数值造发热实体，或凭IgM造血液采样阶段。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-13" aria-labelledby="chapter-13"><h2 id="chapter-13">13. 复核、上报与升级处理<a class="anchor" href="#chapter-13" aria-label="链接到13. 复核、上报与升级处理">#</a></h2>
+<p>如果两种合理解释会得到不同的病例结论，或者当前数据、页面按钮和指南都不足以支持稳定判断，应按本章上报。上报前先按现有规则作保守处理；已有明确规则的情况仍由标注员正常完成，不要一律上交。</p>
+<h3 id="s-13-1">13.1 必须上报的情形<a class="anchor" href="#s-13-1" aria-label="链接到13.1 必须上报的情形">#</a></h3>
+<ul>
+<li>两种解释会改变四分类；</li>
+<li>指南要求与页面实际按钮不一致；</li>
+<li>实体边界无法唯一确定；</li>
+<li>一个修饰词可能连接多个不同实体；</li>
+<li>原文损坏、截断或仍含身份信息；</li>
+<li>出现页面没有相应标签、但可能改变病例结论的重要证据。</li>
+</ul>
+<h3 id="s-13-2">13.2 上报记录要求<a class="anchor" href="#s-13-2" aria-label="链接到13.2 上报记录要求">#</a></h3>
+<ol>
+<li>任务号；</li>
+<li>去标识化的最小必要片段；</li>
+<li>问题类别；</li>
+<li>两种可能解释；</li>
+<li>对纳入、排除、优先级或解释的影响；</li>
+<li>本轮保守处理；</li>
+<li>希望指南明确回答的问题。</li>
+</ol>
+<h3 id="s-13-3">13.3 禁止的上报方式<a class="anchor" href="#s-13-3" aria-label="链接到13.3 禁止的上报方式">#</a></h3>
+<ul>
+<li>只写“不会标”“不确定”；</li>
+<li>复制整份病历；</li>
+<li>含姓名、证件号、电话或精确住址；</li>
+<li>标注员自行宣布新规则或修改标签。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-14" aria-labelledby="chapter-14"><h2 id="chapter-14">14. 质量控制与评价<a class="anchor" href="#chapter-14" aria-label="链接到14. 质量控制与评价">#</a></h2>
+<p>质量评价先看两名标注员能否稳定选出相同的病例结论，再看原文框选、断言、时间和关系是否一致。不能只看一个总分，还要分别检查四类病例和容易出错的边界情况。</p>
+<h3 id="s-14-1">14.1 先评病例级，再评结构化标签<a class="anchor" href="#s-14-1" aria-label="链接到14.1 先评病例级，再评结构化标签">#</a></h3>
+<p>建议顺序：</p>
+<ol>
+<li>病例级四分类一致性；</li>
+<li>核心肺部实体和关键症状；</li>
+<li>断言与时间；</li>
+<li>关系。</li>
+</ol>
+<p>如果两名标注员连要框选的内容都不能保持一致，关系分数就没有解释价值。</p>
+<h3 id="s-14-2">14.2 Cohen&#39;s kappa（校正随机一致后的病例分类一致性）<a class="anchor" href="#s-14-2" aria-label="链接到14.2 Cohen&#39;s kappa（校正随机一致后的病例分类一致性）">#</a></h3>
+<p>两名标注员对同一批病例各给一个四分类结论。设：</p>
+<ul>
+<li><code>Po</code>：实际一致比例；</li>
+<li><code>Pe</code>：按两人各类别边际比例计算的随机一致概率；</li>
+<li><code>kappa = (Po - Pe) / (1 - Pe)</code>。</li>
+</ul>
+<p>例：20例中18例一致，<code>Po=0.90</code>。再根据两名标注员各自四类数量计算<code>Pe</code>，不能直接把0.90当kappa。</p>
+<p>以下是本项目的建议标准，不是国际通用硬标准：</p>
+<ul>
+<li>kappa ≥ 0.80：可进入扩大试标；</li>
+<li>0.67—0.79：分析分歧、修订指南并复测；</li>
+<li>&lt; 0.67：暂停正式标注，重新培训和裁决。</li>
+</ul>
+<p>即使总体kappa较高，也必须逐类报告目标、待复核、非目标和信息不足的混淆，避免类别不平衡掩盖目标病例漏标。</p>
+<h3 id="s-14-3">14.3 原文框选、属性和关系的一致性（F1）<a class="anchor" href="#s-14-3" aria-label="链接到14.3 原文框选、属性和关系的一致性（F1）">#</a></h3>
+<p>计算前保存字符起止偏移、实体ID、属性所属实体、关系端点和方向。成人与儿童均按统一配置评价；旧配置结果须单独报告，不能直接与当前批次合并。</p>
+<ul>
+<li>严格实体匹配：标签、起点和终点全部相同。</li>
+<li>重叠实体匹配：标签相同且跨度有重叠，仅用于诊断边界问题。</li>
+<li>实体属性：实体匹配后逐字段比较存在状态、时间属性、病程变化、条件性、假设性、主体、检测结果、标本类型和检测方式。分别报告适用数、缺失数和一致率/F1；选填留空、原文未说明、无法判断及不适用不可混为一类。</li>
+<li>关系F1：类型、起点、终点及方向均须匹配，按第9章核验。历史评分未考核方向的结果，不能作为当前统一配置的关系质量证明。</li>
+</ul>
+<p>分别报告精确率（precision）、召回率（recall）和F1值，不只报一个总分。精确率反映已标结果中有多少是正确的，召回率反映应标内容中有多少被找出；F1综合两者。核心肺部证据、病原结果和病例级判断应单独报告。</p>
+<h3 id="s-14-4">14.4 完成率和问题门槛<a class="anchor" href="#s-14-4" aria-label="链接到14.4 完成率和问题门槛">#</a></h3>
+<p>进入正式标注前建议满足：</p>
+<ul>
+<li>双标病例完成率 ≥ 95%；</li>
+<li>没有尚未解决、会阻止继续标注的问题；</li>
+<li>所有会影响主要结论的问题都有裁决结果和复测案例；</li>
+<li>核心实体严格F1建议 ≥ 0.85；</li>
+<li>关系F1建议 ≥ 0.80，且没有会反转病原结果的系统错误；</li>
+<li>阶段1筛查排除样本经人工抽查后，无重复模式的目标病例漏筛。</li>
+</ul>
+<h3 id="s-14-5">14.5 当前100例双智能体压力测试结果<a class="anchor" href="#s-14-5" aria-label="链接到14.5 当前100例双智能体压力测试结果">#</a></h3>
+<aside class="callout caution" role="note"><div class="callout-label">隐私与安全</div><p><strong>以下两节是旧指南和旧配置下人工智能执行指南的压力测试，不是真人一致性试验，也不是临床效度评价；没有验证当前统一配置的属性、时间关系和检验选择项。</strong> 这些数字用于发现指南缺口，不能作为病例患病率或正式标注质量的证明。</p>
+</aside><p>两名独立医学标注智能体按v1.0.0完成同一批100例，脱敏修复并独立复标3例后：</p>
+<ul>
+<li>病例级一致94/100，观察一致率0.94；</li>
+<li>Cohen&#39;s kappa = 0.898；</li>
+<li>6例分歧集中在泛化稳定文本、旧影像归属、纯检验、支气管扩张急性加重和跨记录拼接；</li>
+<li>另发现4例两名智能体一致、但会导致系统性过筛的边界，v2已修订慢性/非感染性改变和明确替代解释规则；</li>
+<li>v2裁决参考分布：目标病例信号18、待专业复核9、非目标62、信息不足11。</li>
+</ul>
+<p>该结果只表明两套独立人工智能（AI）执行流程能够理解大部分规则，并帮助发现规则缺口。它不能证明真人能够稳定执行，也不能证明标注结果具有临床效度。裁决参考不是临床金标准，正式标注前仍须按第15章完成人类双标。</p>
+<h3 id="s-14-6">14.6 当前新增200例双智能体压力测试结果<a class="anchor" href="#s-14-6" aria-label="链接到14.6 当前新增200例双智能体压力测试结果">#</a></h3>
+<p>两名独立医学标注智能体按v2.0.1完成同一批新增200例，均无隐私阻塞：</p>
+<ul>
+<li>标注员A分布：目标1、待复核4、非目标136、信息不足59；</li>
+<li>标注员B分布：目标1、待复核9、非目标130、信息不足60；</li>
+<li>原始任务口径一致192/200，观察一致率0.960，Cohen&#39;s kappa=0.915，8例分歧；</li>
+<li>去标识化全文精确折叠后为158个唯一文本，一致151/158，观察一致率0.956，Cohen&#39;s kappa=0.879，7个唯一文本分歧；</li>
+<li>裁决参考原始分布：目标1、待复核6、非目标132、信息不足61；唯一文本分布：目标1、待复核6、非目标121、信息不足30；</li>
+<li>分歧主要集中在结构性肺病是否属于本次急性加重、无发热的咳痰加湿啰音、短而完整的无关记录，以及缺失“同前/如前”上下文；</li>
+<li>200个任务中只有158份不同文本，说明正式抽样前必须先排除空文本并去除完全重复的文本。</li>
+</ul>
+<p>该结果仍是人工智能指南压力测试，不是真人标注者间一致性（IAA）试验，也不能用于判断临床效度或估计病例患病率。样本有意纳入空白和低信息记录，不能把类别分布外推到总体。</p>
+<h3 id="s-14-7">14.7 指标解释与适用限制<a class="anchor" href="#s-14-7" aria-label="链接到14.7 指标解释与适用限制">#</a></h3>
+<ul>
+<li>观察一致率说明两人有多少例完全相同；kappa还扣除按类别比例随机一致的部分。</li>
+<li>100例中非目标占比较高，必须同时查看混淆表和所有目标/待复核分歧，不能只看总kappa。</li>
+<li>空白、隐私问题和跨记录拼接应单独报告为数据质量问题；正式标注的一致性分析应事先规定是否排除这些无法正常标注的样本。</li>
+<li>上述历史压力测试输出未统一保存字符偏移，不能据此报告严格实体F1或关系F1。新版人工输出须记录偏移与属性归属，按第14.3节独立评价。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-15" aria-labelledby="chapter-15"><h2 id="chapter-15">15. 培训、双标与裁决机制<a class="anchor" href="#chapter-15" aria-label="链接到15. 培训、双标与裁决机制">#</a></h2>
+<p>正式开始前先验证统一配置页面：病例四分类只能单选、无默认值、未选择时阻止提交，切换实体后仍保留该病例结论；适用实体选中后面板显示、必填项阻止漏填、切换实体不串属性、病原多提及不合并、导出保留实体ID与属性及关系方向。随后完成培训、独立双标和裁决。字典已同步；锁定清单及后端属性合同须同步或明确禁用不兼容预标注；未完成前不得宣称正式发布。培训帮助两名标注员理解同一套规则；双标用于发现分歧；裁决用于判断分歧来自指南、培训、操作、数据还是页面按钮。三者不能相互替代。</p>
+<h4 id="chapter-15-h-1">图4：从培训到正式标注<a class="anchor" href="#chapter-15-h-1" aria-label="链接到图4：从培训到正式标注">#</a></h4>
+<figure class="flowchart"><div class="diagram-scroll" tabindex="0" aria-label="流程图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 1250" role="img" aria-labelledby="diagram-title-3 diagram-desc-3"><title id="diagram-title-3">图4：从培训到正式标注</title><desc id="diagram-desc-3">阅读指南和快速判定卡，到共同完成5例示范；共同完成5例示范，到独立完成20例培训校准；独立完成20例培训校准，到达到项目标准？；达到项目标准？，否：讲评分歧、补充培训后复测；讲评分歧、补充培训后复测，到独立完成20例培训校准；达到项目标准？，是：不少于30例正式真人双标
+两人独立、提交前互不可见；不少于30例正式真人双标
+两人独立、提交前互不可见，到裁决并记录分歧原因；裁决并记录分歧原因，到达到第14章质量标准？；达到第14章质量标准？，否：修订指南、补充培训或修复数据与页面
+必要时回标并重新验证；修订指南、补充培训或修复数据与页面
+必要时回标并重新验证，到不少于30例正式真人双标
+两人独立、提交前互不可见；达到第14章质量标准？，是：进入50—100例扩大试标；进入50—100例扩大试标，到稳定后正式标注
+每批随机10%双标并加做高风险病例</desc><defs><marker id="arrow-3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718d94"/></marker></defs><path d="M 350 103 L 350 142" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="A" data-to="B" d="M 350 103 L 350 142" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 350 218 L 350 257" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="B" data-to="C" d="M 350 218 L 350 257" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 350 333 L 350 377" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="C" data-to="D" d="M 350 333 L 350 377" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 525 420 L 635 420" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="E" d="M 525 420 L 635 420" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><text x="593" y="410" text-anchor="middle" class="edge-label">否</text><path d="M 975 420 L 995 420 L 995 295 L 565 295" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="E" data-to="C" d="M 975 420 L 995 420 L 995 295 L 565 295" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 350 463 L 350 531" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="D" data-to="F" d="M 350 463 L 350 531" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><text x="363" y="487" text-anchor="middle" class="edge-label">是</text><path d="M 350 639 L 350 697" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="F" data-to="G" d="M 350 639 L 350 697" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 350 773 L 350 822" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="G" data-to="H" d="M 350 773 L 350 822" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 545 865 L 630 865" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="H" data-to="I" d="M 545 865 L 630 865" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><text x="600.5" y="855" text-anchor="middle" class="edge-label">否</text><path d="M 980 865 L 995 865 L 995 585 L 600 585" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="I" data-to="F" d="M 980 865 L 995 865 L 995 585 L 600 585" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><path d="M 350 908 L 350 992" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="H" data-to="J" d="M 350 908 L 350 992" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><text x="363" y="940" text-anchor="middle" class="edge-label">是</text><path d="M 350 1068 L 350 1130" fill="none" stroke="white" stroke-width="8"/><path class="flow-edge" data-from="J" data-to="K" d="M 350 1068 L 350 1130" fill="none" stroke="#718d94" stroke-width="2" marker-end="url(#arrow-3)"/><g class="flow-node" data-node="A"><rect x="135" y="27" width="430" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="71" fill="#28444e" font-size="18"><tspan x="350" dy="0">阅读指南和快速判定卡</tspan></text></g><g class="flow-node" data-node="B"><rect x="135" y="142" width="430" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="186" fill="#28444e" font-size="18"><tspan x="350" dy="0">共同完成5例示范</tspan></text></g><g class="flow-node" data-node="C"><rect x="135" y="257" width="430" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="301" fill="#28444e" font-size="18"><tspan x="350" dy="0">独立完成20例培训校准</tspan></text></g><g class="flow-node" data-node="D"><rect x="175" y="377" width="350" height="86" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 188 415 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="350" y="426" fill="#28444e" font-size="18"><tspan x="350" dy="0">达到项目标准？</tspan></text></g><g class="flow-node" data-node="E"><rect x="635" y="375" width="340" height="90" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="805" y="426" fill="#28444e" font-size="18"><tspan x="805" dy="0">讲评分歧、补充培训后复测</tspan></text></g><g class="flow-node" data-node="F"><rect x="100" y="531" width="500" height="108" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="578" fill="#28444e" font-size="18"><tspan x="350" dy="0">不少于30例正式真人双标</tspan><tspan x="350" dy="26">两人独立、提交前互不可见</tspan></text></g><g class="flow-node" data-node="G"><rect x="135" y="697" width="430" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="741" fill="#28444e" font-size="18"><tspan x="350" dy="0">裁决并记录分歧原因</tspan></text></g><g class="flow-node" data-node="H"><rect x="155" y="822" width="390" height="86" rx="22" fill="#f2f6f7" stroke="#b3c6cb" stroke-width="1.6"/><path d="M 168 860 l 5 5 l -5 5 l -5 -5 z" fill="#6b8f91"/><text text-anchor="middle" x="350" y="871" fill="#28444e" font-size="18"><tspan x="350" dy="0">达到第14章质量标准？</tspan></text></g><g class="flow-node" data-node="I"><rect x="630" y="807" width="350" height="116" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="805" y="858" fill="#28444e" font-size="18"><tspan x="805" dy="0">修订指南、补充培训或修复数据与页面</tspan><tspan x="805" dy="26">必要时回标并重新验证</tspan></text></g><g class="flow-node" data-node="J"><rect x="120" y="992" width="460" height="76" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="1036" fill="#28444e" font-size="18"><tspan x="350" dy="0">进入50—100例扩大试标</tspan></text></g><g class="flow-node" data-node="K"><rect x="50" y="1130" width="600" height="100" rx="8" fill="#fff" stroke="#b3c6cb" stroke-width="1.6"/><text text-anchor="middle" x="350" y="1173" fill="#28444e" font-size="18"><tspan x="350" dy="0">稳定后正式标注</tspan><tspan x="350" dy="26">每批随机10%双标并加做高风险病例</tspan></text></g></div><figcaption>图4 · 按原稿节点和箭头绘制；窄屏可横向滚动。</figcaption><details class="diagram-source"><summary>查看原始流程图文本</summary><pre><code>flowchart TD
+    A[&quot;阅读指南和快速判定卡&quot;] --&gt; B[&quot;共同完成5例示范&quot;]
+    B --&gt; C[&quot;独立完成20例培训校准&quot;]
+    C --&gt; D{&quot;达到项目标准？&quot;}
+    D --&gt;|否| E[&quot;讲评分歧、补充培训后复测&quot;]
+    E --&gt; C
+    D --&gt;|是| F[&quot;不少于30例正式真人双标&lt;br/&gt;两人独立、提交前互不可见&quot;]
+    F --&gt; G[&quot;裁决并记录分歧原因&quot;]
+    G --&gt; H{&quot;达到第14章质量标准？&quot;}
+    H --&gt;|否| I[&quot;修订指南、补充培训或修复数据与页面&lt;br/&gt;必要时回标并重新验证&quot;]
+    I --&gt; F
+    H --&gt;|是| J[&quot;进入50—100例扩大试标&quot;]
+    J --&gt; K[&quot;稳定后正式标注&lt;br/&gt;每批随机10%双标并加做高风险病例&quot;]</code></pre></details></figure><h3 id="s-15-1">15.1 标注员培训<a class="anchor" href="#s-15-1" aria-label="链接到15.1 标注员培训">#</a></h3>
+<ol>
+<li>阅读本指南和快速判定卡；</li>
+<li>由培训者讲解病例级四分类、三类时间信息，以及每种关系可以连接哪些内容；</li>
+<li>共同完成5例示范；</li>
+<li>独立完成20例培训校准集；该批用于讲评，不作为正式一致性验证集；</li>
+<li>讨论分歧，但不覆盖原始答案；</li>
+<li>达到项目标准后进入正式标注。</li>
+</ol>
+<h3 id="s-15-2">15.2 双标设计<a class="anchor" href="#s-15-2" aria-label="链接到15.2 双标设计">#</a></h3>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">阶段</th><th scope="col">样本要求</th><th scope="col">双标比例</th><th scope="col">主要目的</th></tr></thead><tbody><tr><td>正式真人验证</td><td>不少于30例；不得与5例示范和20例培训校准集重叠；覆盖主要病例类型和数据问题</td><td>100%</td><td>验证真人能否稳定执行指南</td></tr><tr><td>扩大试标</td><td>50—100例</td><td>至少20%</td><td>检查规则在更大样本中的稳定性</td></tr><tr><td>稳定开展正式标注后</td><td>每个正式标注批次</td><td>随机10%，高风险边界病例额外双标</td><td>持续监测标注漂移和新分歧</td></tr></tbody></table></div>
+<p>正式真人验证样本应覆盖：明确肺炎、疑似肺炎、复杂胸腔病变、孤立轻症、纯既往、慢性间质性肺病、支气管扩张急性/稳定病例、替代病因、病原检测、无关病例和数据损坏。</p>
+<p>两名标注员必须独立完成，不能在提交前互看结果。</p>
+<h3 id="s-15-3">15.3 裁决<a class="anchor" href="#s-15-3" aria-label="链接到15.3 裁决">#</a></h3>
+<p>裁决员查看原始双份结果、指南版本和最小原文片段，逐项给出：</p>
+<ul>
+<li>最终答案；</li>
+<li>使用的规则；</li>
+<li>分歧原因：指南缺失、培训不足、操作错误、数据问题或页面按钮问题；</li>
+<li>是否修订指南；</li>
+<li>是否回标历史数据。</li>
+</ul>
+<p>裁决不是简单选A或B，也不能覆盖原始标注文件。所有裁决进入日志。</p>
+<h3 id="s-15-4">15.4 指南修订门槛<a class="anchor" href="#s-15-4" aria-label="链接到15.4 指南修订门槛">#</a></h3>
+<p>只有满足以下条件之一才增加标签：</p>
+<ol>
+<li>会改变病例纳入或排除；</li>
+<li>会改变复核优先级；</li>
+<li>是解释病例判断不可缺少的证据；</li>
+<li>在多例中重复出现，且现有标签无法稳定表达。</li>
+</ol>
+<p>新增标签前必须说明定义、纳入、排除、正例、反例、合法关系、复杂度成本和回标需求。</p>
+<hr>
+</section>
+<section class="chapter" data-section="chapter-16" aria-labelledby="chapter-16"><h2 id="chapter-16">16. 文档维护与版本管理<a class="anchor" href="#chapter-16" aria-label="链接到16. 文档维护与版本管理">#</a></h2>
+<p>本章供项目负责人和指南维护人员使用，普通标注员不需要据此修改文件或页面按钮。</p>
+<h3 id="s-16-1">16.1 版本号<a class="anchor" href="#s-16-1" aria-label="链接到16.1 版本号">#</a></h3>
+<ul>
+<li>补丁版本（patch）：澄清文字，不改变既有标注答案；</li>
+<li>次版本（minor）：新增规则或页面标签，部分历史数据需要重新标注；</li>
+<li>主版本（major）：病例定义或核心任务发生不兼容变化。</li>
+</ul>
+<h3 id="s-16-2">16.2 变更日志<a class="anchor" href="#s-16-2" aria-label="链接到16.2 变更日志">#</a></h3>
+<h4 id="chapter-16-h-3">v2.2.0 成人与儿童统一配置适配草案 — 2026-10-07<a class="anchor" href="#chapter-16-h-3" aria-label="链接到v2.2.0 成人与儿童统一配置适配草案 — 2026-10-07">#</a></h4>
+<ul>
+<li>成人与儿童任务共用<code>label_studio/pneumonia_config.xml</code>；项目文件清单改为一个统一配置入口。</li>
+<li>按统一配置核对49个实体标签、9个属性字段及5种关系，同步框选规则、案例操作、关系方向、提交检查和质量评价；不再按患者年龄区分页面操作。</li>
+<li>增加病例级必填单选控件<code>case_decision</code>，提供四种病例结论，不设默认值、不绑定实体选区；原文证据、任务状态和数据问题仍在外部表单记录。</li>
+<li>病例四分类、第3—4章的证据条件及临床阈值未变。儿童特有体征的医学含义和纳入边界保留，不因配置合并自动扩展。</li>
+<li>主指南、标签字典和HTML阅读页同步更新。历史锁定清单、模型、既有标注及反馈记录未改；页面验收、后端兼容性及人工双标仍需验证，不能据此宣称正式发布。</li>
+<li>历史结构化标注须核对原文后迁移或回标，不覆盖原始结果；病例结论仅在复核发现证据变化时调整。</li>
+</ul>
+<blockquote><p>以下为历史版本日志，描述当时的配置，不作为当前统一配置的操作规则。</p>
+</blockquote><h4 id="chapter-16-h-4">v2.2.0 儿童配置适配草案 — 2026-10-06<a class="anchor" href="#chapter-16-h-4" aria-label="链接到v2.2.0 儿童配置适配草案 — 2026-10-06">#</a></h4>
+<ul>
+<li>按用户要求原位更新本文件，文件名保留v2.1.1作为稳定入口；正文标记次版本草案，正式锁定前不能仅用文件名判断规则版本。</li>
+<li>新版儿童49个实体、9个属性字段及5种关系逐章对齐；成人旧页操作明确分开。病例四分类边界和数值标准未改，历史日志保持原记录。</li>
+<li>临床断言、主体、时间状态改为实体属性；检验结果、标本、方法绑定病原；时间表达连接四种明确关系，测量从指标连向组成。删除儿童旧按钮操作和旧方向忽略规则。</li>
+<li>更新原22例操作，新增6个专项构造案例；它们不是新试标结果。</li>
+<li>历史结构化儿童标注不能直接复用：须按原文定向迁移/回标状态、时间、检验属性和新关系，不能用默认值批量补齐；病例结论仅在重核发现证据变化时调整。</li>
+<li>发布阻塞：标签字典已后续同步；锁定清单、固定GLiNER提示尚未同步；ModernBERT缺少属性解析与输出；新版Label Studio显示/必填/导出与真人双标未验收。未修改XML、模型、既有标注或历史反馈；标签字典已在后续请求中同步。</li>
+<li>本次修订分析、决策和下一轮试标计划保存在<code>revisions/2026-10-06-child-xml/</code>。</li>
+</ul>
+<h4 id="chapter-16-h-5">v2.1.1 — 2026-08-28<a class="anchor" href="#chapter-16-h-5" aria-label="链接到v2.1.1 — 2026-08-28">#</a></h4>
+<ul>
+<li>增加成人与儿童标签导读，明确62个共用标签、成人专用标签、儿童专用标签、两类页面均缺少的推荐标签及共同关系；增加本指南实际引用的本地项目文件清单；未修改XML。</li>
+<li>强化Markdown视觉层级：案例按主题分组，病例原文改为引用块，结论、应标内容、不要标和判断依据使用统一加粗字段；在隐私、关系、禁止事项和AI压力测试处增加醒目提示框；规则未变。</li>
+<li>在四分类判断、关系连接、每例操作和培训质控部分增加流程图；在证据作用、时间信息和双标设计部分增加对照表，帮助标注员直接看清判断顺序和条件组合；规则未变。</li>
+<li>根据真人审阅意见，改为从标注员视角说明“要做什么、为什么、遇到问题怎么办”；删除前置章节中的系统字段和开发过程语言。</li>
+<li>将“Schema”“门禁”“v2推荐实施”等技术说法改为“标注页面配置”“数据与隐私检查”“页面已有和暂未提供的功能”，并为必要缩写补充中文解释。</li>
+<li>重写病例分类的操作表达和长句；没有改变四分类边界、标签、关系或数值标准。</li>
+<li>参照WHO马赛克呼吸道监测框架，增加病例级判断与多类证据协同的总体框架，明确各模块的功能和相互关系。</li>
+<li>参照WHO卫生应急框架，统一目的、适用范围、数据与隐私检查、操作、上报和升级处理的表述。</li>
+<li>参照《全球疟疾报告》的证据表达方式，明确主要判断、证据、限制和适用含义之间的层次。</li>
+<li>统一章节标题、章节导语和规范用语。</li>
+<li>统一“索引临床事件”为唯一称谓；为待专业复核六个入口补充正式编号B1—B6，并在图1流程图、证据作用对照表和标签字典中同步引用。</li>
+<li>案例9的病例结论改为按语境分支列出；“文中几个常用词”补充目标病例信号、待专业复核、直接肺部证据等常用词及简称约定。</li>
+<li>核心肺部实体表头由“病例作用”统一为标签字典使用的“病例判断作用”。</li>
+<li>本次为行文与结构澄清，不改变四分类边界、标签体系、页面可用情况、数值标准或重新标注要求。</li>
+</ul>
+<h4 id="chapter-16-h-6">v2.1.0 — 2026-08-28<a class="anchor" href="#chapter-16-h-6" aria-label="链接到v2.1.0 — 2026-08-28">#</a></h4>
+<ul>
+<li>新增200例双智能体压力测试；并列报告200任务原始口径和158个唯一文本口径，避免重复文本虚高一致性。</li>
+<li>明确B3包括“当前呼吸症状＋客观肺部听诊异常”；咳嗽/咳痰加双肺湿啰音可在无发热时进入待专业复核，孤立湿啰音不自动触发。</li>
+<li>明确结构性肺病B5必须是本次明确症状加重加客观急性证据；未改善、换药、年度加重次数和孤立低氧不能替代。</li>
+<li>区分短而完整的无关记录与缺失“同前/如前”上下文；旧无关检查不能补足当前索引病种。</li>
+<li>病例表单的数据问题规则增加“空文本”（<code>empty_text</code>）、“缺少上下文”（<code>missing_context</code>），并要求选择“其他”（<code>other</code>）时填写去标识化问题说明（<code>data_issue_note</code>）。</li>
+<li>继续建议成人和儿童页面增加咳嗽、咳痰、气促/呼吸困难；通用肺胸异常实体因概念差异较大而暂缓，正式使用的页面配置未修改。</li>
+<li>因病例边界和外部数据问题合同发生兼容性变化，版本升为minor；仅对受影响病例和数据问题定向回标。</li>
+</ul>
+<h4 id="chapter-16-h-7">v2.0.1 — 2026-08-28<a class="anchor" href="#chapter-16-h-7" aria-label="链接到v2.0.1 — 2026-08-28">#</a></h4>
+<ul>
+<li>将病例级标签、成人和儿童页面中的全部实体、五类关系和病例表单数据问题扩展为逐标签说明卡。</li>
+<li>每张卡增加纳入标准、排除标准、最小跨度或表单规则、合法关系/端点、病例判断作用、两个正例、一个近似反例和常见混淆裁决。</li>
+<li>明确病原名称、阳性检出、致病和肺炎诊断是四个不同层次；补充标本与检测方法的检验医学边界。</li>
+<li>这是文档澄清版本：病例四分类、第3.2B节六类待复核条件、正式页面配置和重新标注要求均不变。</li>
+</ul>
+<h4 id="chapter-16-h-8">v2.0.0 — 2026-08-28<a class="anchor" href="#chapter-16-h-8" aria-label="链接到v2.0.0 — 2026-08-28">#</a></h4>
+<ul>
+<li>完成100例、两名独立医学标注智能体压力测试；脱敏修复后病例级一致率0.94，Cohen&#39;s kappa=0.898。</li>
+<li>明确慢性、稳定或非感染性间质性肺病不因“肺炎”字样自动进入目标。</li>
+<li>增加明确替代病因规则：肿瘤、心衰等解释充分且无独立感染证据时判非目标。</li>
+<li>“支气管扩张伴感染”不直接映射肺部感染；按稳定复诊、急性恶化或明确肺实质感染分流。</li>
+<li>区分纯检验列表的信息不足与完整无关临床记录的非目标。</li>
+<li>明确连续诊疗引用旧影像的四步判断，以及跨记录错拼的阻塞规则。</li>
+<li>增加检验记录组边界和隐私字段检查要求；未增加实体或关系类型。</li>
+<li>因核心病例边界改变，v1相关病例需按v2回标。</li>
+</ul>
+<h4 id="chapter-16-h-9">v1.0.0 — 2026-08-27<a class="anchor" href="#chapter-16-h-9" aria-label="链接到v1.0.0 — 2026-08-27">#</a></h4>
+<ul>
+<li>采用病例级判断与结构化证据两层任务。</li>
+<li>固定目标、待复核、非目标、信息不足四分类。</li>
+<li>引入“索引临床事件”，处理住院内已改善肺炎和纯既往肺炎。</li>
+<li>建立直接肺部证据白名单及非特异肺/胸异常反例。</li>
+<li>确立一个时间表达加当前/既往、持续/加重的三层轻量时间模型。</li>
+<li>明确弱阳性、可疑阳性、阴性和计划检测的断言映射。</li>
+<li>建立五类关系合法端点矩阵，评分忽略Label Studio点击顺序。</li>
+<li>推荐最小新增咳嗽、咳痰、气促三个症状，不增加程度和频率子标签。</li>
+<li>增加数据质量检查、两阶段筛查、双标、裁决和一致性标准。</li>
+</ul>
+<hr>
+</section>
+<section class="chapter" data-section="appendix-a" aria-labelledby="appendix-a"><h2 id="appendix-a">附录A：快速判定卡<a class="anchor" href="#appendix-a" aria-label="链接到附录A：快速判定卡">#</a></h2>
+<ol>
+<li>空文本：记录“空文本”（<code>empty_text</code>），由项目组拦下；缺少“同前、如前”所引用的内容且可能改变分类：记录“缺少上下文”（<code>missing_context</code>），选择信息不足。</li>
+<li>先排慢性/非感染性或明确替代病因；无独立感染证据时通常非目标。</li>
+<li>本次就诊/住院明确活动性感染性肺炎、肺实质感染、炎症/实变？→ 目标病例信号。</li>
+<li>疑似肺炎，急性发热+呼吸证据，呼吸症状+湿啰音，结构性肺病本次明确加重+客观证据，当前肺/胸异常性质不明，或呼吸道标本明确检出关注病原？→ 待专业复核。</li>
+<li>孤立轻症、长期稳定、纯既往、全部否定、单纯无关病历？→ 非目标。</li>
+<li>病原体名称不等于阳性；阳性不等于肺炎。</li>
+<li>胸水、条索影、小斑片影、结节、脓胸不自动等于肺炎。</li>
+<li>时间表达标原文，标准日期交给程序。</li>
+<li>关系只连明确归属；同句出现不够。</li>
+<li>成人与儿童均从医学实体/指标连向时间表达/测量组成，并核对类型及方向。</li>
+<li>不确定时不猜，写最小片段和问题。</li>
+</ol>
+</section>
+<section class="chapter" data-section="appendix-b" aria-labelledby="appendix-b"><h2 id="appendix-b">附录B：统一配置标签、属性与关系速查表<a class="anchor" href="#appendix-b" aria-label="链接到附录B：统一配置标签、属性与关系速查表">#</a></h2>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">模块</th><th scope="col">当前统一页面</th><th scope="col">要点</th></tr></thead><tbody><tr><td>病例判断</td><td>页面顶部“病例四分类”</td><td>必选一个结论，无默认值；字段名<code>case_decision</code></td></tr><tr><td>病例证据与数据问题</td><td>外部表单</td><td>保存0—3条必要证据及任务状态、数据问题</td></tr><tr><td>肺部证据</td><td>肺炎影像、肺炎诊断</td><td>按来源与证据边界，不自动扩大纳入</td></tr><tr><td>症状/治疗</td><td>第6.2节12个标签</td><td>机械通气没有临床属性；咳嗽/咳痰/气促无按钮</td></tr><tr><td>临床属性</td><td>存在状态、时间属性、条件性、假设性、主体；可选病程变化</td><td>逐实体填写；暴露无条件性/病程变化</td></tr><tr><td>时间</td><td>时间表达</td><td>日期、相对时间、时长；不推算</td></tr><tr><td>测量</td><td>体温、呼吸频率、静息状态指氧饱和度、动脉氧分压(PaO2)、吸氧浓度(FiO2)；数值、单位、比较符</td><td>无阈值判断按钮</td></tr><tr><td>流行病学</td><td>周围聚集性发病现象、高风险职业史、动物/环境接触、境内外旅居史</td><td>原文已有才标；不推断GIS聚集/传播链</td></tr><tr><td>病原检测</td><td>21种病原＋检测结果、标本类型、检测方式属性</td><td>名称不等于阳性；缺项、不适用、含糊分开</td></tr><tr><td>时间关系</td><td>发生时间、起始时间、结束时间、持续时长</td><td>医学实体→时间表达</td></tr><tr><td>测量关系</td><td>测量</td><td>指标→数值/单位/比较符</td></tr><tr><td>成人与儿童任务</td><td>共用<code>pneumonia_config.xml</code></td><td>按同一套实体、属性和关系操作；旧标注迁移见标签字典附录</td></tr></tbody></table></div>
+<hr>
+</section>
+<section class="chapter" data-section="appendix-c" aria-labelledby="appendix-c"><h2 id="appendix-c">附录C：暂未提供的功能与处理方式<a class="anchor" href="#appendix-c" aria-label="链接到附录C：暂未提供的功能与处理方式">#</a></h2>
+<p>本附录供核对页面范围或处理标签缺口时查阅。</p>
+<div class="table-scroll" tabindex="0" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">内容</th><th scope="col">当前页面情况</th><th scope="col">处理方式</th></tr></thead><tbody><tr><td>原文证据、任务状态、数据问题</td><td>暂无相应控件</td><td>仍在外部表单记录，并与该任务对应</td></tr><tr><td>咳嗽、咳痰、气促</td><td>暂无专门实体标签</td><td>保留病例判断所需的原文证据，不用喘鸣喘息等标签替代</td></tr><tr><td>持续、稳定</td><td>无相应病程变化按钮</td><td>不自动映射为加重或好转；明确时长时，按第7章框选时间表达并连接适用关系</td></tr><tr><td>阈值判断</td><td>无独立标签</td><td>保存原文测量指标、数值、单位和比较符，不自行补出异常判断</td></tr></tbody></table></div>
+<p>因果关系和完整事件先后不属于本项目标注范围，不列为待增加的页面功能。</p>
+<hr>
+</section>
+<section class="chapter" data-section="references" aria-labelledby="references"><h2 id="references">参考框架与外部项目<a class="anchor" href="#references" aria-label="链接到参考框架与外部项目">#</a></h2>
+<h3 id="references-h-1">A. WHO框架性文件<a class="anchor" href="#references-h-1" aria-label="链接到A. WHO框架性文件">#</a></h3>
+<p>下列文件用于本指南的总体结构、职责边界、证据表达和实施逻辑。为便于检索，括号中保留部分英文原题；其疾病范围、指标体系和机构职责不直接移植为本项目规则。</p>
+<ol>
+<li>WHO马赛克呼吸道监测框架（Mosaic Respiratory Surveillance Framework）：用于组织监测目标、互补方法和实施路径。<br><a href="https://www.who.int/initiatives/mosaic-respiratory-surveillance-framework/" target="_blank" rel="noopener noreferrer">https://www.who.int/initiatives/mosaic-respiratory-surveillance-framework/</a></li>
+<li>WHO《卫生应急框架》第2.1版（Emergency Response Framework, Edition 2.1）：用于组织数据检查、分级处理、职责和升级机制。<br><a href="https://www.who.int/publications/i/item/9789240058064" target="_blank" rel="noopener noreferrer">https://www.who.int/publications/i/item/9789240058064</a></li>
+<li>WHO《加强全球卫生应急预防、准备、响应和韧性架构》（Strengthening the global architecture for health emergency prevention, preparedness, response and resilience）：用于组织能力模块和跨模块协同。<br><a href="https://www.who.int/publications/m/item/strengthening-the-global-architecture-for-health-emergency-prevention--preparedness--response-and-resilience" target="_blank" rel="noopener noreferrer">https://www.who.int/publications/m/item/strengthening-the-global-architecture-for-health-emergency-prevention--preparedness--response-and-resilience</a></li>
+<li>WHO《全球疟疾报告》（World malaria report）：用于组织主要判断、证据、差距、限制和行动含义。<br><a href="https://www.who.int/teams/global-malaria-programme/reports" target="_blank" rel="noopener noreferrer">https://www.who.int/teams/global-malaria-programme/reports</a></li>
+</ol>
+<h3 id="references-h-2">B. 医学自然语言处理（NLP）标注项目与平台文档<a class="anchor" href="#references-h-2" aria-label="链接到B. 医学自然语言处理（NLP）标注项目与平台文档">#</a></h3>
+<p>以下资料用于实体、断言、关系、时间、双标和评估方法。病例定义和标签取舍仍按本项目公共卫生目标确定：</p>
+<ol>
+<li>i2b2/VA 2010：把concept、assertion和relation分开，并提供独立指南、格式与评估说明。<br><a href="https://www.i2b2.org/NLP/Relations/Documentation.php" target="_blank" rel="noopener noreferrer">https://www.i2b2.org/NLP/Relations/Documentation.php</a></li>
+<li>i2b2/VA challenge论文：强调任务相关概念，并分别评估实体、断言和关系。<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3168320/" target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC3168320/</a></li>
+<li>CLEF clinical annotation：采用指南迭代、双标和裁决流程。<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2655900/" target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC2655900/</a></li>
+<li>THYME：先稳定事件和时间实体，再处理时间关系，并限制依赖推断的关系。<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5657277/" target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC5657277/</a><br><a href="https://clear.colorado.edu/compsem/documents/THYME_guidelines_2014.pdf" target="_blank" rel="noopener noreferrer">https://clear.colorado.edu/compsem/documents/THYME_guidelines_2014.pdf</a></li>
+<li>MOSAIC Annotation Guidelines v1.0：按定义、提取规则、例子、断言、关系、文档排除和变更日志组织指南。<br><a href="https://www.sentinelinitiative.org/sites/default/files/documents/MOSAIC-NLP_AnnotationGuidelines_v1.0_0.pdf" target="_blank" rel="noopener noreferrer">https://www.sentinelinitiative.org/sites/default/files/documents/MOSAIC-NLP_AnnotationGuidelines_v1.0_0.pdf</a></li>
+<li>Label Studio Relations/Relation官方标签文档：<br><a href="https://labelstud.io/tags/relations" target="_blank" rel="noopener noreferrer">https://labelstud.io/tags/relations</a><br><a href="https://labelstud.io/tags/relation" target="_blank" rel="noopener noreferrer">https://labelstud.io/tags/relation</a></li>
+</ol>
+</section></main><aside class="toc" aria-label="本章目录"><div class="toc-label">本章速览</div><div id="toc-chapter" class="toc-chapter"></div><nav id="toc-links"></nav><div class="toc-note">点击标题旁的 # 可定位到该节。<br>搜索后可用 ↑ ↓ 或回车逐处查看。<br><br><a href="#appendix-a">快速判定卡 ↗</a><a href="../../documentation/layout-preview/annotation-manual-design-b.html">查看标签字典 ↗</a></div></aside></div><footer>来源：annotation_guide_v2.1.1.md · 保留源稿正文、表格、案例和引用 · 页面可离线阅读</footer></div></div><button class="back-top" id="back-top" aria-label="返回页首">↑</button><script>
+const sections = [{"id":"before-start","title":"开始标注前，请先记住","headings":[]},{"id":"document-notes","title":"文件使用说明","headings":[{"id":"document-notes-h-1","text":"本指南引用的项目文件","depth":3,"section":"document-notes"},{"id":"document-notes-h-2","text":"标注时需要使用","depth":4,"section":"document-notes"},{"id":"document-notes-h-3","text":"项目管理和结果追溯时使用","depth":4,"section":"document-notes"},{"id":"document-notes-h-4","text":"文中几个常用词","depth":3,"section":"document-notes"}]},{"id":"contents","title":"目录","headings":[]},{"id":"chapter-1","title":"1. 项目背景、目的与任务边界","headings":[{"id":"s-1-1","text":"1.1 背景与公共卫生问题","depth":3,"section":"chapter-1"},{"id":"s-1-2","text":"1.2 指南目的与预期用途","depth":3,"section":"chapter-1"},{"id":"s-1-3","text":"1.3 适用范围与非适用范围","depth":3,"section":"chapter-1"},{"id":"s-1-4","text":"1.4 总体原则","depth":3,"section":"chapter-1"}]},{"id":"chapter-2","title":"2. 每份病例需要完成什么","headings":[{"id":"s-2-1","text":"2.1 总体框架","depth":3,"section":"chapter-2"},{"id":"s-2-2","text":"2.2 第一步：选择病例结论","depth":3,"section":"chapter-2"},{"id":"chapter-2-h-3","text":"在页面上怎样选择与提交","depth":4,"section":"chapter-2"},{"id":"s-2-3","text":"2.3 第二步：框选、填写属性、连接关系","depth":3,"section":"chapter-2"},{"id":"s-2-4","text":"2.4 当前页面提供的功能","depth":3,"section":"chapter-2"},{"id":"s-2-5","text":"2.5 本任务中“病例”的操作含义","depth":3,"section":"chapter-2"}]},{"id":"chapter-3","title":"3. 病例级判断框架","headings":[{"id":"s-3-1","text":"3.1 “索引临床事件”","depth":3,"section":"chapter-3"},{"id":"s-3-2","text":"3.2 四种结论怎么选","depth":3,"section":"chapter-3"},{"id":"chapter-3-h-3","text":"A. 目标病例信号","depth":4,"section":"chapter-3"},{"id":"chapter-3-h-4","text":"B. 待专业复核","depth":4,"section":"chapter-3"},{"id":"chapter-3-h-5","text":"C. 非目标","depth":4,"section":"chapter-3"},{"id":"chapter-3-h-6","text":"D. 信息不足","depth":4,"section":"chapter-3"},{"id":"s-3-3","text":"3.3 标准判定顺序","depth":3,"section":"chapter-3"},{"id":"chapter-3-h-8","text":"图1：四分类判断流程","depth":4,"section":"chapter-3"},{"id":"s-3-4","text":"3.4 证据记录要求","depth":3,"section":"chapter-3"}]},{"id":"chapter-4","title":"4. 哪些证据会影响病例结论","headings":[{"id":"chapter-4-h-1","text":"先看证据在判断中起什么作用","depth":3,"section":"chapter-4"},{"id":"s-4-1","text":"4.1 可以直接支持目标病例的肺部证据","depth":3,"section":"chapter-4"},{"id":"s-4-2","text":"4.2 单独出现时不能判为目标病例的证据","depth":3,"section":"chapter-4"},{"id":"s-4-3","text":"4.3 容易出现分歧的情况","depth":3,"section":"chapter-4"},{"id":"chapter-4-h-5","text":"慢性/非感染性肺部改变","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-6","text":"明确替代解释","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-7","text":"支气管扩张伴感染","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-8","text":"纯检验和无关临床记录","depth":4,"section":"chapter-4"},{"id":"s-4-4","text":"4.4 项目组如何进行初步筛查","depth":3,"section":"chapter-4"},{"id":"chapter-4-h-10","text":"第一步：数据检查","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-11","text":"第二步：尽量不漏病例的粗筛","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-12","text":"第三步：四分类判断","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-13","text":"防止漏筛","depth":4,"section":"chapter-4"},{"id":"chapter-4-h-14","text":"防止过筛","depth":4,"section":"chapter-4"}]},{"id":"chapter-5","title":"5. 原文框选通则","headings":[{"id":"s-5-1","text":"5.1 框选最短但完整的医学概念","depth":3,"section":"chapter-5"},{"id":"s-5-2","text":"5.2 保留会改变含义的限定词","depth":3,"section":"chapter-5"},{"id":"s-5-3","text":"5.3 用语境填写属性，不扩大跨度","depth":3,"section":"chapter-5"},{"id":"s-5-4","text":"5.4 不拆词内误标","depth":3,"section":"chapter-5"},{"id":"s-5-5","text":"5.5 重复、并列与多次检测","depth":3,"section":"chapter-5"},{"id":"s-5-6","text":"5.6 不把相隔文本合成一个实体","depth":3,"section":"chapter-5"}]},{"id":"chapter-6","title":"6. 实体标签模块","headings":[{"id":"chapter-6-h-1","text":"先确认任务配置","depth":3,"section":"chapter-6"},{"id":"s-6-1","text":"6.1 核心肺部实体","depth":3,"section":"chapter-6"},{"id":"s-6-2","text":"6.2 症状和严重程度","depth":3,"section":"chapter-6"},{"id":"s-6-3","text":"6.3 测量","depth":3,"section":"chapter-6"},{"id":"s-6-4","text":"6.4 流行病学关联","depth":3,"section":"chapter-6"},{"id":"s-6-5","text":"6.5 病原体","depth":3,"section":"chapter-6"},{"id":"chapter-6-h-7","text":"病原逐标签跨度示例","depth":4,"section":"chapter-6"},{"id":"s-6-6","text":"6.6 标本类型：填写属性，不框选实体","depth":3,"section":"chapter-6"},{"id":"s-6-7","text":"6.7 检测方式：填写属性，不画方法关系","depth":3,"section":"chapter-6"}]},{"id":"chapter-7","title":"7. 时间模块","headings":[{"id":"s-7-1","text":"7.1 三层时间分别记录","depth":3,"section":"chapter-7"},{"id":"s-7-2","text":"7.2 原文时间表达","depth":3,"section":"chapter-7"},{"id":"s-7-3","text":"7.3 时间属性","depth":3,"section":"chapter-7"},{"id":"s-7-4","text":"7.4 病程变化（选填）","depth":3,"section":"chapter-7"},{"id":"s-7-5","text":"7.5 时间关系","depth":3,"section":"chapter-7"},{"id":"s-7-6","text":"7.6 标注员不做的换算","depth":3,"section":"chapter-7"},{"id":"s-7-7","text":"7.7 历史标注与不确定处理","depth":3,"section":"chapter-7"}]},{"id":"chapter-8","title":"8. 实体属性与断言模块","headings":[{"id":"s-8-1","text":"8.1 先选中实体，再填写适用属性","depth":3,"section":"chapter-8"},{"id":"s-8-2","text":"8.2 存在状态、条件性、假设性和主体分别判断","depth":3,"section":"chapter-8"},{"id":"s-8-3","text":"8.3 病原检测结果","depth":3,"section":"chapter-8"},{"id":"s-8-4","text":"8.4 共享修饰语与检验记录组","depth":3,"section":"chapter-8"},{"id":"s-8-5","text":"8.5 文书语境与默认解释","depth":3,"section":"chapter-8"}]},{"id":"chapter-9","title":"9. 关系模块","headings":[{"id":"s-9-1","text":"9.1 统一配置只连五种关系","depth":3,"section":"chapter-9"},{"id":"s-9-2","text":"9.2 方向","depth":3,"section":"chapter-9"},{"id":"s-9-3","text":"9.3 合法端点及例子","depth":3,"section":"chapter-9"},{"id":"chapter-9-h-4","text":"图2：关系方向示例","depth":4,"section":"chapter-9"},{"id":"s-9-4","text":"9.4 逐关系操作","depth":3,"section":"chapter-9"},{"id":"s-9-5","text":"9.5 历史关系与禁止关系","depth":3,"section":"chapter-9"},{"id":"s-9-6","text":"9.6 不确定时","depth":3,"section":"chapter-9"}]},{"id":"chapter-10","title":"10. 数据与隐私检查","headings":[{"id":"s-10-1","text":"10.1 项目组在导入前检查什么","depth":3,"section":"chapter-10"},{"id":"s-10-2","text":"10.2 标注时发现问题怎么办","depth":3,"section":"chapter-10"},{"id":"s-10-3","text":"10.3 无关病例的处理","depth":3,"section":"chapter-10"}]},{"id":"chapter-11","title":"11. 标准标注流程","headings":[{"id":"s-11-1","text":"11.1 每例操作顺序","depth":3,"section":"chapter-11"},{"id":"chapter-11-h-2","text":"图3：一份记录从打开到提交","depth":4,"section":"chapter-11"},{"id":"s-11-2","text":"11.2 禁止事项","depth":3,"section":"chapter-11"},{"id":"s-11-3","text":"11.3 提交前检查","depth":3,"section":"chapter-11"}]},{"id":"chapter-12","title":"12. 完整案例","headings":[{"id":"s-12-1","text":"12.1 常见病例判断","depth":3,"section":"chapter-12"},{"id":"case-1","text":"案例1：明确当前肺炎","depth":4,"section":"chapter-12"},{"id":"case-2","text":"案例2：急性发热加呼吸证据","depth":4,"section":"chapter-12"},{"id":"case-3","text":"案例3：孤立轻症","depth":4,"section":"chapter-12"},{"id":"case-4","text":"案例4：长期稳定咳嗽","depth":4,"section":"chapter-12"},{"id":"s-12-2","text":"12.2 复杂证据与断言","depth":3,"section":"chapter-12"},{"id":"case-5","text":"案例5：复杂胸腔感染","depth":4,"section":"chapter-12"},{"id":"case-6","text":"案例6：非呼吸主诉中的偶然影像","depth":4,"section":"chapter-12"},{"id":"case-7","text":"案例7：住院期间肺炎已改善","depth":4,"section":"chapter-12"},{"id":"case-8","text":"案例8：纯既往肺炎","depth":4,"section":"chapter-12"},{"id":"case-9","text":"案例9：病原体弱阳性","depth":4,"section":"chapter-12"},{"id":"case-10","text":"案例10：计划排除肺炎","depth":4,"section":"chapter-12"},{"id":"s-12-3","text":"12.3 数据质量与高频边界","depth":3,"section":"chapter-12"},{"id":"case-11","text":"案例11：空文本","depth":4,"section":"chapter-12"},{"id":"case-12","text":"案例12：偶然慢性炎症","depth":4,"section":"chapter-12"},{"id":"case-13","text":"案例13：支气管扩张急性恶化","depth":4,"section":"chapter-12"},{"id":"case-14","text":"案例14：支气管扩张稳定配药","depth":4,"section":"chapter-12"},{"id":"case-15","text":"案例15：明确替代解释","depth":4,"section":"chapter-12"},{"id":"case-16","text":"案例16：连续诊疗中引用旧影像","depth":4,"section":"chapter-12"},{"id":"case-17","text":"案例17：疑似跨记录拼接","depth":4,"section":"chapter-12"},{"id":"case-18","text":"案例18：慢性间质性肺病稳定复诊","depth":4,"section":"chapter-12"},{"id":"s-12-4","text":"12.4 其他高频边界","depth":3,"section":"chapter-12"},{"id":"case-19","text":"案例19：无发热信息的咳痰加湿啰音","depth":4,"section":"chapter-12"},{"id":"case-20","text":"案例20：支扩未改善并换药，但没有急性客观证据","depth":4,"section":"chapter-12"},{"id":"case-21","text":"案例21：短而完整的无关计划","depth":4,"section":"chapter-12"},{"id":"case-22","text":"案例22：缺失“同前/如前”引用","depth":4,"section":"chapter-12"},{"id":"s-12-5","text":"12.5 统一配置属性和关系专项练习","depth":3,"section":"chapter-12"},{"id":"case-23","text":"案例23：过去发热不等于已缓解","depth":4,"section":"chapter-12"},{"id":"case-24","text":"案例24：起始、持续与好转分开记录","depth":4,"section":"chapter-12"},{"id":"case-25","text":"案例25：条件性与假设性独立","depth":4,"section":"chapter-12"},{"id":"case-26","text":"案例26：职业主体与接触主体","depth":4,"section":"chapter-12"},{"id":"case-27","text":"案例27：同病原的两次检测","depth":4,"section":"chapter-12"},{"id":"case-28","text":"案例28：体温和检测缺项","depth":4,"section":"chapter-12"}]},{"id":"chapter-13","title":"13. 复核、上报与升级处理","headings":[{"id":"s-13-1","text":"13.1 必须上报的情形","depth":3,"section":"chapter-13"},{"id":"s-13-2","text":"13.2 上报记录要求","depth":3,"section":"chapter-13"},{"id":"s-13-3","text":"13.3 禁止的上报方式","depth":3,"section":"chapter-13"}]},{"id":"chapter-14","title":"14. 质量控制与评价","headings":[{"id":"s-14-1","text":"14.1 先评病例级，再评结构化标签","depth":3,"section":"chapter-14"},{"id":"s-14-2","text":"14.2 Cohen's kappa（校正随机一致后的病例分类一致性）","depth":3,"section":"chapter-14"},{"id":"s-14-3","text":"14.3 原文框选、属性和关系的一致性（F1）","depth":3,"section":"chapter-14"},{"id":"s-14-4","text":"14.4 完成率和问题门槛","depth":3,"section":"chapter-14"},{"id":"s-14-5","text":"14.5 当前100例双智能体压力测试结果","depth":3,"section":"chapter-14"},{"id":"s-14-6","text":"14.6 当前新增200例双智能体压力测试结果","depth":3,"section":"chapter-14"},{"id":"s-14-7","text":"14.7 指标解释与适用限制","depth":3,"section":"chapter-14"}]},{"id":"chapter-15","title":"15. 培训、双标与裁决机制","headings":[{"id":"chapter-15-h-1","text":"图4：从培训到正式标注","depth":4,"section":"chapter-15"},{"id":"s-15-1","text":"15.1 标注员培训","depth":3,"section":"chapter-15"},{"id":"s-15-2","text":"15.2 双标设计","depth":3,"section":"chapter-15"},{"id":"s-15-3","text":"15.3 裁决","depth":3,"section":"chapter-15"},{"id":"s-15-4","text":"15.4 指南修订门槛","depth":3,"section":"chapter-15"}]},{"id":"chapter-16","title":"16. 文档维护与版本管理","headings":[{"id":"s-16-1","text":"16.1 版本号","depth":3,"section":"chapter-16"},{"id":"s-16-2","text":"16.2 变更日志","depth":3,"section":"chapter-16"},{"id":"chapter-16-h-3","text":"v2.2.0 成人与儿童统一配置适配草案 — 2026-10-07","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-4","text":"v2.2.0 儿童配置适配草案 — 2026-10-06","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-5","text":"v2.1.1 — 2026-08-28","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-6","text":"v2.1.0 — 2026-08-28","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-7","text":"v2.0.1 — 2026-08-28","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-8","text":"v2.0.0 — 2026-08-28","depth":4,"section":"chapter-16"},{"id":"chapter-16-h-9","text":"v1.0.0 — 2026-08-27","depth":4,"section":"chapter-16"}]},{"id":"appendix-a","title":"附录A：快速判定卡","headings":[]},{"id":"appendix-b","title":"附录B：统一配置标签、属性与关系速查表","headings":[]},{"id":"appendix-c","title":"附录C：暂未提供的功能与处理方式","headings":[]},{"id":"references","title":"参考框架与外部项目","headings":[{"id":"references-h-1","text":"A. WHO框架性文件","depth":3,"section":"references"},{"id":"references-h-2","text":"B. 医学自然语言处理（NLP）标注项目与平台文档","depth":3,"section":"references"}]}];
+const $ = id => document.getElementById(id);
+const panels = [...document.querySelectorAll('.chapter')];
+let activeSection = '', ticking = false;
+function activate(id) {
+  if(id===activeSection) return;
+  activeSection=id; const s=sections.find(s=>s.id===id); if(!s)return;
+  document.querySelectorAll('.chapter-link').forEach(a=>{const selected=a.hash==='#'+id;a.classList.toggle('active',selected);if(selected)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+  $('toc-chapter').textContent=s.title;
+  $('toc-links').replaceChildren(...s.headings.map(h=>{const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.text;a.className=h.depth===4?'sub':'';return a}));
+  if(!s.headings.length){const p=document.createElement('p');p.textContent='本节可直接阅读。';$('toc-links').append(p)}
+}
+function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(()=>{ticking=false;let selected=panels[0];for(const p of panels){if(p.getBoundingClientRect().top<=150)selected=p;else break}activate(selected.dataset.section);const s=sections.find(s=>s.id===activeSection);let h=null;for(const item of s.headings){if($(item.id).getBoundingClientRect().top<=165)h=item;else break}document.querySelectorAll('#toc-links a').forEach(a=>a.classList.toggle('active',h&&a.hash==='#'+h.id));const available=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(available?Math.min(100,100*scrollY/available):0)+'%'})}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('hashchange',()=>{const h=document.querySelector(':target');if(h){const chapter=h.closest('.chapter');if(chapter)activate(chapter.dataset.section)}});
+const menu=$('mobile-menu');function closeMenu(){document.body.classList.remove('nav-open');menu.setAttribute('aria-expanded','false')}
+menu.onclick=()=>{const open=document.body.classList.toggle('nav-open');menu.setAttribute('aria-expanded',String(open));if(open)document.querySelector('.sidebar a').focus()};
+$('veil').onclick=()=>{closeMenu();menu.focus()};
+document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>closeMenu()));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.body.classList.contains('nav-open')){closeMenu();menu.focus()}else if($('search').value){$('search').value='';search('')}}});
+$('print').onclick=()=>window.print();$('back-top').onclick=()=>{window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});$('page-title').focus({preventScroll:true})};
+let fontSize=16;for(const [id,delta] of [['font-down',-1],['font-up',1]]){$(id).onclick=()=>{fontSize=Math.max(14,Math.min(20,fontSize+delta));document.documentElement.style.setProperty('--font',fontSize+'px');$('font-down').disabled=fontSize===14;$('font-up').disabled=fontSize===20}};
+let hits=[],hitIndex=-1,timer,lastQuery='';
+function clearHits(){document.querySelectorAll('mark.search-hit').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));$('reading').normalize();hits=[];hitIndex=-1}
+function updateStatus(){const text=hits.length?(hitIndex+1)+' / '+hits.length:'无匹配';$('search-status').textContent=$('search').value.trim()?text:'';$('search-live').textContent=$('search').value.trim()?'搜索结果：'+text:'';$('match-tools').hidden=!hits.length}
+function goHit(index){if(!hits.length)return;hits.forEach(m=>m.classList.remove('current'));hitIndex=(index+hits.length)%hits.length;const hit=hits[hitIndex];hit.classList.add('current');const details=hit.closest('details');if(details)details.open=true;hit.scrollIntoView({block:'center',behavior:'auto'});updateStatus()}
+function search(query){lastQuery=query;clearHits();const q=query.trim().toLocaleLowerCase();if(!q){updateStatus();return}const walker=document.createTreeWalker($('reading'),NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('svg,script,style,.diagram-source,.anchor,summary')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const node of nodes){const raw=node.nodeValue,low=raw.toLocaleLowerCase();let start=0,pos=low.indexOf(q),frag=document.createDocumentFragment();if(pos<0)continue;while(pos>=0){frag.append(document.createTextNode(raw.slice(start,pos)));const mark=document.createElement('mark');mark.className='search-hit';mark.textContent=raw.slice(pos,pos+q.length);frag.append(mark);hits.push(mark);start=pos+q.length;pos=low.indexOf(q,start)}frag.append(document.createTextNode(raw.slice(start)));node.replaceWith(frag)}if(hits.length)goHit(0);else updateStatus()}
+$('search').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>search($('search').value),180)});
+$('search').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();clearTimeout(timer);if(lastQuery!==$('search').value||!hits.length)search($('search').value);else goHit(hitIndex+(e.shiftKey?-1:1))}});
+$('prev-hit').onclick=()=>goHit(hitIndex-1);$('next-hit').onclick=()=>goHit(hitIndex+1);
+$('page-title').setAttribute('tabindex','-1');activate('before-start');onScroll();
+</script></body></html>
