@@ -3,7 +3,7 @@ root=Path(__file__).resolve().parents[1]
 def change(text,old,new,count=1):
     assert text.count(old)==count,(old,text.count(old))
     return text.replace(old,new)
-guide=root/'annotation_agent_workflow/guides/annotation_guide_v2.1.1.md'
+guide=root/'documentation/annotation/annotation_guide_v2.1.1.md'
 text=guide.read_text(encoding='utf-8')
 edits=[
 ('| 病例级判断 | 外部四分类表单及最小证据 | 主要病例输出 |','| 病例级判断 | 页面顶部“病例四分类”单选控件；最小证据另在外部表单保存 | 主要病例输出 |'),
@@ -14,7 +14,7 @@ edits=[
 ('| 病例判断与数据问题 | 外部表单 | 四分类、0—3条必要证据及问题 |','| 病例判断 | 页面顶部“病例四分类” | 必选一个结论，无默认值；字段名`case_decision` |\n| 病例证据与数据问题 | 外部表单 | 保存0—3条必要证据及任务状态、数据问题 |')]
 for old,new in edits:text=change(text,old,new)
 guide.write_bytes(text.replace('\n','\r\n').encode('utf-8'))
-dictionary=root/'annotation_agent_workflow/guides/label_dictionary_v2.1.1.md'
+dictionary=root/'documentation/annotation/label_dictionary_v2.1.1.md'
 text=dictionary.read_text(encoding='utf-8')
 edits=[
 ('- F：外部病例表单字段，直接在表单中填写，无需在原文中框选或连接关系。','- CF：页面顶部的病例级单选控件，每份病例选一个结论，无需框选实体或连接关系。\n- F：外部病例表单字段，直接在表单中填写，无需在原文中框选或连接关系。'),
@@ -31,19 +31,19 @@ cards=cards.replace('病例表单必填','CF：页面顶部病例四分类必选
 text=text[:start]+cards+text[end:]
 dictionary.write_bytes(text.replace('\n','\r\n').encode('utf-8'))
 
-builder=root/'documentation/layout-preview/build-annotation-guide.cjs'
+builder=root/'documentation/annotation/scripts/build-annotation-guide.cjs'
 text=builder.read_text(encoding='utf-8')
 text=change(text,'49个实体标签、9个属性字段、5种关系。两类任务使用同一套页面操作','49个实体标签、9个实体属性字段、5种关系及1个病例级单选控件。两类任务使用同一套页面操作')
 builder.write_text(text,encoding='utf-8')
 
-preview=root/'documentation/layout-preview/annotation-manual-preview.html'
+preview=root/'documentation/annotation/archive/layout-preview/annotation-manual-preview.html'
 text=preview.read_text(encoding='utf-8')
 text=change(text,'病例结论、原文证据和数据问题已在外部表单记录。','页面顶部已选择一个病例结论；原文证据和数据问题已在外部表单记录。')
 # This quick reference has no case cards, so add a clear link to the guide's classification control instructions.
 needle='<li>在外部病例表单中保存证据，记录问题。</li>'
 text=change(text,needle,'<li>在页面顶部“病例四分类”中选一个结论，不设默认值。</li>'+needle)
 preview.write_text(text,encoding='utf-8')
-dictionary_html=root/'documentation/layout-preview/annotation-manual-design-b.html'
+dictionary_html=root/'documentation/annotation/label-dictionary.html'
 text=dictionary_html.read_text(encoding='utf-8')
 text=change(text,'请与主指南共同使用。','页面顶部“病例四分类”必选一个结论；证据和数据问题另存外部表单。')
 dictionary_html.write_text(text,encoding='utf-8')

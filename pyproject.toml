@@ -5,8 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "gliner2>=1.2.4",
-    "gliner>=0.2.0",
+    # Shared model libraries used by the retained Transformers notebook.
+    "torch>=2.10.0",
+    "transformers>=5.0.0",
+    "sentencepiece==0.2.1",
     "httpx[socks]>=0.28.1",
     "ipython>=9.17.1",
     "jupyter>=1.1.1",

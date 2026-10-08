@@ -2,8 +2,8 @@ from pathlib import Path
 import hashlib
 
 root = Path(__file__).resolve().parents[1]
-guide = root / 'annotation_agent_workflow/guides/annotation_guide_v2.1.1.md'
-dictionary = root / 'annotation_agent_workflow/guides/label_dictionary_v2.1.1.md'
+guide = root / 'documentation/annotation/annotation_guide_v2.1.1.md'
+dictionary = root / 'documentation/annotation/label_dictionary_v2.1.1.md'
 original = guide.read_text(encoding='utf-8')
 (root / 'tmp/guide-before-unified.md').write_text(original, encoding='utf-8')
 historical_start = original.index('#### v2.2.0 儿童配置适配草案 — 2026-10-06')

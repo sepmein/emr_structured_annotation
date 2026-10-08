@@ -6,7 +6,7 @@ const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
 const b=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
 const p=await b.newPage({viewport:{width:1600,height:1050},reducedMotion:'reduce'}),errors=[];
 p.on('pageerror',e=>errors.push(e.message));
-await p.goto('file:///'+path.join(root,'documentation/layout-preview/annotation-manual-design-b.html').replaceAll('\\','/'));
+await p.goto('file:///'+path.join(root,'documentation/annotation/label-dictionary.html').replaceAll('\\','/'));
 await p.locator('.navbtn[data-group="病例四分类"]').click();
 assert(await p.locator('.entry').count()===4,'Expected four case cards');
 for(const [id,title] of [['2.1','目标病例信号'],['2.2','待专业复核'],['2.3','非目标'],['2.4','信息不足']]){
@@ -25,7 +25,7 @@ await p.locator('#search').fill('目标病例信号');assert(await p.locator('.e
 await p.locator('.navbtn[data-view="overview"]').click();assert(await p.locator('.entry').count()===49,'Entity catalogue changed');
 await p.locator('.navbtn[data-group="病例四分类"]').click();await p.locator('.entry[data-id="2.4"]').click();
 await p.setViewportSize({width:390,height:844});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile case help overflow');
-await p.goto('file:///'+path.join(root,'documentation/layout-preview/annotation-manual-preview.html').replaceAll('\\','/'));
+await p.goto('file:///'+path.join(root,'documentation/annotation/archive/layout-preview/annotation-manual-preview.html').replaceAll('\\','/'));
 assert(await p.locator('#case-decision-help').count()===1,'Quick preview help missing');
 assert(errors.length===0,errors.join(';'));
 console.log('Four case cards, definitions, tabs, search, 49-entity catalogue, mobile layout and preview help passed.');

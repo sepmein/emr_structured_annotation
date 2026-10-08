@@ -1,8 +1,8 @@
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require('C:/Users/Spencer/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const {marked}=require('C:/Users/Spencer/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/marked');
-const root=path.resolve(__dirname,'..'),filename=path.join(root,'annotation_agent_workflow/guides/annotation_guide_v2.1.1.html');
-const source=fs.readFileSync(filename.replace(/\.html$/,'.md'),'utf8');
+const root=path.resolve(__dirname,'..'),filename=path.join(root,'documentation/annotation/guide.html');
+const source=fs.readFileSync(path.join(root,'documentation/annotation/annotation_guide_v2.1.1.md'),'utf8');
 const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
 (async()=>{
 const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});

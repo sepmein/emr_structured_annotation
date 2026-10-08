@@ -51,10 +51,10 @@
 
 | 文件 | 用途 | 使用说明 |
 |---|---|---|
-| [`schema_manifest_v2.1.0.json`](schema_manifest_v2.1.0.json) | 记录历史锁定的指南、字典、页面配置及文件校验值 | 当前清单锁定的是v2.1.0文件；开始新一批人工试标前，应锁定本次指南、字典、统一XML及校验值；旧清单不能锁定新版 |
-| [`validation_report_v2.0.0.md`](validation_report_v2.0.0.md) | 记录100例双智能体压力测试的方法、结果和限制 | 对应第14.5节，不作为真人一致性或临床效度证明 |
-| [`adjudication_review.md`](../runs/round-03/adjudication/adjudication_review.md) | 汇总新增200例的分歧、重复文本口径和裁决结论 | 对应第14.6节 |
-| [`feedback_resolution_v2.1.1.json`](../runs/round-03/developer/feedback_resolution_v2.1.1.json) | 逐条记录v2.1.1审阅意见、处理理由及是否需要回标 | 供指南维护和审计，不是标注操作规则 |
+| [`schema_manifest_v2.1.0.json`](../../annotation_agent_workflow/guides/schema_manifest_v2.1.0.json) | 记录历史锁定的指南、字典、页面配置及文件校验值 | 当前清单锁定的是v2.1.0文件；开始新一批人工试标前，应锁定本次指南、字典、统一XML及校验值；旧清单不能锁定新版 |
+| [`validation_report_v2.0.0.md`](../../annotation_agent_workflow/guides/validation_report_v2.0.0.md) | 记录100例双智能体压力测试的方法、结果和限制 | 对应第14.5节，不作为真人一致性或临床效度证明 |
+| [`adjudication_review.md`](../../annotation_agent_workflow/runs/round-03/adjudication/adjudication_review.md) | 汇总新增200例的分歧、重复文本口径和裁决结论 | 对应第14.6节 |
+| [`feedback_resolution_v2.1.1.json`](../../annotation_agent_workflow/runs/round-03/developer/feedback_resolution_v2.1.1.json) | 逐条记录v2.1.1审阅意见、处理理由及是否需要回标 | 供指南维护和审计，不是标注操作规则 |
 
 ### 文中几个常用词
 

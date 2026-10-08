@@ -4,7 +4,7 @@ root=Path(__file__).resolve().parents[1]
 def change(text,old,new):
     assert text.count(old)==1,(old,text.count(old))
     return text.replace(old,new,1)
-guide=root/'annotation_agent_workflow/guides/annotation_guide_v2.1.1.md'
+guide=root/'documentation/annotation/annotation_guide_v2.1.1.md'
 text=guide.read_text(encoding='utf-8')
 old='发现身份信息时停止，不选结论、不复制原文。\n\n### 2.3'
 new='''发现身份信息时停止，不选结论、不复制原文。
@@ -26,7 +26,7 @@ text=change(text,'- 病例级只选了一个结论；','- “病例四分类”�
 text=change(text,'正式开始前先验证统一配置页面：适用实体选中后面板显示','正式开始前先验证统一配置页面：病例四分类只能单选、无默认值、未选择时阻止提交，切换实体后仍保留该病例结论；适用实体选中后面板显示')
 guide.write_bytes(text.replace('\n','\r\n').encode('utf-8'))
 
-dictionary=root/'annotation_agent_workflow/guides/label_dictionary_v2.1.1.md'
+dictionary=root/'documentation/annotation/label_dictionary_v2.1.1.md'
 text=dictionary.read_text(encoding='utf-8')
 old='发现身份信息时停止该例，不选择结论、不保存证据、不提交。\n\n### 2.1'
 new='''发现身份信息时停止该例，不选择结论、不保存证据、不提交。
@@ -53,7 +53,7 @@ for m in re.finditer(r'^### (2\.[1-4]) ([^\n]+)\n(.*?)(?=^### |\Z)',case_section
     fields={k:v.strip() for k,v in re.findall(r'^- \*\*(.+?)\*\*：(.+)$',m[3],re.M)}
     cards.append({'id':m[1],'title':m[2],'group':'病例四分类','fields':fields,'entity':False,'caseDecision':True})
 assert len(cards)==4
-html_path=root/'documentation/layout-preview/annotation-manual-design-b.html'
+html_path=root/'documentation/annotation/label-dictionary.html'
 html=html_path.read_text(encoding='utf-8')
 items_match=re.search(r'const items=(\[.*?\]);\s*const el=',html,re.S)
 assert items_match
@@ -67,7 +67,7 @@ el('meta').hidden=false;el('meta').innerHTML='<span class="chip">病例级结论
 document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
 const rules=section('rules','01','什么情况选择',`<div class="rule"><div class="rulebox"><h3>纳入条件</h3><p>${fmt(f['纳入标准'])}</p></div><div class="rulebox no"><h3>排除条件</h3><p>${fmt(f['排除标准'])}</p></div></div><div class="note">在Label Studio左侧标注栏顶部的“病例四分类”中选择。四个选项互斥，不需要选中实体；结论作用于整份病例，切换实体不会改变其归属。发现身份信息时停止该例，不选择、不提交。</div>`);
 const examples=section('examples','02','原文与病例结论',`<div class="example"><div class="exhead"><b>正例</b></div><p>${fmt(f['正例1'])}</p></div><div class="example"><div class="exhead"><b>正例</b></div><p>${fmt(f['正例2'])}</p></div><div class="example"><div class="exhead"><b class="warn">近似反例</b></div><p>${fmt(f['近似反例'])}</p></div>`);
-const reference=section('attributes','03','证据与提交要求',`<div class="scope"><span>证据要求</span><div>${fmt(f['最小完整跨度'])}</div></div><p style="margin-top:18px">结论在Label Studio中记录；支持证据、任务状态和数据问题另存外部表单。提交前核对所选结论和证据，需要更正时改选另一个选项。结论没有默认值，不得为绕过必填而随意选择。</p><div class="note">${fmt(f['常见混淆与裁决'])}</div><details><summary>定义与病例判断作用</summary><p>${fmt(f['医学定义'])}</p><p>${fmt(f['病例判断作用'])}</p></details><p style="margin-top:18px"><a href="../../annotation_agent_workflow/guides/annotation_guide_v2.1.1.html#chapter-3">查看主指南：四分类判断顺序 ↗</a></p>`);
+const reference=section('attributes','03','证据与提交要求',`<div class="scope"><span>证据要求</span><div>${fmt(f['最小完整跨度'])}</div></div><p style="margin-top:18px">结论在Label Studio中记录；支持证据、任务状态和数据问题另存外部表单。提交前核对所选结论和证据，需要更正时改选另一个选项。结论没有默认值，不得为绕过必填而随意选择。</p><div class="note">${fmt(f['常见混淆与裁决'])}</div><details><summary>定义与病例判断作用</summary><p>${fmt(f['医学定义'])}</p><p>${fmt(f['病例判断作用'])}</p></details><p style="margin-top:18px"><a href="guide.html#chapter-3">查看主指南：四分类判断顺序 ↗</a></p>`);
 el('body').innerHTML=tab==='examples'?examples:tab==='reference'?reference:rules+examples+reference;catalog=false;
 }
 '''
@@ -78,9 +78,9 @@ html=change(html,"${x.entity?'查看标签操作':'查看属性与关系'}", "${
 html=change(html,'页面顶部“病例四分类”必选一个结论；证据和数据问题另存外部表单。','标注页面顶部“病例四分类”必选一个结论；证据和数据问题另存外部表单。')
 html_path.write_text(html,encoding='utf-8')
 
-preview=root/'documentation/layout-preview/annotation-manual-preview.html'
+preview=root/'documentation/annotation/archive/layout-preview/annotation-manual-preview.html'
 html=preview.read_text(encoding='utf-8')
-case_reference='<section class="card" id="case-decision-help"><h2>病例四分类：在标注页面怎样记录</h2><p>在Label Studio左侧标注栏顶部选择一个病例结论：目标病例信号、待专业复核、非目标或信息不足。控件必选、单选、无默认值，作用于整份病例，不需要先框选或选中实体。</p><p>结论记录在Label Studio；原文证据、任务状态和数据问题仍在外部表单记录。提交前核对结论与证据，需要更正时改选其他选项。发现身份信息时停止该例，不选择、不提交。</p><p><a href="../../annotation_agent_workflow/guides/annotation_guide_v2.1.1.html#chapter-3">查看四分类判断顺序</a></p></section>'
+case_reference='<section class="card" id="case-decision-help"><h2>病例四分类：在标注页面怎样记录</h2><p>在Label Studio左侧标注栏顶部选择一个病例结论：目标病例信号、待专业复核、非目标或信息不足。控件必选、单选、无默认值，作用于整份病例，不需要先框选或选中实体。</p><p>结论记录在Label Studio；原文证据、任务状态和数据问题仍在外部表单记录。提交前核对结论与证据，需要更正时改选其他选项。发现身份信息时停止该例，不选择、不提交。</p><p><a href="../../guide.html#chapter-3">查看四分类判断顺序</a></p></section>'
 assert '<section class="card"' in html
 html=html.replace('<section class="card"',case_reference+'<section class="card"',1)
 preview.write_text(html,encoding='utf-8')
