@@ -1,0 +1,93 @@
+[
+  {
+    "issue_id": "CHXML-001",
+    "disposition": "accept",
+    "rationale": "儿童独立断言/时态改为实体属性",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "medium",
+    "guide_change": "第2、5、7、8章明确逐实体填写与空白含义",
+    "schema_change": "none",
+    "back_annotation_required": true,
+    "validation_case_types": [
+      "症状否定",
+      "过去",
+      "未来",
+      "主体"
+    ]
+  },
+  {
+    "issue_id": "CHXML-002",
+    "disposition": "accept",
+    "rationale": "儿童新增时间表达及四种时间关系",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "medium",
+    "guide_change": "第7、9章定义类型与方向；更新案例与评分",
+    "schema_change": "none",
+    "back_annotation_required": true,
+    "validation_case_types": [
+      "开始",
+      "结束",
+      "时长及一般时点"
+    ]
+  },
+  {
+    "issue_id": "CHXML-003",
+    "disposition": "accept",
+    "rationale": "病原检验改为单选属性",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "medium",
+    "guide_change": "第6、8章保留结果限定、记录组及标本方法缺项",
+    "schema_change": "none",
+    "back_annotation_required": true,
+    "validation_case_types": [
+      "弱阳性",
+      "IgM",
+      "错位",
+      "两次检测"
+    ]
+  },
+  {
+    "issue_id": "CHXML-004",
+    "disposition": "clarify",
+    "rationale": "XML实体集改变，不能沿用旧儿童字典",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "low",
+    "guide_change": "第6章以49个实体为准，临床肺部证据按来源映射",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": [
+      "影像与诊断",
+      "职业主体",
+      "体温"
+    ]
+  },
+  {
+    "issue_id": "CHXML-005",
+    "disposition": "defer",
+    "rationale": "机械通气无临床属性及单提及多检测超出当前控件",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "low",
+    "guide_change": "不擅改XML；保留证据反馈，结构必要时另提案",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": [
+      "计划机械通气",
+      "一个病原多种检测"
+    ]
+  },
+  {
+    "issue_id": "CHXML-006",
+    "disposition": "defer",
+    "rationale": "字典、manifest、后端Choices尚未同步",
+    "decision_impact": "不改变病例四分类；影响结构化证据操作、解释与迁移",
+    "complexity_cost": "medium",
+    "guide_change": "第16章列发布阻塞；本次仅修订指南",
+    "schema_change": "none",
+    "back_annotation_required": false,
+    "validation_case_types": [
+      "导出属性",
+      "预标注验收",
+      "真人双标"
+    ]
+  }
+]
