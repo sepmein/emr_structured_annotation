@@ -1,0 +1,168 @@
+{
+  "source_sha256": "3fc2dff1a2a20dff078201c81e93276d9ee8c4b245169d8a940f1a3899e8a4b5",
+  "label_config_sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc",
+  "offset_unit_in": "codepoint",
+  "dataset_kind": "synthetic_demo",
+  "selections": [
+    {
+      "task_id": 1,
+      "action": "include",
+      "annotation_id": 1012,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 2,
+      "action": "include",
+      "annotation_id": 1022,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 3,
+      "action": "include",
+      "annotation_id": 1032,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 4,
+      "action": "include",
+      "annotation_id": 1042,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 5,
+      "action": "include",
+      "annotation_id": 1052,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 6,
+      "action": "include",
+      "annotation_id": 1062,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 7,
+      "action": "include",
+      "annotation_id": 1072,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 8,
+      "action": "include",
+      "annotation_id": 1082,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 9,
+      "action": "include",
+      "annotation_id": 1092,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 10,
+      "action": "include",
+      "annotation_id": 1102,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 11,
+      "action": "include",
+      "annotation_id": 1112,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 12,
+      "action": "include",
+      "annotation_id": 1122,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 13,
+      "action": "include",
+      "annotation_id": 1132,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 14,
+      "action": "include",
+      "annotation_id": 1142,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 15,
+      "action": "include",
+      "annotation_id": 1152,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 16,
+      "action": "include",
+      "annotation_id": 1162,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 17,
+      "action": "include",
+      "annotation_id": 1172,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 18,
+      "action": "include",
+      "annotation_id": 1182,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 19,
+      "action": "include",
+      "annotation_id": 1192,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    },
+    {
+      "task_id": 20,
+      "action": "include",
+      "annotation_id": 1202,
+      "reviewed": true,
+      "reviewer": "synthetic-demo-reviewer",
+      "reason": "Fictional workflow demonstration only; not medical adjudication."
+    }
+  ]
+}

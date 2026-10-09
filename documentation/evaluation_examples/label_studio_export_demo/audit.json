@@ -1,0 +1,721 @@
+{
+  "summary": {
+    "tasks": 20,
+    "annotations": 40,
+    "valid_annotations": 40,
+    "two_distinct_annotator_tasks": 20
+  },
+  "pair_exact_agreement": {
+    "entities": {
+      "matching_tasks": 19,
+      "comparable_tasks": 20,
+      "rate": 0.95
+    },
+    "attributes": {
+      "matching_tasks": 19,
+      "comparable_tasks": 20,
+      "rate": 0.95
+    },
+    "relations": {
+      "matching_tasks": 20,
+      "comparable_tasks": 20,
+      "rate": 1.0
+    },
+    "case_choices": {
+      "matching_tasks": 20,
+      "comparable_tasks": 20,
+      "rate": 1.0
+    }
+  },
+  "notes": [
+    "Counts describe this export only, not verified independent human annotation or clinical validity.",
+    "Pairs require exactly two valid annotations with distinct known annotator IDs.",
+    "Exact set agreement is descriptive, not entity F1 or Cohen kappa.",
+    "Conditional required attributes and full Label Studio UI behavior are not validated.",
+    "Platform predictions are never selected as human reference."
+  ],
+  "tasks": [
+    {
+      "task_id": "1",
+      "valid_annotation_ids": [
+        "1011",
+        "1012"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1011",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 0,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1012",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": false,
+        "attributes": false,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "2",
+      "valid_annotation_ids": [
+        "1021",
+        "1022"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1021",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 3,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1022",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 3,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "3",
+      "valid_annotation_ids": [
+        "1031",
+        "1032"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1031",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1032",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "4",
+      "valid_annotation_ids": [
+        "1041",
+        "1042"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1041",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1042",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "5",
+      "valid_annotation_ids": [
+        "1051",
+        "1052"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1051",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1052",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "6",
+      "valid_annotation_ids": [
+        "1061",
+        "1062"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1061",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1062",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "7",
+      "valid_annotation_ids": [
+        "1071",
+        "1072"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1071",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1072",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "8",
+      "valid_annotation_ids": [
+        "1081",
+        "1082"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1081",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1082",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "9",
+      "valid_annotation_ids": [
+        "1091",
+        "1092"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1091",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1092",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "10",
+      "valid_annotation_ids": [
+        "1101",
+        "1102"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1101",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1102",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "11",
+      "valid_annotation_ids": [
+        "1111",
+        "1112"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1111",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1112",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "12",
+      "valid_annotation_ids": [
+        "1121",
+        "1122"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1121",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1122",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "13",
+      "valid_annotation_ids": [
+        "1131",
+        "1132"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1131",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1132",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "14",
+      "valid_annotation_ids": [
+        "1141",
+        "1142"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1141",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 0,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1142",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 0,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "15",
+      "valid_annotation_ids": [
+        "1151",
+        "1152"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1151",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 0,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1152",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 0,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "16",
+      "valid_annotation_ids": [
+        "1161",
+        "1162"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1161",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 3,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1162",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 3,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "17",
+      "valid_annotation_ids": [
+        "1171",
+        "1172"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1171",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1172",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "18",
+      "valid_annotation_ids": [
+        "1181",
+        "1182"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1181",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1182",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "19",
+      "valid_annotation_ids": [
+        "1191",
+        "1192"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1191",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1192",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 1,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    },
+    {
+      "task_id": "20",
+      "valid_annotation_ids": [
+        "1201",
+        "1202"
+      ],
+      "annotations": [
+        {
+          "annotation_id": "1201",
+          "annotator_id": "9001",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        },
+        {
+          "annotation_id": "1202",
+          "annotator_id": "9002",
+          "status": "valid",
+          "entity_count": 2,
+          "case_choices": {
+            "case_decision": "待专业复核"
+          }
+        }
+      ],
+      "pair_eligible": true,
+      "pair_exact_matches": {
+        "entities": true,
+        "attributes": true,
+        "relations": true,
+        "case_choices": true
+      }
+    }
+  ],
+  "source_sha256": "3fc2dff1a2a20dff078201c81e93276d9ee8c4b245169d8a940f1a3899e8a4b5",
+  "label_config_sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+}

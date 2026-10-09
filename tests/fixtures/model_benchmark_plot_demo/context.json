@@ -1,0 +1,12 @@
+{
+  "ours": {
+    "label": "专用模型（虚构记录）",
+    "deployment": "local",
+    "task_scope_id": "fictional_ner_re_v1"
+  },
+  "baseline": {
+    "label": "外部大模型（虚构记录）",
+    "deployment": "external_api",
+    "task_scope_id": "fictional_ner_re_v1"
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "task_id": "10",
+    "text": "肺炎支原体IgM阴性。",
+    "entities": [
+      {
+        "id": "demo10_2_e0",
+        "start": 0,
+        "end": 5,
+        "label": "肺炎支原体"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "17",
+    "text": "家中两人同时出现类似症状。",
+    "entities": [
+      {
+        "id": "demo17_2_e0",
+        "start": 0,
+        "end": 12,
+        "label": "周围聚集性发病现象"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "4",
+    "text": "无鼻翼煽动及三凹征。",
+    "entities": [
+      {
+        "id": "demo04_2_e0",
+        "start": 1,
+        "end": 5,
+        "label": "鼻翼煽动"
+      },
+      {
+        "id": "demo04_2_e1",
+        "start": 6,
+        "end": 9,
+        "label": "三凹征"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "8",
+    "text": "重度脱水，感染性休克。",
+    "entities": [
+      {
+        "id": "demo08_2_e0",
+        "start": 0,
+        "end": 4,
+        "label": "脱水征"
+      },
+      {
+        "id": "demo08_2_e1",
+        "start": 5,
+        "end": 10,
+        "label": "休克"
+      }
+    ],
+    "relations": []
+  }
+]

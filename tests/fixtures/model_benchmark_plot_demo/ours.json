@@ -1,0 +1,385 @@
+{
+  "protocol_version": 1,
+  "dataset_kind": "synthetic_demo",
+  "measurement_scope": "serial_http_request_through_entity_validation",
+  "unique_tasks": 12,
+  "repeats": 3,
+  "concurrency": 1,
+  "tasks_per_request": 1,
+  "measured_task_runs": 36,
+  "measured_wall_seconds": 87.89519999999999,
+  "inputs": {
+    "tasks": {
+      "file": "fictional_length_manifest.json",
+      "sha256": "92b2a850fdeffdbe8fb3b54e54a6e06c4c0fcde70632890bca147d6f61b32b65"
+    }
+  },
+  "token_coverage": {
+    "status": "unknown_fictional_not_measured"
+  },
+  "notes": [
+    "Entirely invented timing records for plotting tests. No inference or API request occurred."
+  ],
+  "samples": [
+    {
+      "task_id": "fictional-01",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 100,
+      "latency_ms": 82.8,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-02",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 250,
+      "latency_ms": 119.6,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-03",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 500,
+      "latency_ms": 156.4,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-04",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 800,
+      "latency_ms": 220.8,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-05",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 1200,
+      "latency_ms": 368.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-06",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 1800,
+      "latency_ms": 598.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-07",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 2500,
+      "latency_ms": 920.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-08",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 3500,
+      "latency_ms": 1656.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-09",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 5000,
+      "latency_ms": 2392.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-10",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 7000,
+      "latency_ms": 4232.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-11",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 9000,
+      "latency_ms": 6624.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-12",
+      "repeat": 0,
+      "phase": "measured",
+      "text_chars": 12000,
+      "latency_ms": 9200.0,
+      "status": "failed",
+      "error_category": "fictional_failure",
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-01",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 100,
+      "latency_ms": 90,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-02",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 250,
+      "latency_ms": 130,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-03",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 500,
+      "latency_ms": 170,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-04",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 800,
+      "latency_ms": 240,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-05",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 1200,
+      "latency_ms": 400,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-06",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 1800,
+      "latency_ms": 650,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-07",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 2500,
+      "latency_ms": 1000,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-08",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 3500,
+      "latency_ms": 1800,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-09",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 5000,
+      "latency_ms": 2600,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-10",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 7000,
+      "latency_ms": 4600,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-11",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 9000,
+      "latency_ms": 7200,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-12",
+      "repeat": 1,
+      "phase": "measured",
+      "text_chars": 12000,
+      "latency_ms": 10000,
+      "status": "failed",
+      "error_category": "fictional_failure",
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-01",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 100,
+      "latency_ms": 100.8,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-02",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 250,
+      "latency_ms": 145.6,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-03",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 500,
+      "latency_ms": 190.4,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-04",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 800,
+      "latency_ms": 268.8,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-05",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 1200,
+      "latency_ms": 448.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-06",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 1800,
+      "latency_ms": 728.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-07",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 2500,
+      "latency_ms": 1120.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-08",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 3500,
+      "latency_ms": 2016.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-09",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 5000,
+      "latency_ms": 2912.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-10",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 7000,
+      "latency_ms": 5152.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-11",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 9000,
+      "latency_ms": 8064.0,
+      "status": "ok",
+      "error_category": null,
+      "response_model_version": "fictional-ours"
+    },
+    {
+      "task_id": "fictional-12",
+      "repeat": 2,
+      "phase": "measured",
+      "text_chars": 12000,
+      "latency_ms": 11200.0,
+      "status": "failed",
+      "error_category": "fictional_failure",
+      "response_model_version": "fictional-ours"
+    }
+  ]
+}

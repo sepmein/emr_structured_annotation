@@ -1,0 +1,323 @@
+{
+  "version": "0.1.0",
+  "status": "draft_requires_training_validation_review",
+  "scope": "entity_mentions_only_no_attributes_relations_or_case_classification",
+  "sources": [
+    "label_studio/pneumonia_config.xml",
+    "documentation/annotation/label_dictionary_v2.1.1.md"
+  ],
+  "overlap_policy": "priority_then_longest_nonoverlap_within_entity_control",
+  "context_window_chars": 24,
+  "notes": [
+    "Alias lists are deliberately finite and do not imply full semantic coverage.",
+    "Negated, historical and planned mentions remain entity candidates.",
+    "No fever entity is inferred solely from temperature values.",
+    "Use only training/validation feedback to revise rules; freeze rule version before final testing.",
+    "Epidemiology, imaging and measurement context rules are approximate and need clinical review."
+  ],
+  "rules": [
+    {
+      "label": "发热",
+      "patterns": [
+        "发热|发烧|高热|低热|高烧|低烧"
+      ]
+    },
+    {
+      "label": "鼻翼煽动",
+      "patterns": [
+        "鼻翼煽动"
+      ]
+    },
+    {
+      "label": "呼吸衰竭",
+      "patterns": [
+        "(?:急性|慢性)?(?:[ⅠⅡⅢ一二三12]型)?呼吸衰竭"
+      ]
+    },
+    {
+      "label": "三凹征",
+      "patterns": [
+        "三凹征"
+      ]
+    },
+    {
+      "label": "喘鸣喘息",
+      "patterns": [
+        "喘鸣|喘息|哮鸣音"
+      ],
+      "exclude_before": "吸气性$"
+    },
+    {
+      "label": "意识障碍",
+      "patterns": [
+        "意识障碍|意识模糊|嗜睡|昏睡|昏迷"
+      ]
+    },
+    {
+      "label": "惊厥",
+      "patterns": [
+        "惊厥|抽搐|强直阵挛发作|癫痫样发作"
+      ]
+    },
+    {
+      "label": "拒食或喂养困难",
+      "patterns": [
+        "拒食|拒奶|喂养困难|不能饮水|不能进食|吸吮无力"
+      ]
+    },
+    {
+      "label": "脱水征",
+      "patterns": [
+        "(?:轻度|中度|重度)?脱水征?"
+      ],
+      "exclude_after": "^(?:剂|药|治疗)"
+    },
+    {
+      "label": "休克",
+      "patterns": [
+        "(?:感染性|脓毒性|心源性|低血容量性|失血性|过敏性)?休克"
+      ],
+      "exclude_after": "^指数"
+    },
+    {
+      "label": "器官衰竭",
+      "patterns": [
+        "(?:急性|慢性)?(?:多器官|多脏器|肾|肝)(?:功能)?衰竭|(?:急性|慢性)?心力衰竭|器官衰竭"
+      ]
+    },
+    {
+      "label": "机械通气",
+      "patterns": [
+        "(?:有创|无创)(?:机械)?通气|机械通气|呼吸机辅助通气"
+      ]
+    },
+    {
+      "label": "肺炎影像",
+      "patterns": [
+        "(?:CT|胸片|胸部影像|X线|影像)[^，,。；;\\n]{0,16}?(?P<entity>(?:[左右双两](?:上|中|下)?肺(?:炎症|感染性病变|感染性实变|实变)|肺炎(?:症)?|肺部炎症|感染性实变))"
+      ],
+      "priority": 0
+    },
+    {
+      "label": "肺炎诊断",
+      "patterns": [
+        "(?:社区获得性|医院获得性|吸入性|支气管|大叶性|小叶性)?肺炎(?!支原体|衣原体|链球菌|克雷伯菌|影像)",
+        "(?:诊断|诊为|考虑|排除|确诊)[^，,。；;\\n]{0,12}?(?P<entity>肺部感染)"
+      ],
+      "exclude_before": "(?:非感染性|放射性|慢性间质性)$"
+    },
+    {
+      "label": "周围聚集性发病现象",
+      "patterns": [
+        "(?:同班|同校|家中|同住者|同事)[^，,。；;\\n]{0,8}(?:多名|多人|两人|三人|相继)[^，,。；;\\n]{0,8}(?:发热|出现类似症状|发病)"
+      ]
+    },
+    {
+      "label": "高风险职业史",
+      "patterns": [
+        "(?:母亲|父亲|患者|本人|家属)?(?:在|从事)?(?:禽类养殖场|屠宰场|病原微生物实验室)[^，,。；;\\n]{0,8}(?:工作|检测|养殖|屠宰)"
+      ]
+    },
+    {
+      "label": "可疑动物或动物制品接触史",
+      "patterns": [
+        "(?:接触|处理|宰杀)(?:过)?(?:病死禽畜|病死禽|生禽制品|活禽|野生动物)"
+      ]
+    },
+    {
+      "label": "可疑环境暴露史",
+      "patterns": [
+        "清扫鸟粪污染环境|进入有禽类污染的场所|(?:接触|暴露于)(?:污水|鸟粪污染环境)"
+      ]
+    },
+    {
+      "label": "境内外旅居史",
+      "patterns": [
+        "赴(?:外省|境外|国外)旅行|境外旅居|境内外旅居|(?:前往|旅居)[\\u4e00-\\u9fff]{2,8}(?:旅行|旅游|出差|居住)"
+      ]
+    },
+    {
+      "label": "时间表达",
+      "patterns": [
+        "\\d{4}[-/]\\d{1,2}[-/]\\d{1,2}|\\d{1,2}月\\d{1,2}日",
+        "(?:入院|发病|住院)?第[0-9一二三四五六七八九十]+[天日]",
+        "(?:入院前|发病前|近|过去)?[0-9一二三四五六七八九十两]+(?:分钟|小时|天|日|周|个月|月|年)(?:前|后|内|余)?|昨日|昨天|今日|今天|近期"
+      ]
+    },
+    {
+      "label": "体温",
+      "patterns": [
+        "体温|腋温|耳温|(?<![A-Za-z])TMAX(?=\\s*[:：]?\\s*\\d)|(?<![A-Za-z])T(?=\\s*[:：]?\\s*\\d)"
+      ]
+    },
+    {
+      "label": "呼吸频率",
+      "patterns": [
+        "呼吸频率|呼吸(?=\\s*[:：]?\\s*\\d+\\s*次/(?:分|min))|(?<![A-Za-z])(?:RR|R)(?=\\s*[:：]?\\s*\\d)"
+      ]
+    },
+    {
+      "label": "静息状态指氧饱和度",
+      "patterns": [
+        "静息(?:状态)?指氧饱和度|静息指氧|指氧饱和度|血氧饱和度|(?<![A-Za-z])SpO2(?![A-Za-z])"
+      ],
+      "exclude_before": "(?:运动后|活动后|步行试验后)\\s*$"
+    },
+    {
+      "label": "动脉氧分压(PaO2)",
+      "patterns": [
+        "动脉氧分压|(?<![A-Za-z])PaO2(?![A-Za-z])"
+      ]
+    },
+    {
+      "label": "吸氧浓度(FiO2)",
+      "patterns": [
+        "吸氧浓度|(?<![A-Za-z])FiO2(?![A-Za-z])"
+      ]
+    },
+    {
+      "label": "数值",
+      "patterns": [
+        "(?:体温|腋温|耳温|(?<![A-Za-z])TMAX|(?<![A-Za-z])T|呼吸频率|(?<![A-Za-z])RR|(?<![A-Za-z])R|呼吸|静息指氧饱和度|指氧饱和度|血氧饱和度|SpO2|PaO2|FiO2|动脉氧分压|吸氧浓度)\\s*[:：=]?\\s*(?:>=|<=|[<>≤≥])?\\s*(?P<entity>[0-9]+(?:\\.[0-9]+)?)"
+      ]
+    },
+    {
+      "label": "单位",
+      "patterns": [
+        "(?:体温|腋温|耳温|(?<![A-Za-z])TMAX|(?<![A-Za-z])T|呼吸频率|(?<![A-Za-z])RR|(?<![A-Za-z])R|呼吸|静息指氧饱和度|指氧饱和度|血氧饱和度|SpO2|PaO2|FiO2|动脉氧分压|吸氧浓度)\\s*[:：=]?\\s*(?:>=|<=|[<>≤≥])?\\s*[0-9]+(?:\\.[0-9]+)?\\s*(?P<entity>℃|°C|摄氏度|次/分|次/min|mmHg|kPa|%)"
+      ]
+    },
+    {
+      "label": "比较符",
+      "patterns": [
+        "(?:体温|腋温|耳温|(?<![A-Za-z])TMAX|(?<![A-Za-z])T|呼吸频率|(?<![A-Za-z])RR|(?<![A-Za-z])R|呼吸|静息指氧饱和度|指氧饱和度|血氧饱和度|SpO2|PaO2|FiO2|动脉氧分压|吸氧浓度)\\s*[:：=]?\\s*(?P<entity>>=|<=|[<>≤≥])\\s*[0-9]+(?:\\.[0-9]+)?"
+      ]
+    },
+    {
+      "label": "新冠病毒",
+      "patterns": [
+        "新型冠状病毒|新冠病毒|SARS-CoV-2"
+      ]
+    },
+    {
+      "label": "流感病毒",
+      "patterns": [
+        "流感病毒"
+      ]
+    },
+    {
+      "label": "呼吸道合胞病毒",
+      "patterns": [
+        "呼吸道合胞病毒"
+      ]
+    },
+    {
+      "label": "腺病毒",
+      "patterns": [
+        "腺病毒"
+      ]
+    },
+    {
+      "label": "人偏肺病毒",
+      "patterns": [
+        "人偏肺病毒"
+      ]
+    },
+    {
+      "label": "副流感病毒",
+      "patterns": [
+        "副流感病毒"
+      ]
+    },
+    {
+      "label": "普通冠状病毒",
+      "patterns": [
+        "普通冠状病毒"
+      ]
+    },
+    {
+      "label": "博卡病毒",
+      "patterns": [
+        "博卡病毒"
+      ]
+    },
+    {
+      "label": "鼻病毒",
+      "patterns": [
+        "鼻病毒"
+      ]
+    },
+    {
+      "label": "肠道病毒",
+      "patterns": [
+        "肠道病毒"
+      ]
+    },
+    {
+      "label": "A族链球菌",
+      "patterns": [
+        "A族链球菌"
+      ]
+    },
+    {
+      "label": "百日咳鲍特菌",
+      "patterns": [
+        "百日咳鲍特菌"
+      ]
+    },
+    {
+      "label": "肺炎链球菌",
+      "patterns": [
+        "肺炎链球菌"
+      ]
+    },
+    {
+      "label": "流感嗜血杆菌",
+      "patterns": [
+        "流感嗜血杆菌"
+      ]
+    },
+    {
+      "label": "军团菌",
+      "patterns": [
+        "军团菌"
+      ]
+    },
+    {
+      "label": "肺炎克雷伯菌",
+      "patterns": [
+        "肺炎克雷伯菌"
+      ]
+    },
+    {
+      "label": "肺炎支原体",
+      "patterns": [
+        "肺炎支原体"
+      ]
+    },
+    {
+      "label": "曲霉菌",
+      "patterns": [
+        "曲霉菌"
+      ]
+    },
+    {
+      "label": "隐球菌",
+      "patterns": [
+        "隐球菌"
+      ]
+    },
+    {
+      "label": "鹦鹉热衣原体",
+      "patterns": [
+        "鹦鹉热衣原体"
+      ]
+    },
+    {
+      "label": "肺炎衣原体",
+      "patterns": [
+        "肺炎衣原体"
+      ]
+    }
+  ]
+}

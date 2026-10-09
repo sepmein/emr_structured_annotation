@@ -1,0 +1,1011 @@
+{
+  "protocol_version": 1,
+  "seed": 42,
+  "grouping": "connected_components_of_patient_id_and_identical_original_text",
+  "requested_ratios": {
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2
+  },
+  "tasks": 20,
+  "patients": 20,
+  "unique_texts": 20,
+  "independent_groups": 20,
+  "verified_no_patient_overlap": true,
+  "verified_no_exact_text_overlap": true,
+  "near_duplicate_check": "not_performed",
+  "splits": {
+    "train": {
+      "tasks": 12,
+      "patients": 12,
+      "unique_texts": 12,
+      "target_task_count": 12.0,
+      "actual_task_fraction": 0.6,
+      "reference_entities": 17,
+      "no_entity_tasks": 1,
+      "case_decision_counts": {
+        "待专业复核": 12
+      },
+      "missing_case_decision_tasks": 0
+    },
+    "validation": {
+      "tasks": 4,
+      "patients": 4,
+      "unique_texts": 4,
+      "target_task_count": 4.0,
+      "actual_task_fraction": 0.2,
+      "reference_entities": 6,
+      "no_entity_tasks": 0,
+      "case_decision_counts": {
+        "待专业复核": 4
+      },
+      "missing_case_decision_tasks": 0
+    },
+    "test": {
+      "tasks": 4,
+      "patients": 4,
+      "unique_texts": 4,
+      "target_task_count": 4.0,
+      "actual_task_fraction": 0.2,
+      "reference_entities": 5,
+      "no_entity_tasks": 1,
+      "case_decision_counts": {
+        "待专业复核": 4
+      },
+      "missing_case_decision_tasks": 0
+    }
+  },
+  "label_coverage": {
+    "发热": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 1
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 1
+      }
+    },
+    "鼻翼煽动": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "呼吸衰竭": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "三凹征": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "喘鸣喘息": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "意识障碍": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "惊厥": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "拒食或喂养困难": {
+      "entities": {
+        "train": 2,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "脱水征": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "休克": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "器官衰竭": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "机械通气": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎影像": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎诊断": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "周围聚集性发病现象": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "高风险职业史": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "可疑动物或动物制品接触史": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "可疑环境暴露史": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "境内外旅居史": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "时间表达": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      }
+    },
+    "体温": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 1
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 1
+      }
+    },
+    "呼吸频率": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "静息状态指氧饱和度": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "动脉氧分压(PaO2)": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "吸氧浓度(FiO2)": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "数值": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      }
+    },
+    "单位": {
+      "entities": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      },
+      "positive_tasks": {
+        "train": 1,
+        "validation": 0,
+        "test": 1
+      }
+    },
+    "比较符": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "新冠病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "流感病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "呼吸道合胞病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "腺病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "人偏肺病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "副流感病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "普通冠状病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "博卡病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "鼻病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肠道病毒": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "A族链球菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "百日咳鲍特菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎链球菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "流感嗜血杆菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "军团菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎克雷伯菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎支原体": {
+      "entities": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 1,
+        "test": 0
+      }
+    },
+    "曲霉菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "隐球菌": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "鹦鹉热衣原体": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "肺炎衣原体": {
+      "entities": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "positive_tasks": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    }
+  },
+  "labels_absent_from_entire_batch": [
+    "可疑环境暴露史",
+    "呼吸频率",
+    "动脉氧分压(PaO2)",
+    "吸氧浓度(FiO2)",
+    "比较符",
+    "新冠病毒",
+    "流感病毒",
+    "呼吸道合胞病毒",
+    "腺病毒",
+    "人偏肺病毒",
+    "副流感病毒",
+    "普通冠状病毒",
+    "博卡病毒",
+    "鼻病毒",
+    "肠道病毒",
+    "A族链球菌",
+    "百日咳鲍特菌",
+    "肺炎链球菌",
+    "流感嗜血杆菌",
+    "军团菌",
+    "肺炎克雷伯菌",
+    "曲霉菌",
+    "隐球菌",
+    "鹦鹉热衣原体",
+    "肺炎衣原体"
+  ],
+  "coverage_warnings": [
+    {
+      "split": "train",
+      "observed_labels_without_examples": [
+        "发热",
+        "鼻翼煽动",
+        "三凹征",
+        "脱水征",
+        "休克",
+        "周围聚集性发病现象",
+        "体温",
+        "肺炎支原体"
+      ]
+    },
+    {
+      "split": "validation",
+      "observed_labels_without_examples": [
+        "发热",
+        "呼吸衰竭",
+        "喘鸣喘息",
+        "意识障碍",
+        "惊厥",
+        "拒食或喂养困难",
+        "器官衰竭",
+        "机械通气",
+        "肺炎影像",
+        "肺炎诊断",
+        "高风险职业史",
+        "可疑动物或动物制品接触史",
+        "境内外旅居史",
+        "时间表达",
+        "体温",
+        "静息状态指氧饱和度",
+        "数值",
+        "单位"
+      ]
+    },
+    {
+      "split": "test",
+      "observed_labels_without_examples": [
+        "鼻翼煽动",
+        "呼吸衰竭",
+        "三凹征",
+        "喘鸣喘息",
+        "意识障碍",
+        "惊厥",
+        "拒食或喂养困难",
+        "脱水征",
+        "休克",
+        "器官衰竭",
+        "机械通气",
+        "肺炎影像",
+        "肺炎诊断",
+        "周围聚集性发病现象",
+        "高风险职业史",
+        "可疑动物或动物制品接触史",
+        "境内外旅居史",
+        "静息状态指氧饱和度",
+        "肺炎支原体"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "group_id": "0e5b96c0aaf7d37b171e575a6421a5163b8a04317045726eb0cbec3f2bc91e84",
+      "split": "validation",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "0e71c9d61a801b86235274dfab92b15dfb859514f351bf1627e1bc07bca5b60c",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "115175dafa22e3159003105401f27980690a156ea5190aa769e33a7e1394b09e",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "26a6ce94f8d2ece150a6caa06e71f7d032764e0638a47b58e868257bb3dea578",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "2aaa0d08e3a122ebeb3a8ad58d25d4f9633aef77be71e5c52780a74cef886d53",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "3d2f323697bf5f150cb2c41dd9deb48e49b793e1be62c52d2f12d116a18e6ffa",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "43de3a417d75f4818c5a553268b80ce3a5805109a3bbc6b605e9fb0b8f50b485",
+      "split": "test",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "5dd919819f5f1549c0004f1a68f8072b1f656d5adecbade143b14e100ab7e1fd",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "5e3322c682b4e46a737ec3a18be48fc20ba87309ae7f942cef08eb51f2a6537e",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "614c38a4fe853d409710a29b6c7559f5d0d794d8aa95ca462fba2cdd56b7ca73",
+      "split": "test",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "68a90152c04505f5f2f397b31c13447056085e8176be9daa43b182b9d731b2e4",
+      "split": "test",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "6e32bc5b03ab4d239b1eff1de30de5007f906dda41e8f720240bbf6481496a60",
+      "split": "validation",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "71447c96d68bdc65906c5092de19f2d27634b0fb59a86baac726a961b4de4228",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "75fd229c68471d3d93eb936c077cb9a3f70082a3366a78bf62d4228389f77847",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "803ec8add3498ac66633e5fdbf8f47d69858594c8820ab43a85dd692fc73e5ba",
+      "split": "test",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "8d81fb9d8d154c5e6d6840b806b2c52e6285fb84c30152a00a09619f41b70523",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "9246e824773fc95ffe7097ebf344e3aef5d4cd76329e4d39a4fd0e79eb8d75c4",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "953d1c8161d6c2eaf8834e68a39f73a45a03c5999959b43902164286f1ba8571",
+      "split": "validation",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "c28e42d96b947502d9ff5405e01a869aeeff5aec51e2bca638f1b3bf1fe4cf30",
+      "split": "train",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    },
+    {
+      "group_id": "ff79e6583582a4445d69f80c3ecd3034c158754bd33c7c62958c861edf7f2a62",
+      "split": "validation",
+      "task_count": 1,
+      "patient_count": 1,
+      "unique_text_count": 1
+    }
+  ],
+  "assignments": [
+    {
+      "task_id": "1",
+      "split": "test",
+      "group_id": "43de3a417d75f4818c5a553268b80ce3a5805109a3bbc6b605e9fb0b8f50b485",
+      "text_sha256": "b34922c848f5ebf9bd277a0bbc97799c4cdda175178a4562a1f1d0d6193c0bcb"
+    },
+    {
+      "task_id": "10",
+      "split": "validation",
+      "group_id": "6e32bc5b03ab4d239b1eff1de30de5007f906dda41e8f720240bbf6481496a60",
+      "text_sha256": "b8b4708c1c6fe33bd866e8e5432d646a3728d92cc2195abb0d7a7924c3c31f50"
+    },
+    {
+      "task_id": "11",
+      "split": "train",
+      "group_id": "71447c96d68bdc65906c5092de19f2d27634b0fb59a86baac726a961b4de4228",
+      "text_sha256": "478d8663f06a0cd97c2a5a1ff2ff5c369fc1d59e3011c5d693b3e2de1b596f5f"
+    },
+    {
+      "task_id": "12",
+      "split": "train",
+      "group_id": "115175dafa22e3159003105401f27980690a156ea5190aa769e33a7e1394b09e",
+      "text_sha256": "4990849a78084158577efd3e83e43ebe4678d43b2d8df1a62d4346bac3fa149d"
+    },
+    {
+      "task_id": "13",
+      "split": "test",
+      "group_id": "803ec8add3498ac66633e5fdbf8f47d69858594c8820ab43a85dd692fc73e5ba",
+      "text_sha256": "06f2150b627522576c8ea1df367345e8c685cbb7158a2b01e7dc7b35995c702b"
+    },
+    {
+      "task_id": "14",
+      "split": "train",
+      "group_id": "75fd229c68471d3d93eb936c077cb9a3f70082a3366a78bf62d4228389f77847",
+      "text_sha256": "7e162e4e7aa03e3d7103b3f9bf010b6f2eae39f4953ab6785ee6279cd7d542cf"
+    },
+    {
+      "task_id": "15",
+      "split": "test",
+      "group_id": "614c38a4fe853d409710a29b6c7559f5d0d794d8aa95ca462fba2cdd56b7ca73",
+      "text_sha256": "b77c50169f25e99e2e92006569deca9f1f9fea8fd71efd186cca696f0feb8a46"
+    },
+    {
+      "task_id": "16",
+      "split": "train",
+      "group_id": "3d2f323697bf5f150cb2c41dd9deb48e49b793e1be62c52d2f12d116a18e6ffa",
+      "text_sha256": "4d634ddda3892192d9b3bfa27ab11870c6f5d5076e027d5a942fbcfdd83e0d28"
+    },
+    {
+      "task_id": "17",
+      "split": "validation",
+      "group_id": "ff79e6583582a4445d69f80c3ecd3034c158754bd33c7c62958c861edf7f2a62",
+      "text_sha256": "014dd347305d4d184b595dda571df1661004a5a739ba3add19b5b92fc78781f1"
+    },
+    {
+      "task_id": "18",
+      "split": "train",
+      "group_id": "c28e42d96b947502d9ff5405e01a869aeeff5aec51e2bca638f1b3bf1fe4cf30",
+      "text_sha256": "342e1e6a9c423a0f1693231cfcc623a24bb22a87003e26a06e672b0e0f8b6f00"
+    },
+    {
+      "task_id": "19",
+      "split": "train",
+      "group_id": "5dd919819f5f1549c0004f1a68f8072b1f656d5adecbade143b14e100ab7e1fd",
+      "text_sha256": "605aa0a4beb0a8b7ef6a6429be8da6bf9e470e07c1559b5ddd5675a9e51c5eee"
+    },
+    {
+      "task_id": "2",
+      "split": "test",
+      "group_id": "68a90152c04505f5f2f397b31c13447056085e8176be9daa43b182b9d731b2e4",
+      "text_sha256": "581198c4501d89134fdb8650a3d7e8d36360bf9ad7592ffb2aded19f48417410"
+    },
+    {
+      "task_id": "20",
+      "split": "train",
+      "group_id": "9246e824773fc95ffe7097ebf344e3aef5d4cd76329e4d39a4fd0e79eb8d75c4",
+      "text_sha256": "2bab1ad7e4fa4373d0855bcf6afcf17594ce698098095a799128775f33ec4026"
+    },
+    {
+      "task_id": "3",
+      "split": "train",
+      "group_id": "26a6ce94f8d2ece150a6caa06e71f7d032764e0638a47b58e868257bb3dea578",
+      "text_sha256": "d96bd573cac577a14c474c8f3fcb11af48e9ccd479e394ec3927c05f055b821e"
+    },
+    {
+      "task_id": "4",
+      "split": "validation",
+      "group_id": "0e5b96c0aaf7d37b171e575a6421a5163b8a04317045726eb0cbec3f2bc91e84",
+      "text_sha256": "bf53ab66fbcd12166a58cbc1126d4d74e35e69da657bde3fb3cd84dfc1ba15f1"
+    },
+    {
+      "task_id": "5",
+      "split": "train",
+      "group_id": "5e3322c682b4e46a737ec3a18be48fc20ba87309ae7f942cef08eb51f2a6537e",
+      "text_sha256": "3e9282c47bc08f73ba841c88e15a326a81aca95dd4100ddc26ca56b5a22e4931"
+    },
+    {
+      "task_id": "6",
+      "split": "train",
+      "group_id": "0e71c9d61a801b86235274dfab92b15dfb859514f351bf1627e1bc07bca5b60c",
+      "text_sha256": "f03c3fcb76ff95e3e1263e1393bc32bbcf76468f59e32e8f7fd247d17b22f881"
+    },
+    {
+      "task_id": "7",
+      "split": "train",
+      "group_id": "2aaa0d08e3a122ebeb3a8ad58d25d4f9633aef77be71e5c52780a74cef886d53",
+      "text_sha256": "bed446800ae3c81670c1ac7addf7a8d14375783fd00738d9218f2759c411ef62"
+    },
+    {
+      "task_id": "8",
+      "split": "validation",
+      "group_id": "953d1c8161d6c2eaf8834e68a39f73a45a03c5999959b43902164286f1ba8571",
+      "text_sha256": "28a97136892ebeda6af1fec95bc6f7cc54f87defd8cd5deb6886f137a709f10a"
+    },
+    {
+      "task_id": "9",
+      "split": "train",
+      "group_id": "8d81fb9d8d154c5e6d6840b806b2c52e6285fb84c30152a00a09619f41b70523",
+      "text_sha256": "0f2bd2d6e5c72cd02b4909ef33d6a7b0d516a5ddff4951fb44fdf17c5173e993"
+    }
+  ],
+  "notes": [
+    "Group sizes can prevent exact requested ratios; all actual counts are reported.",
+    "This is seeded group allocation with task-count balancing, not guaranteed label stratification.",
+    "No records are dropped, and reviewed no-entity records are retained.",
+    "Hashes are provenance aids, not deidentification certification.",
+    "Group separation does not prove adjudication, model/test independence or cross-site generalization.",
+    "Do not replace or retune a final test set after observing its model scores."
+  ],
+  "source_sha256": "6cc63ebe41a95b3ce76fed8a711518eecd26b99b020064250a4b2b9dd0f39738",
+  "label_config_sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+}

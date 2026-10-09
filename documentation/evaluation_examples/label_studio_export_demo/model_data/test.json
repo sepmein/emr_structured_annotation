@@ -1,0 +1,70 @@
+[
+  {
+    "task_id": "1",
+    "text": "无发热。",
+    "entities": [
+      {
+        "id": "demo01_2_e0",
+        "start": 1,
+        "end": 3,
+        "label": "发热"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "13",
+    "text": "今日精神欠佳，鼻导管吸氧。",
+    "entities": [
+      {
+        "id": "demo13_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "时间表达"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "15",
+    "text": "休克指数升高。",
+    "entities": [],
+    "relations": []
+  },
+  {
+    "task_id": "2",
+    "text": "体温38.5℃。",
+    "entities": [
+      {
+        "id": "demo02_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "体温"
+      },
+      {
+        "id": "demo02_2_e1",
+        "start": 2,
+        "end": 6,
+        "label": "数值"
+      },
+      {
+        "id": "demo02_2_e2",
+        "start": 6,
+        "end": 7,
+        "label": "单位"
+      }
+    ],
+    "relations": [
+      {
+        "from_id": "demo02_2_e0",
+        "to_id": "demo02_2_e1",
+        "type": "测量"
+      },
+      {
+        "from_id": "demo02_2_e0",
+        "to_id": "demo02_2_e2",
+        "type": "测量"
+      }
+    ]
+  }
+]

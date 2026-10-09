@@ -1,0 +1,288 @@
+[
+  {
+    "task_id": "demo-01",
+    "text": "无发热。",
+    "entities": [
+      {
+        "start": 1,
+        "end": 3,
+        "label": "发热",
+        "text": "发热"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-02",
+    "text": "体温38.5℃。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "体温",
+        "text": "体温"
+      },
+      {
+        "start": 2,
+        "end": 6,
+        "label": "数值",
+        "text": "38.5"
+      },
+      {
+        "start": 6,
+        "end": 7,
+        "label": "单位",
+        "text": "℃"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-03",
+    "text": "急性Ⅰ型呼吸衰竭，予有创机械通气。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "label": "呼吸衰竭",
+        "text": "急性Ⅰ型呼吸衰竭"
+      },
+      {
+        "start": 10,
+        "end": 16,
+        "label": "机械通气",
+        "text": "有创机械通气"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-04",
+    "text": "无鼻翼煽动及三凹征。",
+    "entities": [
+      {
+        "start": 1,
+        "end": 5,
+        "label": "鼻翼煽动",
+        "text": "鼻翼煽动"
+      },
+      {
+        "start": 6,
+        "end": 9,
+        "label": "三凹征",
+        "text": "三凹征"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-05",
+    "text": "湿啰音，伴哮鸣音。",
+    "entities": [
+      {
+        "start": 5,
+        "end": 8,
+        "label": "喘鸣喘息",
+        "text": "哮鸣音"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-06",
+    "text": "意识模糊，随后抽搐。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "label": "意识障碍",
+        "text": "意识模糊"
+      },
+      {
+        "start": 7,
+        "end": 9,
+        "label": "惊厥",
+        "text": "抽搐"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-07",
+    "text": "拒奶、吸吮无力。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "拒食或喂养困难",
+        "text": "拒奶"
+      },
+      {
+        "start": 3,
+        "end": 7,
+        "label": "拒食或喂养困难",
+        "text": "吸吮无力"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-08",
+    "text": "重度脱水，感染性休克。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "label": "脱水征",
+        "text": "重度脱水"
+      },
+      {
+        "start": 5,
+        "end": 10,
+        "label": "休克",
+        "text": "感染性休克"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-09",
+    "text": "诊断急性肾衰竭。",
+    "entities": [
+      {
+        "start": 2,
+        "end": 7,
+        "label": "器官衰竭",
+        "text": "急性肾衰竭"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-10",
+    "text": "肺炎支原体IgM阴性。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "肺炎支原体",
+        "text": "肺炎支原体"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-11",
+    "text": "CT提示右肺炎症。",
+    "entities": [
+      {
+        "start": 4,
+        "end": 8,
+        "label": "肺炎影像",
+        "text": "右肺炎症"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-12",
+    "text": "诊断社区获得性肺炎。",
+    "entities": [
+      {
+        "start": 2,
+        "end": 9,
+        "label": "肺炎诊断",
+        "text": "社区获得性肺炎"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-13",
+    "text": "今日精神欠佳，鼻导管吸氧。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "时间表达",
+        "text": "今日"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-14",
+    "text": "畏寒，室温正常。",
+    "entities": []
+  },
+  {
+    "task_id": "demo-15",
+    "text": "休克指数升高。",
+    "entities": []
+  },
+  {
+    "task_id": "demo-16",
+    "text": "静息SpO2 96%。",
+    "entities": [
+      {
+        "start": 2,
+        "end": 6,
+        "label": "静息状态指氧饱和度",
+        "text": "SpO2"
+      },
+      {
+        "start": 7,
+        "end": 9,
+        "label": "数值",
+        "text": "96"
+      },
+      {
+        "start": 9,
+        "end": 10,
+        "label": "单位",
+        "text": "%"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-17",
+    "text": "家中两人同时出现类似症状。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "label": "周围聚集性发病现象",
+        "text": "家中两人同时出现类似症状"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-18",
+    "text": "母亲在禽类养殖场工作。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "label": "高风险职业史",
+        "text": "母亲在禽类养殖场工作"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-19",
+    "text": "接触病死禽。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "可疑动物或动物制品接触史",
+        "text": "接触病死禽"
+      }
+    ]
+  },
+  {
+    "task_id": "demo-20",
+    "text": "上月赴外省旅行。",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "label": "时间表达",
+        "text": "上月"
+      },
+      {
+        "start": 2,
+        "end": 7,
+        "label": "境内外旅居史",
+        "text": "赴外省旅行"
+      }
+    ]
+  }
+]

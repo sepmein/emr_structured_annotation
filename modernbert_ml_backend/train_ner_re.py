@@ -545,6 +545,8 @@ def train_model(
         dev_loader: Optional[DataLoader],
         device: torch.device,
         ner_label_weights: Optional[torch.Tensor] = None,
+        metrics_callback=None,
+        save_first_validation: bool = False,
 ) -> Tuple[ModernBERTForNERRE, float]:
     best_f1 = 0.0
 
@@ -699,8 +701,14 @@ def train_model(
                 f"neg_acc={val_metrics.get('re_neg_acc', 0):.4f})"
             )
             current_f1 = val_metrics.get("ner_f1", 0) + val_metrics.get("re_f1", 0)
-            if current_f1 > best_f1_with_delta + config.early_stopping_min_delta:
-                # 指标有实质提升
+            select_checkpoint = (save_first_validation and epoch == 1 and existing is None) or current_f1 > best_f1_with_delta + config.early_stopping_min_delta
+            if metrics_callback is not None:
+                metrics_callback({"epoch": epoch, "global_epoch": global_epoch,
+                                  "train": train_metrics, "validation": val_metrics,
+                                  "selection_score_ner_plus_re": current_f1,
+                                  "checkpoint_selected": select_checkpoint})
+            if select_checkpoint:
+                # 独立入口保存首轮；后续仍按既有改进阈值选择。
                 best_f1 = current_f1
                 best_f1_with_delta = current_f1
                 patience_counter = 0
@@ -735,6 +743,34 @@ def train_model(
 
 
 # ==================== 简化接口（供 fit() 调用）====================
+
+def train_from_splits(train_data: List[Dict], dev_data: List[Dict], seed: int = 42,
+                      metrics_callback=None) -> Tuple[ModernBERTForNERRE, float]:
+    """Fresh experiment from explicit splits; no resplitting or oversampling.
+
+    Freeze XML mappings and validate patient separation before calling this.
+    The existing fit()/train_from_data path keeps its original behavior.
+    """
+    if not train_data or not dev_data:
+        raise ValueError("Explicit nonempty train and validation sets are required")
+    if not config.ner_labels:
+        raise ValueError("Freeze XML label mappings before training explicit splits")
+    if os.path.exists(config.best_model_path):
+        raise ValueError("Explicit-split training requires a fresh checkpoint path")
+    random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+    train_dataset = NERREDataset(train_data, config.tokenizer, config.max_length,
+                                 config.ner_label2id, config.re_label2id)
+    dev_dataset = NERREDataset(dev_data, config.tokenizer, config.max_length,
+                               config.ner_label2id, config.re_label2id)
+    train_loader = DataLoader(train_dataset, batch_size=config.batch_size, shuffle=True, collate_fn=collate_fn)
+    dev_loader = DataLoader(dev_dataset, batch_size=config.batch_size, shuffle=False, collate_fn=collate_fn)
+    return train_model(train_loader, dev_loader, torch.device(config.device),
+                       ner_label_weights=compute_label_weights(train_data),
+                       metrics_callback=metrics_callback, save_first_validation=True)
+
 
 def train_from_data(
         training_data: List[Dict],

@@ -1,0 +1,204 @@
+[
+  {
+    "task_id": "11",
+    "text": "CT提示右肺炎症。",
+    "entities": [
+      {
+        "id": "demo11_2_e0",
+        "start": 4,
+        "end": 8,
+        "label": "肺炎影像"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "12",
+    "text": "诊断社区获得性肺炎。",
+    "entities": [
+      {
+        "id": "demo12_2_e0",
+        "start": 2,
+        "end": 9,
+        "label": "肺炎诊断"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "14",
+    "text": "畏寒，室温正常。",
+    "entities": [],
+    "relations": []
+  },
+  {
+    "task_id": "16",
+    "text": "静息SpO2 96%。",
+    "entities": [
+      {
+        "id": "demo16_2_e0",
+        "start": 2,
+        "end": 6,
+        "label": "静息状态指氧饱和度"
+      },
+      {
+        "id": "demo16_2_e1",
+        "start": 7,
+        "end": 9,
+        "label": "数值"
+      },
+      {
+        "id": "demo16_2_e2",
+        "start": 9,
+        "end": 10,
+        "label": "单位"
+      }
+    ],
+    "relations": [
+      {
+        "from_id": "demo16_2_e0",
+        "to_id": "demo16_2_e1",
+        "type": "测量"
+      },
+      {
+        "from_id": "demo16_2_e0",
+        "to_id": "demo16_2_e2",
+        "type": "测量"
+      }
+    ]
+  },
+  {
+    "task_id": "18",
+    "text": "母亲在禽类养殖场工作。",
+    "entities": [
+      {
+        "id": "demo18_2_e0",
+        "start": 0,
+        "end": 10,
+        "label": "高风险职业史"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "19",
+    "text": "接触病死禽。",
+    "entities": [
+      {
+        "id": "demo19_2_e0",
+        "start": 0,
+        "end": 5,
+        "label": "可疑动物或动物制品接触史"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "20",
+    "text": "上月赴外省旅行。",
+    "entities": [
+      {
+        "id": "demo20_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "时间表达"
+      },
+      {
+        "id": "demo20_2_e1",
+        "start": 2,
+        "end": 7,
+        "label": "境内外旅居史"
+      }
+    ],
+    "relations": [
+      {
+        "from_id": "demo20_2_e1",
+        "to_id": "demo20_2_e0",
+        "type": "发生时间"
+      }
+    ]
+  },
+  {
+    "task_id": "3",
+    "text": "急性Ⅰ型呼吸衰竭，予有创机械通气。",
+    "entities": [
+      {
+        "id": "demo03_2_e0",
+        "start": 0,
+        "end": 8,
+        "label": "呼吸衰竭"
+      },
+      {
+        "id": "demo03_2_e1",
+        "start": 10,
+        "end": 16,
+        "label": "机械通气"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "5",
+    "text": "湿啰音，伴哮鸣音。",
+    "entities": [
+      {
+        "id": "demo05_2_e0",
+        "start": 5,
+        "end": 8,
+        "label": "喘鸣喘息"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "6",
+    "text": "意识模糊，随后抽搐。",
+    "entities": [
+      {
+        "id": "demo06_2_e0",
+        "start": 0,
+        "end": 4,
+        "label": "意识障碍"
+      },
+      {
+        "id": "demo06_2_e1",
+        "start": 7,
+        "end": 9,
+        "label": "惊厥"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "7",
+    "text": "拒奶、吸吮无力。",
+    "entities": [
+      {
+        "id": "demo07_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "拒食或喂养困难"
+      },
+      {
+        "id": "demo07_2_e1",
+        "start": 3,
+        "end": 7,
+        "label": "拒食或喂养困难"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "task_id": "9",
+    "text": "诊断急性肾衰竭。",
+    "entities": [
+      {
+        "id": "demo09_2_e0",
+        "start": 2,
+        "end": 7,
+        "label": "器官衰竭"
+      }
+    ],
+    "relations": []
+  }
+]

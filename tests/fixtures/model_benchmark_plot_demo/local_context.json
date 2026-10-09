@@ -1,0 +1,14 @@
+{
+  "ours": {
+    "label": "专用模型（虚构记录）",
+    "deployment": "local",
+    "task_scope_id": "fictional_ner_re_v1",
+    "resource_budget_id": "fictional-same-hardware"
+  },
+  "baseline": {
+    "label": "本地大模型（虚构记录）",
+    "deployment": "local",
+    "task_scope_id": "fictional_ner_re_v1",
+    "resource_budget_id": "fictional-same-hardware"
+  }
+}

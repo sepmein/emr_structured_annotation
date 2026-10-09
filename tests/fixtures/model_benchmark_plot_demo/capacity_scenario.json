@@ -1,0 +1,13 @@
+{
+  "basis": "complete_records_per_second",
+  "reviewed_quality_and_full_text": true,
+  "sustained_rates": {
+    "ours": 10,
+    "baseline": 1
+  },
+  "hours_per_day": 8,
+  "planning_fraction": 0.7,
+  "records_per_hospital_day": 20000,
+  "peak_records_per_hospital_second": 0.5,
+  "assumptions": "全部为假设值，含模拟的质量/全文复核声明；未运行负载测试。持续吞吐另填，不来自图中串行测速。每天8小时、70%规划比例、每院每日2万条及高峰每秒0.5条仅演示公式，不代表任何医院。"
+}

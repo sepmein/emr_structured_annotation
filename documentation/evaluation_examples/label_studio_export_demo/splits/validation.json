@@ -1,0 +1,320 @@
+[
+  {
+    "task_id": "10",
+    "text": "肺炎支原体IgM阴性。",
+    "patient_id": "fictional-patient-10",
+    "entities": [
+      {
+        "id": "demo10_2_e0",
+        "start": 0,
+        "end": 5,
+        "label": "肺炎支原体",
+        "text": "肺炎支原体"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo10_2_e0",
+        "name": "test_result",
+        "values": [
+          "阴性"
+        ],
+        "export_values": [
+          "negative"
+        ]
+      },
+      {
+        "region_id": "demo10_2_e0",
+        "name": "specimen_type",
+        "values": [
+          "原文未说明"
+        ],
+        "export_values": [
+          "原文未说明"
+        ]
+      },
+      {
+        "region_id": "demo10_2_e0",
+        "name": "detection_method",
+        "values": [
+          "抗体IgM"
+        ],
+        "export_values": [
+          "抗体IgM"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1102"
+  },
+  {
+    "task_id": "17",
+    "text": "家中两人同时出现类似症状。",
+    "patient_id": "fictional-patient-17",
+    "entities": [
+      {
+        "id": "demo17_2_e0",
+        "start": 0,
+        "end": 12,
+        "label": "周围聚集性发病现象",
+        "text": "家中两人同时出现类似症状"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo17_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo17_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo17_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1172"
+  },
+  {
+    "task_id": "4",
+    "text": "无鼻翼煽动及三凹征。",
+    "patient_id": "fictional-patient-04",
+    "entities": [
+      {
+        "id": "demo04_2_e0",
+        "start": 1,
+        "end": 5,
+        "label": "鼻翼煽动",
+        "text": "鼻翼煽动"
+      },
+      {
+        "id": "demo04_2_e1",
+        "start": 6,
+        "end": 9,
+        "label": "三凹征",
+        "text": "三凹征"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo04_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确不存在"
+        ],
+        "export_values": [
+          "known_absent"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e1",
+        "name": "finding_context",
+        "values": [
+          "明确不存在"
+        ],
+        "export_values": [
+          "known_absent"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e1",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e1",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo04_2_e1",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1042"
+  },
+  {
+    "task_id": "8",
+    "text": "重度脱水，感染性休克。",
+    "patient_id": "fictional-patient-08",
+    "entities": [
+      {
+        "id": "demo08_2_e0",
+        "start": 0,
+        "end": 4,
+        "label": "脱水征",
+        "text": "重度脱水"
+      },
+      {
+        "id": "demo08_2_e1",
+        "start": 5,
+        "end": 10,
+        "label": "休克",
+        "text": "感染性休克"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo08_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e1",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e1",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e1",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo08_2_e1",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1082"
+  }
+]

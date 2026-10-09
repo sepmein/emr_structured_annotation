@@ -1,0 +1,35 @@
+{
+  "status": "offline_preflight_passed_no_requests",
+  "dataset_kind": "synthetic_demo",
+  "deployment": "external_api",
+  "unique_tasks": 20,
+  "request_settings": {
+    "model": "MODEL_NOT_SELECTED",
+    "stream": false,
+    "n": 1,
+    "max_tokens": 4096
+  },
+  "request_timeout_seconds": 120,
+  "repeats": 1,
+  "warmup": 0,
+  "task_scope": "ner_re_extraction_attributes_case_choices_excluded",
+  "endpoint_sha256": "9ef6330b8289a85656943f5dc871e94cd167df29147cb911ad0db48770944225",
+  "prompt_sha256": "08db3e2ad07bddefbec04048cd9c9bbfbb9004d3c70514589ae4cdaf05342a71",
+  "runner_sha256": "3114c2ed16d624c8589757997af27303c64b5e0e8529193188423b0c1eaafcd4",
+  "timing_loop_sha256": "53007c0e5e4b8698375c060a92c9da8b5e63d70177fbe5650ccfbdac1dfdd618",
+  "inputs": {
+    "tasks": {
+      "file": "reference.json",
+      "sha256": "6cc63ebe41a95b3ce76fed8a711518eecd26b99b020064250a4b2b9dd0f39738"
+    },
+    "label_config": {
+      "file": "pneumonia_config.xml",
+      "sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+    },
+    "guidance": {
+      "file": "label_dictionary_v2.1.1.md",
+      "sha256": "14795070481cbaa63770e477cf3cfdb3836b4cafd23d9e7ea4401b424953f8ea"
+    }
+  },
+  "created_at_utc": "2026-10-08T16:21:47.225566+00:00"
+}

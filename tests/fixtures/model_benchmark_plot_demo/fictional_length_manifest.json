@@ -1,0 +1,54 @@
+{
+  "synthetic_demo": true,
+  "note": "Fictional identifiers and length metadata only; no records were sent to any service.",
+  "tasks": [
+    {
+      "task_id": "fictional-01",
+      "text_chars": 100
+    },
+    {
+      "task_id": "fictional-02",
+      "text_chars": 250
+    },
+    {
+      "task_id": "fictional-03",
+      "text_chars": 500
+    },
+    {
+      "task_id": "fictional-04",
+      "text_chars": 800
+    },
+    {
+      "task_id": "fictional-05",
+      "text_chars": 1200
+    },
+    {
+      "task_id": "fictional-06",
+      "text_chars": 1800
+    },
+    {
+      "task_id": "fictional-07",
+      "text_chars": 2500
+    },
+    {
+      "task_id": "fictional-08",
+      "text_chars": 3500
+    },
+    {
+      "task_id": "fictional-09",
+      "text_chars": 5000
+    },
+    {
+      "task_id": "fictional-10",
+      "text_chars": 7000
+    },
+    {
+      "task_id": "fictional-11",
+      "text_chars": 9000
+    },
+    {
+      "task_id": "fictional-12",
+      "text_chars": 12000
+    }
+  ]
+}

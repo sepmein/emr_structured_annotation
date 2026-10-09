@@ -1,0 +1,142 @@
+[
+  {
+    "task_id": "1",
+    "text": "无发热。",
+    "patient_id": "fictional-patient-01",
+    "entities": [
+      {
+        "id": "demo01_2_e0",
+        "start": 1,
+        "end": 3,
+        "label": "发热",
+        "text": "发热"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo01_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确不存在"
+        ],
+        "export_values": [
+          "known_absent"
+        ]
+      },
+      {
+        "region_id": "demo01_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo01_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo01_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1012"
+  },
+  {
+    "task_id": "13",
+    "text": "今日精神欠佳，鼻导管吸氧。",
+    "patient_id": "fictional-patient-13",
+    "entities": [
+      {
+        "id": "demo13_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "时间表达",
+        "text": "今日"
+      }
+    ],
+    "attributes": [],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1132"
+  },
+  {
+    "task_id": "15",
+    "text": "休克指数升高。",
+    "patient_id": "fictional-patient-15",
+    "entities": [],
+    "attributes": [],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1152"
+  },
+  {
+    "task_id": "2",
+    "text": "体温38.5℃。",
+    "patient_id": "fictional-patient-02",
+    "entities": [
+      {
+        "id": "demo02_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "体温",
+        "text": "体温"
+      },
+      {
+        "id": "demo02_2_e1",
+        "start": 2,
+        "end": 6,
+        "label": "数值",
+        "text": "38.5"
+      },
+      {
+        "id": "demo02_2_e2",
+        "start": 6,
+        "end": 7,
+        "label": "单位",
+        "text": "℃"
+      }
+    ],
+    "attributes": [],
+    "relations": [
+      {
+        "from_id": "demo02_2_e0",
+        "to_id": "demo02_2_e1",
+        "type": "测量",
+        "direction": "right"
+      },
+      {
+        "from_id": "demo02_2_e0",
+        "to_id": "demo02_2_e2",
+        "type": "测量",
+        "direction": "right"
+      }
+    ],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1022"
+  }
+]

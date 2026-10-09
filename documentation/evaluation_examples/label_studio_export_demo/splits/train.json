@@ -1,0 +1,756 @@
+[
+  {
+    "task_id": "11",
+    "text": "CT提示右肺炎症。",
+    "patient_id": "fictional-patient-11",
+    "entities": [
+      {
+        "id": "demo11_2_e0",
+        "start": 4,
+        "end": 8,
+        "label": "肺炎影像",
+        "text": "右肺炎症"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo11_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo11_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo11_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo11_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1112"
+  },
+  {
+    "task_id": "12",
+    "text": "诊断社区获得性肺炎。",
+    "patient_id": "fictional-patient-12",
+    "entities": [
+      {
+        "id": "demo12_2_e0",
+        "start": 2,
+        "end": 9,
+        "label": "肺炎诊断",
+        "text": "社区获得性肺炎"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo12_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo12_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo12_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo12_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1122"
+  },
+  {
+    "task_id": "14",
+    "text": "畏寒，室温正常。",
+    "patient_id": "fictional-patient-14",
+    "entities": [],
+    "attributes": [],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1142"
+  },
+  {
+    "task_id": "16",
+    "text": "静息SpO2 96%。",
+    "patient_id": "fictional-patient-16",
+    "entities": [
+      {
+        "id": "demo16_2_e0",
+        "start": 2,
+        "end": 6,
+        "label": "静息状态指氧饱和度",
+        "text": "SpO2"
+      },
+      {
+        "id": "demo16_2_e1",
+        "start": 7,
+        "end": 9,
+        "label": "数值",
+        "text": "96"
+      },
+      {
+        "id": "demo16_2_e2",
+        "start": 9,
+        "end": 10,
+        "label": "单位",
+        "text": "%"
+      }
+    ],
+    "attributes": [],
+    "relations": [
+      {
+        "from_id": "demo16_2_e0",
+        "to_id": "demo16_2_e1",
+        "type": "测量",
+        "direction": "right"
+      },
+      {
+        "from_id": "demo16_2_e0",
+        "to_id": "demo16_2_e2",
+        "type": "测量",
+        "direction": "right"
+      }
+    ],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1162"
+  },
+  {
+    "task_id": "18",
+    "text": "母亲在禽类养殖场工作。",
+    "patient_id": "fictional-patient-18",
+    "entities": [
+      {
+        "id": "demo18_2_e0",
+        "start": 0,
+        "end": 10,
+        "label": "高风险职业史",
+        "text": "母亲在禽类养殖场工作"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo18_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo18_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo18_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1182"
+  },
+  {
+    "task_id": "19",
+    "text": "接触病死禽。",
+    "patient_id": "fictional-patient-19",
+    "entities": [
+      {
+        "id": "demo19_2_e0",
+        "start": 0,
+        "end": 5,
+        "label": "可疑动物或动物制品接触史",
+        "text": "接触病死禽"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo19_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo19_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo19_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1192"
+  },
+  {
+    "task_id": "20",
+    "text": "上月赴外省旅行。",
+    "patient_id": "fictional-patient-20",
+    "entities": [
+      {
+        "id": "demo20_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "时间表达",
+        "text": "上月"
+      },
+      {
+        "id": "demo20_2_e1",
+        "start": 2,
+        "end": 7,
+        "label": "境内外旅居史",
+        "text": "赴外省旅行"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo20_2_e1",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo20_2_e1",
+        "name": "temporality",
+        "values": [
+          "过去"
+        ],
+        "export_values": [
+          "historical"
+        ]
+      },
+      {
+        "region_id": "demo20_2_e1",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "from_id": "demo20_2_e1",
+        "to_id": "demo20_2_e0",
+        "type": "发生时间",
+        "direction": "right"
+      }
+    ],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1202"
+  },
+  {
+    "task_id": "3",
+    "text": "急性Ⅰ型呼吸衰竭，予有创机械通气。",
+    "patient_id": "fictional-patient-03",
+    "entities": [
+      {
+        "id": "demo03_2_e0",
+        "start": 0,
+        "end": 8,
+        "label": "呼吸衰竭",
+        "text": "急性Ⅰ型呼吸衰竭"
+      },
+      {
+        "id": "demo03_2_e1",
+        "start": 10,
+        "end": 16,
+        "label": "机械通气",
+        "text": "有创机械通气"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo03_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo03_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo03_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo03_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1032"
+  },
+  {
+    "task_id": "5",
+    "text": "湿啰音，伴哮鸣音。",
+    "patient_id": "fictional-patient-05",
+    "entities": [
+      {
+        "id": "demo05_2_e0",
+        "start": 5,
+        "end": 8,
+        "label": "喘鸣喘息",
+        "text": "哮鸣音"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo05_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo05_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo05_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo05_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1052"
+  },
+  {
+    "task_id": "6",
+    "text": "意识模糊，随后抽搐。",
+    "patient_id": "fictional-patient-06",
+    "entities": [
+      {
+        "id": "demo06_2_e0",
+        "start": 0,
+        "end": 4,
+        "label": "意识障碍",
+        "text": "意识模糊"
+      },
+      {
+        "id": "demo06_2_e1",
+        "start": 7,
+        "end": 9,
+        "label": "惊厥",
+        "text": "抽搐"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo06_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e1",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e1",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e1",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo06_2_e1",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1062"
+  },
+  {
+    "task_id": "7",
+    "text": "拒奶、吸吮无力。",
+    "patient_id": "fictional-patient-07",
+    "entities": [
+      {
+        "id": "demo07_2_e0",
+        "start": 0,
+        "end": 2,
+        "label": "拒食或喂养困难",
+        "text": "拒奶"
+      },
+      {
+        "id": "demo07_2_e1",
+        "start": 3,
+        "end": 7,
+        "label": "拒食或喂养困难",
+        "text": "吸吮无力"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo07_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e1",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e1",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e1",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo07_2_e1",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1072"
+  },
+  {
+    "task_id": "9",
+    "text": "诊断急性肾衰竭。",
+    "patient_id": "fictional-patient-09",
+    "entities": [
+      {
+        "id": "demo09_2_e0",
+        "start": 2,
+        "end": 7,
+        "label": "器官衰竭",
+        "text": "急性肾衰竭"
+      }
+    ],
+    "attributes": [
+      {
+        "region_id": "demo09_2_e0",
+        "name": "finding_context",
+        "values": [
+          "明确存在"
+        ],
+        "export_values": [
+          "known_present"
+        ]
+      },
+      {
+        "region_id": "demo09_2_e0",
+        "name": "temporality",
+        "values": [
+          "当前"
+        ],
+        "export_values": [
+          "current"
+        ]
+      },
+      {
+        "region_id": "demo09_2_e0",
+        "name": "conditional",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      },
+      {
+        "region_id": "demo09_2_e0",
+        "name": "hypothetical",
+        "values": [
+          "否"
+        ],
+        "export_values": [
+          "no"
+        ]
+      }
+    ],
+    "relations": [],
+    "case_choices": {
+      "case_decision": "待专业复核"
+    },
+    "source_annotation_id": "1092"
+  }
+]

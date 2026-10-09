@@ -2,6 +2,10 @@
 
 当前标注资料：[标注指南、标签字典与 HTML 阅读版](documentation/annotation/README.md)。
 
+模型实验准备：[正则与训练前后模型逐标签评价](documentation/model-evaluation.md)，配套[规则、工具与虚构演示结果](documentation/regex-baseline-comparison.md)（真实模型结果待测）。
+
+数据转换：[完整Label Studio导出到模型训练文件](documentation/label-studio-to-training.md)，含20条任务/40份标注的虚构样例及实际转换结果。
+
 ### —— 基于 Label Studio 的电子病历信息抽取数据集构建体系
 
 ---

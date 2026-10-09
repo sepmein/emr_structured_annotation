@@ -1,0 +1,852 @@
+{
+  "method": "regex",
+  "measurement_scope": "local_cpu_entity_extraction",
+  "notes": [
+    "Per-task latency includes regex matching, exclusions, overlap resolution and entity construction.",
+    "Input/output file I/O, validation, compilation and warmup are excluded.",
+    "Throughput uses total measured loop wall time, including timing bookkeeping.",
+    "These local timings are not directly comparable with model HTTP/queue latency.",
+    "Text length is recorded; regex scans the entire original text without truncation."
+  ],
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "device": "cpu",
+    "concurrency": 1
+  },
+  "unique_tasks": 20,
+  "repeats": 5,
+  "warmup_passes": 1,
+  "measured_task_runs": 100,
+  "successful_task_runs": 100,
+  "failed_task_runs": 0,
+  "p50_latency_ms": 0.02645,
+  "p95_latency_ms": 0.041249999999999995,
+  "mean_latency_ms": 0.027501,
+  "measured_wall_seconds": 0.0027956999999999995,
+  "successful_tasks_per_second": 35769.21701183962,
+  "samples": [
+    {
+      "task_id": "1",
+      "repeat": 0,
+      "latency_ms": 0.0203,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "2",
+      "repeat": 0,
+      "latency_ms": 0.029,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "3",
+      "repeat": 0,
+      "latency_ms": 0.0369,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "4",
+      "repeat": 0,
+      "latency_ms": 0.0282,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "5",
+      "repeat": 0,
+      "latency_ms": 0.0258,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "6",
+      "repeat": 0,
+      "latency_ms": 0.0278,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "7",
+      "repeat": 0,
+      "latency_ms": 0.0253,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "8",
+      "repeat": 0,
+      "latency_ms": 0.0288,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "9",
+      "repeat": 0,
+      "latency_ms": 0.0244,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "10",
+      "repeat": 0,
+      "latency_ms": 0.0271,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "11",
+      "repeat": 0,
+      "latency_ms": 0.0484,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "12",
+      "repeat": 0,
+      "latency_ms": 0.0272,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "13",
+      "repeat": 0,
+      "latency_ms": 0.0292,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "14",
+      "repeat": 0,
+      "latency_ms": 0.0229,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "15",
+      "repeat": 0,
+      "latency_ms": 0.024,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "16",
+      "repeat": 0,
+      "latency_ms": 0.0303,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "17",
+      "repeat": 0,
+      "latency_ms": 0.0325,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "18",
+      "repeat": 0,
+      "latency_ms": 0.0268,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "19",
+      "repeat": 0,
+      "latency_ms": 0.0227,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "20",
+      "repeat": 0,
+      "latency_ms": 0.0248,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "1",
+      "repeat": 1,
+      "latency_ms": 0.0201,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "2",
+      "repeat": 1,
+      "latency_ms": 0.0266,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "3",
+      "repeat": 1,
+      "latency_ms": 0.0357,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "4",
+      "repeat": 1,
+      "latency_ms": 0.0275,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "5",
+      "repeat": 1,
+      "latency_ms": 0.0257,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "6",
+      "repeat": 1,
+      "latency_ms": 0.0268,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "7",
+      "repeat": 1,
+      "latency_ms": 0.0251,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "8",
+      "repeat": 1,
+      "latency_ms": 0.0285,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "9",
+      "repeat": 1,
+      "latency_ms": 0.0247,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "10",
+      "repeat": 1,
+      "latency_ms": 0.0268,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "11",
+      "repeat": 1,
+      "latency_ms": 0.0272,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "12",
+      "repeat": 1,
+      "latency_ms": 0.0267,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "13",
+      "repeat": 1,
+      "latency_ms": 0.0288,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "14",
+      "repeat": 1,
+      "latency_ms": 0.023,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "15",
+      "repeat": 1,
+      "latency_ms": 0.023,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "16",
+      "repeat": 1,
+      "latency_ms": 0.0294,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "17",
+      "repeat": 1,
+      "latency_ms": 0.0331,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "18",
+      "repeat": 1,
+      "latency_ms": 0.0311,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "19",
+      "repeat": 1,
+      "latency_ms": 0.0244,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "20",
+      "repeat": 1,
+      "latency_ms": 0.0251,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "1",
+      "repeat": 2,
+      "latency_ms": 0.0205,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "2",
+      "repeat": 2,
+      "latency_ms": 0.0263,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "3",
+      "repeat": 2,
+      "latency_ms": 0.0423,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "4",
+      "repeat": 2,
+      "latency_ms": 0.0288,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "5",
+      "repeat": 2,
+      "latency_ms": 0.026,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "6",
+      "repeat": 2,
+      "latency_ms": 0.0275,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "7",
+      "repeat": 2,
+      "latency_ms": 0.0259,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "8",
+      "repeat": 2,
+      "latency_ms": 0.0292,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "9",
+      "repeat": 2,
+      "latency_ms": 0.0244,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "10",
+      "repeat": 2,
+      "latency_ms": 0.028,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "11",
+      "repeat": 2,
+      "latency_ms": 0.028,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "12",
+      "repeat": 2,
+      "latency_ms": 0.0273,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "13",
+      "repeat": 2,
+      "latency_ms": 0.0299,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "14",
+      "repeat": 2,
+      "latency_ms": 0.0233,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "15",
+      "repeat": 2,
+      "latency_ms": 0.0234,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "16",
+      "repeat": 2,
+      "latency_ms": 0.0301,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "17",
+      "repeat": 2,
+      "latency_ms": 0.0305,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "18",
+      "repeat": 2,
+      "latency_ms": 0.0277,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "19",
+      "repeat": 2,
+      "latency_ms": 0.0228,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "20",
+      "repeat": 2,
+      "latency_ms": 0.0243,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "1",
+      "repeat": 3,
+      "latency_ms": 0.0207,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "2",
+      "repeat": 3,
+      "latency_ms": 0.0267,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "3",
+      "repeat": 3,
+      "latency_ms": 0.0335,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "4",
+      "repeat": 3,
+      "latency_ms": 0.0262,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "5",
+      "repeat": 3,
+      "latency_ms": 0.0237,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "6",
+      "repeat": 3,
+      "latency_ms": 0.0262,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "7",
+      "repeat": 3,
+      "latency_ms": 0.0234,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "8",
+      "repeat": 3,
+      "latency_ms": 0.0272,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "9",
+      "repeat": 3,
+      "latency_ms": 0.0226,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "10",
+      "repeat": 3,
+      "latency_ms": 0.0258,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "11",
+      "repeat": 3,
+      "latency_ms": 0.0255,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "12",
+      "repeat": 3,
+      "latency_ms": 0.0248,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "13",
+      "repeat": 3,
+      "latency_ms": 0.0273,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "14",
+      "repeat": 3,
+      "latency_ms": 0.0219,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "15",
+      "repeat": 3,
+      "latency_ms": 0.0229,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "16",
+      "repeat": 3,
+      "latency_ms": 0.0278,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "17",
+      "repeat": 3,
+      "latency_ms": 0.0283,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "18",
+      "repeat": 3,
+      "latency_ms": 0.0254,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "19",
+      "repeat": 3,
+      "latency_ms": 0.0211,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "20",
+      "repeat": 3,
+      "latency_ms": 0.0223,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "1",
+      "repeat": 4,
+      "latency_ms": 0.0188,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "2",
+      "repeat": 4,
+      "latency_ms": 0.0239,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "3",
+      "repeat": 4,
+      "latency_ms": 0.0329,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "4",
+      "repeat": 4,
+      "latency_ms": 0.0262,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "5",
+      "repeat": 4,
+      "latency_ms": 0.0243,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "6",
+      "repeat": 4,
+      "latency_ms": 0.0412,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "7",
+      "repeat": 4,
+      "latency_ms": 0.0486,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "8",
+      "repeat": 4,
+      "latency_ms": 0.0363,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "9",
+      "repeat": 4,
+      "latency_ms": 0.0232,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "10",
+      "repeat": 4,
+      "latency_ms": 0.0257,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "11",
+      "repeat": 4,
+      "latency_ms": 0.026,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "12",
+      "repeat": 4,
+      "latency_ms": 0.0254,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "13",
+      "repeat": 4,
+      "latency_ms": 0.0272,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "14",
+      "repeat": 4,
+      "latency_ms": 0.0227,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "15",
+      "repeat": 4,
+      "latency_ms": 0.0422,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "16",
+      "repeat": 4,
+      "latency_ms": 0.0345,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "17",
+      "repeat": 4,
+      "latency_ms": 0.0334,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "18",
+      "repeat": 4,
+      "latency_ms": 0.0422,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "19",
+      "repeat": 4,
+      "latency_ms": 0.0217,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "20",
+      "repeat": 4,
+      "latency_ms": 0.0225,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    }
+  ],
+  "rules_version": "0.1.0",
+  "rules_status": "draft_requires_training_validation_review",
+  "compile_ms": 7.0136,
+  "dataset_kind": "synthetic_demo",
+  "measured_at_utc": "2026-10-08T15:52:27.652144+00:00",
+  "inputs": {
+    "tasks": {
+      "file": "reference.json",
+      "sha256": "6cc63ebe41a95b3ce76fed8a711518eecd26b99b020064250a4b2b9dd0f39738"
+    },
+    "rules": {
+      "file": "regex_entity_baseline_v0.1.0.json",
+      "sha256": "47ea11f12be517287306c4f78656951cbaec0d0508b56b5afa34e0ca3a99edfc"
+    },
+    "label_config": {
+      "file": "pneumonia_config.xml",
+      "sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+    }
+  },
+  "runner_sha256": "7201d2658b8c33208f8cae4bd96110b4bbcaa1779fb5329cc8ec09051de52fa6"
+}

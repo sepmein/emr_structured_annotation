@@ -1,0 +1,31 @@
+{
+  "protocol_version": 1,
+  "dataset_kind": "synthetic_demo",
+  "offset_unit_in": "codepoint",
+  "offset_unit_out": "python_codepoint",
+  "source_sha256": "3fc2dff1a2a20dff078201c81e93276d9ee8c4b245169d8a940f1a3899e8a4b5",
+  "label_config_sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc",
+  "export_tasks": 20,
+  "generated_at_utc": "2026-10-08T15:52:15.564005+00:00",
+  "notes": [
+    "The input export is never modified.",
+    "Predictions, cancelled and invalid annotations cannot be selected as reference.",
+    "Choice aliases normalize to display values; original per-region choice strings remain in export_values.",
+    "Case choices and attributes are preserved in reference.json but are not learned by the existing NER+RE dataset.",
+    "training_data.json covers all selected records and is not an independent test set.",
+    "No model training, tokenizer alignment, UI verification or medical adjudication is performed."
+  ],
+  "status": "reviewed_training_data_converted",
+  "included_tasks": 20,
+  "excluded_tasks": 0,
+  "no_entity_tasks": 2,
+  "entities": 28,
+  "relations_in_model_data": 5,
+  "split_tasks": {
+    "train": 12,
+    "validation": 4,
+    "test": 4
+  },
+  "runner_sha256": "a9c95a90607d527d8b0e4a65cac4fdbd99db58779adcb293706ac16c804db260",
+  "selection_sha256": "d08469784e077f40fa19f4cba37e5d4bda094461b36d625d3876da33148a3173"
+}

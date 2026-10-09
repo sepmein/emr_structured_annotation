@@ -1,0 +1,3973 @@
+[
+  {
+    "id": 1,
+    "data": {
+      "text": "无发热。",
+      "patient_id": "fictional-patient-01",
+      "patient_name": "",
+      "serial_number": "fictional-visit-01"
+    },
+    "annotations": [
+      {
+        "id": 1011,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo01_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 1,
+        "parent_prediction": null
+      },
+      {
+        "id": 1012,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo01_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 1,
+              "end": 3,
+              "text": "发热",
+              "labels": [
+                "发热"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo01_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_absent"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo01_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo01_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo01_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo01_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 1,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 2,
+    "data": {
+      "text": "体温38.5℃。",
+      "patient_id": "fictional-patient-02",
+      "patient_name": "",
+      "serial_number": "fictional-visit-02"
+    },
+    "annotations": [
+      {
+        "id": 1021,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo02_1_e0",
+            "from_name": "measure_entities",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "体温",
+              "labels": [
+                "体温"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo02_1_e1",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 6,
+              "text": "38.5",
+              "labels": [
+                "数值"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo02_1_e2",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 7,
+              "text": "℃",
+              "labels": [
+                "单位"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo02_1_e0",
+            "to_id": "demo02_1_e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "from_id": "demo02_1_e0",
+            "to_id": "demo02_1_e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "id": "demo02_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 2,
+        "parent_prediction": null
+      },
+      {
+        "id": 1022,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo02_2_e0",
+            "from_name": "measure_entities",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "体温",
+              "labels": [
+                "体温"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo02_2_e1",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 6,
+              "text": "38.5",
+              "labels": [
+                "数值"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo02_2_e2",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 7,
+              "text": "℃",
+              "labels": [
+                "单位"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo02_2_e0",
+            "to_id": "demo02_2_e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "from_id": "demo02_2_e0",
+            "to_id": "demo02_2_e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "id": "demo02_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 2,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 3,
+    "data": {
+      "text": "急性Ⅰ型呼吸衰竭，予有创机械通气。",
+      "patient_id": "fictional-patient-03",
+      "patient_name": "",
+      "serial_number": "fictional-visit-03"
+    },
+    "annotations": [
+      {
+        "id": 1031,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo03_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 8,
+              "text": "急性Ⅰ型呼吸衰竭",
+              "labels": [
+                "呼吸衰竭"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 16,
+              "text": "有创机械通气",
+              "labels": [
+                "机械通气"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 3,
+        "parent_prediction": null
+      },
+      {
+        "id": 1032,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo03_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 8,
+              "text": "急性Ⅰ型呼吸衰竭",
+              "labels": [
+                "呼吸衰竭"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 10,
+              "end": 16,
+              "text": "有创机械通气",
+              "labels": [
+                "机械通气"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo03_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 3,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 4,
+    "data": {
+      "text": "无鼻翼煽动及三凹征。",
+      "patient_id": "fictional-patient-04",
+      "patient_name": "",
+      "serial_number": "fictional-visit-04"
+    },
+    "annotations": [
+      {
+        "id": 1041,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo04_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 1,
+              "end": 5,
+              "text": "鼻翼煽动",
+              "labels": [
+                "鼻翼煽动"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_absent"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "三凹征",
+              "labels": [
+                "三凹征"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_absent"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 4,
+        "parent_prediction": null
+      },
+      {
+        "id": 1042,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo04_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 1,
+              "end": 5,
+              "text": "鼻翼煽动",
+              "labels": [
+                "鼻翼煽动"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_absent"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 6,
+              "end": 9,
+              "text": "三凹征",
+              "labels": [
+                "三凹征"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_absent"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo04_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 4,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 5,
+    "data": {
+      "text": "湿啰音，伴哮鸣音。",
+      "patient_id": "fictional-patient-05",
+      "patient_name": "",
+      "serial_number": "fictional-visit-05"
+    },
+    "annotations": [
+      {
+        "id": 1051,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo05_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "哮鸣音",
+              "labels": [
+                "喘鸣喘息"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 5,
+        "parent_prediction": null
+      },
+      {
+        "id": 1052,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo05_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 8,
+              "text": "哮鸣音",
+              "labels": [
+                "喘鸣喘息"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo05_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 5,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 6,
+    "data": {
+      "text": "意识模糊，随后抽搐。",
+      "patient_id": "fictional-patient-06",
+      "patient_name": "",
+      "serial_number": "fictional-visit-06"
+    },
+    "annotations": [
+      {
+        "id": 1061,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo06_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "意识模糊",
+              "labels": [
+                "意识障碍"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "抽搐",
+              "labels": [
+                "惊厥"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 6,
+        "parent_prediction": null
+      },
+      {
+        "id": 1062,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo06_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "意识模糊",
+              "labels": [
+                "意识障碍"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "抽搐",
+              "labels": [
+                "惊厥"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo06_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 6,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 7,
+    "data": {
+      "text": "拒奶、吸吮无力。",
+      "patient_id": "fictional-patient-07",
+      "patient_name": "",
+      "serial_number": "fictional-visit-07"
+    },
+    "annotations": [
+      {
+        "id": 1071,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo07_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "拒奶",
+              "labels": [
+                "拒食或喂养困难"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "吸吮无力",
+              "labels": [
+                "拒食或喂养困难"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 7,
+        "parent_prediction": null
+      },
+      {
+        "id": 1072,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo07_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "拒奶",
+              "labels": [
+                "拒食或喂养困难"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 3,
+              "end": 7,
+              "text": "吸吮无力",
+              "labels": [
+                "拒食或喂养困难"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo07_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 7,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 8,
+    "data": {
+      "text": "重度脱水，感染性休克。",
+      "patient_id": "fictional-patient-08",
+      "patient_name": "",
+      "serial_number": "fictional-visit-08"
+    },
+    "annotations": [
+      {
+        "id": 1081,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo08_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "重度脱水",
+              "labels": [
+                "脱水征"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 10,
+              "text": "感染性休克",
+              "labels": [
+                "休克"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 8,
+        "parent_prediction": null
+      },
+      {
+        "id": 1082,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo08_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 4,
+              "text": "重度脱水",
+              "labels": [
+                "脱水征"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e1",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 5,
+              "end": 10,
+              "text": "感染性休克",
+              "labels": [
+                "休克"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e1",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo08_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 8,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 9,
+    "data": {
+      "text": "诊断急性肾衰竭。",
+      "patient_id": "fictional-patient-09",
+      "patient_name": "",
+      "serial_number": "fictional-visit-09"
+    },
+    "annotations": [
+      {
+        "id": 1091,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo09_1_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 7,
+              "text": "急性肾衰竭",
+              "labels": [
+                "器官衰竭"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 9,
+        "parent_prediction": null
+      },
+      {
+        "id": 1092,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo09_2_e0",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 7,
+              "text": "急性肾衰竭",
+              "labels": [
+                "器官衰竭"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo09_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 9,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 10,
+    "data": {
+      "text": "肺炎支原体IgM阴性。",
+      "patient_id": "fictional-patient-10",
+      "patient_name": "",
+      "serial_number": "fictional-visit-10"
+    },
+    "annotations": [
+      {
+        "id": 1101,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo10_1_e0",
+            "from_name": "other_pathogen",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "肺炎支原体",
+              "labels": [
+                "肺炎支原体"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_1_e0",
+            "from_name": "test_result",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "negative"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_1_e0",
+            "from_name": "specimen_type",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "原文未说明"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_1_e0",
+            "from_name": "detection_method",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "抗体IgM"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 10,
+        "parent_prediction": null
+      },
+      {
+        "id": 1102,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo10_2_e0",
+            "from_name": "other_pathogen",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "肺炎支原体",
+              "labels": [
+                "肺炎支原体"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_2_e0",
+            "from_name": "test_result",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "negative"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_2_e0",
+            "from_name": "specimen_type",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "原文未说明"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_2_e0",
+            "from_name": "detection_method",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "抗体IgM"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo10_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 10,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 11,
+    "data": {
+      "text": "CT提示右肺炎症。",
+      "patient_id": "fictional-patient-11",
+      "patient_name": "",
+      "serial_number": "fictional-visit-11"
+    },
+    "annotations": [
+      {
+        "id": 1111,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo11_1_e0",
+            "from_name": "diagnosis_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "右肺炎症",
+              "labels": [
+                "肺炎影像"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 11,
+        "parent_prediction": null
+      },
+      {
+        "id": 1112,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo11_2_e0",
+            "from_name": "diagnosis_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 4,
+              "end": 8,
+              "text": "右肺炎症",
+              "labels": [
+                "肺炎影像"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo11_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 11,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 12,
+    "data": {
+      "text": "诊断社区获得性肺炎。",
+      "patient_id": "fictional-patient-12",
+      "patient_name": "",
+      "serial_number": "fictional-visit-12"
+    },
+    "annotations": [
+      {
+        "id": 1121,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo12_1_e0",
+            "from_name": "diagnosis_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 9,
+              "text": "社区获得性肺炎",
+              "labels": [
+                "肺炎诊断"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_1_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 12,
+        "parent_prediction": null
+      },
+      {
+        "id": 1122,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo12_2_e0",
+            "from_name": "diagnosis_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 9,
+              "text": "社区获得性肺炎",
+              "labels": [
+                "肺炎诊断"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_2_e0",
+            "from_name": "conditional",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo12_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 12,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 13,
+    "data": {
+      "text": "今日精神欠佳，鼻导管吸氧。",
+      "patient_id": "fictional-patient-13",
+      "patient_name": "",
+      "serial_number": "fictional-visit-13"
+    },
+    "annotations": [
+      {
+        "id": 1131,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo13_1_e0",
+            "from_name": "time_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "今日",
+              "labels": [
+                "时间表达"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo13_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 13,
+        "parent_prediction": null
+      },
+      {
+        "id": 1132,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo13_2_e0",
+            "from_name": "time_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "今日",
+              "labels": [
+                "时间表达"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo13_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 13,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 14,
+    "data": {
+      "text": "畏寒，室温正常。",
+      "patient_id": "fictional-patient-14",
+      "patient_name": "",
+      "serial_number": "fictional-visit-14"
+    },
+    "annotations": [
+      {
+        "id": 1141,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo14_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 14,
+        "parent_prediction": null
+      },
+      {
+        "id": 1142,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo14_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 14,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [
+      {
+        "model_version": "fictional-untrusted-prediction",
+        "result": [
+          {
+            "id": "fake-pred",
+            "from_name": "symptons_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "畏寒",
+              "labels": [
+                "发热"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 15,
+    "data": {
+      "text": "休克指数升高。",
+      "patient_id": "fictional-patient-15",
+      "patient_name": "",
+      "serial_number": "fictional-visit-15"
+    },
+    "annotations": [
+      {
+        "id": 1151,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo15_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 15,
+        "parent_prediction": null
+      },
+      {
+        "id": 1152,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo15_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 15,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 16,
+    "data": {
+      "text": "静息SpO2 96%。",
+      "patient_id": "fictional-patient-16",
+      "patient_name": "",
+      "serial_number": "fictional-visit-16"
+    },
+    "annotations": [
+      {
+        "id": 1161,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo16_1_e0",
+            "from_name": "measure_entities",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 6,
+              "text": "SpO2",
+              "labels": [
+                "静息状态指氧饱和度"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo16_1_e1",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "96",
+              "labels": [
+                "数值"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo16_1_e2",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 10,
+              "text": "%",
+              "labels": [
+                "单位"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo16_1_e0",
+            "to_id": "demo16_1_e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "from_id": "demo16_1_e0",
+            "to_id": "demo16_1_e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "id": "demo16_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 16,
+        "parent_prediction": null
+      },
+      {
+        "id": 1162,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo16_2_e0",
+            "from_name": "measure_entities",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 6,
+              "text": "SpO2",
+              "labels": [
+                "静息状态指氧饱和度"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo16_2_e1",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 7,
+              "end": 9,
+              "text": "96",
+              "labels": [
+                "数值"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo16_2_e2",
+            "from_name": "measure_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 9,
+              "end": 10,
+              "text": "%",
+              "labels": [
+                "单位"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo16_2_e0",
+            "to_id": "demo16_2_e1",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "from_id": "demo16_2_e0",
+            "to_id": "demo16_2_e2",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "测量"
+            ]
+          },
+          {
+            "id": "demo16_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 16,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 17,
+    "data": {
+      "text": "家中两人同时出现类似症状。",
+      "patient_id": "fictional-patient-17",
+      "patient_name": "",
+      "serial_number": "fictional-visit-17"
+    },
+    "annotations": [
+      {
+        "id": 1171,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo17_1_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 12,
+              "text": "家中两人同时出现类似症状",
+              "labels": [
+                "周围聚集性发病现象"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 17,
+        "parent_prediction": null
+      },
+      {
+        "id": 1172,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo17_2_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 12,
+              "text": "家中两人同时出现类似症状",
+              "labels": [
+                "周围聚集性发病现象"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo17_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 17,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 18,
+    "data": {
+      "text": "母亲在禽类养殖场工作。",
+      "patient_id": "fictional-patient-18",
+      "patient_name": "",
+      "serial_number": "fictional-visit-18"
+    },
+    "annotations": [
+      {
+        "id": 1181,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo18_1_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 10,
+              "text": "母亲在禽类养殖场工作",
+              "labels": [
+                "高风险职业史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 18,
+        "parent_prediction": null
+      },
+      {
+        "id": 1182,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo18_2_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 10,
+              "text": "母亲在禽类养殖场工作",
+              "labels": [
+                "高风险职业史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo18_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 18,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 19,
+    "data": {
+      "text": "接触病死禽。",
+      "patient_id": "fictional-patient-19",
+      "patient_name": "",
+      "serial_number": "fictional-visit-19"
+    },
+    "annotations": [
+      {
+        "id": 1191,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo19_1_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "接触病死禽",
+              "labels": [
+                "可疑动物或动物制品接触史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_1_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_1_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_1_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 19,
+        "parent_prediction": null
+      },
+      {
+        "id": 1192,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo19_2_e0",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 5,
+              "text": "接触病死禽",
+              "labels": [
+                "可疑动物或动物制品接触史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_2_e0",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_2_e0",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "current"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_2_e0",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo19_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 19,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  },
+  {
+    "id": 20,
+    "data": {
+      "text": "上月赴外省旅行。",
+      "patient_id": "fictional-patient-20",
+      "patient_name": "",
+      "serial_number": "fictional-visit-20"
+    },
+    "annotations": [
+      {
+        "id": 1201,
+        "completed_by": 9001,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo20_1_e0",
+            "from_name": "time_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "上月",
+              "labels": [
+                "时间表达"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_1_e1",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 7,
+              "text": "赴外省旅行",
+              "labels": [
+                "境内外旅居史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_1_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_1_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "historical"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_1_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo20_1_e1",
+            "to_id": "demo20_1_e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "发生时间"
+            ]
+          },
+          {
+            "id": "demo20_1_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 20,
+        "parent_prediction": null
+      },
+      {
+        "id": 1202,
+        "completed_by": 9002,
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2026-10-08T00:00:00Z",
+        "updated_at": "2026-10-08T00:00:00Z",
+        "lead_time": 12.0,
+        "result": [
+          {
+            "id": "demo20_2_e0",
+            "from_name": "time_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 0,
+              "end": 2,
+              "text": "上月",
+              "labels": [
+                "时间表达"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_2_e1",
+            "from_name": "epidemics_labels",
+            "to_name": "chief_complaint_text",
+            "type": "labels",
+            "value": {
+              "start": 2,
+              "end": 7,
+              "text": "赴外省旅行",
+              "labels": [
+                "境内外旅居史"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_2_e1",
+            "from_name": "finding_context",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "known_present"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_2_e1",
+            "from_name": "temporality",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "historical"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "id": "demo20_2_e1",
+            "from_name": "hypothetical",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "no"
+              ]
+            },
+            "origin": "manual"
+          },
+          {
+            "from_id": "demo20_2_e1",
+            "to_id": "demo20_2_e0",
+            "type": "relation",
+            "direction": "right",
+            "labels": [
+              "发生时间"
+            ]
+          },
+          {
+            "id": "demo20_2_case",
+            "from_name": "case_decision",
+            "to_name": "chief_complaint_text",
+            "type": "choices",
+            "value": {
+              "choices": [
+                "待专业复核"
+              ]
+            },
+            "origin": "manual"
+          }
+        ],
+        "task": 20,
+        "parent_prediction": null
+      }
+    ],
+    "predictions": [],
+    "meta": {
+      "synthetic_demo": true,
+      "case_choice_is_placeholder": true
+    },
+    "created_at": "2026-10-08T00:00:00Z",
+    "updated_at": "2026-10-08T00:00:00Z",
+    "project": 999999
+  }
+]

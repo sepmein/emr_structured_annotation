@@ -1,0 +1,852 @@
+{
+  "method": "regex",
+  "measurement_scope": "local_cpu_entity_extraction",
+  "notes": [
+    "Per-task latency includes regex matching, exclusions, overlap resolution and entity construction.",
+    "Input/output file I/O, validation, compilation and warmup are excluded.",
+    "Throughput uses total measured loop wall time, including timing bookkeeping.",
+    "These local timings are not directly comparable with model HTTP/queue latency.",
+    "Text length is recorded; regex scans the entire original text without truncation."
+  ],
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "device": "cpu",
+    "concurrency": 1
+  },
+  "unique_tasks": 20,
+  "repeats": 5,
+  "warmup_passes": 1,
+  "measured_task_runs": 100,
+  "successful_task_runs": 100,
+  "failed_task_runs": 0,
+  "p50_latency_ms": 0.02565,
+  "p95_latency_ms": 0.03060999999999999,
+  "mean_latency_ms": 0.025675,
+  "measured_wall_seconds": 0.0026085,
+  "successful_tasks_per_second": 38336.20854897451,
+  "samples": [
+    {
+      "task_id": "demo-01",
+      "repeat": 0,
+      "latency_ms": 0.0199,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-02",
+      "repeat": 0,
+      "latency_ms": 0.0265,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-03",
+      "repeat": 0,
+      "latency_ms": 0.0364,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-04",
+      "repeat": 0,
+      "latency_ms": 0.0272,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-05",
+      "repeat": 0,
+      "latency_ms": 0.0252,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-06",
+      "repeat": 0,
+      "latency_ms": 0.0269,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-07",
+      "repeat": 0,
+      "latency_ms": 0.0255,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-08",
+      "repeat": 0,
+      "latency_ms": 0.0278,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-09",
+      "repeat": 0,
+      "latency_ms": 0.0249,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-10",
+      "repeat": 0,
+      "latency_ms": 0.0262,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-11",
+      "repeat": 0,
+      "latency_ms": 0.0271,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-12",
+      "repeat": 0,
+      "latency_ms": 0.0261,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-13",
+      "repeat": 0,
+      "latency_ms": 0.0283,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-14",
+      "repeat": 0,
+      "latency_ms": 0.0224,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-15",
+      "repeat": 0,
+      "latency_ms": 0.0231,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-16",
+      "repeat": 0,
+      "latency_ms": 0.0297,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-17",
+      "repeat": 0,
+      "latency_ms": 0.0302,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-18",
+      "repeat": 0,
+      "latency_ms": 0.0262,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-19",
+      "repeat": 0,
+      "latency_ms": 0.0225,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-20",
+      "repeat": 0,
+      "latency_ms": 0.0235,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-01",
+      "repeat": 1,
+      "latency_ms": 0.0195,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-02",
+      "repeat": 1,
+      "latency_ms": 0.0266,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-03",
+      "repeat": 1,
+      "latency_ms": 0.0343,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-04",
+      "repeat": 1,
+      "latency_ms": 0.0265,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-05",
+      "repeat": 1,
+      "latency_ms": 0.0247,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-06",
+      "repeat": 1,
+      "latency_ms": 0.0268,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-07",
+      "repeat": 1,
+      "latency_ms": 0.025,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-08",
+      "repeat": 1,
+      "latency_ms": 0.0284,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-09",
+      "repeat": 1,
+      "latency_ms": 0.0239,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-10",
+      "repeat": 1,
+      "latency_ms": 0.03,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-11",
+      "repeat": 1,
+      "latency_ms": 0.0272,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-12",
+      "repeat": 1,
+      "latency_ms": 0.0263,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-13",
+      "repeat": 1,
+      "latency_ms": 0.0292,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-14",
+      "repeat": 1,
+      "latency_ms": 0.0227,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-15",
+      "repeat": 1,
+      "latency_ms": 0.023,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-16",
+      "repeat": 1,
+      "latency_ms": 0.0294,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-17",
+      "repeat": 1,
+      "latency_ms": 0.0295,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-18",
+      "repeat": 1,
+      "latency_ms": 0.0279,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-19",
+      "repeat": 1,
+      "latency_ms": 0.0226,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-20",
+      "repeat": 1,
+      "latency_ms": 0.0241,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-01",
+      "repeat": 2,
+      "latency_ms": 0.0203,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-02",
+      "repeat": 2,
+      "latency_ms": 0.026,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-03",
+      "repeat": 2,
+      "latency_ms": 0.0361,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-04",
+      "repeat": 2,
+      "latency_ms": 0.0281,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-05",
+      "repeat": 2,
+      "latency_ms": 0.0257,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-06",
+      "repeat": 2,
+      "latency_ms": 0.0269,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-07",
+      "repeat": 2,
+      "latency_ms": 0.0254,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-08",
+      "repeat": 2,
+      "latency_ms": 0.0281,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-09",
+      "repeat": 2,
+      "latency_ms": 0.0242,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-10",
+      "repeat": 2,
+      "latency_ms": 0.0269,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-11",
+      "repeat": 2,
+      "latency_ms": 0.0275,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-12",
+      "repeat": 2,
+      "latency_ms": 0.0267,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-13",
+      "repeat": 2,
+      "latency_ms": 0.029,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-14",
+      "repeat": 2,
+      "latency_ms": 0.0232,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-15",
+      "repeat": 2,
+      "latency_ms": 0.0249,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-16",
+      "repeat": 2,
+      "latency_ms": 0.0294,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-17",
+      "repeat": 2,
+      "latency_ms": 0.0305,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-18",
+      "repeat": 2,
+      "latency_ms": 0.0273,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-19",
+      "repeat": 2,
+      "latency_ms": 0.0226,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-20",
+      "repeat": 2,
+      "latency_ms": 0.0243,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-01",
+      "repeat": 3,
+      "latency_ms": 0.02,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-02",
+      "repeat": 3,
+      "latency_ms": 0.0256,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-03",
+      "repeat": 3,
+      "latency_ms": 0.0332,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-04",
+      "repeat": 3,
+      "latency_ms": 0.0259,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-05",
+      "repeat": 3,
+      "latency_ms": 0.0236,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-06",
+      "repeat": 3,
+      "latency_ms": 0.0245,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-07",
+      "repeat": 3,
+      "latency_ms": 0.0272,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-08",
+      "repeat": 3,
+      "latency_ms": 0.0266,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-09",
+      "repeat": 3,
+      "latency_ms": 0.0221,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-10",
+      "repeat": 3,
+      "latency_ms": 0.0247,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-11",
+      "repeat": 3,
+      "latency_ms": 0.0253,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-12",
+      "repeat": 3,
+      "latency_ms": 0.0242,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-13",
+      "repeat": 3,
+      "latency_ms": 0.0261,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-14",
+      "repeat": 3,
+      "latency_ms": 0.0209,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-15",
+      "repeat": 3,
+      "latency_ms": 0.0211,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-16",
+      "repeat": 3,
+      "latency_ms": 0.0269,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-17",
+      "repeat": 3,
+      "latency_ms": 0.0279,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-18",
+      "repeat": 3,
+      "latency_ms": 0.0256,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-19",
+      "repeat": 3,
+      "latency_ms": 0.0205,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-20",
+      "repeat": 3,
+      "latency_ms": 0.0218,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-01",
+      "repeat": 4,
+      "latency_ms": 0.0181,
+      "text_chars": 4,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-02",
+      "repeat": 4,
+      "latency_ms": 0.024,
+      "text_chars": 8,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-03",
+      "repeat": 4,
+      "latency_ms": 0.0327,
+      "text_chars": 17,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-04",
+      "repeat": 4,
+      "latency_ms": 0.0258,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-05",
+      "repeat": 4,
+      "latency_ms": 0.0236,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-06",
+      "repeat": 4,
+      "latency_ms": 0.0255,
+      "text_chars": 10,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-07",
+      "repeat": 4,
+      "latency_ms": 0.0234,
+      "text_chars": 8,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-08",
+      "repeat": 4,
+      "latency_ms": 0.0262,
+      "text_chars": 11,
+      "entity_count": 2,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-09",
+      "repeat": 4,
+      "latency_ms": 0.0226,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-10",
+      "repeat": 4,
+      "latency_ms": 0.0245,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-11",
+      "repeat": 4,
+      "latency_ms": 0.0249,
+      "text_chars": 9,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-12",
+      "repeat": 4,
+      "latency_ms": 0.024,
+      "text_chars": 10,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-13",
+      "repeat": 4,
+      "latency_ms": 0.0268,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-14",
+      "repeat": 4,
+      "latency_ms": 0.0212,
+      "text_chars": 8,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-15",
+      "repeat": 4,
+      "latency_ms": 0.0212,
+      "text_chars": 7,
+      "entity_count": 0,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-16",
+      "repeat": 4,
+      "latency_ms": 0.0275,
+      "text_chars": 11,
+      "entity_count": 3,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-17",
+      "repeat": 4,
+      "latency_ms": 0.0276,
+      "text_chars": 13,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-18",
+      "repeat": 4,
+      "latency_ms": 0.0247,
+      "text_chars": 11,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-19",
+      "repeat": 4,
+      "latency_ms": 0.0208,
+      "text_chars": 6,
+      "entity_count": 1,
+      "status": "ok"
+    },
+    {
+      "task_id": "demo-20",
+      "repeat": 4,
+      "latency_ms": 0.0224,
+      "text_chars": 8,
+      "entity_count": 1,
+      "status": "ok"
+    }
+  ],
+  "rules_version": "0.1.0",
+  "rules_status": "draft_requires_training_validation_review",
+  "compile_ms": 7.0003,
+  "dataset_kind": "synthetic_demo",
+  "measured_at_utc": "2026-10-08T15:19:57.999075+00:00",
+  "inputs": {
+    "tasks": {
+      "file": "regex_entity_demo.json",
+      "sha256": "35779bad0f3495e78c6aee0bc08d5f7072e9a9f96e8bb100bffb7bc691f93fcf"
+    },
+    "rules": {
+      "file": "regex_entity_baseline_v0.1.0.json",
+      "sha256": "47ea11f12be517287306c4f78656951cbaec0d0508b56b5afa34e0ca3a99edfc"
+    },
+    "label_config": {
+      "file": "pneumonia_config.xml",
+      "sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+    }
+  },
+  "runner_sha256": "7201d2658b8c33208f8cae4bd96110b4bbcaa1779fb5329cc8ec09051de52fa6"
+}

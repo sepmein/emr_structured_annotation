@@ -1,0 +1,1405 @@
+{
+  "protocol_version": 2,
+  "metric": "strict_character_span_and_entity_label",
+  "notes": [
+    "Inputs must use adjudicated reference entities and identical original text.",
+    "Patient separation, adjudication and model versions are not verified by this scorer.",
+    "Missing/failed predictions remain in the denominator and produce missed entities.",
+    "Labels with no reference examples have null recall/F1; false positives are retained.",
+    "Macro F1 averages only labels with reference examples; micro includes all false positives.",
+    "Mention presence measures label mentions, not clinical symptom existence or attributes.",
+    "Missing/failed negative cases count as errors in mention-presence accuracy."
+  ],
+  "label_groups": {
+    "symptons_labels": [
+      "发热",
+      "鼻翼煽动",
+      "呼吸衰竭",
+      "三凹征",
+      "喘鸣喘息",
+      "意识障碍",
+      "惊厥",
+      "拒食或喂养困难",
+      "脱水征",
+      "休克",
+      "器官衰竭",
+      "机械通气"
+    ],
+    "diagnosis_labels": [
+      "肺炎影像",
+      "肺炎诊断"
+    ],
+    "epidemics_labels": [
+      "周围聚集性发病现象",
+      "高风险职业史",
+      "可疑动物或动物制品接触史",
+      "可疑环境暴露史",
+      "境内外旅居史"
+    ],
+    "time_labels": [
+      "时间表达"
+    ],
+    "measure_entities": [
+      "体温",
+      "呼吸频率",
+      "静息状态指氧饱和度",
+      "动脉氧分压(PaO2)",
+      "吸氧浓度(FiO2)"
+    ],
+    "measure_labels": [
+      "数值",
+      "单位",
+      "比较符"
+    ],
+    "pathogen": [
+      "新冠病毒",
+      "流感病毒",
+      "呼吸道合胞病毒",
+      "腺病毒",
+      "人偏肺病毒",
+      "副流感病毒",
+      "普通冠状病毒",
+      "博卡病毒",
+      "鼻病毒",
+      "肠道病毒"
+    ],
+    "bacteria": [
+      "A族链球菌",
+      "百日咳鲍特菌",
+      "肺炎链球菌",
+      "流感嗜血杆菌",
+      "军团菌",
+      "肺炎克雷伯菌"
+    ],
+    "other_pathogen": [
+      "肺炎支原体",
+      "曲霉菌",
+      "隐球菌",
+      "鹦鹉热衣原体",
+      "肺炎衣原体"
+    ]
+  },
+  "runs": {
+    "regex": {
+      "coverage": {
+        "reference_tasks": 20,
+        "successful_prediction_tasks": 20,
+        "missing_prediction_tasks": 0,
+        "failed_prediction_tasks": 0,
+        "missing_task_ids": [],
+        "failed_task_ids": [],
+        "duplicate_prediction_entities": 0
+      },
+      "overall": {
+        "micro": {
+          "tp": 27,
+          "fp": 0,
+          "fn": 1,
+          "support": 28,
+          "predicted": 27,
+          "precision": 1.0,
+          "recall": 0.9642857142857143,
+          "f1": 0.9818181818181818,
+          "status": "evaluated"
+        },
+        "macro_f1_supported_labels": 0.9861111111111112,
+        "supported_label_count": 24,
+        "configured_label_count": 49
+      },
+      "groups": {
+        "symptons_labels": {
+          "micro": {
+            "tp": 13,
+            "fp": 0,
+            "fn": 0,
+            "support": 13,
+            "predicted": 13,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 12,
+          "configured_label_count": 12
+        },
+        "diagnosis_labels": {
+          "micro": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "support": 2,
+            "predicted": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 2,
+          "configured_label_count": 2
+        },
+        "epidemics_labels": {
+          "micro": {
+            "tp": 4,
+            "fp": 0,
+            "fn": 0,
+            "support": 4,
+            "predicted": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 4,
+          "configured_label_count": 5
+        },
+        "time_labels": {
+          "micro": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "support": 2,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 0.6666666666666666,
+          "supported_label_count": 1,
+          "configured_label_count": 1
+        },
+        "measure_entities": {
+          "micro": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "support": 2,
+            "predicted": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 2,
+          "configured_label_count": 5
+        },
+        "measure_labels": {
+          "micro": {
+            "tp": 4,
+            "fp": 0,
+            "fn": 0,
+            "support": 4,
+            "predicted": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 2,
+          "configured_label_count": 3
+        },
+        "pathogen": {
+          "micro": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "status": "no_reference_examples"
+          },
+          "macro_f1_supported_labels": null,
+          "supported_label_count": 0,
+          "configured_label_count": 10
+        },
+        "bacteria": {
+          "micro": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "support": 0,
+            "predicted": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "status": "no_reference_examples"
+          },
+          "macro_f1_supported_labels": null,
+          "supported_label_count": 0,
+          "configured_label_count": 6
+        },
+        "other_pathogen": {
+          "micro": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "support": 1,
+            "predicted": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "status": "evaluated"
+          },
+          "macro_f1_supported_labels": 1.0,
+          "supported_label_count": 1,
+          "configured_label_count": 5
+        }
+      },
+      "per_label": {
+        "发热": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "鼻翼煽动": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "呼吸衰竭": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "三凹征": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "喘鸣喘息": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "意识障碍": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "惊厥": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "拒食或喂养困难": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "脱水征": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "休克": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "器官衰竭": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "机械通气": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "肺炎影像": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "肺炎诊断": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "周围聚集性发病现象": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "高风险职业史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "可疑动物或动物制品接触史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "可疑环境暴露史": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "境内外旅居史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "时间表达": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "support": 2,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "status": "evaluated"
+        },
+        "体温": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "呼吸频率": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "静息状态指氧饱和度": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "动脉氧分压(PaO2)": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "吸氧浓度(FiO2)": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "数值": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "单位": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "support": 2,
+          "predicted": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "比较符": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "新冠病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "流感病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "呼吸道合胞病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "腺病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "人偏肺病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "副流感病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "普通冠状病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "博卡病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "鼻病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "肠道病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "A族链球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "百日咳鲍特菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "肺炎链球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "流感嗜血杆菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "军团菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "肺炎克雷伯菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "肺炎支原体": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "support": 1,
+          "predicted": 1,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "status": "evaluated"
+        },
+        "曲霉菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "隐球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "鹦鹉热衣原体": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        },
+        "肺炎衣原体": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "support": 0,
+          "predicted": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "status": "no_reference_examples"
+        }
+      },
+      "label_mention_presence": {
+        "发热": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "鼻翼煽动": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "呼吸衰竭": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "三凹征": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "喘鸣喘息": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "意识障碍": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "惊厥": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "拒食或喂养困难": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "脱水征": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "休克": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "器官衰竭": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "机械通气": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "肺炎影像": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "肺炎诊断": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "周围聚集性发病现象": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "高风险职业史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "可疑动物或动物制品接触史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "可疑环境暴露史": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "境内外旅居史": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "时间表达": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "tn": 18,
+          "failed_negative": 0,
+          "reference_positive_tasks": 2,
+          "total_tasks": 20,
+          "accuracy": 0.95,
+          "precision": 1.0,
+          "recall": 0.5
+        },
+        "体温": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "呼吸频率": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "静息状态指氧饱和度": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "动脉氧分压(PaO2)": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "吸氧浓度(FiO2)": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "数值": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 18,
+          "failed_negative": 0,
+          "reference_positive_tasks": 2,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "单位": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 18,
+          "failed_negative": 0,
+          "reference_positive_tasks": 2,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "比较符": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "新冠病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "流感病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "呼吸道合胞病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "腺病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "人偏肺病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "副流感病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "普通冠状病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "博卡病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "鼻病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "肠道病毒": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "A族链球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "百日咳鲍特菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "肺炎链球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "流感嗜血杆菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "军团菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "肺炎克雷伯菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "肺炎支原体": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "tn": 19,
+          "failed_negative": 0,
+          "reference_positive_tasks": 1,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "曲霉菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "隐球菌": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "鹦鹉热衣原体": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        },
+        "肺炎衣原体": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 20,
+          "failed_negative": 0,
+          "reference_positive_tasks": 0,
+          "total_tasks": 20,
+          "accuracy": 1.0,
+          "precision": null,
+          "recall": null
+        }
+      }
+    }
+  },
+  "comparisons": {},
+  "dataset_kind": "synthetic_demo",
+  "evaluator_sha256": "c7628ccfc4478f1d12f06d6b5202143b3bae7679d5a76138e4700c66b8aee5c8",
+  "inputs": {
+    "reference": {
+      "file": "regex_entity_demo.json",
+      "sha256": "35779bad0f3495e78c6aee0bc08d5f7072e9a9f96e8bb100bffb7bc691f93fcf"
+    },
+    "label_config": {
+      "file": "pneumonia_config.xml",
+      "sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc"
+    },
+    "regex": {
+      "file": "regex_predictions.json",
+      "sha256": "b65ab46f2ebd107a49e48300b719cfc9e0f7067c47cd66474188f5a727d3cfa0"
+    }
+  }
+}
