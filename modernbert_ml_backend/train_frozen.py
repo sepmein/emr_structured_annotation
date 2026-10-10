@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(1, str(ROOT))
-from scripts.frozen_training_data import prepare_frozen_training
+from emr_annotation.training_data.frozen import prepare_frozen_training
 
 
 def file_sha256(path):
@@ -44,8 +44,16 @@ def main(argv=None):
         train, validation, receipt = prepare_frozen_training(args.splits_dir, args.reference, args.label_config)
         receipt.update({"created_at_utc": datetime.now(timezone.utc).isoformat(),
                         "runner_sha256": file_sha256(Path(__file__)),
-                        "converter_sha256": file_sha256(ROOT / "scripts/frozen_training_data.py"),
-                        "trainer_sha256": file_sha256(ROOT / "modernbert_ml_backend/train_ner_re.py"),
+                        "converter_sha256": file_sha256(ROOT / "emr_annotation/training_data/frozen.py"),
+                        "shared_code_sha256": {path: file_sha256(ROOT / path) for path in (
+                            "emr_annotation/training_data/frozen.py", "emr_annotation/evaluation/entity_predictions.py",
+                            "emr_annotation/annotation/schema.py")},
+                        "trainer_sha256": file_sha256(ROOT / "modernbert_ml_backend/training/trainer.py"),
+                        "model_code_sha256": {path: file_sha256(ROOT / path) for path in (
+                            "modernbert_ml_backend/modeling/network.py", "modernbert_ml_backend/modeling/inference.py",
+                            "modernbert_ml_backend/training/trainer.py", "modernbert_ml_backend/label_studio_backend/service.py",
+                            "modernbert_ml_backend/backend/service.py",
+                            "modernbert_ml_backend/model.py", "modernbert_ml_backend/train_ner_re.py")},
                         "config_sha256": file_sha256(ROOT / "modernbert_ml_backend/config.py"),
                         "requested_settings": {"base_model": args.base_model, "epochs": args.epochs, "batch_size": args.batch_size, "max_length": args.max_length, "seed": args.seed}})
         args.output_dir.mkdir(parents=True, exist_ok=False)

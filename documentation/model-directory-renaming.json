@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-10",
+  "old_root": "bert-base-model",
+  "current_root": "pretrained_models",
+  "compatibility": "local hidden Windows Junction; recreate on workspace restore",
+  "files": {
+    "synthetic-modernbert-smoke-20261009-001/config.json": {
+      "size": 1302,
+      "sha256": "a02ed11aec4d335276dff0c014b5cb946f0c11bbfc1ff7a89ef26fe7ca78c4b0"
+    },
+    "synthetic-modernbert-smoke-20261009-001/model.safetensors": {
+      "size": 293616,
+      "sha256": "014fd4502597425f704ea5c3e2b16414f715a6a56881b012bf0dc7102e64c947"
+    },
+    "synthetic-modernbert-smoke-20261009-001/smoke_metadata.json": {
+      "size": 410,
+      "sha256": "3f5aa50ef6fb3902fb24ac1bffffb019c42c3a998a355a52f2e83a95893f33b1"
+    },
+    "synthetic-modernbert-smoke-20261009-001/tokenizer.json": {
+      "size": 2759,
+      "sha256": "3d7b8b1122b4c778e30c1838ca77686e531fc45297f31f77e2c467f426e34d98"
+    },
+    "synthetic-modernbert-smoke-20261009-001/tokenizer_config.json": {
+      "size": 204,
+      "sha256": "7055f59e95368642820bfa8f235b17d8b9dfed91eac1000bc85a2f6678050af8"
+    }
+  },
+  "hash_verification": "unchanged",
+  "real_model_validation": "not performed",
+  "validation": {
+    "offline_tests": 144,
+    "staged_source_sandbox_tests": 144,
+    "annotation_document_links": "passed",
+    "config_path_selection": "passed via isolated AST method execution without model loading",
+    "old_new_file_identity": "5 files passed",
+    "training_output_paths": "unchanged",
+    "demo_provenance_line_endings": "fixed with .gitattributes; synthetic source/config hashes updated"
+  }
+}

@@ -321,59 +321,157 @@
         </View>
       </View>
 
-      <View className="group tone-red">
-        <View className="group-head">
-          <Header value="症状及治疗" />
+      <!-- Preserve legacy control names for existing annotations; each group is single-selection. -->
+      <View className="entity-selector">
+        <View className="annotation-help" style="margin-bottom:6px;">
+          <Header size="6" value="各组内单选；框选前请取消其他组的标签选中，避免同一跨度重复标注。" />
         </View>
-        <View className="group-body">
-          <Labels name="symptons_labels" toName="chief_complaint_text" showInline="true">
-            <Label value="发热" background="#D32F2F" style="color:white;" />
-            <Label value="鼻翼煽动" background="#D32F2F" style="color:white;" />
-            <Label value="呼吸衰竭" background="#D32F2F" style="color:white;" />
-            <Label value="三凹征" background="#D32F2F" style="color:white;" />
-            <Label value="喘鸣喘息" background="#D32F2F" style="color:white;" />
-            <Label value="意识障碍" background="#D32F2F" style="color:white;" />
-            <Label value="惊厥" background="#D32F2F" style="color:white;" />
-            <Label value="拒食或喂养困难" background="#D32F2F" style="color:white;" />
-            <Label value="脱水征" background="#D32F2F" style="color:white;" />
-            <Label value="休克" background="#D32F2F" style="color:white;" />
-            <Label value="器官衰竭" background="#D32F2F" style="color:white;" />
-            <Label value="机械通气" background="#D32F2F" style="color:white;" />
-          </Labels>
+        <View className="group tone-red">
+          <View className="group-head">
+            <Header value="症状及治疗" />
+          </View>
+          <View className="group-body">
+            <Labels name="symptons_labels" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="发热" background="#D32F2F" style="color:white;" />
+              <Label value="鼻翼煽动" background="#D32F2F" style="color:white;" />
+              <Label value="呼吸衰竭" background="#D32F2F" style="color:white;" />
+              <Label value="三凹征" background="#D32F2F" style="color:white;" />
+              <Label value="喘鸣喘息" background="#D32F2F" style="color:white;" />
+              <Label value="意识障碍" background="#D32F2F" style="color:white;" />
+              <Label value="惊厥" background="#D32F2F" style="color:white;" />
+              <Label value="拒食或喂养困难" background="#D32F2F" style="color:white;" />
+              <Label value="脱水征" background="#D32F2F" style="color:white;" />
+              <Label value="休克" background="#D32F2F" style="color:white;" />
+              <Label value="器官衰竭" background="#D32F2F" style="color:white;" />
+              <Label value="机械通气" background="#D32F2F" style="color:white;" />
+            </Labels>
+          </View>
         </View>
-      </View>
 
-      <View className="group tone-orange">
-        <View className="group-head">
-          <Header value="诊断" />
+        <View className="group tone-orange">
+          <View className="group-head">
+            <Header value="诊断" />
+          </View>
+          <View className="group-body">
+            <Labels name="diagnosis_labels" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="肺炎影像" background="#EF6C00" style="color:white;" />
+              <Label value="肺炎诊断" background="#EF6C00" style="color:white;" />
+            </Labels>
+          </View>
         </View>
-        <View className="group-body">
-          <Labels name="diagnosis_labels" toName="chief_complaint_text" showInline="true">
-            <Label value="肺炎影像" background="#EF6C00" style="color:white;" />
-            <Label value="肺炎诊断" background="#EF6C00" style="color:white;" />
-          </Labels>
-        </View>
-      </View>
 
-      <View className="group tone-brown">
-        <View className="group-head">
-          <Header value="流行病学关联" />
+        <View className="group tone-brown">
+          <View className="group-head">
+            <Header value="流行病学关联" />
+          </View>
+          <View className="group-body">
+            <Labels name="epidemics_labels" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="周围聚集性发病现象" background="#6D4C41" style="color:white;" />
+              <Label value="高风险职业史" background="#6D4C41" style="color:white;" />
+              <Label value="可疑动物或动物制品接触史" background="#6D4C41" style="color:white;" />
+              <Label value="可疑环境暴露史" background="#6D4C41" style="color:white;" />
+              <Label value="境内外旅居史" background="#6D4C41" style="color:white;" />
+            </Labels>
+          </View>
         </View>
-        <View className="group-body">
-          <Labels name="epidemics_labels" toName="chief_complaint_text" showInline="true">
-            <Label value="周围聚集性发病现象" background="#6D4C41" style="color:white;" />
-            <Label value="高风险职业史" background="#6D4C41" style="color:white;" />
-            <Label value="可疑动物或动物制品接触史" background="#6D4C41" style="color:white;" />
-            <Label value="可疑环境暴露史" background="#6D4C41" style="color:white;" />
-            <Label value="境内外旅居史" background="#6D4C41" style="color:white;" />
-          </Labels>
+
+        <View className="group tone-cyan">
+          <View className="group-head">
+            <Header value="时间表达" />
+          </View>
+          <View className="group-body">
+            <Labels name="time_labels" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="时间表达" background="#00838F" style="color:white;" />
+            </Labels>
+            <View className="annotation-help" style="font-size:12px;line-height:1.6;color:#667085;">
+              <Header size="6" value="框选时间后，从实体连向时间；明确开始／结束才选对应关系。" />
+            </View>
+          </View>
+        </View>
+
+        <View className="modifier-panel">
+          <View className="modifier-head">
+            <Header value="检查与测量" />
+          </View>
+          <View className="modifier-row">
+            <View className="group tone-indigo">
+              <View className="group-head">
+                <Header value="测量实体" />
+              </View>
+              <View className="group-body">
+                <Labels name="measure_entities" toName="chief_complaint_text" choice="single" showInline="true">
+                  <Label value="体温" background="#303F9F" style="color:white;" />
+                  <Label value="呼吸频率" background="#303F9F" style="color:white;" />
+                  <Label value="静息状态指氧饱和度" background="#303F9F" style="color:white;" />
+                  <Label value="动脉氧分压(PaO2)" background="#303F9F" style="color:white;" />
+                  <Label value="吸氧浓度(FiO2)" background="#303F9F" style="color:white;" />
+                </Labels>
+              </View>
+            </View>
+            <View className="group tone-indigo-soft">
+              <View className="group-head">
+                <Header value="测量属性" />
+              </View>
+              <View className="group-body">
+                <Labels name="measure_labels" toName="chief_complaint_text" choice="single" showInline="true">
+                  <Label value="数值" background="#5C6BC0" style="color:white;" />
+                  <Label value="单位" background="#5C6BC0" style="color:white;" />
+                  <Label value="比较符" background="#5C6BC0" style="color:white;" />
+                </Labels>
+              </View>
+            </View>
+          </View>
+        </View>
+
+        <View className="group tone-pathogen">
+          <View className="group-head">
+            <Header value="病原检测" />
+          </View>
+          <View className="group-body">
+            <Labels name="pathogen" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="新冠病毒" background="#1565C0" style="color:white;" />
+              <Label value="流感病毒" background="#1565C0" style="color:white;" />
+              <Label value="呼吸道合胞病毒" background="#1565C0" style="color:white;" />
+              <Label value="腺病毒" background="#1565C0" style="color:white;" />
+              <Label value="人偏肺病毒" background="#1565C0" style="color:white;" />
+              <Label value="副流感病毒" background="#1565C0" style="color:white;" />
+              <Label value="普通冠状病毒" background="#1565C0" style="color:white;" />
+              <Label value="博卡病毒" background="#1565C0" style="color:white;" />
+              <Label value="鼻病毒" background="#1565C0" style="color:white;" />
+              <Label value="肠道病毒" background="#1565C0" style="color:white;" />
+            </Labels>
+
+            <View className="pathogen-sub">
+              <Header value="细菌" />
+            </View>
+            <Labels name="bacteria" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="A族链球菌" background="#2E7D32" style="color:white;" />
+              <Label value="百日咳鲍特菌" background="#2E7D32" style="color:white;" />
+              <Label value="肺炎链球菌" background="#2E7D32" style="color:white;" />
+              <Label value="流感嗜血杆菌" background="#2E7D32" style="color:white;" />
+              <Label value="军团菌" background="#2E7D32" style="color:white;" />
+              <Label value="肺炎克雷伯菌" background="#2E7D32" style="color:white;" />
+            </Labels>
+
+            <View className="pathogen-sub">
+              <Header value="其他病原体" />
+            </View>
+            <Labels name="other_pathogen" toName="chief_complaint_text" choice="single" showInline="true">
+              <Label value="肺炎支原体" background="#827717" style="color:white;" />
+              <Label value="曲霉菌" background="#827717" style="color:white;" />
+              <Label value="隐球菌" background="#827717" style="color:white;" />
+              <Label value="鹦鹉热衣原体" background="#827717" style="color:white;" />
+              <Label value="肺炎衣原体" background="#827717" style="color:white;" />
+            </Labels>
+
+          </View>
         </View>
       </View>
 
       <!-- concept 由实体 Labels 表达；五轴属性通过相同 region id 与实体关联。
            region-selected 仅用 whenLabelValue 筛选，避免不同版本对 whenTagName 的解释差异。 -->
       <View className="group tone-slate" visibleWhen="region-selected"
-        whenLabelValue="发热,鼻翼煽动,呼吸衰竭,三凹征,喘鸣喘息,意识障碍,惊厥,拒食或喂养困难,脱水征,休克,器官衰竭,肺炎影像,肺炎诊断,周围聚集性发病现象,高风险职业史,可疑动物或动物制品接触史,可疑环境暴露史,境内外旅居史,时间表达">
+        whenLabelValue="发热,鼻翼煽动,呼吸衰竭,三凹征,喘鸣喘息,意识障碍,惊厥,拒食或喂养困难,脱水征,休克,器官衰竭,肺炎影像,肺炎诊断,周围聚集性发病现象,高风险职业史,可疑动物或动物制品接触史,可疑环境暴露史,境内外旅居史">
         <View className="group-head">
           <Header value="所选实体属性 · 症状／诊断／流行病学关联" />
         </View>
@@ -461,147 +559,62 @@
               <Choice value="无法判断" alias="unknown" />
             </Choices>
           </View>
-          <View style="border-top:1px solid #e6edf5;margin-top:6px;padding-top:6px;">
-            <Header value="时间表达实体＋关系 · 具体何时发生、持续多久？" />
-            <Labels name="time_labels" toName="chief_complaint_text" showInline="true">
-              <Label value="时间表达" background="#00838F" style="color:white;" />
-            </Labels>
-            <View className="annotation-help" style="font-size:12px;line-height:1.6;color:#667085;">
-              <Header size="6" value="框选时间后，从实体连向时间；明确开始／结束才选对应关系。" />
-            </View>
-          </View>
         </View>
       </View>
 
-      <View className="modifier-panel">
-        <View className="modifier-head">
-          <Header value="检查与测量" />
+      <View className="detect-block" visibleWhen="region-selected"
+        whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
+        <View className="pathogen-sub">
+          <Header value="检验结果" />
         </View>
-        <View className="modifier-row">
-          <View className="group tone-indigo">
-            <View className="group-head">
-              <Header value="测量实体" />
-            </View>
-            <View className="group-body">
-              <Labels name="measure_entities" toName="chief_complaint_text" showInline="true">
-                <Label value="体温" background="#303F9F" style="color:white;" />
-                <Label value="呼吸频率" background="#303F9F" style="color:white;" />
-                <Label value="静息状态指氧饱和度" background="#303F9F" style="color:white;" />
-                <Label value="动脉氧分压(PaO2)" background="#303F9F" style="color:white;" />
-                <Label value="吸氧浓度(FiO2)" background="#303F9F" style="color:white;" />
-              </Labels>
-            </View>
-          </View>
-          <View className="group tone-indigo-soft">
-            <View className="group-head">
-              <Header value="测量属性" />
-            </View>
-            <View className="group-body">
-              <Labels name="measure_labels" toName="chief_complaint_text" showInline="true">
-                <Label value="数值" background="#5C6BC0" style="color:white;" />
-                <Label value="单位" background="#5C6BC0" style="color:white;" />
-                <Label value="比较符" background="#5C6BC0" style="color:white;" />
-              </Labels>
-            </View>
-          </View>
+        <Choices name="test_result" toName="chief_complaint_text" choice="single-radio"
+          showInline="true" perRegion="true" visibleWhen="region-selected"
+          whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
+          <Choice value="阳性" alias="positive" />
+          <Choice value="阴性" alias="negative" />
+          <Choice value="无法判断" alias="unknown" />
+        </Choices>
+
+        <View className="pathogen-sub">
+          <Header value="所选病原体 · 检测属性" />
         </View>
-      </View>
-
-      <View className="group tone-pathogen">
-        <View className="group-head">
-          <Header value="病原检测" />
+        <View className="annotation-help">
+          <Header size="6" value="仅按本次检测样本选择；没有写明选“原文未说明”。" />
         </View>
-        <View className="group-body">
-          <Labels name="pathogen" toName="chief_complaint_text" showInline="true">
-            <Label value="新冠病毒" background="#1565C0" style="color:white;" />
-            <Label value="流感病毒" background="#1565C0" style="color:white;" />
-            <Label value="呼吸道合胞病毒" background="#1565C0" style="color:white;" />
-            <Label value="腺病毒" background="#1565C0" style="color:white;" />
-            <Label value="人偏肺病毒" background="#1565C0" style="color:white;" />
-            <Label value="副流感病毒" background="#1565C0" style="color:white;" />
-            <Label value="普通冠状病毒" background="#1565C0" style="color:white;" />
-            <Label value="博卡病毒" background="#1565C0" style="color:white;" />
-            <Label value="鼻病毒" background="#1565C0" style="color:white;" />
-            <Label value="肠道病毒" background="#1565C0" style="color:white;" />
-          </Labels>
-
-          <View className="pathogen-sub">
-            <Header value="细菌" />
-          </View>
-          <Labels name="bacteria" toName="chief_complaint_text" showInline="true">
-            <Label value="A族链球菌" background="#2E7D32" style="color:white;" />
-            <Label value="百日咳鲍特菌" background="#2E7D32" style="color:white;" />
-            <Label value="肺炎链球菌" background="#2E7D32" style="color:white;" />
-            <Label value="流感嗜血杆菌" background="#2E7D32" style="color:white;" />
-            <Label value="军团菌" background="#2E7D32" style="color:white;" />
-            <Label value="肺炎克雷伯菌" background="#2E7D32" style="color:white;" />
-          </Labels>
-
-          <View className="pathogen-sub">
-            <Header value="其他病原体" />
-          </View>
-          <Labels name="other_pathogen" toName="chief_complaint_text" showInline="true">
-            <Label value="肺炎支原体" background="#827717" style="color:white;" />
-            <Label value="曲霉菌" background="#827717" style="color:white;" />
-            <Label value="隐球菌" background="#827717" style="color:white;" />
-            <Label value="鹦鹉热衣原体" background="#827717" style="color:white;" />
-            <Label value="肺炎衣原体" background="#827717" style="color:white;" />
-          </Labels>
-
-          <View className="detect-block" visibleWhen="region-selected"
-            whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
-            <View className="pathogen-sub">
-              <Header value="检验结果" />
-            </View>
-            <Choices name="test_result" toName="chief_complaint_text" choice="single-radio"
-              showInline="true" perRegion="true" visibleWhen="region-selected"
-              whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
-              <Choice value="阳性" alias="positive" />
-              <Choice value="阴性" alias="negative" />
-              <Choice value="无法判断" alias="unknown" />
-            </Choices>
-
-            <View className="pathogen-sub">
-              <Header value="所选病原体 · 检测属性" />
-            </View>
-            <View className="annotation-help">
-              <Header size="6" value="仅按本次检测样本选择；没有写明选“原文未说明”。" />
-            </View>
-            <View className="pathogen-sub">
-              <Header value="标本类型" />
-            </View>
-            <Choices name="specimen_type" toName="chief_complaint_text" choice="single-radio"
-              showInline="true" perRegion="true" visibleWhen="region-selected"
-              whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
-              <Choice value="口咽/鼻咽拭子" />
-              <Choice value="深部痰液" />
-              <Choice value="气管吸取物" />
-              <Choice value="肺泡灌洗液" />
-              <Choice value="胸腔穿刺液" />
-              <Choice value="血液(发病7天急性期样本)" />
-              <Choice value="血液(发病间隔2到4周样本)" />
-              <Choice value="血液(发病间隔6到8周样本)" />
-              <Choice value="血液(未说明采样间隔)" />
-              <Choice value="痰" />
-              <Choice value="尿" />
-              <Choice value="原文未说明" />
-            </Choices>
-            <View className="pathogen-sub">
-              <Header value="检测方式" />
-            </View>
-            <Choices name="detection_method" toName="chief_complaint_text" choice="single-radio"
-              showInline="true" perRegion="true" visibleWhen="region-selected"
-              whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
-              <Choice value="核酸检测" />
-              <Choice value="mNGS" />
-              <Choice value="抗原快速检测" />
-              <Choice value="抗体IgM" />
-              <Choice value="抗体滴度/双份" />
-              <Choice value="培养" />
-              <Choice value="原文未说明" />
-            </Choices>
-          </View>
+        <View className="pathogen-sub">
+          <Header value="标本类型" />
         </View>
+        <Choices name="specimen_type" toName="chief_complaint_text" choice="single-radio"
+          showInline="true" perRegion="true" visibleWhen="region-selected"
+          whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
+          <Choice value="口咽/鼻咽拭子" />
+          <Choice value="深部痰液" />
+          <Choice value="气管吸取物" />
+          <Choice value="肺泡灌洗液" />
+          <Choice value="胸腔穿刺液" />
+          <Choice value="血液(发病7天急性期样本)" />
+          <Choice value="血液(发病间隔2到4周样本)" />
+          <Choice value="血液(发病间隔6到8周样本)" />
+          <Choice value="血液(未说明采样间隔)" />
+          <Choice value="痰" />
+          <Choice value="尿" />
+          <Choice value="原文未说明" />
+        </Choices>
+        <View className="pathogen-sub">
+          <Header value="检测方式" />
+        </View>
+        <Choices name="detection_method" toName="chief_complaint_text" choice="single-radio"
+          showInline="true" perRegion="true" visibleWhen="region-selected"
+          whenLabelValue="新冠病毒,流感病毒,呼吸道合胞病毒,腺病毒,人偏肺病毒,副流感病毒,普通冠状病毒,博卡病毒,鼻病毒,肠道病毒,A族链球菌,百日咳鲍特菌,肺炎链球菌,流感嗜血杆菌,军团菌,肺炎克雷伯菌,肺炎支原体,曲霉菌,隐球菌,鹦鹉热衣原体,肺炎衣原体">
+          <Choice value="核酸检测" />
+          <Choice value="mNGS" />
+          <Choice value="抗原快速检测" />
+          <Choice value="抗体IgM" />
+          <Choice value="抗体IgG" />
+          <Choice value="抗体滴度/双份" />
+          <Choice value="培养" />
+          <Choice value="原文未说明" />
+        </Choices>
       </View>
 
       <View className="relation-card">

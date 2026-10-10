@@ -1,6 +1,6 @@
 {
-  "source_sha256": "3fc2dff1a2a20dff078201c81e93276d9ee8c4b245169d8a940f1a3899e8a4b5",
-  "label_config_sha256": "1327b87d47bc1f49d1985cae2f16473842543c7d1ae58781a75bf44d36b3d7cc",
+  "source_sha256": "7dc904694e48b7e5c28c3d50fd0685aca96273b9fc0d259be32ab7bd33260f4d",
+  "label_config_sha256": "6c9ccac03372c6335bc4ab7a152cfe8dbf10970342e95fdbf3f6ed97911ed854",
   "offset_unit_in": "codepoint",
   "dataset_kind": "synthetic_demo",
   "selections": [

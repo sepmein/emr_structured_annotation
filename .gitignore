@@ -29,6 +29,7 @@ wheels/
 # Model weights and checkpoints
 models/
 bert-base-model/
+pretrained_models/
 *.safetensors
 *.pt
 *.pth

@@ -11,6 +11,8 @@
 
 配套的 Label Studio 页面配置为 [pneumonia_config.xml](../../label_studio/pneumonia_config.xml)。
 
+默认配置保留旧实体控件名，各组内单选，兼容已有标注；病例结论和属性按各自字段单选。新项目可采用[跨分组单选版](../../label_studio/pneumonia_config.global-single.xml)。操作与配置选择见[单选配置与旧项目兼容说明](label-studio-single-selection.md)。
+
 ## 目录
 
 ```text
@@ -26,7 +28,7 @@ annotation/
 └── archive/layout-preview/            # 旧排版样稿及设计截图
 ```
 
-[历史指南、字典、验证报告和修订记录](../../annotation_agent_workflow/guides/)保留在原目录，以便追溯历史试标与裁决依据。
+[历史指南、字典、验证报告和修订记录](../../annotation_agent_workflow/guides)保留在原目录，以便追溯历史试标与裁决依据。
 
 ## 维护
 

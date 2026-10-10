@@ -126,7 +126,7 @@ class Config:
             self._tokenizer = None
         self.model_scope = model_scope
         self.model_path = os.path.join(
-            self.root_dir, "bert-base-model", self.base_model_name
+            self.root_dir, "pretrained_models", self.base_model_name
         )
         if self.model_scope:
             self.output_dir = os.path.join(

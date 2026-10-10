@@ -9,13 +9,13 @@ import unittest
 from unittest.mock import patch
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-from scripts.benchmark_chat_model import (
+from emr_annotation.evaluation.benchmark_chat_model import (
     ChatAdapter, make_chat_transport, make_prompt, main, parse_chat_response,
     reported_usage, run_chat_benchmark,
 )
-from scripts.benchmark_model_service import RequestFailure, read_targets
-from scripts.compare_model_benchmarks import summarize
-from scripts.evaluate_entity_predictions import build_report, normalize_records
+from emr_annotation.evaluation.benchmark_model_service import RequestFailure, read_targets
+from emr_annotation.evaluation.compare_model_benchmarks import summarize
+from emr_annotation.evaluation.entity_predictions import build_report, normalize_records
 
 
 GROUPS = {"symptons_labels": ["发热"], "time_labels": ["时间表达"]}

@@ -1,0 +1,434 @@
+{
+  "stage": 3,
+  "scope": "ModernBERT implementation separation; not pinned-runtime service acceptance",
+  "namespace": "script-style modeling / backend / training; config remains top-level",
+  "source_snapshots": [
+    {
+      "path": "modernbert_ml_backend/model.py",
+      "sha256_before": "fd5d595b6d385ced67400e6d36a8faf1182f162abc27c053d6232ec42ac729d7",
+      "bytes": 46967
+    },
+    {
+      "path": "modernbert_ml_backend/train_ner_re.py",
+      "sha256_before": "21a36291fd717ef862e6a13ad8090996c0426086af5e6ccccb0517ca6e46e402",
+      "bytes": 37199
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "modernbert_ml_backend/config.py",
+      "sha256_before": "ecd5cc355d0bf8a863308b2f7c0e78b01a3f0214c6d1340233a0dfb5f0cf6c53",
+      "bytes": 6325,
+      "sha256_after": "ecd5cc355d0bf8a863308b2f7c0e78b01a3f0214c6d1340233a0dfb5f0cf6c53"
+    },
+    {
+      "path": "modernbert_ml_backend/_wsgi.py",
+      "sha256_before": "2c4f1ee5afcc0c6b964dea61033c4b0fe1125c8169ac7fd54f5cbf037d9cada5",
+      "bytes": 3696,
+      "sha256_after": "2c4f1ee5afcc0c6b964dea61033c4b0fe1125c8169ac7fd54f5cbf037d9cada5"
+    },
+    {
+      "path": "modernbert_ml_backend/requirements.txt",
+      "sha256_before": "5b6f35e95416e67654f57e6b486520d9e83fef810b9fc172956edac240192c33",
+      "bytes": 560,
+      "sha256_after": "5b6f35e95416e67654f57e6b486520d9e83fef810b9fc172956edac240192c33"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/__init__.py",
+      "sha256_before": "250b9fecc2cc46e54e349dbd72c951401df9db5abcbefd026bb0dc2c34286208",
+      "bytes": 147,
+      "sha256_after": "250b9fecc2cc46e54e349dbd72c951401df9db5abcbefd026bb0dc2c34286208"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/api.py",
+      "sha256_before": "160215833ce9a352e6cd394f6530a9d052b3969532c6f94343531b965eb95fc4",
+      "bytes": 6439,
+      "sha256_after": "160215833ce9a352e6cd394f6530a9d052b3969532c6f94343531b965eb95fc4"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/cache.py",
+      "sha256_before": "12b34930457331d86b7a385b9281ddedf7a6539a8924724b8cee7bd31b62db87",
+      "bytes": 3730,
+      "sha256_after": "12b34930457331d86b7a385b9281ddedf7a6539a8924724b8cee7bd31b62db87"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/exceptions.py",
+      "sha256_before": "c63aaca46d7966c9cae20036218b2a214a32e95ffd2a2ddc3fc7e936adcdfa65",
+      "bytes": 1899,
+      "sha256_after": "c63aaca46d7966c9cae20036218b2a214a32e95ffd2a2ddc3fc7e936adcdfa65"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/model.py",
+      "sha256_before": "2839aecec3c14aacd10d0ec554d05d0d76c56d5d4159cf4d4c58583651b72640",
+      "bytes": 19386,
+      "sha256_after": "2839aecec3c14aacd10d0ec554d05d0d76c56d5d4159cf4d4c58583651b72640"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/response.py",
+      "sha256_before": "0750c224f4d9464d803984f1ffebe4ab49ab052bb26e4957b9d09b530ff6c41e",
+      "bytes": 1310,
+      "sha256_after": "0750c224f4d9464d803984f1ffebe4ab49ab052bb26e4957b9d09b530ff6c41e"
+    },
+    {
+      "path": "modernbert_ml_backend/label_studio_ml/utils.py",
+      "sha256_before": "78cafaf98f9ed2cdc89c384e16e48482038a4c664a391445e0aa2c8da09ea217",
+      "bytes": 5622,
+      "sha256_after": "78cafaf98f9ed2cdc89c384e16e48482038a4c664a391445e0aa2c8da09ea217"
+    },
+    {
+      "path": "bert-base-model/synthetic-modernbert-smoke-20261009-001/config.json",
+      "sha256_before": "a02ed11aec4d335276dff0c014b5cb946f0c11bbfc1ff7a89ef26fe7ca78c4b0",
+      "bytes": 1302,
+      "sha256_after": "a02ed11aec4d335276dff0c014b5cb946f0c11bbfc1ff7a89ef26fe7ca78c4b0"
+    },
+    {
+      "path": "bert-base-model/synthetic-modernbert-smoke-20261009-001/model.safetensors",
+      "sha256_before": "014fd4502597425f704ea5c3e2b16414f715a6a56881b012bf0dc7102e64c947",
+      "bytes": 293616,
+      "sha256_after": "014fd4502597425f704ea5c3e2b16414f715a6a56881b012bf0dc7102e64c947"
+    },
+    {
+      "path": "bert-base-model/synthetic-modernbert-smoke-20261009-001/smoke_metadata.json",
+      "sha256_before": "3f5aa50ef6fb3902fb24ac1bffffb019c42c3a998a355a52f2e83a95893f33b1",
+      "bytes": 410,
+      "sha256_after": "3f5aa50ef6fb3902fb24ac1bffffb019c42c3a998a355a52f2e83a95893f33b1"
+    },
+    {
+      "path": "bert-base-model/synthetic-modernbert-smoke-20261009-001/tokenizer.json",
+      "sha256_before": "3d7b8b1122b4c778e30c1838ca77686e531fc45297f31f77e2c467f426e34d98",
+      "bytes": 2759,
+      "sha256_after": "3d7b8b1122b4c778e30c1838ca77686e531fc45297f31f77e2c467f426e34d98"
+    },
+    {
+      "path": "bert-base-model/synthetic-modernbert-smoke-20261009-001/tokenizer_config.json",
+      "sha256_before": "7055f59e95368642820bfa8f235b17d8b9dfed91eac1000bc85a2f6678050af8",
+      "bytes": 204,
+      "sha256_after": "7055f59e95368642820bfa8f235b17d8b9dfed91eac1000bc85a2f6678050af8"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/adapter_config.json",
+      "sha256_before": "6760fdf7d44ea17b671ed69578e133e6db8cf933b0011f5fe087d55d62762131",
+      "bytes": 1169,
+      "sha256_after": "6760fdf7d44ea17b671ed69578e133e6db8cf933b0011f5fe087d55d62762131"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/adapter_model.safetensors",
+      "sha256_before": "2e33aa7ea8916a2c0017ab35966be3ae241fb6ec7dbbf7134b907d776f8885d3",
+      "bytes": 104216,
+      "sha256_after": "2e33aa7ea8916a2c0017ab35966be3ae241fb6ec7dbbf7134b907d776f8885d3"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/checkpoint.pt",
+      "sha256_before": "c2b2cd0419f3942b374fbc0ca89343b3ddf44d594706c994e508664a0376cb1f",
+      "bytes": 549813,
+      "sha256_after": "c2b2cd0419f3942b374fbc0ca89343b3ddf44d594706c994e508664a0376cb1f"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/classification_heads.pt",
+      "sha256_before": "90c9717a3ee091461938b8b25cd3b0108bd796d65e3c83b0ad9fae10616be841",
+      "bytes": 165427,
+      "sha256_after": "90c9717a3ee091461938b8b25cd3b0108bd796d65e3c83b0ad9fae10616be841"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/label_mappings.json",
+      "sha256_before": "5c47ca324acfeee55241438e343c8f2cede2abf71d7945d7d1f98143376eabd3",
+      "bytes": 3133,
+      "sha256_after": "5c47ca324acfeee55241438e343c8f2cede2abf71d7945d7d1f98143376eabd3"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/run_001/best_model/README.md",
+      "sha256_before": "4b4805d11bf1e4514e88af18076c4a10f600e18f7e2c63e54b2ff45243e2213c",
+      "bytes": 5292,
+      "sha256_after": "4b4805d11bf1e4514e88af18076c4a10f600e18f7e2c63e54b2ff45243e2213c"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/runtime/Lib/site-packages/sentencepiece/package_data/nfkc.bin",
+      "sha256_before": "52f11028ff8a7df3e009d94a8b6a54d4a8a17132efb4ccc1c9a0a41e432bd91e",
+      "bytes": 240008,
+      "sha256_after": "52f11028ff8a7df3e009d94a8b6a54d4a8a17132efb4ccc1c9a0a41e432bd91e"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/runtime/Lib/site-packages/sentencepiece/package_data/nfkc_cf.bin",
+      "sha256_before": "60833ec11201446659c3549c183b18f024c4007628cc6b3a4e91ae007697b826",
+      "bytes": 247028,
+      "sha256_after": "60833ec11201446659c3549c183b18f024c4007628cc6b3a4e91ae007697b826"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/runtime/Lib/site-packages/sentencepiece/package_data/nmt_nfkc.bin",
+      "sha256_before": "79372c41389c2b9b29bc171017ab5400e352debd686b02670a42bec709015074",
+      "bytes": 240007,
+      "sha256_after": "79372c41389c2b9b29bc171017ab5400e352debd686b02670a42bec709015074"
+    },
+    {
+      "path": "output/adjudicated_smoke_20261009_001/runtime/Lib/site-packages/sentencepiece/package_data/nmt_nfkc_cf.bin",
+      "sha256_before": "22c292c76f503795f30c85d79d30a7f572fff4f49e00392d2d60f4f93e941a1e",
+      "bytes": 247027,
+      "sha256_after": "22c292c76f503795f30c85d79d30a7f572fff4f49e00392d2d60f4f93e941a1e"
+    }
+  ],
+  "definitions": [
+    {
+      "name": "ModernBERTForNERRE",
+      "target": "modernbert_ml_backend/modeling/network.py",
+      "source_ast_sha256": "68c86b2529fbbbf02a39659687d8e18b62756f986a0975ff9ebb3ad9be6dc3ab"
+    },
+    {
+      "name": "predict_text",
+      "target": "modernbert_ml_backend/modeling/inference.py",
+      "source_ast_sha256": "6d485685a9f36d6416a2221366b241ed7ddd79bf4d77483a0f163fb4fd656204"
+    },
+    {
+      "name": "NERREPredictor",
+      "target": "modernbert_ml_backend/modeling/inference.py",
+      "source_ast_sha256": "3f05505d782a7b58cf3c9bd237672114ccc7fd8757756f1764ae47b97d43db13"
+    },
+    {
+      "name": "ModernBERTModel",
+      "target": "modernbert_ml_backend/backend/service.py",
+      "source_ast_sha256": "670f754b1de612ddfc5ca3c69f14c88a4f207a2f92a04efe14256a8b8c162dbb"
+    },
+    {
+      "name": "NERREDataset",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "4f1de0033eb3d6ee205034eae423a00424c461147a2a1b44551463d5624cee38"
+    },
+    {
+      "name": "collate_fn",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "f92e41750488f00969a1f8409a8acdd1ad97370f10082b5fd1b85a638dba9013"
+    },
+    {
+      "name": "compute_label_weights",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "acdc39deb166870faaee1e4f26cbc6c8124df6c78d6b4d57be89e8a15ef49e62"
+    },
+    {
+      "name": "train_epoch",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "881f1c9baf2579bb9ddaaac6b302712f8f83d9198a864ef8dcb6a83fdca5bb94"
+    },
+    {
+      "name": "evaluate",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "1172543ac67977de81eb6625144d8352beb86b20c4207ab5463e39fb43e103a0"
+    },
+    {
+      "name": "_save_model",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "b03c86d1bc728b8a7ffe1853cbca43bb145aeb8d39c8689b2e98ffbfb28852ef"
+    },
+    {
+      "name": "_load_model_if_exists",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "1b589561fd7b768fb1a246fd3c2068c97fdcb0ce7bae8c9b977ee610425c4139"
+    },
+    {
+      "name": "train_model",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "dc365f6d77608664f6d2d1addef23549db25b6cab05411c940162d369ca20df0"
+    },
+    {
+      "name": "train_from_splits",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "13369a6a513fc63a62b2dfd42bbe331b0df9ebd1101ff98bc0d5d62efec225bc"
+    },
+    {
+      "name": "train_from_data",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "6728d8a20292c091f5b0b974f92f68e102d8677a44bf8e292e1c6d1bc18195fe"
+    },
+    {
+      "name": "_extract_labels_from_data",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "ccd02ae19ca231d9f956a344d492588684bc43199262124e0d858d76acb06d44"
+    },
+    {
+      "name": "main",
+      "target": "modernbert_ml_backend/training/trainer.py",
+      "source_ast_sha256": "7fc03ca19f1e88a00d3dfcefcb93b243333e03e917477f755af76bcf866a1bba"
+    }
+  ],
+  "validation": {
+    "offline_suite": {
+      "command": "python -m unittest discover -s tests -v",
+      "passed": 146,
+      "result": "passed"
+    },
+    "model_contract_tests": 9,
+    "definition_ast_preservation": "All 16 original top-level class/function AST hashes match after only documented service root/import normalization.",
+    "protected_file_hashes": {
+      "checked": 25,
+      "result": "all_equal"
+    },
+    "syntax_compile": "py_compile on four moved implementations plus two compatibility entries passed",
+    "annotation_document_links": "passed; limited to documentation/annotation",
+    "synthetic_smoke": {
+      "status": "failed_before_model_execution",
+      "receipt": "output/2026-10-10-code-migration/evaluation/model-separation-smoke-01/receipt.json",
+      "receipt_sha256": "173c5ab5f11e62418e3abb03bd8fc8cf339aa7fca814e1ab5994b24a51a5630d",
+      "reason": "Root .venv torch C extensions failed on import. No network forward, decoding, training or service executed.",
+      "root_environment_package_metadata": {
+        "torch": "2.10.0",
+        "transformers": "5.0.0"
+      },
+      "pinned_requirements": {
+        "torch": "2.7.1",
+        "transformers": "5.5.4"
+      },
+      "shared_environment_changed": false
+    },
+    "full_service": "not_run",
+    "pinned_requirements_environment": "not_available_verified",
+    "label_studio_ui": "not_run",
+    "medical_or_model_performance_acceptance": "not_run"
+  },
+  "allowed_definition_changes": {
+    "ModernBERTModel": [
+      {
+        "method": "setup",
+        "before": "os.path.dirname(os.path.abspath(__file__))",
+        "after": "os.path.dirname(os.path.dirname(os.path.abspath(__file__)))",
+        "resolved_root_before_and_after": "E:/emr_structured_annotation/modernbert_ml_backend"
+      },
+      {
+        "method": "fit",
+        "before": "from train_ner_re import train_from_data",
+        "after": "from training.trainer import train_from_data",
+        "behavior": "Import remains inside fit after training input validation."
+      }
+    ]
+  },
+  "implementations": [
+    {
+      "path": "modernbert_ml_backend/modeling/network.py",
+      "sha256_after": "dd08fcdbabd2b138d3351ea3aa459a6b124a89247649464919c4f71ce825eae9"
+    },
+    {
+      "path": "modernbert_ml_backend/modeling/inference.py",
+      "sha256_after": "f5109402224a14e5ffd554057363930b89eef81a8479c9b3bdd9c99a5983d65f"
+    },
+    {
+      "path": "modernbert_ml_backend/backend/service.py",
+      "sha256_after": "470edb7e3de77c6e4b79cb21637924039416f07807d08c69e307a0815bd3804a"
+    },
+    {
+      "path": "modernbert_ml_backend/training/trainer.py",
+      "sha256_after": "d4d1fe573b1f401902a7ff9658aaf238b751f74dab8b4085820ba88ed9918577"
+    },
+    {
+      "path": "modernbert_ml_backend/modeling/__init__.py",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "modernbert_ml_backend/backend/__init__.py",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "modernbert_ml_backend/training/__init__.py",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "compatibility_entries": [
+    {
+      "path": "modernbert_ml_backend/model.py",
+      "sha256_after": "4670ded043e76864ca84e424d789aaa24577dba78fa9988624e5dd22cb4f45a5"
+    },
+    {
+      "path": "modernbert_ml_backend/train_ner_re.py",
+      "sha256_after": "cee31c69f8bae40c148742c2a4ec9227f8f39cbc5d3bffe9abcee3a3a209b76e"
+    }
+  ],
+  "updated_consumers": [
+    {
+      "path": "modernbert_ml_backend/train_frozen.py",
+      "sha256_after": "bae7995a8062d09293e418671df4960eb6a3e836c5fd9035a6a4f567afae307a"
+    },
+    {
+      "path": "modernbert_ml_backend/train_adjudicated.py",
+      "sha256_after": "967fabfbc9a80b1964ca7a59dddcf5233569e4616ea3b610359a0a1fdb3cd9f3"
+    },
+    {
+      "path": "tests/test_frozen_training_data.py",
+      "sha256_after": "e1f9cb22fce41611bb306522ce144365010c9e4be14f6569ab71894866e57e0f"
+    },
+    {
+      "path": "tests/test_adjudicated_training.py",
+      "sha256_after": "efd04bc58407a41371ae0eaac6dc74e00cf0dfdb7a13cc858d7254c1574be37b"
+    },
+    {
+      "path": "tests/test_model_code_migration.py",
+      "sha256_after": "252ba5abe5a4f55a0ee14a771aa0c8eecd07c8cf4e79068d6186bac00157291f"
+    }
+  ],
+  "protected_scope": "Current config, requirements, script service entry, all local label_studio_ml source, all base-model files, existing output .pt/.bin/.safetensors and best_model artifacts; no historical outputs moved or rewritten.",
+  "previous_stage_snapshot": {
+    "path": "documentation/source-migration.json",
+    "sha256": "dcfeeb60614a0f5c5a6eff632bafd50d2c8dcf13afd8267ba9b675bd50f8b749",
+    "note": "Stage 2 updated_consumers hashes are stage-2 completion snapshots; this stage records newer training runner hashes without rewriting stage 2."
+  },
+  "followup_validation": {
+    "date": "2026-10-10",
+    "reason": "The original AST and protected-byte comparisons are one-time relocation audits. Repeating historical hashes in permanent unit tests would reject valid future changes and require Gitignored local weights on a clean checkout.",
+    "removed_tests": [
+      "test_extracted_definition_bodies_keep_original_ast",
+      "test_protected_runtime_config_entry_and_weight_bytes_unchanged"
+    ],
+    "permanent_model_contract_tests": 7,
+    "updated_test": {
+      "path": "tests/test_model_code_migration.py",
+      "sha256_after": "c94f35b01afa9843334835597d28992269502dad5aa67aeec149f66bfb86819b"
+    },
+    "snapshot_policy": "Original definitions/source/protection hashes and updated_consumers are preserved as stage-3 completion evidence; updated_test is a later correction, not a replacement historical hash.",
+    "one_time_local_recheck": {
+      "original_definition_ast_matches": 16,
+      "protected_file_hash_matches": 25,
+      "status": "passed",
+      "not_a_permanent_unit_test": true
+    },
+    "offline_suite": {
+      "command": "python -S -m unittest discover -s tests -v",
+      "tests": 144,
+      "status": "passed",
+      "site_packages_loaded": false
+    },
+    "clean_source_suite": {
+      "command": "python -S -m unittest discover -s tests -v",
+      "tests": 144,
+      "status": "passed",
+      "copied_source_files": 201,
+      "excluded_roots": [
+        "data",
+        "output",
+        "bert-base-model",
+        ".venv",
+        ".git",
+        "tmp"
+      ],
+      "copied_roots": [
+        "emr_annotation",
+        "modernbert_ml_backend",
+        "scripts",
+        "tests",
+        "documentation",
+        "label_studio",
+        "skill_src"
+      ],
+      "additional_inputs": [
+        "pyproject.toml",
+        "uv.lock",
+        "README.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "annotation_agent_workflow/scripts",
+        "annotation_agent_workflow/rules",
+        "annotation_agent_workflow/templates"
+      ],
+      "receipt": "output/2026-10-10-code-migration/evaluation/offline-clean-source-01/receipt.json",
+      "receipt_sha256": "6474c2b44eba2fb8ca2e004e4f3d45fb061d5dfead36ac25a87ff9543c799af7",
+      "network_scope": "No real model/service requests made; existing tests include local loopback HTTP stubs.",
+      "site_packages_loaded": false
+    },
+    "model_and_service_execution": "not_run",
+    "core_implementation_modified": false
+  }
+}

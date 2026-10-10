@@ -151,7 +151,7 @@
         "result": [
           {
             "id": "demo02_1_e0",
-            "from_name": "measure_entities",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -166,7 +166,7 @@
           },
           {
             "id": "demo02_1_e1",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -181,7 +181,7 @@
           },
           {
             "id": "demo02_1_e2",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -239,7 +239,7 @@
         "result": [
           {
             "id": "demo02_2_e0",
-            "from_name": "measure_entities",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -254,7 +254,7 @@
           },
           {
             "id": "demo02_2_e1",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -269,7 +269,7 @@
           },
           {
             "id": "demo02_2_e2",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2245,7 +2245,7 @@
         "result": [
           {
             "id": "demo10_1_e0",
-            "from_name": "other_pathogen",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2321,7 +2321,7 @@
         "result": [
           {
             "id": "demo10_2_e0",
-            "from_name": "other_pathogen",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2416,7 +2416,7 @@
         "result": [
           {
             "id": "demo11_1_e0",
-            "from_name": "diagnosis_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2504,7 +2504,7 @@
         "result": [
           {
             "id": "demo11_2_e0",
-            "from_name": "diagnosis_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2611,7 +2611,7 @@
         "result": [
           {
             "id": "demo12_1_e0",
-            "from_name": "diagnosis_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2699,7 +2699,7 @@
         "result": [
           {
             "id": "demo12_2_e0",
-            "from_name": "diagnosis_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2806,7 +2806,7 @@
         "result": [
           {
             "id": "demo13_1_e0",
-            "from_name": "time_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -2846,7 +2846,7 @@
         "result": [
           {
             "id": "demo13_2_e0",
-            "from_name": "time_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3063,7 +3063,7 @@
         "result": [
           {
             "id": "demo16_1_e0",
-            "from_name": "measure_entities",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3078,7 +3078,7 @@
           },
           {
             "id": "demo16_1_e1",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3093,7 +3093,7 @@
           },
           {
             "id": "demo16_1_e2",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3151,7 +3151,7 @@
         "result": [
           {
             "id": "demo16_2_e0",
-            "from_name": "measure_entities",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3166,7 +3166,7 @@
           },
           {
             "id": "demo16_2_e1",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3181,7 +3181,7 @@
           },
           {
             "id": "demo16_2_e2",
-            "from_name": "measure_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3258,7 +3258,7 @@
         "result": [
           {
             "id": "demo17_1_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3334,7 +3334,7 @@
         "result": [
           {
             "id": "demo17_2_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3429,7 +3429,7 @@
         "result": [
           {
             "id": "demo18_1_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3505,7 +3505,7 @@
         "result": [
           {
             "id": "demo18_2_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3600,7 +3600,7 @@
         "result": [
           {
             "id": "demo19_1_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3676,7 +3676,7 @@
         "result": [
           {
             "id": "demo19_2_e0",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3771,7 +3771,7 @@
         "result": [
           {
             "id": "demo20_1_e0",
-            "from_name": "time_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3786,7 +3786,7 @@
           },
           {
             "id": "demo20_1_e1",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3871,7 +3871,7 @@
         "result": [
           {
             "id": "demo20_2_e0",
-            "from_name": "time_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {
@@ -3886,7 +3886,7 @@
           },
           {
             "id": "demo20_2_e1",
-            "from_name": "epidemics_labels",
+            "from_name": "symptons_labels",
             "to_name": "chief_complaint_text",
             "type": "labels",
             "value": {

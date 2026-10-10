@@ -1,10 +1,19 @@
 # EMR 结构化标注框架
 
+项目维护入口：[每次新任务规则](AGENTS.md)，[按工作流程划分的代码、文档、数据与输出组织方案](documentation/project-organization.md)。17 份当前技术说明与汇报文档已按工作流程归位；[文档总导航](documentation/README.md)和[迁移记录](documentation/migration-log.md)列出当前入口、旧路径兼容页与迁移哈希。
+共享业务已按 6 个工作流程模块迁至 `emr_annotation/`，14 个旧脚本入口继续可用；源码/模板共 15 项移动见[阶段 2 快照](documentation/source-migration.json)。阶段 3 已将模型、推理、服务和训练分开，见[模型迁移快照](documentation/model-migration.json)；实际模型/服务验收未完成，阶段 4 已完成 73 件明确材料的副本归位与保留索引，见[旧资料索引](documentation/legacy-materials.md)；原件保持原位，阶段 5 已完成本轮范围整体验证，当前 144 项离线测试及净源码沙箱 144 项通过。
+
 当前标注资料：[标注指南、标签字典与 HTML 阅读版](documentation/annotation/README.md)。
 
-模型实验准备：[正则与训练前后模型逐标签评价](documentation/model-evaluation.md)，配套[规则、工具与虚构演示结果](documentation/regex-baseline-comparison.md)（真实模型结果待测）。
+目录命名：[当前名称、改名映射与后续命名规则](documentation/directory-naming.md)。本轮已重命名 7 个当前维护目录；旧服务导入仍兼容，运行 stage 和历史来源路径保持原值。
 
-数据转换：[完整Label Studio导出到模型训练文件](documentation/label-studio-to-training.md)，含20条任务/40份标注的虚构样例及实际转换结果。
+数据目录：[按用途、批次与存储版本命名的目录索引](documentation/data-directory-naming.md)。6 个顶层目录已改名，旧名称保留隐藏兼容入口，数据内容与现有 CSV 默认输入保持。
+
+模型实验准备：[正则与训练前后模型逐标签评价](documentation/model_evaluation/model-evaluation.md)，配套[规则、工具与虚构演示结果](documentation/model_evaluation/regex-baseline-comparison.md)（真实模型结果待测）。
+
+数据转换：[完整Label Studio导出到模型训练文件](documentation/training_data_preparation/label-studio-to-training.md)，含20条任务/40份标注的虚构样例及实际转换结果。
+
+最终裁决数据：[ModernBERT 训练与训练前后评估](documentation/model_training/adjudicated-model-training.md)，包含冻结患者分组、严格实体与端到端关系评分、验证选模及最佳权重重载。
 
 ### —— 基于 Label Studio 的电子病历信息抽取数据集构建体系
 
@@ -48,21 +57,34 @@
 
 ## 四、代码架构与目录
 
-以下按 2026-10-08 当前代码整理。仓库包含数据整理、Label Studio 配置、ModernBERT ML 后端，以及指南试标与质量复核工具；Label Studio 本身是独立服务，不由本仓库启动。模型输出用于辅助预标注，病例判断与公共卫生信号仍需人工复核。
+以下目录仍是现有布局。2026-10-10 的完整流程、入口及目标组织见[项目组织方案](documentation/project-organization.md)，覆盖新增分析、裁决和训练评估工具；下面的简图不穷举文件。Label Studio 本身是独立服务，不由本仓库启动。模型输出用于辅助预标注，病例判断与公共卫生信号仍需人工复核。
 
 ### 1. 当前目录与职责
 
 ```text
 emr_structured_annotation/
-├── scripts/
-│   ├── merge_emr_data.py             # EMR 多表合并、就诊级任务、文本与年龄分组
-│   └── fetch_who_don_pdf.py          # WHO DON 资料采集，独立辅助工具
+├── emr_annotation/                 # 不在导入时加载模型、联网或生成文件
+│   ├── data_preparation/            # EMR 多表合并与就诊级任务
+│   ├── annotation/schema.py         # 两种 Schema 读取契约与实体标签解析
+│   ├── annotation_analysis/         # 导出审计、参考选择与双标差异
+│   ├── adjudication/               # 工作台渲染、打包与 templates/ 源码模板
+│   ├── training_data/              # 转换、患者分组、冻结与 token 核查
+│   └── evaluation/                 # 评分、正则与模型服务测速/比较
+├── scripts/                        # 14 个旧业务 CLI/导入兼容入口
+│   ├── fetch_who_don_pdf.py          # 独立辅助研究工具
+│   └── build_training_smoke_fixture.py # 虚构训练 smoke 材料生成工具
 ├── label_studio/
 │   └── pneumonia_config.xml         # 成人与儿童共用页面配置
 ├── modernbert_ml_backend/           # ModernBERT NER + RE 训练与预测后端
 │   ├── _wsgi.py                     # Flask 服务入口，使用同目录导入
-│   ├── model.py                     # 联合网络、推理、Label Studio 适配、训练触发
-│   ├── train_ner_re.py              # 数据集转换、训练、验证和模型保存
+│   ├── modeling/network.py          # 联合网络，训练与服务共同依赖
+│   ├── modeling/inference.py        # 文本推理解码与预测器
+│   ├── label_studio_backend/        # Label Studio适配、Schema与fit触发
+│   │   └── service.py
+│   ├── backend/                    # 旧服务导入兼容，实际实现见上一目录
+│   ├── training/trainer.py          # 数据集、训练、验证和保存，不依赖服务
+│   ├── model.py                     # 原模块兼容别名，供_wsgi.py继续导入
+│   ├── train_ner_re.py              # 原训练模块兼容别名和CLI
 │   ├── config.py                    # 路径、标签映射、训练参数与 tokenizer
 │   ├── label_studio_ml/             # 仓库内维护的 ML 服务运行时代码
 │   ├── requirements.txt            # 本后端独立依赖
@@ -75,8 +97,14 @@ emr_structured_annotation/
 │   └── validation/                  # 专项规则验证记录
 ├── documentation/
 │   ├── annotation/                  # 当前指南、标签字典、HTML、生成脚本和旧样稿
-│   └── …                            # 参考文件与用语汇编
-├── skill_src/                       # 医学标注员/指南开发者技能源码
+│   ├── training_data_preparation/   # 导出转换、参考准备与冻结清单
+│   ├── model_training/              # 裁决后训练与训练前后评估说明
+│   ├── model_evaluation/            # 评分、基线、服务测速与实验实施方案
+│   ├── double_annotation_adjudication/ # 双人裁决方法与工作台说明
+│   ├── project_delivery/            # 发布说明与汇报草稿
+│   ├── evaluation_examples/         # 已有虚构演示及冻结结果，保留原位置
+│   └── README.md / migration-log.md # 总导航与迁移证据；参考 PDF 暂留原位置
+├── annotation_skills/              # 医学标注员/指南开发者技能源码
 ├── tests/test_merge_emr_data.py      # 不加载模型的数据整理单元测试
 ├── Untitled.ipynb                   # 探索性 notebook
 ├── pyproject.toml / uv.lock          # 根目录 Python 环境
@@ -108,6 +136,7 @@ flowchart TD
 ```
 
 当前保留 ModernBERT 实现，GLiNER 不再作为可选服务入口。试标工具通过文件输入输出运行，未与合并脚本及后端组成自动调度流水线。
+共享业务实现位于 `emr_annotation/`；上图和本文命令保留兼容入口，便于既有调用继续运行。新模块不依赖旧 `scripts/` 实现；训练入口直接引用共享转换和评分模块。
 
 当前文本协议：
 
@@ -124,7 +153,7 @@ flowchart TD
 | 文本读取 | 根据页面配置解析文本字段候选，支持当前 `$text` |
 | 预测 | 联合 NER + RE，经 tokenizer offset 转回字符位置 |
 | 训练 | `fit()` 拉取标注并同步触发训练，完成后重载模型 |
-| 模型产物 | `bert-base-model/{base_model}/`；训练输出为 `output/{base_model}/{schema}/best_model/` |
+| 模型产物 | `pretrained_models/{base_model}/`；训练输出为 `output/{base_model}/{schema}/best_model/` |
 | 服务运行时 | 脚本启动方式下优先使用本目录 `label_studio_ml/` |
 | 当前限制 | 动态 NER/RE 不等于完整页面协议支持；多项目并发状态隔离需验证 |
 
@@ -132,36 +161,11 @@ GLiNER 的固定提示和旧文本协议已随代码移除。历史试标记录�
 
 ### 4. 目录优化评估与顺序
 
-当前规模不需要引入统一后端基类、插件工厂、任务调度框架或整体 `src/` 重构。优先厘清入口与协议，再进行小范围移动。
+详细方案统一维护在[项目组织方案与规则](documentation/project-organization.md)，避免在 README 重复维护另一棵目标目录树。按数据准备、标注规范、模型构建、后端服务、标注分析、双人裁决、训练数据准备、训练、评估、交付及研究分块。
 
-| 优先级 | 已核实的问题 | 建议的最小调整 |
-|---|---|---|
-| 先处理 | 根依赖与 ModernBERT `requirements.txt` 分开维护，后者还包含同名的本地 ML 运行时；`from model/config/train_ner_re` 依赖启动位置 | 先明确两套环境和启动命令；后续改成包内相对导入并验证运行时实际加载路径，再决定是否移动后端目录。暂不删除本地运行时代码 |
-| 先处理 | `modernbert_ml_backend/predict_test.py` 混有固定服务地址、项目参数和会话凭据 | 改为环境变量或命令行参数，移至手工联调目录；会话凭据不应保存在受版本控制的测试代码中 |
-| 随后处理 | `modernbert_ml_backend/model.py` 约 1170 行，同时承担网络、推理和服务适配；训练模块又从它导入网络类 | 优先拆出联合网络与独立推理代码，训练和服务分别依赖它们；避免为了拆文件建立通用框架 |
-| 随后处理 | 字典验证脚本固定读取 v2.1.0 与本机绝对路径，引用的成人/儿童 XML 当前不存在 | 改为显式传入字典与 XML，并验证当前 `Choices` 和关系；历史试验清单继续保留原版本，不改写历史验收结论 |
-| 随后处理 | `tmp/` 已跟踪 79 个文件；`main.py`、无名 notebook 与服务联调脚本混在正式入口附近 | 按用途将有复现价值的脚本/证据归档，其余生成产物移出版本控制；保留必要证据后再配置临时目录忽略规则 |
-| 可延后 | WHO 资料采集与 EMR 合并共用 `scripts/`；历史进度及模型设计文档存在旧目录描述 | 功能扩展时再分 `scripts/data/` 与 `scripts/research/`；当前先通过职责说明区分，逐份更新过期文档 |
+维护文档已按 stage 归入 `documentation/`，外部输入归 `data/<batch_id>/`，新运行产物归 `output/<batch_id>/<stage>/<run_id>/`；现有模型路径与冻结历史属于兼容例外。文档归位、共享业务提取及模型源码拆分已完成；明确旧材料的副本归位与保留索引已完成；旧 tmp、冻结记录、原始导出和模型路径有意保留，真实模型/服务验收单独记录。
 
-当前只保留一个后端，暂时保留 `modernbert_ml_backend/` 的目录名即可。后续若拆分模块，可采用以下结构；**这是建议，尚未实施**：
-
-```text
-modernbert_ml_backend/
-    ├── _wsgi.py / config.py
-    ├── network.py                   # 联合模型
-    ├── inference.py                 # 文本推理与 offset 转换
-    ├── model.py                     # Label Studio 适配
-    ├── train_ner_re.py
-    └── label_studio_ml/             # 明确来源及本地修改后再决定去留
-examples/                            # 模型样例和手工联调入口
-scripts/                             # 数据准备工具；有实际需要时再分组
-annotation_agent_workflow/           # 保留试标与裁决工具及历史记录
-label_studio/                        # 页面协议
-documentation/                      # 说明资料，当前套件已集中
-tests/                              # 不依赖外部服务的自动化检查
-```
-
-实际迁移前需要检查导入、启动命令、相对模型路径和历史脚本引用。ModernBERT 使用全局可变 `config`，仅有模型缓存锁不能证明不同项目的标签及训练状态已隔离；移动目录也不能解决此问题。
+迁移前检查导入、启动命令、模板/打包路径、相对模型路径及历史来源哈希。ModernBERT 的全局可变 `config` 和多项目状态隔离需要独立验证，目录调整不构成能力验证。
 
 ### 5. 本地入口与验证
 
@@ -179,11 +183,13 @@ python -m unittest discover -s tests -v
 python documentation/annotation/scripts/check-document-links.py
 ```
 
-ModernBERT 当前以 `python modernbert_ml_backend/_wsgi.py --port 9090` 作为脚本入口；使用安装了其 `requirements.txt` 的独立环境，并预先准备本地基础模型。当前不要把它改写为 `python -m modernbert_ml_backend._wsgi`：现有顶层导入尚未适配包启动。
+ModernBERT 当前以 `python modernbert_ml_backend/_wsgi.py --port 9090` 作为脚本入口；使用安装了其 `requirements.txt` 的独立环境，并预先准备本地基础模型。当前实现使用顶层 `modeling`、`label_studio_backend`、`training` 和同一个 `config` 模块；旧 `backend.service` 与 `model.py` 保留服务别名，`train_ner_re.py` 保留训练别名。不要改写为 `python -m modernbert_ml_backend._wsgi`，顶层导入尚未改为完整包启动契约。
 
 `modernbert_ml_backend/predict_test.py` 会访问实际服务，不是上述单元测试的组成部分。根环境显式保留 `torch`、`transformers` 与共享 tokenizer 依赖 `sentencepiece`，避免原来依赖 GLiNER 间接安装这些包的 notebook 失效；没有执行环境同步卸载或清理模型缓存。
 
-本次架构梳理完成静态代码、入口、目录与 XML 协议核对；数据整理 10 项单元测试及 1 项旧路线退役检查通过。未进行模型下载、真实推理、训练或服务部署验证，以上后端能力按代码实现描述，不代表生产验收完成。
+阶段 2 完成时 137 项离线测试通过，其中 9 项迁移专项检查验证旧入口别名、私有符号及 patch 兼容、新旧 CLI、虚构结果等价、真实实现哈希、资源路径和缺病例选择时完整生成核查材料；12 个旧 CLI 与 12 个新模块 CLI 的帮助参数一致。无模型依赖导入检查通过，没有执行真实模型、服务或医学验证。阶段完成快照不因后续维护重写，详细范围见[迁移记录](documentation/migration-log.md)。
+
+阶段 3 核心拆分全量 146 项离线测试通过；模型专项 9 项、补充 receipt 断言后的冻结/裁决/模型相关 28 项通过。16 项定义 AST 对照和 25 份 config/入口/runtime/权重文件哈希保护通过。根 `.venv` 的虚构 tiny forward 尝试因 PyTorch C 扩展导入失败而停止，未执行 forward、解码或训练；`output/2026-10-10-code-migration/evaluation/model-separation-smoke-01/receipt.json`（本地 ignored 回执）保留，未更改依赖。指定 requirements 环境、真实模型/服务及 UI 尚未验收。
 
 ## EMR 数据拼合
 
@@ -242,3 +248,5 @@ uv run python -m unittest discover -s tests -v
 ### 4. 可扩展性
 
 标签体系设计采用模块化结构，便于未来扩展至多病种、多系统。
+
+本轮迁移最终验证：当前工作区和不含 data/output/权重/环境/tmp 的净源码沙箱，离线测试各 144 项通过；annotation 文件/HTML 锚点及当前文档文件链接检查通过。阶段 3 核心拆分的 146 项是当时快照，两项一次性源码/本机文件审计已移出永久测试，证据保留在模型快照的历史记录与 followup_validation。旧资料清单和运行回执属于本地 ignored 材料，其他 clone 可能缺失，需随资料备份。

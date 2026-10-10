@@ -1,0 +1,155 @@
+{
+  "stage": 2,
+  "migrations": [
+    {
+      "old_path": "scripts/merge_emr_data.py",
+      "new_path": "emr_annotation/data_preparation/merge_emr_data.py",
+      "source_sha256": "f36a40e8ef7f09378bf5318cffff465287324d8790ce220d3f8a640f28c01b15",
+      "implementation_sha256": "f36a40e8ef7f09378bf5318cffff465287324d8790ce220d3f8a640f28c01b15",
+      "compatibility_sha256": "c95bdfb348cf55484ec01fdd76bc696e283f35c262300b7dabae3cbcb0a72347"
+    },
+    {
+      "old_path": "scripts/evaluate_entity_predictions.py",
+      "new_path": "emr_annotation/evaluation/entity_predictions.py",
+      "source_sha256": "c379c6af7ae14aa61928961a10895c08f7134703bdb7bec36b47ef2f2f627297",
+      "implementation_sha256": "008b99b6a71e4e20f3947745774eea3e188f402d6e36196c87f07b331b8c83f5",
+      "compatibility_sha256": "31718ee9fe84b42f59f1ed366af11e9387ea85e774cb7e7b3fce39a29f10ecca"
+    },
+    {
+      "old_path": "scripts/prepare_label_studio_evaluation.py",
+      "new_path": "emr_annotation/annotation_analysis/label_studio_evaluation.py",
+      "source_sha256": "2ff82b7493172163d638d2b0e081e6e415cc44a6c80a225cd48ce63ef65a1203",
+      "implementation_sha256": "3a7e70ff3967d1e92d9090d8d7c6fdd65e8b33f9d35c7b306feaf4fd2dcb4cbc",
+      "compatibility_sha256": "35b6ee86810a2caae876c71325500ce80af145be9d05127fe708a6e6eb48ad6c"
+    },
+    {
+      "old_path": "scripts/audit_double_annotations.py",
+      "new_path": "emr_annotation/annotation_analysis/double_annotations.py",
+      "source_sha256": "c34788e561161fa00e994cd97a926c3d2bf62d295cf529d7398fc10fda1bbb43",
+      "implementation_sha256": "740c804fc98f9ac1ceee96fa043538b0530004c2564cf9e3601968d9015a87f9",
+      "compatibility_sha256": "43d48f1c3dfb0e11d32e17234b686aba110e4f3af1e47a4dacaa8928a185bf93"
+    },
+    {
+      "old_path": "scripts/frozen_training_data.py",
+      "new_path": "emr_annotation/training_data/frozen.py",
+      "source_sha256": "2625c61f26dc745abd160bbeca778ae6c3835a8c4ba40f7e952fd057e613d1a8",
+      "implementation_sha256": "2098e647bf3f930bf25b3661c04f05e43d6fe28df75a2ce74551df1428243746",
+      "compatibility_sha256": "7c4d1b82d6c97f2138e369000dcf337a454fb788778dab2ec14b42072cf7e9e0"
+    },
+    {
+      "old_path": "scripts/split_evaluation_reference.py",
+      "new_path": "emr_annotation/training_data/split_reference.py",
+      "source_sha256": "ff73dbeadfd9af703f5f5f348346001d481276dac127ddda85300db58dd25c5a",
+      "implementation_sha256": "a10764b185051357dbd27404a5bc46c21921f3c33f435611fb2ed38e4311e5f2",
+      "compatibility_sha256": "c6214392d1b5b839fe301334dbffba9f47d42337315ed85ad8de046734a04f14"
+    },
+    {
+      "old_path": "scripts/prepare_training_data.py",
+      "new_path": "emr_annotation/training_data/preparation.py",
+      "source_sha256": "a9c95a90607d527d8b0e4a65cac4fdbd99db58779adcb293706ac16c804db260",
+      "implementation_sha256": "a0388e5801bd14757adf0c06dff80d7771889b98a5027668db16aee9cbb414ce",
+      "compatibility_sha256": "0a21b1a295c7f1c124429b0bf1d99d66ec2388a863a6c7eb4bcac669df2a9686"
+    },
+    {
+      "old_path": "scripts/audit_training_tokens.py",
+      "new_path": "emr_annotation/training_data/token_audit.py",
+      "source_sha256": "640a297fe0067ba618059a2aab74d972d1e758a6ea7264355a0bfc4166b3a8f9",
+      "implementation_sha256": "c22e68c268049d390524adc58ee6f2b19aa64b7264bdb20488baf1de491e4780",
+      "compatibility_sha256": "eb46b28f06bcda655b7fd121d1d0430fa26c7007f7720dc66cd6503fa5e95be2"
+    },
+    {
+      "old_path": "scripts/evaluate_ner_re.py",
+      "new_path": "emr_annotation/evaluation/ner_re.py",
+      "source_sha256": "4e3c592ba793952f600cdaa40bb0cbdc1204917a48695ee8b8b1bbb5cdab4476",
+      "implementation_sha256": "f0fd81726c8cac29aa34133040a8ffbb0df4ea559b4c06a767b46acecc2c7a4d",
+      "compatibility_sha256": "85a01e927f4cc604839cee5a8b4bf3f83300f947a74e3fbae7e6566d8d7de11d"
+    },
+    {
+      "old_path": "scripts/regex_entity_baseline.py",
+      "new_path": "emr_annotation/evaluation/regex_entity_baseline.py",
+      "source_sha256": "7201d2658b8c33208f8cae4bd96110b4bbcaa1779fb5329cc8ec09051de52fa6",
+      "implementation_sha256": "0f5458911aab57871556e67a0ab2f106951d862b22adc146a0e3f3ba22445752",
+      "compatibility_sha256": "cfcce75041f9e6711f44aae02ece9f5574b5476ad07c4ab6bda0f8452f9f2595"
+    },
+    {
+      "old_path": "scripts/benchmark_model_service.py",
+      "new_path": "emr_annotation/evaluation/benchmark_model_service.py",
+      "source_sha256": "53007c0e5e4b8698375c060a92c9da8b5e63d70177fbe5650ccfbdac1dfdd618",
+      "implementation_sha256": "99e139cda549584f27971a2032506192918834a271cb2d7db7b06a33652fb9cd",
+      "compatibility_sha256": "8b423436b0f2a64e3249d6ae4cda8aa84a88c8c16677882fde3b875e5185ebd7"
+    },
+    {
+      "old_path": "scripts/benchmark_chat_model.py",
+      "new_path": "emr_annotation/evaluation/benchmark_chat_model.py",
+      "source_sha256": "3114c2ed16d624c8589757997af27303c64b5e0e8529193188423b0c1eaafcd4",
+      "implementation_sha256": "a68d30674fb169052cbebc16cdd3adfdf24e4ecae9b8b7b940f15f56c126755c",
+      "compatibility_sha256": "6c0ee370a32628bbf72c26cadbdd4a282154d98d9fa0dd48ed33cb53fa6a5db6"
+    },
+    {
+      "old_path": "scripts/compare_model_benchmarks.py",
+      "new_path": "emr_annotation/evaluation/compare_model_benchmarks.py",
+      "source_sha256": "50cd2a82128e43752b60964e99e18fa545b043c58c0c9c2963c2f2fdd4cd771a",
+      "implementation_sha256": "12890d4b5578b8dc384babf9f646fdc2dd828106798b6c865e765f08a71e772e",
+      "compatibility_sha256": "7d4ce258c0b2c6ae9ac7af362727310312b830b30a16df66aeacd36af5bd94c7"
+    },
+    {
+      "old_path": "scripts/package_double_annotation_review.py",
+      "new_path": "emr_annotation/adjudication/package_review.py",
+      "source_sha256": "b78a4c1315b9c7ffdbfe5b95b4a0897e7e1f64cde25bc6d3084c526cc41ef117",
+      "implementation_sha256": "47a2aec51d3525861ccf06559831de7d8c6dd71c256c974e46fb4891d7712ea8",
+      "compatibility_sha256": "684f15bb1dce44c6a7e712c0b0d79302d2e3ae1a43d123ad7e467ec802528b3d"
+    },
+    {
+      "old_path": "scripts/templates/double_annotation_review.html",
+      "new_path": "emr_annotation/adjudication/templates/double_annotation_review.html",
+      "source_sha256": "138574d176fcf2a193936087a272972e12bf8318afaa146630f020342ec88ec2",
+      "implementation_sha256": "138574d176fcf2a193936087a272972e12bf8318afaa146630f020342ec88ec2"
+    }
+  ],
+  "extracted": [
+    {
+      "path": "emr_annotation/annotation/schema.py",
+      "sha256": "a894563fc73202d775af326d07f3293f96f226d22c979adb8f96517622cecd3c"
+    },
+    {
+      "path": "emr_annotation/adjudication/workbench.py",
+      "sha256": "416ba4ecb2fa84dd3f100e0d48520246e9d9cb12e24bec29bf7303ec52859829"
+    }
+  ],
+  "updated_consumers": [
+    {
+      "path": "scripts/build_training_smoke_fixture.py",
+      "sha256": "fe7a32bc768c381849769994fb6868c9e9f148fe8703da1db8c04cb0f0292eb9"
+    },
+    {
+      "path": "modernbert_ml_backend/train_frozen.py",
+      "sha256": "7fc6bd053abf49bf3330eb1ac5a8854d033404d0bb0ead7ce472c7655ef5a48e"
+    },
+    {
+      "path": "modernbert_ml_backend/train_adjudicated.py",
+      "sha256": "a85ed33c1ef1a9e8715d97dc73f10698df4cb5cf55bfc32186ed4f6097661297"
+    }
+  ],
+  "validation": {
+    "offline_unit_tests": 137,
+    "legacy_cli_help_count": 12,
+    "canonical_cli_help_count": 12,
+    "site_packages_disabled": true,
+    "synthetic_equivalence": [
+      "entity_scoring",
+      "training_conversion_and_frozen_preflight",
+      "double_annotation_payloads_and_template"
+    ],
+    "real_model_or_service_run": false,
+    "migration_regression_tests": 9,
+    "missing_case_choices_regression": true
+  },
+  "notes": [
+    "source_sha256 was captured before migration, including pre-existing working-tree edits.",
+    "Python legacy entry points use module aliases; new reports hash the real canonical implementation.",
+    "The review HTML template is byte-identical at its new source location.",
+    "Schema readers retain distinct export-analysis and double-review data contracts.",
+    "Historical manifests, frozen data and results have not been rewritten.",
+    "Undefined kappa/F1 values and absent case-metric objects display as not evaluable; metric calculations and audit payloads are unchanged."
+  ]
+}

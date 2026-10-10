@@ -6,8 +6,8 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.evaluate_entity_predictions import read_label_groups
-from scripts.regex_entity_baseline import compile_rules, main, predict_entities, run_baseline
+from emr_annotation.evaluation.entity_predictions import read_label_groups
+from emr_annotation.evaluation.regex_entity_baseline import compile_rules, main, predict_entities, run_baseline
 
 
 ROOT = Path(__file__).resolve().parents[1]

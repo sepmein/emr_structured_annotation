@@ -1,0 +1,6 @@
+
+# Stable bytes for fictional demo provenance across Git checkouts.
+tests/fixtures/label_studio_demo_export.json text eol=lf
+tests/fixtures/label_studio_demo_selection.json text eol=lf
+label_studio/pneumonia_config.xml text eol=lf
+label_studio/pneumonia_config.global-single.xml text eol=lf

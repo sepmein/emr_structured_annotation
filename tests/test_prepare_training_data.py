@@ -7,13 +7,13 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.prepare_training_data import build_outputs, convert_offset_units, json_bytes, main
-from scripts.prepare_label_studio_evaluation import audit_export, load_schema
-from scripts.frozen_training_data import prepare_frozen_training
+from emr_annotation.training_data.preparation import build_outputs, convert_offset_units, json_bytes, main
+from emr_annotation.annotation_analysis.label_studio_evaluation import audit_export, load_schema
+from emr_annotation.training_data.frozen import prepare_frozen_training
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "label_studio/pneumonia_config.xml"
+CONFIG = ROOT / "label_studio/pneumonia_config.global-single.xml"
 EXPORT = ROOT / "tests/fixtures/label_studio_demo_export.json"
 SELECTION = ROOT / "tests/fixtures/label_studio_demo_selection.json"
 

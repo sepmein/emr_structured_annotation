@@ -8,10 +8,10 @@ import unittest
 from unittest.mock import patch
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-from scripts.benchmark_model_service import (
+from emr_annotation.evaluation.benchmark_model_service import (
     RequestFailure, benchmark_service, main, make_transport, parse_prediction, read_targets,
 )
-from scripts.evaluate_entity_predictions import build_report, normalize_records
+from emr_annotation.evaluation.entity_predictions import build_report, normalize_records
 
 
 GROUPS = {"symptons_labels": ["发热"]}

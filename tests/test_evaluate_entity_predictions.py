@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.evaluate_entity_predictions import (
+from emr_annotation.evaluation.entity_predictions import (
     build_report,
     main,
     normalize_records,
@@ -168,7 +168,11 @@ class EntityEvaluationTests(unittest.TestCase):
         config = Path(__file__).resolve().parents[1] / "label_studio" / "pneumonia_config.xml"
         groups = read_label_groups(config)
         self.assertEqual(sum(map(len, groups.values())), 49)
+        self.assertEqual(len(groups), 9)
         self.assertEqual(len(groups["symptons_labels"]), 12)
+        unified = read_label_groups(config.with_name("pneumonia_config.global-single.xml"))
+        self.assertEqual(list(unified), ["symptons_labels"])
+        self.assertEqual(len(unified["symptons_labels"]), 49)
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             gold_path, before_path, after_path = [root / name for name in ("gold.json", "before.json", "after.json")]

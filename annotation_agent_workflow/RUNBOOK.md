@@ -6,7 +6,7 @@
 
 ```text
 Use $medical-annotation-guide-developer.
-读取当前成人/儿童XML、后端标签提示、现有指南和上一轮annotator_feedback.json。
+读取本项目实际使用的共享XML配置或global-single配置快照、当前指南，以及上一轮annotator_feedback.json；后端当前实现仅支持实体与关系，不能把历史标签提示当成当前协议。
 所有输出写入本轮developer目录；XML只作为当前事实来源，标签变化生成提案，不直接修改。
 ```
 

@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.split_evaluation_reference import main, split_reference
+from emr_annotation.training_data.split_reference import main, split_reference
 
 
 GROUPS = {"symptons_labels": ["发热", "休克", "惊厥"]}

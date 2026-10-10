@@ -5,11 +5,11 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.prepare_label_studio_evaluation import audit_export, load_schema, main, select_reference
-from scripts.evaluate_entity_predictions import normalize_records, build_report
+from emr_annotation.annotation_analysis.label_studio_evaluation import audit_export, load_schema, main, select_reference
+from emr_annotation.evaluation.entity_predictions import normalize_records, build_report
 
 
-CONFIG = Path(__file__).resolve().parents[1] / "label_studio" / "pneumonia_config.xml"
+CONFIG = Path(__file__).resolve().parents[1] / "label_studio" / "pneumonia_config.global-single.xml"
 
 
 def entity(region="entity1", label="发热", start=0, end=2, control="symptons_labels"):
@@ -70,7 +70,7 @@ class LabelStudioPreparationTests(unittest.TestCase):
         self.assertEqual(audit["summary"]["invalid_annotations"], 2)
 
     def test_entities_attributes_relations_and_case_choice_survive_selection(self):
-        time = entity("time", "时间表达", 2, 4, "time_labels")
+        time = entity("time", "时间表达", 2, 4)
         rel = {"type": "relation", "from_id": "symptom", "to_id": "time", "labels": ["持续时长"], "direction": "right"}
         a = annotation(results=[rel, choice("finding_context", "明确存在", "symptom"), choice(), time, entity("symptom")])
         _, tasks = audit_export([task(annotations=[a])], self.schema)
@@ -97,6 +97,28 @@ class LabelStudioPreparationTests(unittest.TestCase):
         self.assertEqual(reference[0]["entities"], [])
         self.assertEqual(reference[0]["case_choices"]["case_decision"], "非目标")
 
+    def test_single_entity_rejects_multiple_labels_but_distinct_entities_keep_attributes(self):
+        multi = entity(label="发热")
+        multi["value"]["labels"] = ["发热", "肺炎诊断"]
+        audit, _ = audit_export([task(annotations=[annotation(results=[multi, choice()])])], self.schema)
+        self.assertEqual(audit["summary"]["invalid_annotations"], 1)
+        results = [entity("fever"), entity("diagnosis", "肺炎诊断", 2, 4), choice(),
+                   choice("finding_context", "明确存在", "fever"),
+                   choice("temporality", "当前", "fever")]
+        audit, tasks = audit_export([task(annotations=[annotation(results=results)])], self.schema)
+        self.assertEqual(audit["summary"]["valid_annotations"], 1)
+        parsed = tasks["1"]["annotations"]["10"]
+        self.assertEqual(len(parsed["entities"]), 2)
+        self.assertEqual(len(parsed["attributes"]), 2)
+
+    def test_historical_control_names_require_archived_schema(self):
+        archive = CONFIG.parent / "archive/pneumonia_config.before-global-single.xml"
+        old = load_schema(archive)
+        results = [entity("time", "时间表达", 2, 4, "time_labels"), entity("fever"), choice()]
+        payload = [task(annotations=[annotation(results=results)])]
+        self.assertEqual(audit_export(payload, old)[0]["summary"]["valid_annotations"], 1)
+        self.assertEqual(audit_export(payload, self.schema)[0]["summary"]["invalid_annotations"], 1)
+
     def test_wrong_control_dangling_links_and_missing_required_case_rejected(self):
         bad_results = [
             [entity(control="diagnosis_labels"), choice()],
@@ -107,7 +129,7 @@ class LabelStudioPreparationTests(unittest.TestCase):
             [entity(), choice(), choice()],
             [entity(), choice("finding_context", "明确存在", "entity1"), choice("finding_context", "明确存在", "entity1"), choice()],
             [{**entity(), "from_name": []}, choice()],
-            [entity(), entity("time", "时间表达", 2, 4, "time_labels"), {"type": "relation", "from_id": "entity1", "to_id": "time", "labels": ["持续时长"], "direction": []}, choice()],
+            [entity(), entity("time", "时间表达", 2, 4), {"type": "relation", "from_id": "entity1", "to_id": "time", "labels": ["持续时长"], "direction": []}, choice()],
         ]
         for results in bad_results:
             with self.subTest(results=results):

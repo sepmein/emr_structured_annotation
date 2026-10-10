@@ -12,14 +12,14 @@ from types import SimpleNamespace
 import tempfile
 import unittest
 
-from scripts.frozen_training_data import convert_rows, prepare_frozen_training
-from scripts.split_evaluation_reference import split_reference
-from scripts.evaluate_entity_predictions import read_label_groups
+from emr_annotation.training_data.frozen import convert_rows, prepare_frozen_training
+from emr_annotation.training_data.split_reference import split_reference
+from emr_annotation.evaluation.entity_predictions import read_label_groups
 from modernbert_ml_backend.train_frozen import main
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "label_studio/pneumonia_config.xml"
-TRAINER = ROOT / "modernbert_ml_backend/train_ner_re.py"
+TRAINER = ROOT / "modernbert_ml_backend/training/trainer.py"
 
 
 def row(task_id, text, positive=True):
@@ -122,6 +122,18 @@ class FrozenTrainingDataTests(unittest.TestCase):
                 self.assertEqual(main(args), 0)
             receipt = json.loads((out/"training_receipt.json").read_text(encoding="utf-8"))
             self.assertEqual(receipt["status"], "data_preflight_passed_training_not_run")
+            self.assertEqual(receipt["trainer_sha256"], hashlib.sha256(TRAINER.read_bytes()).hexdigest())
+            self.assertEqual(set(receipt["model_code_sha256"]), {
+                "modernbert_ml_backend/modeling/network.py",
+                "modernbert_ml_backend/modeling/inference.py",
+                "modernbert_ml_backend/training/trainer.py",
+                "modernbert_ml_backend/label_studio_backend/service.py",
+                "modernbert_ml_backend/backend/service.py",
+                "modernbert_ml_backend/model.py",
+                "modernbert_ml_backend/train_ner_re.py",
+            })
+            for path, digest in receipt["model_code_sha256"].items():
+                self.assertEqual(digest, hashlib.sha256((ROOT / path).read_bytes()).hexdigest())
             self.assertFalse((out/"best_model").exists())
             with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
                 main(args)

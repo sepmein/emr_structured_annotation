@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from scripts.compare_model_benchmarks import capacity_scenario, compare, main, read_context, summarize
+from emr_annotation.evaluation.compare_model_benchmarks import capacity_scenario, compare, main, read_context, summarize
 
 
 def benchmark(scale=1, failed=()):

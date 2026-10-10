@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.merge_emr_data import (
+from emr_annotation.data_preparation.merge_emr_data import (
     build_label_studio_task,
     build_combined_text,
     calculate_age,
