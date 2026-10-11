@@ -8,9 +8,15 @@
 阶段 3 四个模型实现模块、旧入口、后续消费者哈希与受保护文件见 [模型迁移快照](model-migration.json)。两份源码快照各自记录阶段完成时版本；训练消费者后续更新不回写阶段 2 原哈希。
 根目录 [AGENTS.md](../AGENTS.md) 是后续任务必须参照的规则入口。本文件提供工作流程映射、统一存放位置、兼容例外及可分次执行的整理方案。新任务先找现有入口；不要按下面的目标树直接修改运行命令。
 
+2026-10-11 新增独立[中文Schema多任务试验](model_training/schema-multitask-trial.md)：数据转换进入training_data业务包，跨度网络进入modeling，训练进入training，报告进入evaluation；CLI为train_schema.py与predict_schema.py。原始双标尚未裁决，首轮关系停用，第二轮利用原始已标类型的唯一Schema端点投影进行正例监督；未知实体对不当作负例，关系效果仍不可评价。已有ModernBERT服务和历史证据保持。真实中文权重训练及重载另留本轮回执，不回写迁移阶段的历史验收状态。
+
+2026-10-11 新增[全量人工裁决工具](double_annotation_adjudication/human-review-tool.md)：批量构建及本地服务在`emr_annotation/adjudication/review_tool.py`，维护模板为该包`templates/human_review.html`。复用Schema、原导出解析及关系校验；生成网页/病例快照/运行凭据和SQLite审查历史位于同批次`output/.../adjudication/<run_id>/`，不覆盖原始导出或历史训练参考。
+
 后续命名调整：7 个当前维护目录已按用途重命名，见[目录命名规范](directory-naming.md)及[调整记录](directory-renaming.json)。文档目录采用完整用途名称，运行清单中的 stage 保持原值；历史快照仍表示完成时路径。
 
 data 后续调整：用户指定的 6 个顶层目录已按用途、批次日期和存储版本重命名，见[数据目录规则与索引](data-directory-naming.md)。65 件文件及内部冻结名称保持，旧路径使用隐藏 Junction 访问同一数据；根 CSV 和既有 output 批次继续保留。新批次沿用本方案内容布局，批次名称增加明确用途与 `vNNN`，运行清单记录精确版本；清点跳过兼容联接。
+
+2026-10-10 后续环境维护：根 Python/cp312 不匹配已修复，后端仍使用独立 requirements 环境；环境检查共享逻辑在 `modernbert_ml_backend/training/environment.py`，命令入口为 `check_environment.py`。本机环境、验收范围及复现方式见[本地训练与评估环境](model_training/runtime-environment.md)。历史快照和失败回执不回写。
 
 ## 1. 按工作流程分块
 

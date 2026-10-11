@@ -20,6 +20,7 @@
   <nav class="nav" aria-label="工作台视图"><button data-nav="cases" class="active">病例裁决</button><button data-nav="labels">标签图表与规则</button><button data-nav="inventory">原始结果追溯</button></nav>
 </header>
 <div id="alert" class="alert view-hidden" role="alert"></div>
+<div id="batch-context" class="notice view-hidden" style="margin:12px 26px"></div>
 <div id="metrics" class="summary-strip"></div>
 <details class="overview" id="overview"><summary>展开分歧总览 <span class="muted">· 核查项分布与病例四分类交叉表，点击图表可筛选</span></summary><div class="overview-content"><section><div class="chart-head"><h2>核查项分布</h2><div class="legend"><span class="a">需处理</span><span>一致 / 选填空白</span></div></div><div id="kind-chart"></div><p class="matrix-legend">同一个选区可能有多项问题；条数不等于错误病例数。</p></section><section><div class="chart-head"><h2>病例四分类交叉表</h2><small id="matrix-caption"></small></div><div id="case-matrix"></div><p class="matrix-legend">行：A结论 · 列：B结论。对角线为两人一致，橙色为分歧；一致不代表正确。</p></section></div></details>
 <p class="overview-banner" id="filter-note" aria-live="polite"></p>
@@ -47,6 +48,7 @@ let decisions={},labelReviews={};
 try{decisions=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){showAlert('浏览器草稿无法读取；请使用导入、导出保存记录。')}
 let state={nav:'cases',tab:'entities',task:p.tasks[0]?.key,row:p.tasks[0]?.review_rows[0]?.id,group:0,window:0,kind:'',matrix:null,inventoryPage:0};
 const taskMap=new Map(p.tasks.map(t=>[t.key,t])),rowMap=new Map(p.review_rows.map(r=>[r.id,r]));
+if(p.batch_context){$('batch-context').textContent=p.batch_context.notice;$('batch-context').classList.remove('view-hidden');if(p.batch_context.statistics_url){const a=document.createElement('a');a.href=p.batch_context.statistics_url;a.textContent=' 查看本批完整统计图表';$('batch-context').append(a)}}
 const groupCache=new Map();
 function showAlert(message){$('alert').textContent=message;$('alert').classList.remove('view-hidden')}
 function clearAlert(){$('alert').classList.add('view-hidden')}
@@ -125,6 +127,8 @@ $('inventory-prev').onclick=()=>{state.inventoryPage--;renderInventory()};$('inv
 function exportRecords(){const records=p.review_rows.map(r=>({id:r.id,task:r.task,kind:r.kind,status:'待裁决',final_answer:'',evidence_offsets:'',rule_ref:'',reason_category:'',reason:'',adjudicator:'',reviewed_at:'',needs_back_annotation:false,...decisions[r.id]}));const invalid=records.filter(d=>d.status==='已裁决'&&['final_answer','rule_ref','reason','adjudicator','reviewed_at'].some(f=>!String(d[f]??'').trim()));if(invalid.length){showAlert(`${invalid.length}项“已裁决”缺少最终答案、规则、理由、裁决人或时间，请补全再导出。`);selectRow(invalid[0].id);return}const blob=new Blob([JSON.stringify({version:p.version,sources:p.sources,review_context:p.review_context,exported_at:new Date().toISOString(),decisions:records},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='adjudication-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('save').textContent='已导出 '+records.length+' 项核查记录';clearAlert()}
 $('download').onclick=exportRecords;
 $('import').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;const d=JSON.parse(await file.text());if(JSON.stringify(d.sources)!==JSON.stringify(p.sources)||JSON.stringify(d.review_context)!==JSON.stringify(p.review_context))throw Error('来源、配置或规则哈希不一致');if(!Array.isArray(d.decisions)||d.decisions.some(v=>!rowMap.has(v.id))||new Set(d.decisions.map(v=>v.id)).size!==d.decisions.length)throw Error('核查项ID不属于本批或存在重复');if(!confirm('导入将替换当前浏览器草稿。请先导出已有草稿。'))return;decisions=Object.fromEntries(d.decisions.map(v=>[v.id,v]));save();renderAll();$('save').textContent='已导入 '+d.decisions.length+' 项记录'}catch(err){showAlert('导入失败：'+err.message)}finally{e.target.value=''}};
+function applyDeepLink(){const params=new URLSearchParams(location.hash.slice(1));if(!location.hash)return;$('project').value=params.get('project')||'';$('label-filter').value=params.get('label')||'';state.nav='cases';state.tab='entities';state.group=0;state.window=0;state.matrix=null;state.kind='';if(taskMap.has(params.get('task'))){state.task=params.get('task');state.row=taskMap.get(state.task).review_rows[0]?.id;$('scope').value='all'}}
+applyDeepLink();window.addEventListener('hashchange',()=>{applyDeepLink();renderAll()});
 renderAll();
 </script>
 </body>

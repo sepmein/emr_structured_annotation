@@ -1,9 +1,15 @@
 import json,re,sys
 from pathlib import Path
-a=json.loads(Path('output/emr_data_1_20261008/_parsed_records.json').read_text(encoding='utf-8'))
+if len(sys.argv)!=3:
+ sys.exit(f'用法: python {Path(__file__).name} <起始行号> <结束行号>')
+try:
+ start,end=int(sys.argv[1]),int(sys.argv[2])
+except ValueError:
+ sys.exit('起始行号和结束行号必须是整数')
+a=json.loads((Path(__file__).resolve().parents[1]/'output/emr_data_1_20261008/_parsed_records.json').read_text(encoding='utf-8'))
 pat=re.compile(r'肺炎|肺部感染|肺.{0,10}(?:炎症|炎性|感染|渗出|实变|磨玻璃)|发热|发烧|低热|高热|咳嗽|咳痰|气促|气急|喘息|喘鸣|呼吸困难|呼吸衰竭|鼻翼煽动|三凹|休克|器官衰竭|惊厥|抽搐|拒食|喂养困难|脱水征|流感|新冠|冠状病毒|合胞病毒|腺病毒|偏肺|副流感|鼻病毒|肠道病毒|博卡|衣原体|支原体|军团|曲霉|隐球|肺炎链球|百日咳',re.I)
 for x in a:
- if not int(sys.argv[1])<=x['row']<=int(sys.argv[2]): continue
+ if not start<=x['row']<=end: continue
  t=x['data']['text']
  print('\n#',x['row'],'chars',len(t))
  if len(t)<650:

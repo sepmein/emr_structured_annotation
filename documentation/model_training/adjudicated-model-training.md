@@ -2,7 +2,9 @@
 
 入口：[train_adjudicated.py](../../modernbert_ml_backend/train_adjudicated.py)。复用现有 ModernBERT 共享编码器、BIO 实体头、实体对关系头、LoRA、联合损失及动态填充，增加完整实验流程：冻结数据 → 核查 → 训练前测试 → 训练 → 验证集选最佳模型 → 重载 → 同一测试集训练后测试。
 
-2026-10-10 源码迁移：共享网络在 [modeling/network.py](../../modernbert_ml_backend/modeling/network.py)，数据集/训练/保存函数在 [training/trainer.py](../../modernbert_ml_backend/training/trainer.py)，训练实现不依赖 Label Studio 服务。旧 `train_ner_re.py` 保留别名，顶层 `config` 与脚本命名空间不变。迁移验证及模型环境尝试的失败范围见[模型迁移快照](../model-migration.json)；历史虚构 smoke 记录保持，本次迁移后的实际模型运行仍需在指定独立环境验证。
+2026-10-10 源码迁移：共享网络在 [modeling/network.py](../../modernbert_ml_backend/modeling/network.py)，数据集/训练/保存函数在 [training/trainer.py](../../modernbert_ml_backend/training/trainer.py)，训练实现不依赖 Label Studio 服务。旧 `train_ner_re.py` 保留别名，顶层 `config` 与脚本命名空间不变。迁移验证及模型环境尝试的失败范围见[模型迁移快照](../model-migration.json)；历史虚构 smoke 记录保持；阶段 3 迁移时实测未完成，后续验收范围见下文的新环境记录。
+
+本地解释器、独立 GPU 环境及环境检查命令见[本地训练与评估环境](runtime-environment.md)。2026-10-10 已在指定依赖的 GPU 环境完成迁移后虚构 tiny 模型的训练、重载及前后评估；正式中文权重的运行和容量仍待实测。历史迁移失败回执保留，新环境验收另写运行记录。
 
 当前目标为 XML 中 49 个实体标签和 5 种关系。9 个实体属性字段和病例级选择保存在最终参考中，没有对应模型输出头，不能将本流程结果作为它们的训练效果。
 

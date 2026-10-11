@@ -5,6 +5,12 @@
 
 当前标注资料：[标注指南、标签字典与 HTML 阅读版](documentation/annotation/README.md)。
 
+人工裁决工具：[全部病例的双人标注对照、可视化编辑与版本保存](documentation/double_annotation_adjudication/human-review-tool.md)，批量读取现有结构化记录，不调用模型重新解析。
+
+人工审查后统计：[双人一致性、各人与裁决符合度及案例材料](documentation/double_annotation_adjudication/human-review-statistics.md)，按实际人员配对计算，AI草稿与训练模型测试范围分别报告。
+
+多项目试标：[导出整合、详细一致性统计与V2裁决准备](documentation/double_annotation_adjudication/trial-batch-workflow.md)，保留源版本并按实际人员组合统计。
+
 目录命名：[当前名称、改名映射与后续命名规则](documentation/directory-naming.md)。本轮已重命名 7 个当前维护目录；旧服务导入仍兼容，运行 stage 和历史来源路径保持原值。
 
 数据目录：[按用途、批次与存储版本命名的目录索引](documentation/data-directory-naming.md)。6 个顶层目录已改名，旧名称保留隐藏兼容入口，数据内容与现有 CSV 默认输入保持。
@@ -14,6 +20,16 @@
 数据转换：[完整Label Studio导出到模型训练文件](documentation/training_data_preparation/label-studio-to-training.md)，含20条任务/40份标注的虚构样例及实际转换结果。
 
 最终裁决数据：[ModernBERT 训练与训练前后评估](documentation/model_training/adjudicated-model-training.md)，包含冻结患者分组、严格实体与端到端关系评分、验证选模及最佳权重重载。
+
+双人原始导出的模型试验：[中文跨度、9属性及病例四分类](documentation/model_training/schema-multitask-trial.md)，独立入口保留原有服务；未裁决结果与最终金标评价分开，关系分支在缺少有效监督时停用。
+
+基座替换：[mmBERT与中文BERT对比](documentation/model_training/mmbert-base-comparison.md)，沿用同一AI样例参考、患者划分与任务头，记录分词可表示性和真实训练结果。
+
+人工裁决后训练：[mmBERT文本、实体关系证据与门控融合](documentation/model_training/human-reviewed-hybrid.md)，冻结182例人工参考，生成1000条规则样本只用于训练，新增症候群证据和病原检出辅助头。
+
+进一步优化：[边界修正、分层分类与LR/XGBoost对照](documentation/model_training/mmbert-optimization.md)；属性支持及后续架构建议见[Laya与联合抽取文献分析](documentation/model_training/laya-architecture-analysis.md)。
+
+按错分继续改进：[逐项错误清单、实体候选与检验原文绑定、病例对照及实际重载](documentation/model_training/error-driven-improvement.md)。本批开发实体F1为82.55%，病例四分类未达到80%—85%目标，独立新批次验收仍待进行。
 
 ### —— 基于 Label Studio 的电子病历信息抽取数据集构建体系
 
@@ -186,6 +202,8 @@ python documentation/annotation/scripts/check-document-links.py
 ModernBERT 当前以 `python modernbert_ml_backend/_wsgi.py --port 9090` 作为脚本入口；使用安装了其 `requirements.txt` 的独立环境，并预先准备本地基础模型。当前实现使用顶层 `modeling`、`label_studio_backend`、`training` 和同一个 `config` 模块；旧 `backend.service` 与 `model.py` 保留服务别名，`train_ner_re.py` 保留训练别名。不要改写为 `python -m modernbert_ml_backend._wsgi`，顶层导入尚未改为完整包启动契约。
 
 `modernbert_ml_backend/predict_test.py` 会访问实际服务，不是上述单元测试的组成部分。根环境显式保留 `torch`、`transformers` 与共享 tokenizer 依赖 `sentencepiece`，避免原来依赖 GLiNER 间接安装这些包的 notebook 失效；没有执行环境同步卸载或清理模型缓存。
+
+2026-10-10 本地环境维护：根 Python/cp312 不匹配已修复；独立后端环境通过本地 `modernbert_ml_backend/.venv` Junction 使用。新环境验收状态、恢复步骤及显式检查命令见[本地训练与评估环境](documentation/model_training/runtime-environment.md)，历史迁移回执保持原内容。
 
 阶段 2 完成时 137 项离线测试通过，其中 9 项迁移专项检查验证旧入口别名、私有符号及 patch 兼容、新旧 CLI、虚构结果等价、真实实现哈希、资源路径和缺病例选择时完整生成核查材料；12 个旧 CLI 与 12 个新模块 CLI 的帮助参数一致。无模型依赖导入检查通过，没有执行真实模型、服务或医学验证。阶段完成快照不因后续维护重写，详细范围见[迁移记录](documentation/migration-log.md)。
 

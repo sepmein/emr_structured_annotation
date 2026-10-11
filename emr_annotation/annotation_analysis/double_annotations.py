@@ -450,7 +450,9 @@ def build_report(p, guide_link='../../../../documentation/double_annotation_adju
         case_text=f"{k['agree']}/{k['n']}" if k is not None else '不可评价（无可比病例）'
         kappa_text=f"{k['kappa']:.4f}" if k is not None and k['kappa'] is not None else '不可评价'
         f1_text=f"{f:.4f}" if f is not None else '不可评价'
-        lines.append(f"| {project} | {m['tasks']} | {case_text} | {kappa_text} | {f1_text} | 合法类型A={m['typed_relation']['A']}，B={m['typed_relation']['B']} |")
+        typed = m.get('typed_relation')
+        relation_text = f"合法类型A={typed['A']}，B={typed['B']}" if typed is not None else '类型或端点记录不完整，暂不可评价'
+        lines.append(f"| {project} | {m['tasks']} | {case_text} | {kappa_text} | {f1_text} | {relation_text} |")
     overall_case=s['case']
     overall_case_text=f"{overall_case['agree']}/{overall_case['n']}" if overall_case is not None else '不可评价（无可比病例）'
     lines.extend(['','病例总体一致：'+overall_case_text+'；不同项目A/B不是同一对人，合并指标仅作描述。',

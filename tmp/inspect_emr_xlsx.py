@@ -1,9 +1,13 @@
-import json
+import json, os
 from collections import Counter
 from pathlib import Path
 import openpyxl
-SOURCE = Path("D:/OneDrive/03_Resource/Documents/Desktop/emr_data_1.xlsx")
-OUT = Path("E:/emr_structured_annotation/output/emr_data_1_20261008")
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE = Path(os.environ["EMR_SOURCE_XLSX"]) if os.environ.get("EMR_SOURCE_XLSX") else None
+if SOURCE is None or not SOURCE.is_file():
+    raise SystemExit("Set EMR_SOURCE_XLSX to an existing source workbook path.")
+OUT = Path(os.environ.get("EMR_PARSE_OUT", ROOT / "output/emr_data_1_20261008"))
 OUT.mkdir(parents=True, exist_ok=True)
 wb = openpyxl.load_workbook(SOURCE, read_only=True, data_only=True)
 records, errors = [], []

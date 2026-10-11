@@ -2,6 +2,20 @@
 
 新任务先阅读根目录 [AGENTS.md](../AGENTS.md) 和 [项目组织方案与规则](project-organization.md)。阶段 1–3 文档归位、共享业务及模型源码拆分/离线验证已完成；阶段 4 已完成 73 件明确材料的副本归位与保留索引，阶段 5 已完成本轮源码、文档和明确材料范围整体验证（当前离线 144 项，净源码沙箱 144 项）。本页维护当前流程入口，历史证据保留在原位置。实际模型/服务验收仍未完成。
 
+本机环境修复、独立 GPU 环境及后续检查命令见[本地训练与评估环境](model_training/runtime-environment.md)。新的实际运行验收另行记录，不改写历史迁移回执。
+
+基座替换试验见[mmBERT与中文BERT对比](model_training/mmbert-base-comparison.md)，复用冻结AI样例与现有多任务网络；实际结果和验证凭据保存在对应output运行中。
+
+人工审查完成后的流程见[mmBERT混合判断训练](model_training/human-reviewed-hybrid.md)：人工参考冻结、1000条规则样本、预测实体/关系与文本融合，保留真实患者分组及辅助标签来源边界。
+
+进一步改进见[mmBERT优化与小模型分类对照](model_training/mmbert-optimization.md)，属性头、全检测特征缺口及文献建议见[Laya架构分析](model_training/laya-architecture-analysis.md)。
+
+当前执行目标已补充为[逐项错分原因分析与模型改进](model_training/error-driven-improvement.md)，保留性能验收目标、人工参考和真实患者评估边界。
+
+人工审查后质量统计见[双标一致性与裁决符合度](double_annotation_adjudication/human-review-statistics.md)：分别报告双人相互一致、各人与参考相符以及可追溯的差异案例。
+
+阶段成果汇报见[项目阶段汇报 PPT 维护入口](project_delivery/project-progress-presentation.md)：由复核快照生成可编辑图表，区分已完成工作、实测结果与尚未达到的目标。
+
 ## 按工作流程查找
 
 目录含义、改名映射及后续命名约定见[目录命名规范](directory-naming.md)；本轮 7 个目录已完成改名，原阶段快照仍记录当时路径。
@@ -14,7 +28,7 @@
 | 标注规范 | [指南、字典与阅读页面](annotation/README.md)；[实体单选配置与旧项目兼容](annotation/label-studio-single-selection.md) |
 | 模型构建与 Label Studio 后端 | [当前实现和服务边界](../README.md#3-modernbert-后端的边界)；[网络](../modernbert_ml_backend/modeling/network.py)、[推理解码](../modernbert_ml_backend/modeling/inference.py)、[服务适配](../modernbert_ml_backend/label_studio_backend/service.py)；旧 model.py 为兼容别名 |
 | 标注结果分析 | [导出核查与参考准备](training_data_preparation/label-studio-evaluation-preparation.md)；[双标审计与复核](double_annotation_adjudication/double-annotation-adjudication.md) |
-| 双人裁决 | [裁决方案](double_annotation_adjudication/double-annotation-adjudication.md)；[可视化工作台](double_annotation_adjudication/double-annotation-workbench.md) |
+| 双人裁决 | [裁决方案](double_annotation_adjudication/double-annotation-adjudication.md)；[可视化工作台](double_annotation_adjudication/double-annotation-workbench.md)；[多项目整合与统计流程](double_annotation_adjudication/trial-batch-workflow.md)；[全量人工审查与裁决工具](double_annotation_adjudication/human-review-tool.md) |
 | 训练数据准备与冻结 | [完整导出到训练格式](training_data_preparation/label-studio-to-training.md)；[参考选择与患者分组](training_data_preparation/label-studio-evaluation-preparation.md)；[冻结清单核查与训练前提](training_data_preparation/frozen-split-training.md) |
 | 模型训练 | [裁决后训练与训练前后评估](model_training/adjudicated-model-training.md)；[冻结清单独立入口](training_data_preparation/frozen-split-training.md)；[实际训练模块](../modernbert_ml_backend/training/trainer.py) |
 | 模型评估 | [实体逐标签评价](model_evaluation/model-evaluation.md)；[正则基线](model_evaluation/regex-baseline-comparison.md)；[服务预测与测速](model_evaluation/model-service-benchmark.md)；[通用大模型测试](model_evaluation/chat-model-benchmark.md)；[长度、速度与容量情景](model_evaluation/model-speed-capacity-comparison.md)；[200条真人双标实施方案](model_evaluation/200条真人双标_训练评估实施方案.md) |
@@ -64,3 +78,7 @@
 具体移动与哈希见 [迁移记录](migration-log.md)。文件位置调整不构成医学、模型性能、服务或 UI 验收。
 
 基础权重目录已统一为 `pretrained_models/`，旧 `bert-base-model/` 通过本地隐藏 Junction 兼容；规则及当前验证边界见[目录命名规范](directory-naming.md)。
+
+中文多任务试验：[跨度实体、9属性和病例分类训练](model_training/schema-multitask-trial.md)，原始双标试验、患者分组、权重重载、六部分报告及关系未训练边界。
+
+样例裁决试验：[AI逐点处理、患者边界冻结与训练报告](double_annotation_adjudication/ai-sample-adjudication.md)。AI样例与专家最终金标分开；未决点保留，关系正例监督及医学/UI验收边界单独列示。

@@ -1,16 +1,30 @@
 from pathlib import Path
 import json
+import os
 import tempfile
 from playwright.sync_api import sync_playwright
 
-
-BASE = Path('data/anotated_results/batch_1/review_2026-10-09_final').resolve()
+ROOT = Path(__file__).resolve().parents[1]
+REVIEW_CANDIDATES = [
+    ROOT / 'data/double_annotation_review_batch_001_20261009_v001/batch_1/review_2026-10-09_final',
+    ROOT / 'data/anotated_results/batch_1/review_2026-10-09_final',
+]
+BASE = next((p for p in REVIEW_CANDIDATES if (p / 'audit.v2.json').is_file()), None)
+if BASE is None:
+    raise SystemExit('Review workbench directory not found. Expected data/double_annotation_review_batch_001_20261009_v001/batch_1/review_2026-10-09_final')
 DATA = json.loads((BASE/'audit.v2.json').read_text('utf-8'))
 URL = (BASE/'review.html').as_uri()
 
+def css_attr(value):
+    return '"' + str(value).replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+chrome = os.environ.get('CHROME_PATH')
+launch_kwargs = {'headless': True}
+if chrome:
+    launch_kwargs['executable_path'] = chrome
 
 with sync_playwright() as pw, tempfile.TemporaryDirectory(prefix='review-v2-test-') as temp:
-    browser = pw.chromium.launch(executable_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe',headless=True)
+    browser = pw.chromium.launch(**launch_kwargs)
     page = browser.new_page(viewport={'width':1720,'height':1150})
     errors=[]
     page.on('pageerror', lambda e: errors.append(str(e)))
@@ -20,7 +34,7 @@ with sync_playwright() as pw, tempfile.TemporaryDirectory(prefix='review-v2-test
     assert page.locator('.mark').count()>0
     assert page.evaluate('attributesEqual({temporality:["current"],finding_context:["known_present"]},{finding_context:["known_present"],temporality:["current"]})')
     assert not page.locator('#overview').evaluate('(e)=>e.open')
-    page.screenshot(path=str(Path('tmp/review_v2_overview.png').resolve()),full_page=False)
+    page.screenshot(path=str((ROOT/'tmp/review_v2_overview.png').resolve()),full_page=False)
 
     # Matrix filters select the real two-person case disagreement, not the two files.
     page.locator('#overview summary').click()
@@ -43,7 +57,7 @@ with sync_playwright() as pw, tempfile.TemporaryDirectory(prefix='review-v2-test
     assert '检测方式' in page.locator('#case-content').inner_text()
     assert '抗体滴度/双份' in page.locator('#case-content').inner_text()
     attr_row=next(r for r in DATA['review_rows'] if r['task']=='P230/LS41862/T093' and r['kind']=='属性' and r['A']['field']=='detection_method' and r['status']!='一致')
-    page.locator('tr[data-row="'+attr_row['id']+'"]').click()
+    page.locator('tr[data-row=' + css_attr(attr_row['id']) + ']').click()
     assert '检测方式' in page.locator('.editor-title').inner_text()
 
     # Relationship graphs retain every source edge and the missing types.
@@ -55,7 +69,7 @@ with sync_playwright() as pw, tempfile.TemporaryDirectory(prefix='review-v2-test
     page.locator('.graph-edge').first.click()
     assert '未记录类型' in page.locator('.editor-title').inner_text()
     page.locator('#case-main').scroll_into_view_if_needed()
-    page.screenshot(path=str(Path('tmp/review_v2_relation_graph.png').resolve()),full_page=False)
+    page.screenshot(path=str((ROOT/'tmp/review_v2_relation_graph.png').resolve()),full_page=False)
 
     # All 49 labels can be inspected, including labels absent from this batch.
     page.locator('[data-nav=labels]').click()
@@ -116,7 +130,7 @@ with sync_playwright() as pw, tempfile.TemporaryDirectory(prefix='review-v2-test
         assert page.evaluate('document.documentElement.scrollWidth')<=width+1
         page.locator('[data-nav=cases]').click()
         if width==390:
-            page.screenshot(path=str(Path('tmp/review_v2_mobile.png').resolve()),full_page=False)
+            page.screenshot(path=str((ROOT/'tmp/review_v2_mobile.png').resolve()),full_page=False)
     assert not errors,errors
     browser.close()
     print(json.dumps({'page_errors':errors,'matrix_filters':'PASS','entity_highlights':'PASS','attribute_comparison':'PASS',

@@ -1,10 +1,11 @@
 """Produce task JSON and row-level triage audit without modifying the source workbook."""
-import csv, hashlib, json, re
+import csv, hashlib, json, os, re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT=Path('E:/emr_structured_annotation')
-OUT=ROOT/'output/emr_data_1_20261008'
+ROOT=Path(__file__).resolve().parents[1]
+OUT=Path(os.environ.get('EMR_PARSE_OUT', ROOT/'output/emr_data_1_20261008'))
+SOURCE=Path(os.environ['EMR_SOURCE_XLSX']) if os.environ.get('EMR_SOURCE_XLSX') else None
 records=json.loads((OUT/'_parsed_records.json').read_text(encoding='utf-8'))
 errors=json.loads((OUT/'invalid_source_rows.json').read_text(encoding='utf-8'))
 decisions=json.loads((ROOT/'tmp/emr_screening_decisions.json').read_text(encoding='utf-8'))
@@ -74,10 +75,21 @@ name_patterns=[
  re.compile(r'患者([\u4e00-\u9fff]{2,4})(?=[，,]\s*[男女](?:[，,]|性))'),
  re.compile(r'患者([\u4e00-\u9fff]{2,4})(?=[，,]\s*因[“"\'])')
 ]
+def record_text(d, row):
+ text=d.get('text')
+ if not isinstance(text,str):
+  raise ValueError(f'row {row}: missing or invalid text')
+ return text
+
+def patient_key(d, row):
+ pid=d.get('patient_id')
+ return pid if pid not in (None,'') else f'row-{row}'
+
 names=set()
 for x in records:
+ text=record_text(x['data'], x['row'])
  for pat in name_patterns:
-  names.update(pat.findall(x['data']['text']))
+  names.update(pat.findall(text))
  # Explicit names from the observed first-course documentation.
  v=x['data'].get('patient_name','')
  if isinstance(v,str) and re.fullmatch(r'[\u4e00-\u9fff]{2,4}',v): names.add(v)
@@ -100,10 +112,10 @@ def pseudo(s): return 'P-'+hashlib.sha256(str(s).encode()).hexdigest()[:12]
 
 def normalize(t):
  t=re.sub(r'\d{4}[-/.]\d{1,2}[-/.]\d{1,2}(?:\s+\d{1,2}:\d{2}(?::\d{2}(?:\.\d+)?)?)?','',t)
- return re.sub(r'\s+','',t)
+ return re.sub(r'\s+',' ',t).strip()
 
 norm_groups=defaultdict(list)
-for x in records: norm_groups[normalize(x['data']['text'])].append(x['row'])
+for x in records: norm_groups[normalize(record_text(x['data'], x['row']))].append(x['row'])
 
 def excerpt(t,kind):
  lines=[z.strip() for z in t.splitlines() if z.strip() and not re.match(r'(操作时间|诊断时间|确定诊断日期|院内检验项目代码|标准化检验定性结果代码)',z)]
@@ -119,7 +131,7 @@ tasks={k:[] for k in decisions}
 audits=[]
 redactions=[]
 for x in records:
- row,d=x['row'],x['data']; kind=lookup[row]; text=d['text']; patient=pseudo(d['patient_id'])
+ row,d=x['row'],x['data']; kind=lookup[row]; text=record_text(d, row); patient=pseudo(patient_key(d, row))
  cleaned=clean_obj(d)
  cleaned['patient_id']=patient
  cleaned['patient_name']='已去除直接身份字段'
@@ -146,7 +158,7 @@ for x in records:
   if row in (80,115): reason='仅消化道或妇科/尿液常规微生物信息，无本项目呼吸病原或临床线索。'
   if row==313: reason='仅建议电子喉镜，无肺炎触发或其他可用呼吸感染信息。'
  q=[]
- if len(norm_groups[normalize(text)])>1: q.append('去日期及空白后同文：'+','.join(map(str,norm_groups[normalize(text)])))
+ if len(norm_groups[normalize(text)])>1: q.append('去日期并折叠空白后同文：'+','.join(map(str,norm_groups[normalize(text)])))
  if row in (16,17,30,79): q.append('多文书起病/日期/索引归属需核对')
  if row==61: q.append('定性结果名称疑似填成项目名称')
  if row==78: q.append('未生长/未检出文字与阳性代码冲突；按原文保留，不推断阳性')
@@ -170,9 +182,11 @@ dump('label_studio_pending_38.json',tasks['pending'])
 dump('label_studio_all_valid_327.json',sorted(sum(tasks.values(),[]),key=lambda t:t['data']['source_row']))
 dump('screening_audit.json',audits)
 dump('redaction_log.json',redactions)
+AUDIT_FIELDS=['源Excel行号','工作表','患者代号','筛选结论','用途分组','原文依据','逐条筛选理由','数据问题','原文本字符数','推荐导入','候选保留']
 with (OUT/'screening_audit.csv').open('w',encoding='utf-8-sig',newline='') as f:
- writer=csv.DictWriter(f,fieldnames=list(audits[0]));writer.writeheader();writer.writerows(audits)
-summary={'source_rows':329,'valid_json':327,'truncated_json_rows':[35,36],'counts':{LABELS[k]:len(v) for k,v in decisions.items()},'recommended_import':156,'candidate_pool_including_pending':194,'pending':38,'exclude':133,'unique_patients_valid':len({x['data']['patient_id'] for x in records}),'unique_patients_recommended':len({t['data']['patient_id'] for t in tasks['core']+tasks['boundary']}),'unique_patients_candidates':len({t['data']['patient_id'] for t in tasks['core']+tasks['boundary']+tasks['pending']}),'date_normalized_duplicate_groups':[v for v in norm_groups.values() if len(v)>1],'text_redacted_rows':len(redactions),'source_sha256':hashlib.sha256(Path('D:/OneDrive/03_Resource/Documents/Desktop/emr_data_1.xlsx').read_bytes()).hexdigest(),'method':'逐条辅助初筛与语义核对。长文本按主诉、现病史及全文检索的相关片段复核；并非临床专家逐字双标，也不是四分类金标准。','scope':'宽口径候选保留，包含轻症、稳定慢性肺病、阴性和非感染解释对照；信息不足单列。','privacy':'导出移除直接身份字段，患者号换成稳定SHA256派生代号，自动遮盖识别到的姓名、完整证件号及手机号；不是完整去标识化认证，人工标注前需验收。'}
+ writer=csv.DictWriter(f,fieldnames=AUDIT_FIELDS);writer.writeheader();writer.writerows(audits)
+source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest() if SOURCE and SOURCE.is_file() else None
+summary={'source_rows':329,'valid_json':327,'truncated_json_rows':[35,36],'counts':{LABELS[k]:len(v) for k,v in decisions.items()},'recommended_import':156,'candidate_pool_including_pending':194,'pending':38,'exclude':133,'unique_patients_valid':len({patient_key(x['data'], x['row']) for x in records}),'unique_patients_recommended':len({t['data']['patient_id'] for t in tasks['core']+tasks['boundary']}),'unique_patients_candidates':len({t['data']['patient_id'] for t in tasks['core']+tasks['boundary']+tasks['pending']}),'date_normalized_duplicate_groups':[v for v in norm_groups.values() if len(v)>1],'text_redacted_rows':len(redactions),'source_sha256':source_sha256,'method':'逐条辅助初筛与语义核对。长文本按主诉、现病史及全文检索的相关片段复核；并非临床专家逐字双标，也不是四分类金标准。','scope':'宽口径候选保留，包含轻症、稳定慢性肺病、阴性和非感染解释对照；信息不足单列。','privacy':'导出移除直接身份字段，患者号换成稳定SHA256派生代号，自动遮盖识别到的姓名、完整证件号及手机号；不是完整去标识化认证，人工标注前需验收。'}
 dump('screening_summary.json',summary)
 assert len(audits)==329 and {a['源Excel行号'] for a in audits}==set(range(1,330))
 for name,n in [('label_studio_recommended_156.json',156),('label_studio_candidates_194.json',194),('label_studio_priority_39.json',39),('label_studio_pending_38.json',38),('label_studio_all_valid_327.json',327)]:
